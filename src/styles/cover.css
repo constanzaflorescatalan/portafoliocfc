@@ -127,7 +127,7 @@
   text-align: center;
   border-radius: calc(52 * var(--u));
   /* Azul oscuro plano, sin brillos ni degradé (leve transparencia para no tapar el cielo). */
-  border: 1px solid #02040a;
+  border: 0;
   background: rgba(7, 12, 28, 0.88);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
