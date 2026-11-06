@@ -19,8 +19,71 @@
   top: 0;
   bottom: 0;
   width: calc(50% + 1px);
+  overflow: hidden;
   background: var(--color-bg);
   transition: transform var(--motion-long) var(--ease-out);
+}
+
+/*
+  Cielo de la portada: azul noche más oscuro que el universo, con degradé (no plano),
+  estrellas finas y una bruma apenas perceptible. Mide el doble de cada mitad para que
+  el conjunto sea continuo; cada mitad muestra su lado y se lo lleva al abrirse.
+*/
+.sky {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200%;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 42%, #0c1730 0%, #08101f 38%, #050a15 68%, #020409 100%);
+}
+
+.cover__door--left .sky {
+  left: 0;
+}
+
+.cover__door--right .sky {
+  right: 0;
+}
+
+/* Bruma diagonal muy tenue (vía láctea sugerida), sin brillo. */
+.sky__haze {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 38% 9% at 50% 50%, rgba(120, 140, 190, 0.07), transparent 70%),
+    radial-gradient(ellipse 22% 7% at 38% 46%, rgba(199, 130, 162, 0.035), transparent 70%),
+    radial-gradient(ellipse 26% 8% at 63% 55%, rgba(16, 46, 44, 0.18), transparent 70%);
+  transform: rotate(-24deg);
+  filter: blur(18px);
+}
+
+.sky__stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Unas pocas estrellas que titilan muy lento. */
+.sky__twinkle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #eef0f6;
+  opacity: 0.15;
+  animation: twinkle 7s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.75;
+  }
 }
 
 .cover__door--left {
@@ -247,6 +310,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .sky__twinkle {
+    animation: none;
+    opacity: 0.5;
+  }
+
   .hero__card,
   .hero__photo,
   .orbit-line {

@@ -63,3 +63,8 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 
 ## Ajustes por la especificación completa (`docs/00`)
 - Marcas y Quién soy pasan a fondo negro carbón; Quién soy suma acentos verde bosque (círculos de íconos y resplandor de fondo muy tenue).
+
+## Portada — cambios pedidos por Coni
+- **Foto real de Constanza** en el círculo (`public/assets/retrato_constanza.jpg`, recorte cuadrado 900 px). Reemplaza al retrato demo.
+- **Fondo de universo en la portada** (pedido explícito, cambia el «fondo #05080E muy limpio» de docs/00): degradé radial azul noche más oscuro que el universo (#0c1730 → #020409), estrellas finas dibujadas en canvas (casi todas diminutas y tenues), una bruma diagonal apenas perceptible y 6 estrellas que titilan muy lento. Sin brillos ni nebulosas.
+- El cielo se pinta dentro de cada mitad del fondo, así se parte y viaja con ellas en la apertura.
