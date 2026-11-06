@@ -111,21 +111,31 @@
   height: calc(970 * var(--u));
 }
 
-/* Tarjeta verde pino */
+/*
+  Tarjeta verde pino, más oscura y translúcida (deja ver el cielo detrás).
+  Arriba en 510: la órbita baja hasta ~485, así no la toca; la foto (hasta 528) aún se apoya en ella.
+*/
 .hero__card {
   position: absolute;
   z-index: 1;
-  left: calc(37 * var(--u));
-  top: calc(488 * var(--u));
-  width: calc(678 * var(--u));
-  height: calc(470 * var(--u));
-  padding-top: calc(72 * var(--u));
+  left: calc(76 * var(--u));
+  top: calc(510 * var(--u));
+  width: calc(600 * var(--u));
+  padding: calc(58 * var(--u)) calc(36 * var(--u)) calc(46 * var(--u));
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-radius: calc(58 * var(--u));
-  background: linear-gradient(157deg, #15382c 2%, var(--color-card) 60%, #0f2622 100%);
+  border-radius: calc(52 * var(--u));
+  border: 1px solid rgba(235, 233, 232, 0.06);
+  background: linear-gradient(
+    157deg,
+    rgba(18, 52, 43, 0.74) 2%,
+    rgba(12, 37, 34, 0.7) 60%,
+    rgba(9, 28, 26, 0.76) 100%
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   animation: card-in 1100ms 550ms var(--ease-out) backwards;
   transition:
     transform var(--motion-medium) var(--ease-out),
@@ -133,8 +143,8 @@
 }
 
 .hero__name {
-  margin: 0 0 calc(22 * var(--u));
-  font-size: calc(66 * var(--u));
+  margin: 0 0 calc(18 * var(--u));
+  font-size: calc(60 * var(--u));
   line-height: 1.05;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -143,8 +153,8 @@
 
 .hero__headline {
   margin: 0;
-  max-width: calc(560 * var(--u));
-  font-size: calc(30 * var(--u));
+  max-width: calc(500 * var(--u));
+  font-size: calc(27 * var(--u));
   line-height: 1.32;
   color: #ece4e4;
 }
@@ -154,9 +164,9 @@
 }
 
 .hero__rule {
-  width: calc(150 * var(--u));
+  width: calc(130 * var(--u));
   height: max(2px, calc(3 * var(--u)));
-  margin: calc(40 * var(--u)) 0 calc(36 * var(--u));
+  margin: calc(28 * var(--u)) 0 calc(24 * var(--u));
   background: var(--color-pink);
 }
 
@@ -164,8 +174,8 @@
   margin: 0;
   display: flex;
   align-items: center;
-  gap: calc(14 * var(--u));
-  font-size: calc(29 * var(--u));
+  gap: calc(12 * var(--u));
+  font-size: calc(26 * var(--u));
   font-style: italic;
   color: #e7d6dd;
 }
