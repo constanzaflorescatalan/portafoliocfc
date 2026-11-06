@@ -51,8 +51,8 @@ export type Brand = {
   logo?: string;
   /** Fondo original del logo: se muestra al pasar el cursor. */
   logoBg?: string;
-  /** `silhouette`: blanco en reposo · `badge`: insignia en grises en reposo. */
-  logoMode: 'silhouette' | 'badge';
+  /** En reposo: `silhouette` blanco · `lines` contornos en blanco (logos con mucho detalle) · `badge` grises. */
+  logoMode: 'silhouette' | 'lines' | 'badge';
   /** Logo alto (dos logos apilados): se muestra con más altura. */
   logoTall: boolean;
   /** true si el fondo original es claro (el texto bajo el logo se oscurece al pasar el cursor). */
@@ -113,7 +113,7 @@ function logoFields(o: RawLogo) {
     color: '#C782A2',
     logo: o.logo,
     logoBg: o.logoBg,
-    logoMode: (o.logoMode === 'badge' ? 'badge' : 'silhouette') as Brand['logoMode'],
+    logoMode: (o.logoMode === 'badge' || o.logoMode === 'lines' ? o.logoMode : 'silhouette') as Brand['logoMode'],
     logoTall: Boolean(o.logoTall),
     lightBg: isLight(o.logoBg),
   };

@@ -205,3 +205,8 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
   - **Registro Civil, Subsecretaría del Trabajo y SUBDERE**: sin los bloques azul y rojo; queda el escudo y el nombre (se recortó «Gobierno de Chile» porque dejaba un hueco y achicaba todo). Al pasar el cursor, fondo rojo gobierno. Ya no hay insignias en grises.
   - **Marcas de gobierno juntas**: La Granja, La Pintana, Independencia, Puerto Montt, Lo Espejo, Registro Civil, SUBDERE, Subsecretaría del Trabajo y SISS (las tres últimas añadidas sin ventana, solo nombre y logo).
   - Total: **40 marcas** (10 filas completas de 4).
+- Segunda ronda de logos (pedido de Coni):
+  - **Zetering**: vuelven los bloques dorado y azul (son parte del logo); solo se quitó el blanco exterior.
+  - **Puerto Montt**: se quitó el fondo de cuadritos (transparencia falsa del archivo), conservando el blanco interno de la vela y la ola.
+  - **Hijas del Caldero**: solo el caldero, sin el anillo de fuego; al pasar el cursor, fondo negro (su original).
+  - Nuevo modo de reposo **`lines`** (contornos en blanco: los tonos oscuros pasan a claros y el negro se funde con el fondo) para logos con mucho detalle, donde la silueta se veía como una mancha: Salsa & Avocado, Maestras Leyendas, Las Tabinas, Zetering y Puerto Montt.

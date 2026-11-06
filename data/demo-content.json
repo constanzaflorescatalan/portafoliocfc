@@ -441,7 +441,7 @@
       "showOrganization": true,
       "brands": [],
       "logo": "assets/logos/hijas-del-caldero.webp",
-      "logoBg": "#130601"
+      "logoBg": "#000000"
     },
     {
       "organization": "Brecha Digital Consultores",
@@ -473,7 +473,8 @@
           "name": "Municipalidad de Puerto Montt",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/puerto-montt.webp",
-          "logoBg": "#f9fdfd"
+          "logoBg": "#ffffff",
+          "logoMode": "lines"
         },
         {
           "name": "Municipalidad de Lo Espejo",
@@ -530,7 +531,8 @@
     {
       "name": "Zetering",
       "logo": "assets/logos/zetering.webp",
-      "logoBg": "#ffffff"
+      "logoBg": "#ffffff",
+      "logoMode": "lines"
     },
     {
       "name": "Loz Takos",
@@ -550,12 +552,14 @@
     {
       "name": "Las Tabinas",
       "logo": "assets/logos/las-tabinas.webp",
-      "logoBg": "#ffffff"
+      "logoBg": "#ffffff",
+      "logoMode": "lines"
     },
     {
       "name": "Maestras Leyendas",
       "logo": "assets/logos/maestras-leyendas.webp",
-      "logoBg": "#ffffff"
+      "logoBg": "#ffffff",
+      "logoMode": "lines"
     },
     {
       "name": "Apoquindo Centro de Entrenamiento",
@@ -565,7 +569,8 @@
     {
       "name": "Salsa & Avocado",
       "logo": "assets/logos/salsa-avocado.webp",
-      "logoBg": "#fefefe"
+      "logoBg": "#ffffff",
+      "logoMode": "lines"
     }
   ]
 }
