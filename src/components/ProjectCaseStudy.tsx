@@ -51,7 +51,12 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
 
   return (
     <article ref={scroller} className="case" aria-labelledby="case-title">
-      <button type="button" className="case__star" onClick={onBack}>
+      <button
+        type="button"
+        className="case__star"
+        onClick={onBack}
+        aria-label={`Volver a ${WORLDS[world].title}`}
+      >
         <svg viewBox="-16 -16 32 32" aria-hidden="true" focusable="false">
           <path d={STAR} />
         </svg>
