@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "status": "DEMO — reemplazar antes de publicar",
+    "language": "es-CL"
+  },
+  "identity": {
+    "name": "Constanza Flores",
+    "headline": "Diseñadora Gráfica Senior · Ingeniera en Informática · UX/UI",
+    "location": "Santiago de Chile",
+    "email": "conoflor@gmail.com",
+    "linkedin": "https://linkedin.com/in/conoflor",
+    "github": "https://github.com/Confloresc",
+    "figma": "https://figma.com/@constanzaflores",
+    "vimeo": "https://vimeo.com/conoflor"
+  },
+  "worlds": [
+    {
+      "id": "design",
+      "title": "DISEÑO",
+      "degree": "Diseño Gráfico · Universidad Diego Portales · Título profesional y licenciatura · 2016",
+      "projects": [
+        {
+          "id": "demo-diseno-01",
+          "title": "Proyecto demo de Diseño 01",
+          "isDemo": true,
+          "client": "Marca ficticia (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
+          "tools": [],
+          "result": "Resultado sin definir (DEMO)",
+          "image": "legacy-prototype/assets/demo_diseno_01.jpg"
+        },
+        {
+          "id": "demo-diseno-02",
+          "title": "Proyecto demo de Diseño 02",
+          "isDemo": true,
+          "client": "Marca ficticia (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "goal": "Texto de ejemplo.",
+          "contribution": "Pendiente.",
+          "tools": [],
+          "result": "Pendiente.",
+          "image": "legacy-prototype/assets/demo_diseno_02.jpg"
+        }
+      ]
+    },
+    {
+      "id": "informatics",
+      "title": "INFORMÁTICA",
+      "degree": "Ingeniería en Informática · Duoc UC · Título profesional · 2025",
+      "projects": [
+        {
+          "id": "demo-informatica-01",
+          "title": "Proyecto demo de Informática 01",
+          "isDemo": true,
+          "client": "Ejemplo no real",
+          "goal": "Texto de ejemplo.",
+          "contribution": "Pendiente de validar.",
+          "tools": [],
+          "result": "Pendiente.",
+          "image": "legacy-prototype/assets/demo_info_01.jpg"
+        }
+      ]
+    }
+  ],
+  "brandRelationships": [
+    {
+      "organization": "Proust House",
+      "role": "Agencia / colaboración principal",
+      "clients": [
+        "Property Partners",
+        "Imagination Station",
+        "Scotch Plains Montessori School",
+        "Forge Programming",
+        "Arbor Counseling Centers (según CV; validar)"
+      ]
+    },
+    {
+      "organization": "Drei Ventures",
+      "role": "Diseñadora Gráfica Freelance",
+      "clients": [
+        "Nuva Oxi"
+      ]
+    },
+    {
+      "organization": "HEAD",
+      "role": "Experiencia directa",
+      "clients": []
+    },
+    {
+      "organization": "Castaño",
+      "role": "Experiencia directa",
+      "clients": []
+    },
+    {
+      "organization": "R Medy",
+      "role": "UX/UI freelance; según CV",
+      "clients": []
+    }
+  ],
+  "personalInterests": [
+    {
+      "id": "gym",
+      "name": "Gym",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_gym.jpg"
+    },
+    {
+      "id": "cocina",
+      "name": "Cocina",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_cocina.jpg"
+    },
+    {
+      "id": "animales",
+      "name": "Animales",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_animales.jpg"
+    },
+    {
+      "id": "tarot",
+      "name": "Tarot",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_tarot.jpg"
+    },
+    {
+      "id": "herbolaria",
+      "name": "Herbolaria",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_herbolaria.jpg"
+    },
+    {
+      "id": "dibujo",
+      "name": "Dibujo",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_dibujo.jpg"
+    },
+    {
+      "id": "pintura",
+      "name": "Pintura",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_pintura.jpg"
+    },
+    {
+      "id": "jabones",
+      "name": "Jabones",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_jabones.jpg"
+    },
+    {
+      "id": "velas",
+      "name": "Velas",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "legacy-prototype/assets/demo_hobby_velas.jpg"
+    }
+  ],
+  "contact": {
+    "title": "¿Creamos algo juntos?",
+    "titleIsProvisional": true,
+    "subtitle": "Siempre hay espacio para una buena idea.",
+    "subtitleIsProvisional": true
+  }
+}
