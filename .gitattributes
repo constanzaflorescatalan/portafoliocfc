@@ -1,0 +1,12 @@
+# Normaliza saltos de línea (evita diferencias entre Mac y Windows)
+* text=auto eol=lf
+
+# Archivos binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,20 @@
+# Dependencias y build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Sistema operativo
+.DS_Store
+._*
+__MACOSX/
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Registros y variables de entorno
+*.log
+npm-debug.log*
+.env*
