@@ -60,14 +60,14 @@ Se recorrieron las 8 pantallas en computador (1440 px) y celular (iPhone 13) con
 | Dependencias con fallas (`npm audit`) | ✅ 0 |
 | Peso del sitio | ✅ Liviano: JavaScript 82 KB y CSS 7 KB comprimidos; 1,4 MB en total con las imágenes demo |
 | Movimiento reducido (`prefers-reduced-motion`) | ✅ Respetado |
-| **Contraste bajo** en las etiquetas «Cliente / Agencia / Tipo» del caso de estudio | ⚠️ Falla AA (3 elementos) |
-| **Botón sin nombre**: en celular, la estrella para volver del caso de estudio esconde su texto y queda sin nombre para lectores de pantalla | ⚠️ Falla crítica (fácil de corregir) |
-| **Sin favicon** (ícono de la pestaña) | ⚠️ Falta |
-| **Sin vista previa al compartir** (Open Graph: imagen, título y descripción en WhatsApp, LinkedIn, etc.) | ⚠️ Falta, y es importante para un portafolio |
+| Contraste bajo en las etiquetas del caso de estudio | ✅ Corregido (sesión 2) |
+| Estrella de volver sin nombre accesible en celular | ✅ Corregido (sesión 2) |
+| Favicon | ✅ Agregado (sesión 2) |
+| Vista previa al compartir (Open Graph) | ✅ Agregada (sesión 2); falta dirección completa cuando haya dominio |
 | Direcciones con `#/` (ej. `#/diseno`) | ⚠️ Funcionan, pero Google y las vistas previas las tratan como una sola página |
 | Imágenes sin formato moderno (WebP/AVIF) ni tamaños por pantalla | ⏳ Hacerlo cuando lleguen las imágenes reales |
-| Fuentes cargadas desde Google | ⏳ Alojarlas en el sitio (privacidad y velocidad) |
-| Sin `robots.txt`, `sitemap.xml` ni página 404 | ⏳ Agregar al publicar |
+| Fuentes | ✅ Alojadas en el sitio (sesión 2) |
+| `robots.txt` | ✅ Agregado con bloqueo de robots de IA (sesión 2). Faltan `sitemap.xml` (requiere dominio) y página 404 |
 | Estrellas solo arriba a la izquierda en tu equipo | ❓ No reproducido aquí; falta captura y navegador |
 
 ---
@@ -149,7 +149,7 @@ Se recorrieron las 8 pantallas en computador (1440 px) y celular (iPhone 13) con
 
 **Fase 1 — Seguridad y datos (1 sesión)**
 1. CV público sin teléfono, repositorio privado o limpio y 2FA en GitHub (`08_SEGURIDAD.md`).
-2. Corregir los 2 problemas de accesibilidad.
+2. ~~Corregir los 2 problemas de accesibilidad.~~ ✅
 
 **Fase 2 — Contenido real (la más larga; depende de tu material)**
 3. Elegir y escribir 3 a 5 proyectos por mundo; preparar imágenes en tamaño web.
@@ -163,9 +163,9 @@ Se recorrieron las 8 pantallas en computador (1440 px) y celular (iPhone 13) con
 9. Resolver lo pendiente de la portada (foto final, estrellas en tu equipo).
 
 **Fase 4 — Preparar la publicación (1 sesión)**
-10. Favicon, imagen y textos para compartir (Open Graph), `robots.txt`, `sitemap.xml` y página 404.
+10. ~~Favicon, imagen para compartir y `robots.txt`~~ ✅ · Pendiente: `sitemap.xml` y página 404.
 11. Direcciones sin `#` (rutas reales) para Google y para compartir enlaces a cada proyecto.
-12. Fuentes alojadas en el sitio, imágenes en WebP/AVIF y cabeceras de seguridad.
+12. ~~Fuentes alojadas y cabeceras de seguridad~~ ✅ · Pendiente: imágenes en WebP/AVIF (con las imágenes reales).
 13. (Opcional) Versión en inglés.
 
 **Fase 5 — Publicar (1 sesión)**

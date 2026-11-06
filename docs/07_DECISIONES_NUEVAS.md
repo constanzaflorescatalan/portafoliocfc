@@ -160,3 +160,13 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 **Técnico**
 - Estrellas de la portada: Coni las vio solo arriba a la izquierda en su equipo; falta captura y navegador para reproducirlo (sospecha: Safari).
 - Publicación pública (GitHub Pages / Vercel) cuando Coni lo pida.
+
+## Preparación para publicar (sesión 2)
+- **Fuentes alojadas en el sitio** (`@fontsource-variable/urbanist`, `@fontsource/sacramento`): ya no se carga nada desde Google; el sitio no hace ninguna conexión externa.
+- **Favicon** («CF.» con punto rosa) en SVG, PNG 32 px y ícono para iPhone (`public/`).
+- **Vista previa al compartir** (Open Graph y Twitter): `public/og-image.jpg` 1200×630 con foto, órbita, nombre y títulos. Al tener dominio, cambiar `og:image` a dirección completa.
+- **`public/robots.txt`**: buscadores permitidos; robots de IA (GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot, etc.) bloqueados.
+- **`public/_headers`**: cabeceras de seguridad (CSP, HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, COOP) para Cloudflare Pages o Netlify. Probadas sirviendo el sitio con ellas: sin bloqueos.
+- **Correo protegido contra spam**: en el JSON va como `usuario [at] dominio` y se arma solo al copiar; ya no aparece como correo en el código publicado.
+- **Notas internas fuera del sitio publicado**: se detectó que el JSON completo (con notas como «por confirmar con Coni» y la revisión de Vimeo) viajaba en el código del sitio. Se quitaron esas notas del JSON (siguen en este documento) y el sitio importa solo las secciones que muestra. Regla: **todo lo que está en `data/demo-content.json` es público**.
+- **Accesibilidad**: la estrella de volver del caso de estudio tiene nombre accesible también en celular; los textos tenues subieron de 45 % a 60 % de opacidad para cumplir contraste AA. Revisión con axe-core: 0 problemas en 16 pantallas.

@@ -115,10 +115,10 @@ Ojo con las **marcas de clientes**: antes de publicar logos y piezas de clientes
 2. [ ] Crear el CV público sin teléfono y reemplazarlo en `public/assets/`.
 3. [ ] Activar 2FA en GitHub, más Dependabot, secret scanning y protección de `main`.
 4. [ ] Elegir hosting (recomendado: Cloudflare Pages o Vercel).
-5. [ ] Agregar el archivo de cabeceras de seguridad (`_headers` o `vercel.json`) con CSP, HSTS, etc.
-6. [ ] Agregar `robots.txt` con bloqueo de robots de IA.
-7. [ ] Alojar las fuentes en el sitio.
-8. [ ] Codificar el correo en el código.
+5. [x] Agregar el archivo de cabeceras de seguridad (`_headers` o `vercel.json`) con CSP, HSTS, etc. ✅ (sesión 2)
+6. [x] Agregar `robots.txt` con bloqueo de robots de IA. ✅ (sesión 2)
+7. [x] Alojar las fuentes en el sitio. ✅ (sesión 2)
+8. [x] Codificar el correo en el código. ✅ (sesión 2)
 9. [ ] Agregar el aviso de derechos de autor en el pie.
 10. [ ] Preparar las imágenes reales: tamaño web, sin GPS, con autoría en metadatos y marca de agua en las piezas clave.
 11. [ ] Después de publicar: revisar la nota de seguridad del sitio en [MDN HTTP Observatory](https://developer.mozilla.org/en-US/observatory) y [securityheaders.com](https://securityheaders.com).
