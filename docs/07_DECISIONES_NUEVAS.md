@@ -71,3 +71,6 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Fondo de la portada **más oscuro** (#08112a → #010205).
 - **Estrellas con profundidad**: el campo "respira" (se acerca y se aleja) en un ciclo de 26 s; las cercanas se mueven, crecen y se aclaran más que las lejanas. Quieto con `prefers-reduced-motion`.
 - **Órbita, contorno del círculo y estrella en blanco suave** (#EBE9E8, línea al 78 %) en vez de rosa, a pedido de Coni. El rosa se mantiene en la línea bajo los títulos y el pin de ubicación. Cambiar en `--orbit-color` / `--orbit-star` (cover.css).
+- La estrella de cuatro puntas que recorre la órbita pasa a ser una **luna**: círculo pequeño (r = 10) con sombreado esférico suave, sin brillo.
+- Movimiento de estrellas más perceptible: ciclo de 14 s y amplitud 0,16 (antes 26 s y 0,075, demasiado sutil).
+- Barra de navegación superior más oscura (casi negra, 97 % → 86 %).

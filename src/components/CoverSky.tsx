@@ -13,9 +13,9 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
  */
 const SEED = 1987;
 /** Duración de un ciclo completo acercar → alejar, en segundos. */
-const BREATH_SECONDS = 26;
+const BREATH_SECONDS = 14;
 /** Desplazamiento máximo hacia el espectador para las estrellas más cercanas. */
-const DEPTH_AMPLITUDE = 0.075;
+const DEPTH_AMPLITUDE = 0.16;
 
 const TWINKLES = [
   { x: 12, y: 22, d: 0 },

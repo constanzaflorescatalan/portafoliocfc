@@ -7,7 +7,6 @@
   --u: min(calc((100svh - var(--nav-height) - 112px - 16px) / 970), calc(100vw / 780));
   /* Color de la órbita, el contorno del círculo y la estrella (antes rosa; ver docs/07). */
   --orbit-color: rgba(235, 233, 232, 0.78);
-  --orbit-star: #ebe9e8;
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -215,8 +214,9 @@
   animation: orbit-fade 700ms 900ms ease-out backwards;
 }
 
-.orbit-star {
-  fill: var(--orbit-star);
+.orbit-moon {
+  stroke: rgba(5, 8, 14, 0.35);
+  stroke-width: 1;
 }
 
 .hero__photo {

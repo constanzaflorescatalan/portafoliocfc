@@ -13,13 +13,26 @@ const ORBIT_SECONDS = 14;
 
 const FRONT_ARC = `M ${-ORBIT.rx} 0 A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${ORBIT.rx} 0`;
 const FULL_LOOP = `${FRONT_ARC} A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${-ORBIT.rx} 0`;
-const STAR_SHAPE = 'M0 -15 L4 -4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4 -4 Z';
+/** Radio de la luna que recorre la órbita (en unidades del lienzo 750×970). */
+const MOON_R = 10;
 
 /**
- * Estrella de cuatro puntas, sin brillo. Hay una copia detrás y otra delante de la foto;
+ * Luna (antes estrella de cuatro puntas), sin brillo. Hay una copia detrás y otra delante de la foto;
  * cada una es visible solo durante la mitad de la órbita que le corresponde.
  */
-function OrbitStar({ half }: { half: 'front' | 'back' }) {
+function MoonGradient({ half }: { half: 'front' | 'back' }) {
+  return (
+    <defs>
+      <radialGradient id={`moon-${half}`} cx="38%" cy="34%" r="70%">
+        <stop offset="0%" stopColor="#f4f3f2" />
+        <stop offset="55%" stopColor="#d9d8db" />
+        <stop offset="100%" stopColor="#8f97a8" />
+      </radialGradient>
+    </defs>
+  );
+}
+
+function OrbitMoon({ half }: { half: 'front' | 'back' }) {
   return (
     <g opacity="0">
       <animateMotion dur={`${ORBIT_SECONDS}s`} begin="1.8s" repeatCount="indefinite" path={FULL_LOOP} />
@@ -32,7 +45,8 @@ function OrbitStar({ half }: { half: 'front' | 'back' }) {
         keyTimes="0;0.5"
         values={half === 'front' ? '1;0' : '0;1'}
       />
-      <path className="orbit-star" d={STAR_SHAPE} transform={`rotate(${-ORBIT.rotate})`} />
+      {/* Luna: círculo con sombreado esférico suave (sin brillo). */}
+      <circle className="orbit-moon" r={MOON_R} fill={`url(#moon-${half})`} />
     </g>
   );
 }
@@ -65,6 +79,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
 
         <div className="hero__portrait">
           <svg className="hero__orbit" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
+            <MoonGradient half="back" />
             <g transform={orbitTransform}>
               <ellipse
                 className="orbit-line"
@@ -74,7 +89,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
                 ry={ORBIT.ry}
                 pathLength="1"
               />
-              {!reduced && <OrbitStar half="back" />}
+              {!reduced && <OrbitMoon half="back" />}
             </g>
           </svg>
 
@@ -88,9 +103,10 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           </div>
 
           <svg className="hero__orbit hero__orbit--front" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
+            <MoonGradient half="front" />
             <g transform={orbitTransform}>
               <path className="orbit-line orbit-line--front" d={FRONT_ARC} pathLength="1" />
-              {!reduced && <OrbitStar half="front" />}
+              {!reduced && <OrbitMoon half="front" />}
             </g>
           </svg>
         </div>

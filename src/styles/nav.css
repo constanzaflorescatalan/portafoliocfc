@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(24px, 4.5vw, 90px);
-  background: linear-gradient(180deg, rgba(5, 8, 14, 0.92), rgba(5, 8, 14, 0.55));
+  background: linear-gradient(180deg, rgba(1, 2, 5, 0.97), rgba(2, 3, 8, 0.86));
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-line);
 }
