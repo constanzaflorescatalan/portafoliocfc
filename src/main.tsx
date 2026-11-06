@@ -1,5 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+// Fuentes alojadas en el propio sitio (sin Google Fonts): privacidad y velocidad.
+import '@fontsource-variable/urbanist';
+import '@fontsource/sacramento/latin-400.css';
 import '../design/tokens.css';
 import './styles/base.css';
 import './styles/nav.css';
