@@ -136,12 +136,6 @@
   color: #9accc0;
 }
 
-.float--chip {
-  border: 1px solid rgba(154, 204, 192, 0.55);
-  border-radius: 6px;
-  background: rgba(154, 204, 192, 0.06);
-}
-
 .float--caret {
   width: 2px;
   height: 1.3em;

@@ -10,11 +10,21 @@ const TOKENS = [
   'if (clicked) open();',
   'display: grid;',
   'let imagination = 1;',
+  '</>',
+  '<div class="idea">',
+  'return <Portfolio />;',
+  'npm run dev',
+  'git commit -m "nuevo"',
+  'useState(false)',
+  '.card { color: #C782A2; }',
+  'const ux = () => {}',
+  'export default App;',
 ];
 
-type Kind = 'code' | 'chip' | 'caret';
+/** Solo código: fragmentos de texto y, a veces, un cursor parpadeando. */
+type Kind = 'code' | 'caret';
 
-/** Código breve, bloques de interfaz y cursores parpadeando al pasar por la mitad Informática. */
+/** Fragmentos de código y cursores parpadeando al pasar por la mitad Informática. */
 export const CodeFloaters = forwardRef<HoverLayerHandle>(function CodeFloaters(_props, ref) {
   const layerRef = useRef<HTMLDivElement>(null);
 
@@ -27,14 +37,11 @@ export const CodeFloaters = forwardRef<HoverLayerHandle>(function CodeFloaters(_
         while (layer.childElementCount >= MAX_LIVE) layer.firstElementChild?.remove();
 
         const roll = Math.random();
-        const kind: Kind = roll < 0.55 ? 'code' : roll < 0.85 ? 'chip' : 'caret';
+        const kind: Kind = roll < 0.86 ? 'code' : 'caret';
         const el = document.createElement('span');
         el.className = `float float--${kind}`;
         if (kind === 'code') {
           el.textContent = TOKENS[Math.floor(Math.random() * TOKENS.length)];
-        } else if (kind === 'chip') {
-          el.style.width = `${36 + Math.random() * 56}px`;
-          el.style.height = `${14 + Math.random() * 14}px`;
         }
         // Se mantiene dentro de la mitad para no invadir el otro mundo.
         el.style.left = `${Math.max(8, Math.min(x + 12, width - 260))}px`;

@@ -93,3 +93,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 ## Selector Diseño / Informática — ajustes pedidos por Coni
 - Fondos de ambas mitades con **el mismo oscuro del cielo de la portada** (#08112a → #010205). Cada mitad tiene su centro de luz propio (Diseño a la derecha de su mitad, Informática a la izquierda) y una línea divisoria tenue, para que se lean separadas.
 - **«Explorar» solo aparece al pasar el cursor** por cualquier parte de su mitad (o al enfocarla con teclado), **sin flecha ni línea**. En pantallas táctiles (sin cursor) se muestra siempre, para no ocultar cómo entrar.
+- Hover de Informática: se quitaron los «bloques de interfaz» (rectángulos vacíos que se leían como cajas sin sentido). Ahora solo aparecen fragmentos de código (16 variantes) y, a veces, un cursor parpadeando.
