@@ -1,0 +1,23 @@
+:root {
+  --color-bg: #05080E;
+  --color-pine: #102E2C;
+  --color-pink: #C782A2;
+  --color-text: #EBE9E8;
+  --color-universe: #050914; /* guía: azul prácticamente negro; ajustar con la usuaria */
+  --color-muted: #A8B0BA;
+  --color-card: #102E2C;
+  --font-primary: "DM Sans", system-ui, sans-serif;
+  --font-accent: "Sacramento", cursive;
+  --radius-card: 24px; /* inicial, ajustable */
+  --radius-pill: 999px;
+  --nav-height: 72px; /* inicial, ajustable */
+  --focus-outline: 2px solid var(--color-pink);
+  --motion-short: 220ms;
+  --motion-medium: 550ms;
+  --motion-long: 1000ms;
+  --orbit-duration: 14s; /* elección provisional */
+}
+/* Cargar DM Sans y Sacramento en el proyecto; usar pesos correctos. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-short: 0ms; --motion-medium: 0ms; --motion-long: 0ms; }
+}
