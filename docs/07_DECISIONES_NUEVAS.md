@@ -101,3 +101,11 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Composición más arriba: agujero negro al 42 % del espacio (antes 55 %) y proyectos 14 puntos más arriba en `data/demo-content.json`, para reducir el aire bajo la formación.
 - Pie: se quitó «Proyectos de ejemplo · contenido DEMO»; queda «Desliza para ver marcas» a la derecha. Los proyectos siguen siendo DEMO hasta que Coni defina los reales.
 - Nombres de proyecto hasta 280 px de ancho para que no se corten en dos líneas.
+
+## Marcas — pedido de Coni (con su CV ATS)
+- Se quitó la nota bajo la grilla («Nombres reales · logotipos tipográficos temporales…»).
+- Cada marca es un botón que abre una **ventana pequeña** con relación, período, rol y qué hace Coni (texto chico). Se cierra con ×, Escape o clic fuera.
+- Los datos viven en `experiences` de `data/demo-content.json` (reemplaza a `brandRelationships`). Cada experiencia: organización, tipo, rol, período, resumen y sus marcas. Cuando lleguen los logos se agrega `logo` a cada marca y la grilla muestra el logo (gris en reposo, color al pasar el cursor) en vez del nombre.
+- El texto bajo cada nombre se mantiene por ahora (Coni lo pidió así hasta tener logos).
+- Marcas agregadas según el CV y lo que contó Coni: HEAD Chile y Calú Bags (Maletas Chile SpA), Patagonia Donas (Castaño), Municipalidad de La Granja, Municipalidad de La Pintana y SUBDERE (clientes vía Brecha Digital Consultores), El Búho Comunicaciones, MujerActual, Hijas del Caldero, Brecha Digital Consultores, E-Mach Card.
+- **Pendiente de confirmar con Coni** (no se publican hasta confirmar): nombre de la marca de pan de Castaño; escritura de «Pampier»; desde cuándo trabaja con Drei Ventures (hoy dice solo «Actualidad»); clientes de El Búho (ej. «Isa» y organismos de gobierno); si Arbor Counseling Centers se mantiene (está en el CV anterior, no en el ATS).

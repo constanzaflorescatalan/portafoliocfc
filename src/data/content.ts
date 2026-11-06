@@ -39,6 +39,14 @@ export type Brand = {
   context: string;
   /** Color de muestra del hover mientras no haya logos oficiales. */
   color: string;
+  /** Logo oficial (ruta en public/assets). Mientras no exista se muestra el nombre. */
+  logo?: string;
+  /** Datos de la ventana: organización, rol, período y qué hace. */
+  organization: string;
+  role: string;
+  period: string;
+  summary: string;
+  detail?: string;
 };
 
 type RawWorld = { id: string; projects: Project[] };
@@ -64,39 +72,67 @@ export const CONTACT = {
 /** Colores demostrativos para el hover (se reemplazan por logos reales). */
 const BRAND_COLORS: Record<string, string> = {
   'Proust House': '#D6A2BC',
-  'Drei Ventures': '#A5C5B1',
-  HEAD: '#E6C0A2',
-  Castaño: '#D8BBA6',
-  'R Medy': '#A5B8D0',
   'Property Partners': '#9CCABF',
   'Imagination Station': '#AEC4DC',
   'Scotch Plains Montessori School': '#D9B4AD',
   'Forge Programming': '#D29CBA',
   'Arbor Counseling Centers': '#B3C8C2',
+  'Drei Ventures': '#A5C5B1',
   'Nuva Oxi': '#D6A1C3',
+  'HEAD Chile': '#E6C0A2',
+  'Calú Bags': '#D9B9C9',
+  Castaño: '#D8BBA6',
+  'Patagonia Donas': '#E2C7A0',
+  'R Medy': '#A5B8D0',
+  'El Búho Comunicaciones': '#C9B79C',
+  MujerActual: '#D9A5B8',
+  'Hijas del Caldero': '#B9A6CF',
+  'Brecha Digital Consultores': '#9FC1C9',
+  'E-Mach Card': '#B5BDD6',
+  'Municipalidad de La Granja': '#A9C7B5',
+  'Municipalidad de La Pintana': '#B7C2DA',
+  SUBDERE: '#C9B3C9',
+};
+
+type RawExperience = {
+  organization: string;
+  kind: string;
+  role: string;
+  period: string;
+  summary: string;
+  showOrganization: boolean;
+  logo?: string;
+  brands: { name: string; relation?: string; detail?: string; logo?: string }[];
 };
 
 /**
- * Grid de marcas derivado de `brandRelationships`: primero cada organización y
- * luego sus clientes con la relación explícita ("Cliente vía Proust House").
+ * Grid de marcas desde `experiences` (data/demo-content.json): cada organización
+ * (si corresponde) seguida de sus marcas, con la relación explícita
+ * («Cliente vía Proust House», «Marca de Maletas Chile SpA»…).
  */
-export const BRANDS: Brand[] = (() => {
-  const list: Brand[] = [];
-  const clients: Brand[] = [];
-  for (const rel of raw.brandRelationships) {
-    list.push({
-      name: rel.organization,
-      context: rel.role.replace(/;.*$/, ''),
-      color: BRAND_COLORS[rel.organization] ?? '#C782A2',
-    });
-    for (const client of rel.clients) {
-      const name = client.replace(/\s*\(.*\)$/, '');
-      clients.push({
-        name,
-        context: `${rel.organization === 'Drei Ventures' ? 'Proyecto' : 'Cliente'} vía ${rel.organization}`,
-        color: BRAND_COLORS[name] ?? '#C782A2',
-      });
-    }
-  }
-  return [...list, ...clients];
-})();
+export const BRANDS: Brand[] = (raw.experiences as RawExperience[]).flatMap((exp) => {
+  const base = { organization: exp.organization, role: exp.role, period: exp.period, summary: exp.summary };
+  const own: Brand[] = exp.showOrganization
+    ? [
+        {
+          ...base,
+          name: exp.organization,
+          context: exp.kind,
+          color: BRAND_COLORS[exp.organization] ?? '#C782A2',
+          logo: exp.logo,
+        },
+      ]
+    : [];
+  const viaAgency = exp.kind === 'Agencia';
+  const brands: Brand[] = exp.brands.map((b) => ({
+    ...base,
+    name: b.name,
+    context:
+      b.relation ??
+      (viaAgency ? `Cliente vía ${exp.organization}` : `Marca trabajada en ${exp.organization}`),
+    color: BRAND_COLORS[b.name] ?? '#C782A2',
+    logo: b.logo,
+    detail: b.detail,
+  }));
+  return [...own, ...brands];
+});

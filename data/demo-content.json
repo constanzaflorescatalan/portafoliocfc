@@ -184,41 +184,6 @@
       ]
     }
   ],
-  "brandRelationships": [
-    {
-      "organization": "Proust House",
-      "role": "Agencia / colaboración principal",
-      "clients": [
-        "Property Partners",
-        "Imagination Station",
-        "Scotch Plains Montessori School",
-        "Forge Programming",
-        "Arbor Counseling Centers (según CV; validar)"
-      ]
-    },
-    {
-      "organization": "Drei Ventures",
-      "role": "Diseñadora Gráfica Freelance",
-      "clients": [
-        "Nuva Oxi"
-      ]
-    },
-    {
-      "organization": "HEAD",
-      "role": "Experiencia directa",
-      "clients": []
-    },
-    {
-      "organization": "Castaño",
-      "role": "Experiencia directa",
-      "clients": []
-    },
-    {
-      "organization": "R Medy",
-      "role": "UX/UI freelance; según CV",
-      "clients": []
-    }
-  ],
   "personalInterests": [
     {
       "id": "gym",
@@ -325,5 +290,155 @@
     "titleIsProvisional": true,
     "subtitle": "Siempre hay espacio para una buena idea.",
     "subtitleIsProvisional": true
-  }
+  },
+  "experiences": [
+    {
+      "organization": "Proust House",
+      "kind": "Agencia",
+      "role": "Diseñadora Gráfica y Digital",
+      "period": "2026 – Actualidad",
+      "summary": "Diseño de contenido digital, campañas, piezas para redes sociales y web para marcas nacionales e internacionales.",
+      "showOrganization": true,
+      "brands": [
+        {
+          "name": "Property Partners",
+          "detail": "La Reina y Ñuñoa, Chile"
+        },
+        {
+          "name": "Imagination Station",
+          "detail": "Fort Worth, Texas, EE. UU."
+        },
+        {
+          "name": "Scotch Plains Montessori School",
+          "detail": "New Jersey, EE. UU."
+        },
+        {
+          "name": "Forge Programming",
+          "detail": "EE. UU."
+        },
+        {
+          "name": "Arbor Counseling Centers",
+          "detail": "New Jersey, EE. UU."
+        }
+      ]
+    },
+    {
+      "organization": "Drei Ventures",
+      "kind": "Colaboración freelance",
+      "role": "Diseñadora Gráfica Freelance",
+      "period": "Actualidad",
+      "periodPending": true,
+      "summary": "Diseño gráfico freelance para proyectos de Drei Ventures.",
+      "showOrganization": true,
+      "brands": [
+        {
+          "name": "Nuva Oxi",
+          "relation": "Proyecto vía Drei Ventures"
+        }
+      ]
+    },
+    {
+      "organization": "Maletas Chile SpA",
+      "kind": "Empresa",
+      "role": "Diseñadora",
+      "period": "Agosto 2024 – Actualidad",
+      "summary": "Piezas gráficas y contenido visual para campañas, plataformas y formatos digitales; edición y retoque de imágenes de producto.",
+      "showOrganization": false,
+      "brands": [
+        {
+          "name": "HEAD Chile"
+        },
+        {
+          "name": "Calú Bags"
+        }
+      ]
+    },
+    {
+      "organization": "Castaño",
+      "kind": "Empresa",
+      "role": "Líder de Diseño (2022–2024) · Asistente de Diseño (2021–2022)",
+      "period": "Noviembre 2021 – Agosto 2024",
+      "summary": "Liderazgo y coordinación de proyectos de diseño y comunicación visual, supervisión de consistencia gráfica de marca.",
+      "showOrganization": true,
+      "brands": [
+        {
+          "name": "Patagonia Donas"
+        }
+      ],
+      "pendingBrands": [
+        "Marca de pan (nombre por confirmar)",
+        "Pampier (escritura por confirmar)"
+      ]
+    },
+    {
+      "organization": "R Medy",
+      "kind": "Proyecto freelance",
+      "role": "Web & UX/UI Design",
+      "period": "2026",
+      "summary": "Diseño de interfaces mobile-first para la renovación del sitio web, prototipos en Figma. Vancouver, Canadá.",
+      "showOrganization": true,
+      "brands": []
+    },
+    {
+      "organization": "El Búho Comunicaciones",
+      "kind": "Agencia",
+      "role": "Diseñadora Gráfica Freelance",
+      "period": "2016 – 2022",
+      "summary": "Piezas para proyectos de marketing y publicidad, adaptadas a distintos clientes y formatos.",
+      "showOrganization": true,
+      "brands": [],
+      "pendingBrands": [
+        "Clientes por confirmar con Coni (ej. «Isa» y organismos de gobierno)"
+      ]
+    },
+    {
+      "organization": "MujerActual",
+      "kind": "Revista digital",
+      "role": "Diseñadora Gráfica Freelance",
+      "period": "2017 – 2019",
+      "summary": "Contenido visual para revista, blog y plataformas digitales.",
+      "showOrganization": true,
+      "brands": []
+    },
+    {
+      "organization": "Hijas del Caldero",
+      "kind": "Emprendimiento propio",
+      "role": "Diseñadora",
+      "period": "2018 – 2022",
+      "summary": "Identidad y material gráfico, piezas visuales, atención a clientes y apoyo en comercialización.",
+      "showOrganization": true,
+      "brands": []
+    },
+    {
+      "organization": "Brecha Digital Consultores",
+      "kind": "Empresa",
+      "role": "Diseñadora Gráfica y Audiovisual",
+      "period": "2019 – 2020",
+      "summary": "Contenido gráfico y audiovisual y edición de piezas para comunicación digital.",
+      "showOrganization": true,
+      "brands": [
+        {
+          "name": "Municipalidad de La Granja",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        },
+        {
+          "name": "Municipalidad de La Pintana",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        },
+        {
+          "name": "SUBDERE",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        }
+      ]
+    },
+    {
+      "organization": "E-Mach Card",
+      "kind": "Empresa",
+      "role": "Edición fotográfica",
+      "period": "2017 – 2019",
+      "summary": "Edición, tratamiento y optimización de fotografías para el proyecto TNA.",
+      "showOrganization": true,
+      "brands": []
+    }
+  ]
 }
