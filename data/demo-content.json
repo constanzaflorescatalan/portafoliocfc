@@ -286,8 +286,9 @@
     }
   ],
   "contact": {
-    "title": "Diseño que se ve. Código que funciona.",
-    "titleIsProvisional": true
+    "titleLead": "Tu mensaje será nuestro próximo",
+    "titleHighlight": "gran proyecto.",
+    "titleIsProvisional": false
   },
   "experiences": [
     {

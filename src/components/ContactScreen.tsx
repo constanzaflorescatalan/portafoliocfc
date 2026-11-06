@@ -1,18 +1,36 @@
+import { useEffect, useRef, useState } from 'react';
 import { CONTACT } from '../data/content';
 import { asset } from '../lib/asset';
 import { StarField } from './StarField';
 
 const YEAR = new Date().getFullYear();
 
-/** Separa la frase en dos tramos («Diseño que se ve.» / «Código que funciona.»). */
-function splitTitle(title: string): [string, string] {
-  const i = title.indexOf('. ');
-  return i === -1 ? [title, ''] : [title.slice(0, i + 1), title.slice(i + 2)];
+/** Copia el correo; si el navegador no deja, abre el programa de correo. */
+async function copyEmail(email: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(email);
+    return true;
+  } catch {
+    window.location.href = `mailto:${email}`;
+    return false;
+  }
 }
 
-/** Capítulo final, sin formulario (docs/02). La frase sale de data/demo-content.json. */
+/** Capítulo final, sin formulario (docs/02). Los textos salen de data/demo-content.json. */
 export function ContactScreen() {
-  const [first, second] = splitTitle(CONTACT.title);
+  const [copied, setCopied] = useState(false);
+  const timer = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(timer.current), []);
+
+  const onMail = async () => {
+    if (await copyEmail(CONTACT.email)) {
+      setCopied(true);
+      window.clearTimeout(timer.current);
+      timer.current = window.setTimeout(() => setCopied(false), 2200);
+    }
+  };
+
   const links = [
     { label: 'LinkedIn', href: CONTACT.linkedin },
     { label: 'GitHub', href: CONTACT.github },
@@ -25,20 +43,19 @@ export function ContactScreen() {
       <div className="shell contact__shell">
         <p className="eyebrow">03 / Contacto</p>
         <h2 id="contact-title" className="contact__title" tabIndex={-1} data-chapter-heading>
-          {first}
-          {second && (
-            <>
-              <br />
-              <em>{second}</em>
-            </>
-          )}
+          <span className="contact__lead">{CONTACT.titleLead}</span>
+          <em className="contact__highlight">{CONTACT.titleHighlight}</em>
         </h2>
 
-        <a className="contact__email" href={`mailto:${CONTACT.email}`}>
-          {CONTACT.email} <span aria-hidden="true">↗</span>
-        </a>
-
         <ul className="contact__links">
+          <li className="contact__mail">
+            <button type="button" onClick={onMail} title={CONTACT.email} aria-describedby="mail-status">
+              Mail <span aria-hidden="true">⧉</span>
+            </button>
+            <span id="mail-status" className={`contact__toast${copied ? ' is-on' : ''}`} role="status">
+              {copied ? 'Correo copiado' : ''}
+            </span>
+          </li>
           {links.map((l) => (
             <li key={l.label}>
               <a href={l.href} target="_blank" rel="noopener noreferrer">

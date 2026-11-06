@@ -61,7 +61,8 @@ export const PROJECTS: Record<WorldId, Project[]> = {
 export const INTERESTS = raw.personalInterests as unknown as Interest[];
 
 export const CONTACT = {
-  title: raw.contact.title,
+  titleLead: raw.contact.titleLead,
+  titleHighlight: raw.contact.titleHighlight,
   email: raw.identity.email,
   linkedin: raw.identity.linkedin,
   github: raw.identity.github,

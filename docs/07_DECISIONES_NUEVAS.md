@@ -129,3 +129,5 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Correo nuevo: **constanza.florescatalan@gmail.com** (reemplaza conoflor@gmail.com en todo el sitio).
 - Enlaces: LinkedIn (linkedin.com/in/conoflor, el de su CV), **GitHub github.com/constanzaflorescatalan** (cuenta del proyecto) y **Vimeo vimeo.com/conoflor** (nuevo).
 - «Descargar CV» descarga el **CV ATS** que entregó Coni (reemplaza `public/assets/Constanza_Flores_CV.pdf`).
+- Luego, a pedido de Coni: frase **«Tu mensaje será nuestro próximo»** (blanco, más pequeña) + **«gran proyecto.»** (rosa, al tamaño grande del título). Textos en `contact.titleLead` / `contact.titleHighlight`.
+- El correo grande se reemplazó por **«Mail»** en la fila de enlaces: al hacer clic copia constanza.florescatalan@gmail.com y muestra «Correo copiado»; si el navegador no permite copiar, abre el programa de correo. El correo aparece como tooltip al pasar el cursor.
