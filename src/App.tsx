@@ -1,36 +1,83 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { LandingHero } from './components/LandingHero';
 import { OpeningTransition } from './components/OpeningTransition';
+import { PersonalCollage } from './components/PersonalCollage';
+import { ProjectCaseStudy } from './components/ProjectCaseStudy';
 import { TopNav } from './components/TopNav';
-import { UniverseScene } from './components/UniverseScene';
+import { WorldSite } from './components/WorldSite';
 import { WorldSelector } from './components/WorldSelector';
+import { PROJECTS } from './data/content';
 import { WORLDS } from './data/site';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { readMs } from './lib/motion';
-import type { AppState, Stage, WorldId } from './types';
+import type { AppState, Chapter, NavTarget, Stage, WorldId } from './types';
 
-/** Ruta (hash) de cada estado: permite enlaces directos y botón "atrás" del navegador. */
-function hashFor({ stage, world }: AppState): string {
-  if (stage === 'universe' || stage === 'entering') return `#${WORLDS[world ?? 'design'].path}`;
+const WORLD_BY_PATH: Record<string, WorldId> = { diseno: 'design', informatica: 'tech' };
+const LAST_WORLD_KEY = 'cf:lastWorld';
+
+function readLastWorld(): WorldId {
+  try {
+    const value = window.sessionStorage.getItem(LAST_WORLD_KEY);
+    return value === 'tech' ? 'tech' : 'design';
+  } catch {
+    return 'design';
+  }
+}
+
+function saveLastWorld(world: WorldId) {
+  try {
+    window.sessionStorage.setItem(LAST_WORLD_KEY, world);
+  } catch {
+    /* sin almacenamiento: se usa Diseño por defecto */
+  }
+}
+
+/** Ruta (hash) de cada estado: enlaces directos y botón "atrás" del navegador. */
+function hashFor({ stage, world, project, chapter }: AppState): string {
+  const w = WORLDS[world ?? 'design'].path;
+  if (stage === 'project' && project) return `#${w}/${project}`;
+  if (stage === 'about' || stage === 'portal') return '#/quien-soy';
+  if (stage === 'universe' || stage === 'entering') {
+    if (chapter === 'brands') return '#/marcas';
+    if (chapter === 'contact') return '#/contacto';
+    return `#${w}`;
+  }
   if (stage === 'chooser' || stage === 'opening') return '#/mundos';
   return '#/';
 }
 
 function parseHash(): AppState {
-  const hash = window.location.hash.replace(/^#/, '');
-  if (hash === WORLDS.design.path) return { stage: 'universe', world: 'design' };
-  if (hash === WORLDS.tech.path) return { stage: 'universe', world: 'tech' };
-  if (hash === '/mundos') return { stage: 'chooser', world: null };
+  const parts = window.location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  const [first, second] = parts;
+  const world = first ? WORLD_BY_PATH[first] : undefined;
+  if (world) {
+    if (second && PROJECTS[world].some((p) => p.id === second)) {
+      return { stage: 'project', world, project: second };
+    }
+    return { stage: 'universe', world };
+  }
+  if (first === 'marcas') return { stage: 'universe', world: readLastWorld(), chapter: 'brands' };
+  if (first === 'contacto') return { stage: 'universe', world: readLastWorld(), chapter: 'contact' };
+  if (first === 'quien-soy') return { stage: 'about', world: readLastWorld() };
+  if (first === 'mundos') return { stage: 'chooser', world: null };
   return { stage: 'cover', world: null };
 }
 
-const TITLES: Record<Stage, string> = {
-  cover: 'Constanza Flores — Portafolio',
-  opening: 'Constanza Flores — Portafolio',
-  chooser: 'Elige un mundo — Constanza Flores',
-  entering: 'Constanza Flores — Portafolio',
-  universe: 'Constanza Flores — Portafolio',
-};
+function titleFor(state: AppState): string {
+  const suffix = 'Constanza Flores';
+  if (state.stage === 'chooser') return `Elige un mundo — ${suffix}`;
+  if (state.stage === 'about' || state.stage === 'portal') return `Quién soy — ${suffix}`;
+  if (state.stage === 'project' && state.world) {
+    const p = PROJECTS[state.world].find((x) => x.id === state.project);
+    if (p) return `${p.title} — ${suffix}`;
+  }
+  if (state.stage === 'universe' && state.world) {
+    if (state.chapter === 'brands') return `Marcas — ${suffix}`;
+    if (state.chapter === 'contact') return `Contacto — ${suffix}`;
+    return `${WORLDS[state.world].title} — ${suffix}`;
+  }
+  return `${suffix} — Portafolio`;
+}
 
 export default function App() {
   const reduced = useReducedMotion();
@@ -38,11 +85,13 @@ export default function App() {
   const stageRef = useRef<Stage>(state.stage);
   const timer = useRef<number | undefined>(undefined);
   const firstPanelRef = useRef<HTMLButtonElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
   const previousStage = useRef<Stage>(state.stage);
+  /** Capítulo visible al hacer scroll (para el indicador del menú). */
+  const [visibleChapter, setVisibleChapter] = useState<Chapter>('universe');
 
   const update = useCallback((next: AppState) => {
     stageRef.current = next.stage;
+    if (next.world) saveLastWorld(next.world);
     setState(next);
   }, []);
 
@@ -89,18 +138,54 @@ export default function App() {
     [after, pushHash, update],
   );
 
-  // Menú: desde el selector conserva la animación; desde cualquier otro estado entra directo.
-  const goWorld = useCallback(
-    (world: WorldId) => {
-      if (stageRef.current === 'chooser') chooseWorld(world);
-      else if (stageRef.current === 'entering') return;
-      else jump({ stage: 'universe', world });
+  // Agujero negro → quién soy: zoom/absorción y luego el collage.
+  const enterPortal = useCallback(() => {
+    if (stageRef.current !== 'universe') return;
+    const world = state.world ?? readLastWorld();
+    const next: AppState = { stage: 'portal', world };
+    update(next);
+    pushHash(next);
+    const ms = readMs('--motion-portal', 900);
+    after(ms > 0 ? ms : 0, () => update({ stage: 'about', world }));
+  }, [after, pushHash, update, state.world]);
+
+  const openProject = useCallback(
+    (world: WorldId, project: string) => jump({ stage: 'project', world, project }),
+    [jump],
+  );
+
+  const goNav = useCallback(
+    (target: NavTarget) => {
+      const current = stageRef.current;
+      if (current === 'entering' || current === 'opening' || current === 'portal') return;
+      if (target === 'design' || target === 'tech') {
+        if (current === 'chooser') chooseWorld(target);
+        else jump({ stage: 'universe', world: target, chapter: 'universe', nonce: Date.now() });
+        return;
+      }
+      const world = state.world ?? readLastWorld();
+      if (target === 'about') jump({ stage: 'about', world });
+      else jump({ stage: 'universe', world, chapter: target, nonce: Date.now() });
     },
-    [chooseWorld, jump],
+    [chooseWorld, jump, state.world],
   );
 
   const goHome = useCallback(() => jump({ stage: 'cover', world: null }), [jump]);
-  const backToChooser = useCallback(() => jump({ stage: 'chooser', world: null }), [jump]);
+  const backToUniverse = useCallback(
+    (world: WorldId) => jump({ stage: 'universe', world }),
+    [jump],
+  );
+
+  /** El scroll entre capítulos actualiza la URL sin llenar el historial. */
+  const onChapterChange = useCallback(
+    (chapter: Chapter) => {
+      setVisibleChapter(chapter);
+      if (stageRef.current !== 'universe' || !state.world) return;
+      const hash = hashFor({ stage: 'universe', world: state.world, chapter });
+      if (window.location.hash !== hash) window.history.replaceState(null, '', hash);
+    },
+    [state.world],
+  );
 
   // Botón "atrás/adelante" del navegador.
   useEffect(() => {
@@ -116,29 +201,37 @@ export default function App() {
   useEffect(() => {
     const was = previousStage.current;
     previousStage.current = state.stage;
-    if (was === state.stage) return;
+    if (was === state.stage && state.stage !== 'project') return;
     if (state.stage === 'chooser') firstPanelRef.current?.focus({ preventScroll: true });
-    if (state.stage === 'universe') headingRef.current?.focus({ preventScroll: true });
-  }, [state.stage]);
+    if (state.stage === 'universe' || state.stage === 'project' || state.stage === 'about') {
+      window.requestAnimationFrame(() =>
+        document.querySelector<HTMLElement>('[data-autofocus]')?.focus({ preventScroll: true }),
+      );
+    }
+  }, [state.stage, state.project]);
 
   useEffect(() => {
-    document.title =
-      state.stage === 'universe' && state.world
-        ? `${WORLDS[state.world].title} — Constanza Flores`
-        : TITLES[state.stage];
-  }, [state.stage, state.world]);
+    document.title = titleFor(state);
+  }, [state]);
 
   const { stage, world } = state;
   const showCover = stage === 'cover' || stage === 'opening';
   const showChooser = stage === 'opening' || stage === 'chooser' || stage === 'entering';
-  const activeWorld = stage === 'universe' || stage === 'entering' ? world : null;
+  const showSite = (stage === 'universe' || stage === 'portal') && world;
+
+  let activeNav: NavTarget | null = null;
+  if (stage === 'about' || stage === 'portal') activeNav = 'about';
+  else if (stage === 'universe' || stage === 'entering' || stage === 'project') {
+    if (stage === 'universe' && visibleChapter !== 'universe') activeNav = visibleChapter;
+    else activeNav = world;
+  }
 
   return (
     <>
       <a className="skip" href="#main">
         Saltar al contenido
       </a>
-      <TopNav activeWorld={activeWorld} onHome={goHome} onWorld={goWorld} />
+      <TopNav active={activeNav} onHome={goHome} onNav={goNav} />
 
       <main id="main">
         {showChooser && (
@@ -157,8 +250,30 @@ export default function App() {
           </OpeningTransition>
         )}
 
-        {stage === 'universe' && world && (
-          <UniverseScene world={world} onBack={backToChooser} headingRef={headingRef} />
+        {showSite && (
+          <WorldSite
+            world={world}
+            chapter={state.chapter}
+            nonce={state.nonce}
+            absorbing={stage === 'portal'}
+            reduced={reduced}
+            onOpenProject={openProject}
+            onPortal={enterPortal}
+            onChapterChange={onChapterChange}
+          />
+        )}
+
+        {stage === 'project' && world && state.project && (
+          <ProjectCaseStudy
+            world={world}
+            projectId={state.project}
+            onBack={() => backToUniverse(world)}
+            onNavigate={(id) => openProject(world, id)}
+          />
+        )}
+
+        {stage === 'about' && world && (
+          <PersonalCollage world={world} onBack={() => backToUniverse(world)} />
         )}
       </main>
     </>

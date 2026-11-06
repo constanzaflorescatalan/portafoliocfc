@@ -1,14 +1,14 @@
 import { NAV_ITEMS } from '../data/site';
-import type { WorldId } from '../types';
+import type { NavTarget } from '../types';
 import { MobileNav } from './MobileNav';
 
 type Props = {
-  activeWorld: WorldId | null;
+  active: NavTarget | null;
   onHome: () => void;
-  onWorld: (world: WorldId) => void;
+  onNav: (target: NavTarget) => void;
 };
 
-export function TopNav({ activeWorld, onHome, onWorld }: Props) {
+export function TopNav({ active, onHome, onNav }: Props) {
   return (
     <header className="topnav">
       <button type="button" className="topnav__logo" onClick={onHome} aria-label="Volver a la portada">
@@ -16,37 +16,19 @@ export function TopNav({ activeWorld, onHome, onWorld }: Props) {
       </button>
 
       <nav className="topnav__links" aria-label="Navegación principal">
-        {NAV_ITEMS.map((item) => {
-          const world = item.world;
-          if (!world) {
-            // Disponibles en etapas siguientes: visibles, pero sin acción todavía.
-            return (
-              <button
-                key={item.id}
-                type="button"
-                className="is-pending"
-                aria-disabled="true"
-                title="Disponible en una próxima etapa"
-              >
-                {item.label}
-                <span className="sr-only"> (disponible en una próxima etapa)</span>
-              </button>
-            );
-          }
-          return (
-            <button
-              key={item.id}
-              type="button"
-              aria-current={activeWorld === world ? 'page' : undefined}
-              onClick={() => onWorld(world)}
-            >
-              {item.label}
-            </button>
-          );
-        })}
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            aria-current={active === item.id ? 'page' : undefined}
+            onClick={() => onNav(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
       </nav>
 
-      <MobileNav activeWorld={activeWorld} onWorld={onWorld} />
+      <MobileNav active={active} onNav={onNav} />
     </header>
   );
 }

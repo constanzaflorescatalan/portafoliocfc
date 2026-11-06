@@ -1,4 +1,4 @@
-import type { WorldId } from '../types';
+import type { NavTarget, WorldId } from '../types';
 
 /** Textos confirmados (docs/04). La portada usa exactamente estos textos, sin tagline. */
 export const IDENTITY = {
@@ -31,10 +31,10 @@ export const WORLDS: Record<
   },
 };
 
-/** Menú (docs/01). Los ítems sin `world` se activan en etapas siguientes. */
-export const NAV_ITEMS: { id: string; label: string; world?: WorldId }[] = [
-  { id: 'design', label: 'Diseño', world: 'design' },
-  { id: 'tech', label: 'Informática', world: 'tech' },
+/** Menú (docs/01). */
+export const NAV_ITEMS: { id: NavTarget; label: string }[] = [
+  { id: 'design', label: 'Diseño' },
+  { id: 'tech', label: 'Informática' },
   { id: 'brands', label: 'Marcas' },
   { id: 'about', label: 'Quién soy' },
   { id: 'contact', label: 'Contacto' },

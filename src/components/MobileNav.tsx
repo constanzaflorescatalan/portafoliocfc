@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { NAV_ITEMS } from '../data/site';
-import type { WorldId } from '../types';
+import type { NavTarget } from '../types';
 
-type Props = { activeWorld: WorldId | null; onWorld: (world: WorldId) => void };
+type Props = { active: NavTarget | null; onNav: (target: NavTarget) => void };
 
-export function MobileNav({ activeWorld, onWorld }: Props) {
+export function MobileNav({ active, onNav }: Props) {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -36,30 +36,19 @@ export function MobileNav({ activeWorld, onWorld }: Props) {
       </button>
 
       <nav id="mobile-menu" className="mobilenav__panel" aria-label="Navegación móvil" hidden={!open}>
-        {NAV_ITEMS.map((item) => {
-          const world = item.world;
-          if (!world) {
-            return (
-              <button key={item.id} type="button" className="is-pending" aria-disabled="true">
-                {item.label}
-                <span className="sr-only"> (disponible en una próxima etapa)</span>
-              </button>
-            );
-          }
-          return (
-            <button
-              key={item.id}
-              type="button"
-              aria-current={activeWorld === world ? 'page' : undefined}
-              onClick={() => {
-                setOpen(false);
-                onWorld(world);
-              }}
-            >
-              {item.label} <span aria-hidden="true">↗</span>
-            </button>
-          );
-        })}
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            aria-current={active === item.id ? 'page' : undefined}
+            onClick={() => {
+              setOpen(false);
+              onNav(item.id);
+            }}
+          >
+            {item.label} <span aria-hidden="true">↗</span>
+          </button>
+        ))}
       </nav>
     </div>
   );
