@@ -84,7 +84,8 @@ export const CONTACT = {
   // En el JSON va como «usuario [at] dominio» para que los robots de spam no lo detecten.
   email: identity.email.replace(/\s*\[at\]\s*/, '@'),
   linkedin: identity.linkedin,
-  github: identity.github,
+  githubPro: identity.githubPro,
+  githubAcademic: identity.githubAcademic,
   vimeo: identity.vimeo,
   cv: 'assets/Constanza_Flores_CV.pdf',
 };

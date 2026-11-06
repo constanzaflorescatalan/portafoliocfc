@@ -33,7 +33,8 @@ export function ContactScreen() {
 
   const links = [
     { label: 'LinkedIn', href: CONTACT.linkedin },
-    { label: 'GitHub', href: CONTACT.github },
+    { label: 'GitHub profesional', href: CONTACT.githubPro },
+    { label: 'GitHub académico', href: CONTACT.githubAcademic },
     { label: 'Vimeo', href: CONTACT.vimeo },
   ];
 
