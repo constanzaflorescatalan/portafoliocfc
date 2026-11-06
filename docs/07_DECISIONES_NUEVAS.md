@@ -197,3 +197,11 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - E-Mach: el archivo entregado era una firma de correo con datos personales de otra persona (nombre, correo y teléfono); se publicó **solo el recorte de la palabra «EMACH»**.
 - El logo de El Búho llegó muy pequeño (40 × 40 px): pedir una versión más grande.
 - Total en la grilla: 41 marcas.
+- Ajustes de logos pedidos por Coni:
+  - **DECH y Unimarc en una sola tarjeta** («DECH · Unimarc»), un logo arriba del otro (`dech-unimarc.webp`, `logoTall`).
+  - **E-Mach**: solo la palabra «EMACH» (sin la firma de correo).
+  - **El Búho**: el logo de 40 px se agrandó y suavizó (silueta del mismo búho).
+  - **Zetering**: sin bloques de color; solo el texto («zeter» azul, «ing» dorado, con el corchete del diseño) y el subtítulo, fondo transparente.
+  - **Registro Civil, Subsecretaría del Trabajo y SUBDERE**: sin los bloques azul y rojo; queda el escudo y el nombre (se recortó «Gobierno de Chile» porque dejaba un hueco y achicaba todo). Al pasar el cursor, fondo rojo gobierno. Ya no hay insignias en grises.
+  - **Marcas de gobierno juntas**: La Granja, La Pintana, Independencia, Puerto Montt, Lo Espejo, Registro Civil, SUBDERE, Subsecretaría del Trabajo y SISS (las tres últimas añadidas sin ventana, solo nombre y logo).
+  - Total: **40 marcas** (10 filas completas de 4).
