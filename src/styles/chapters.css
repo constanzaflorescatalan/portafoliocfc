@@ -1,5 +1,6 @@
 /* Marcas y Contacto: capítulos de pantalla completa debajo del universo. */
 .shell {
+  position: relative;
   width: min(1180px, 100%);
   margin: 0 auto;
   padding: calc(var(--nav-height) + clamp(32px, 7vh, 80px)) clamp(20px, 4.5vw, 64px) 56px;
@@ -44,7 +45,8 @@
 
 /* ---------- Marcas ---------- */
 .brands {
-  background: var(--color-charcoal);
+  /* Mismo azul noche de la portada. */
+  background: radial-gradient(ellipse 70% 60% at 50% 42%, #08112a 0%, #050b1a 38%, #03060f 68%, #010205 100%);
   border-top: 1px solid var(--color-line);
 }
 

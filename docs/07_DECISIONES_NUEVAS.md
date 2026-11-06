@@ -121,3 +121,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Tarjeta de la portada: **azul oscuro plano, sin brillo ni degradé** (rgba(13, 22, 48, 0.82)); luego más oscuro: rgba(7, 12, 28, 0.88), borde casi invisible; se mantiene una leve transparencia con desenfoque para no tapar del todo el cielo.
 - Borde de la tarjeta más oscuro: línea casi negra (#02040a) en vez del borde claro tenue.
 - Luego, a pedido de Coni: tarjeta **sin contorno** (sin borde).
+- Fondo de Marcas: **mismo degradé azul noche de la portada** (#08112a → #010205) con estrellas casi invisibles (StarField con `dim` 0,35: opacidad máxima ≈ 0,12).

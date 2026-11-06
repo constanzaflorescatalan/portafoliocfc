@@ -4,6 +4,7 @@ import { BRANDS } from '../data/content';
 import type { Brand } from '../data/content';
 import { asset } from '../lib/asset';
 import { BrandModal } from './BrandModal';
+import { StarField } from './StarField';
 
 /**
  * Capítulo de marcas (docs/02): grid limpio, monocromo en reposo y color al pasar
@@ -16,6 +17,8 @@ export function BrandGrid() {
 
   return (
     <section id="marcas" data-chapter="brands" className="chapter brands" aria-labelledby="brands-title">
+      {/* Estrellas casi invisibles: solo se perciben mirando con atención. */}
+      <StarField count={70} seed={311} dim={0.35} />
       <div className="shell">
         <header className="chapter__head">
           <p className="eyebrow">02 / Experiencia</p>

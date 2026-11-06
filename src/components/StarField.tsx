@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
 
-type Props = { count?: number; seed?: number };
+/** `dim` multiplica la opacidad (1 = normal; 0.3 = casi invisible). */
+type Props = { count?: number; seed?: number; dim?: number };
 
 /**
  * Estrellas mínimas y tenues de fondo (docs/01). Posiciones deterministas para que
  * la composición sea estable; son decorativas y nunca clicables.
  */
-export function StarField({ count = 70, seed = 57 }: Props) {
+export function StarField({ count = 70, seed = 57, dim = 1 }: Props) {
   const stars = useMemo(() => {
     let s = seed;
     const rnd = () => {
@@ -16,9 +17,9 @@ export function StarField({ count = 70, seed = 57 }: Props) {
     return Array.from({ length: count }, () => ({
       left: 3 + rnd() * 94,
       top: 4 + rnd() * 92,
-      opacity: 0.08 + rnd() * 0.26,
+      opacity: (0.08 + rnd() * 0.26) * dim,
     }));
-  }, [count, seed]);
+  }, [count, seed, dim]);
 
   return (
     <div className="starfield" aria-hidden="true">
