@@ -210,3 +210,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
   - **Puerto Montt**: se quitó el fondo de cuadritos (transparencia falsa del archivo), conservando el blanco interno de la vela y la ola.
   - **Hijas del Caldero**: solo el caldero, sin el anillo de fuego; al pasar el cursor, fondo negro (su original).
   - Nuevo modo de reposo **`lines`** (contornos en blanco: los tonos oscuros pasan a claros y el negro se funde con el fondo) para logos con mucho detalle, donde la silueta se veía como una mancha: Salsa & Avocado, Maestras Leyendas, Las Tabinas, Zetering y Puerto Montt.
+- Registro Civil, SUBDERE y Subsecretaría del Trabajo vuelven a su **recuadro azul y rojo original** (pedido de Coni), con «Gobierno de Chile». En reposo, modo contornos (`lines`); al pasar el cursor, colores originales sobre blanco.

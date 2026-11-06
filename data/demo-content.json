@@ -486,19 +486,22 @@
           "name": "Servicio de Registro Civil",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/registro-civil.webp",
-          "logoBg": "#ef3f44"
+          "logoBg": "#ffffff",
+          "logoMode": "lines"
         },
         {
           "name": "SUBDERE",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/subdere.webp",
-          "logoBg": "#ef3f44"
+          "logoBg": "#ffffff",
+          "logoMode": "lines"
         },
         {
           "name": "Subsecretaría del Trabajo",
           "logo": "assets/logos/subsecretaria-trabajo.webp",
-          "logoBg": "#ef3f44",
-          "nameOnly": true
+          "logoBg": "#ffffff",
+          "nameOnly": true,
+          "logoMode": "lines"
         },
         {
           "name": "SISS",
