@@ -257,37 +257,41 @@
   }
 }
 
-@media (max-width: 760px), (max-height: 600px) {
-  .about {
-    overflow-y: auto;
-  }
-
+/* Celular: la misma órbita, más estirada en vertical (la pantalla es alta) y con íconos más chicos. */
+@media (max-width: 760px) {
   .about__stage {
-    flex: none;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    margin-top: 28px;
+    min-height: 420px;
   }
 
   .about__head {
-    position: static;
-    transform: none;
-    width: auto;
+    width: 52%;
+  }
+
+  .about__title {
+    font-size: clamp(24px, 7vw, 32px);
+    text-wrap: balance;
+  }
+
+  .about__hint {
+    text-wrap: balance;
+  }
+
+  .about__hint {
+    font-size: 11px;
   }
 
   .orbit {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px 8px;
-    justify-items: center;
-    animation: none;
+    --rx: 39%;
+    --ry: 43%;
   }
 
-  .orbit__item {
-    position: static;
-    transform: none;
+  .interest {
+    padding: 4px;
+  }
+
+  .interest__circle {
+    width: clamp(46px, 13vw, 58px);
+    height: clamp(46px, 13vw, 58px);
   }
 
   .modal__card {
@@ -297,6 +301,23 @@
   .modal__media {
     min-height: 0;
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* Pantallas muy bajas (celular horizontal): órbita más ancha que alta, íconos chicos. */
+@media (max-height: 600px) and (min-width: 761px) {
+  .about__stage {
+    min-height: 360px;
+  }
+
+  .orbit {
+    --rx: 44%;
+    --ry: 40%;
+  }
+
+  .interest__circle {
+    width: 48px;
+    height: 48px;
   }
 }
 
