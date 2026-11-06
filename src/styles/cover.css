@@ -1,0 +1,255 @@
+/*
+  Portada. Toda la composición se mide en la unidad --u, calculada para que el conjunto
+  (lienzo de 750×970 unidades, tomado de la portada aprobada a 1920×1080) quepa en alto y en ancho.
+*/
+.cover {
+  /* 112px abajo se reservan para el botón "Entrar" y su nota. */
+  --u: min(calc((100svh - var(--nav-height) - 112px - 16px) / 970), calc(100vw / 780));
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: var(--nav-height) 0 112px;
+}
+
+/* Las dos mitades del fondo negro. */
+.cover__door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 1px);
+  background: var(--color-bg);
+  transition: transform var(--motion-long) var(--ease-out);
+}
+
+.cover__door--left {
+  left: 0;
+}
+
+.cover__door--right {
+  right: 0;
+}
+
+.cover.is-opening .cover__door--left {
+  transform: translateX(-100%);
+}
+
+.cover.is-opening .cover__door--right {
+  transform: translateX(100%);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  width: calc(750 * var(--u));
+  height: calc(970 * var(--u));
+}
+
+/* Tarjeta verde pino */
+.hero__card {
+  position: absolute;
+  z-index: 1;
+  left: calc(37 * var(--u));
+  top: calc(488 * var(--u));
+  width: calc(678 * var(--u));
+  height: calc(470 * var(--u));
+  padding-top: calc(72 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: calc(58 * var(--u));
+  background: linear-gradient(157deg, #15382c 2%, var(--color-card) 60%, #0f2622 100%);
+  animation: card-in 1100ms 550ms var(--ease-out) backwards;
+  transition:
+    transform var(--motion-medium) var(--ease-out),
+    opacity calc(var(--motion-medium) * 0.8) ease;
+}
+
+.hero__name {
+  margin: 0 0 calc(22 * var(--u));
+  font-size: calc(66 * var(--u));
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.hero__headline {
+  margin: 0;
+  max-width: calc(560 * var(--u));
+  font-size: calc(30 * var(--u));
+  line-height: 1.32;
+  color: #ece4e4;
+}
+
+.hero__headline span {
+  display: inline-block;
+}
+
+.hero__rule {
+  width: calc(150 * var(--u));
+  height: max(2px, calc(3 * var(--u)));
+  margin: calc(40 * var(--u)) 0 calc(36 * var(--u));
+  background: var(--color-pink);
+}
+
+.hero__location {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: calc(14 * var(--u));
+  font-size: calc(29 * var(--u));
+  font-style: italic;
+  color: #e7d6dd;
+}
+
+.hero__pin {
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+  fill: var(--color-pink);
+}
+
+/* Retrato + órbita (se van hacia la izquierda con la mitad izquierda del fondo). */
+.hero__portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform var(--motion-long) var(--ease-out);
+}
+
+.cover.is-opening .hero__portrait {
+  transform: translateX(calc(-50vw - 380 * var(--u)));
+}
+
+.hero__orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero__orbit--front {
+  z-index: 3;
+}
+
+.orbit-line {
+  fill: none;
+  stroke: var(--color-pink);
+  stroke-width: 3;
+  stroke-dasharray: 1;
+  animation: orbit-draw 1500ms 250ms ease-out backwards;
+}
+
+.orbit-line--front {
+  animation: orbit-fade 700ms 900ms ease-out backwards;
+}
+
+.orbit-star {
+  fill: var(--color-pink);
+}
+
+.hero__photo {
+  position: absolute;
+  z-index: 2;
+  left: calc(110 * var(--u));
+  top: calc(18 * var(--u));
+  width: calc(510 * var(--u));
+  height: calc(510 * var(--u));
+  overflow: hidden;
+  border: max(2px, calc(5 * var(--u))) solid var(--color-pink);
+  border-radius: 50%;
+  background: var(--color-pine);
+  animation: photo-in 900ms var(--ease-out) backwards;
+}
+
+.hero__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Zona clicable del broche (mouse/táctil). */
+.hero__clasp {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  cursor: pointer;
+  background: transparent;
+}
+
+.hero__clasp:disabled {
+  cursor: default;
+}
+
+/* Cuando se abre, el card baja y se desvanece. */
+.cover.is-opening .hero__card {
+  transform: translateY(calc(90 * var(--u)));
+  opacity: 0;
+}
+
+/* Acción inferior */
+.cover__bottom {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: opacity var(--motion-medium) ease;
+}
+
+.cover.is-opening .cover__bottom {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cover__demo {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes orbit-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes orbit-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(40 * var(--u)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__card,
+  .hero__photo,
+  .orbit-line {
+    animation: none;
+  }
+}

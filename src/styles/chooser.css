@@ -1,0 +1,217 @@
+/* Selector de mundos: dos mitades, cada una es un botón completo. */
+.chooser {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  background: var(--color-universe);
+}
+
+.panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  padding: var(--nav-height) 16px 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--color-text);
+  background: radial-gradient(ellipse at 70% 45%, #0b1326, var(--color-universe) 72%);
+  transition:
+    flex-grow var(--motion-expand) var(--ease-out),
+    opacity calc(var(--motion-expand) * 0.7) ease,
+    background-color var(--motion-short);
+}
+
+.panel--tech {
+  background: radial-gradient(ellipse at 30% 50%, #0a1424, var(--color-universe) 72%);
+}
+
+.panel + .panel {
+  border-left: 1px solid var(--color-line);
+}
+
+.panel:focus-visible {
+  outline-offset: -8px;
+}
+
+.panel__label {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  pointer-events: none;
+  transition: transform 350ms var(--ease-out);
+}
+
+.panel:hover .panel__label,
+.panel:focus-visible .panel__label {
+  transform: translateY(-6px);
+}
+
+.panel__title {
+  font-size: clamp(34px, 4.4vw, 80px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+}
+
+.panel__cue {
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--color-pink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--color-pink);
+}
+
+.panel__cue span {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.chooser__hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: opacity var(--motion-short);
+}
+
+/* Capas de efectos al pasar el cursor: nunca bloquean clics. */
+.art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stroke {
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: stroke-trace 1250ms ease-out forwards;
+}
+
+.float {
+  position: absolute;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: float-up 1400ms ease-out forwards;
+}
+
+.float--code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: clamp(12px, 1.1vw, 16px);
+  color: #9accc0;
+}
+
+.float--chip {
+  border: 1px solid rgba(154, 204, 192, 0.55);
+  border-radius: 6px;
+  background: rgba(154, 204, 192, 0.06);
+}
+
+.float--caret {
+  width: 2px;
+  height: 1.3em;
+  background: var(--color-pink);
+  animation: caret-blink 1300ms steps(1) forwards;
+}
+
+@keyframes stroke-trace {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  25% {
+    opacity: var(--stroke-op, 0.9);
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  30%,
+  70%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  50%,
+  85% {
+    opacity: 1;
+  }
+}
+
+/* Mundo elegido: su mitad se expande, la otra se retira. */
+.chooser[data-chosen] {
+  pointer-events: none;
+}
+
+.chooser[data-chosen] .chooser__hint {
+  opacity: 0;
+}
+
+.chooser[data-chosen='design'] .panel--tech,
+.chooser[data-chosen='tech'] .panel--design {
+  flex-grow: 0.0001;
+  opacity: 0;
+}
+
+/* En móvil las dos áreas táctiles se apilan. */
+@media (max-width: 760px) {
+  .chooser {
+    flex-direction: column;
+  }
+
+  .panel {
+    padding-top: calc(var(--nav-height) / 2);
+  }
+
+  .panel:first-of-type {
+    padding-top: var(--nav-height);
+  }
+
+  .panel + .panel {
+    border-left: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .chooser__hint {
+    bottom: 14px;
+  }
+}
