@@ -39,6 +39,11 @@
     radial-gradient(ellipse 70% 60% at 50% 42%, #08112a 0%, #050b1a 38%, #03060f 68%, #010205 100%);
 }
 
+.sky--full {
+  left: 0;
+  width: 100%;
+}
+
 .cover__door--left .sky {
   left: 0;
 }

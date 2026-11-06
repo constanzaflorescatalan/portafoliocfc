@@ -54,7 +54,8 @@ function makeStars(width: number, height: number): Star[] {
   });
 }
 
-export function CoverSky() {
+/** `full`: ocupa todo su contenedor (Quién soy) en vez del 200 % de cada puerta de la portada. */
+export function CoverSky({ full = false }: { full?: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const reduced = useReducedMotion();
 
@@ -123,7 +124,7 @@ export function CoverSky() {
   }, [reduced]);
 
   return (
-    <div className="sky" aria-hidden="true">
+    <div className={`sky${full ? ' sky--full' : ''}`} aria-hidden="true">
       <div className="sky__haze" />
       <canvas ref={ref} className="sky__stars" />
       {TWINKLES.map((t, i) => (

@@ -131,3 +131,9 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - «Descargar CV» descarga el **CV ATS** que entregó Coni (reemplaza `public/assets/Constanza_Flores_CV.pdf`).
 - Luego, a pedido de Coni: frase **«Tu mensaje será nuestro próximo»** (blanco, más pequeña) + **«gran proyecto.»** (rosa, al tamaño grande del título). Textos en `contact.titleLead` / `contact.titleHighlight`.
 - El correo grande se reemplazó por **«Mail»** en la fila de enlaces: al hacer clic copia constanza.florescatalan@gmail.com y muestra «Correo copiado»; si el navegador no permite copiar, abre el programa de correo. El correo aparece como tooltip al pasar el cursor.
+
+## Quién soy — pedido de Coni
+- Título: **«Quién soy» (etiqueta) + «Un poquito de mí.»**. Se quitó «Mucho de mí.». Se mantiene «Toca un ícono para conocer un poco más.». Se quitó la nota DEMO del pie.
+- Fondo: **el mismo cielo de la portada** (degradé azul noche + estrellas que se acercan y alejan + titileo), con `CoverSky full`.
+- **Solo íconos**, sin nombres visibles (el nombre va como etiqueta accesible y en la ventana). Los 9 íconos **orbitan muy lento (140 s por vuelta) alrededor del título** en una elipse, cada uno flotando suavemente; la órbita se detiene al pasar el cursor o enfocar con teclado para poder hacer clic con calma. Círculos azul oscuro translúcidos; al pasar el cursor, borde y ícono rosados.
+- En celular (o pantallas bajas): grilla de 3 × 3 sin órbita. Con `prefers-reduced-motion`: todo quieto.

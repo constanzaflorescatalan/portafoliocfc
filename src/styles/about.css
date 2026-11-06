@@ -1,15 +1,19 @@
-/* Quién soy: collage de intereses con íconos de línea. */
+/* Quién soy: mismo cielo de la portada, íconos orbitando alrededor del título. */
+@property --rot {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
 .about {
   position: fixed;
   inset: 0;
   z-index: 30;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: calc(var(--nav-height) + clamp(24px, 5vh, 56px)) clamp(20px, 4.5vw, 90px) 32px;
-  background:
-    radial-gradient(ellipse 55% 45% at 50% 62%, rgba(16, 46, 44, 0.45), transparent 70%),
-    var(--color-charcoal);
+  padding: calc(var(--nav-height) + 20px) clamp(20px, 4.5vw, 90px) 24px;
+  background: #010205;
   animation: portal-out 900ms var(--ease-out) backwards;
 }
 
@@ -29,16 +33,25 @@
   color: var(--color-pink);
 }
 
-.about__head {
+.about__stage {
   position: relative;
   z-index: 2;
+  flex: 1;
+  min-height: 0;
+}
+
+.about__head {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, 60%);
   text-align: center;
-  margin-top: 12px;
 }
 
 .about__title {
   margin: 12px 0 10px;
-  font-size: clamp(34px, 4.6vw, 72px);
+  font-size: clamp(32px, 4vw, 60px);
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: 0.01em;
@@ -48,63 +61,65 @@
   outline: none;
 }
 
-.about__script {
-  font-family: var(--font-accent);
-  font-weight: 400;
-  font-size: 1.15em;
-  letter-spacing: 0;
-  color: var(--color-pink);
-}
-
 .about__hint {
   margin: 0;
   font-size: 13px;
   color: var(--color-muted);
 }
 
-.collage {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  min-height: 360px;
-  margin: 24px 0 0;
+/* Órbita: cada ícono sobre una elipse; --rot gira muy lento todo el conjunto. */
+.orbit {
+  position: absolute;
+  inset: 0;
+  margin: 0;
   padding: 0;
   list-style: none;
+  --rx: 40%;
+  --ry: 38%;
+  animation: orbit-turn 140s linear infinite;
 }
 
-.collage__item {
+.orbit:hover,
+.orbit:focus-within {
+  animation-play-state: paused;
+}
+
+.orbit__item {
   position: absolute;
-  left: var(--x);
-  top: var(--y);
+  left: calc(50% + cos(var(--a) + var(--rot)) * var(--rx));
+  top: calc(50% + sin(var(--a) + var(--rot)) * var(--ry));
   transform: translate(-50%, -50%);
-  animation: point-in 600ms var(--ease-out) backwards;
-  animation-delay: calc(400ms + var(--i) * 70ms);
+  animation: point-in 700ms var(--ease-out) backwards;
+  animation-delay: calc(450ms + var(--i) * 80ms);
 }
 
 .interest {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  display: block;
   padding: 6px;
-  border-radius: 14px;
-  transition: transform 400ms var(--ease-out);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -1.7s);
 }
 
 .interest__circle {
   display: grid;
   place-items: center;
-  width: 76px;
-  height: 76px;
-  border: 1px solid rgba(235, 233, 232, 0.18);
+  width: clamp(64px, 6.4vw, 92px);
+  height: clamp(64px, 6.4vw, 92px);
+  border: 1px solid rgba(235, 233, 232, 0.16);
   border-radius: 50%;
-  background: rgba(16, 46, 44, 0.35);
-  transition: border-color 300ms, background 300ms;
+  background: rgba(10, 18, 40, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition:
+    border-color 300ms,
+    background 300ms,
+    transform 450ms var(--ease-out);
 }
 
 .interest-icon {
-  width: 30px;
-  height: 30px;
+  width: 42%;
+  height: 42%;
   fill: none;
   stroke: var(--color-text);
   stroke-width: 1.2;
@@ -113,42 +128,16 @@
   transition: stroke 300ms;
 }
 
-.interest__name {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.interest:hover,
-.interest:focus-visible {
-  transform: translateY(-6px) rotate(-3deg);
-}
-
-.collage__item:nth-child(even) .interest:hover,
-.collage__item:nth-child(even) .interest:focus-visible {
-  transform: translateY(-6px) rotate(3deg);
-}
-
 .interest:hover .interest__circle,
 .interest:focus-visible .interest__circle {
   border-color: var(--color-pink);
-  background: var(--color-pine);
+  background: rgba(199, 130, 162, 0.12);
+  transform: scale(1.12);
 }
 
 .interest:hover .interest-icon,
 .interest:focus-visible .interest-icon {
   stroke: var(--color-pink);
-}
-
-.about__demo {
-  position: relative;
-  z-index: 2;
-  margin: 16px 0 0;
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(235, 233, 232, 0.4);
 }
 
 /* ---------- Ventana de interés ---------- */
@@ -234,6 +223,12 @@
   color: var(--color-muted);
 }
 
+@keyframes orbit-turn {
+  to {
+    --rot: 360deg;
+  }
+}
+
 @keyframes portal-out {
   from {
     opacity: 0;
@@ -249,28 +244,37 @@
   }
 }
 
-@media (max-width: 760px) {
-  .collage {
-    flex: none;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px 8px;
-    margin-top: 36px;
+@media (max-width: 760px), (max-height: 600px) {
+  .about {
+    overflow-y: auto;
   }
 
-  .collage__item {
+  .about__stage {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 28px;
+  }
+
+  .about__head {
     position: static;
     transform: none;
+    width: auto;
   }
 
-  .interest {
-    width: 100%;
+  .orbit {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 8px;
+    justify-items: center;
+    animation: none;
   }
 
-  .interest__circle {
-    width: 64px;
-    height: 64px;
+  .orbit__item {
+    position: static;
+    transform: none;
   }
 
   .modal__card {
@@ -285,7 +289,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .about,
-  .collage__item,
+  .orbit,
+  .orbit__item,
+  .interest,
   .modal[open] {
     animation: none;
   }
