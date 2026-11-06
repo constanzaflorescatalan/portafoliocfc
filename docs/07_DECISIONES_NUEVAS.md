@@ -68,3 +68,6 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **Foto real de Constanza** en el círculo (`public/assets/retrato_constanza.jpg`, recorte cuadrado 900 px). Reemplaza al retrato demo.
 - **Fondo de universo en la portada** (pedido explícito, cambia el «fondo #05080E muy limpio» de docs/00): degradé radial azul noche más oscuro que el universo (#0c1730 → #020409), estrellas finas dibujadas en canvas (casi todas diminutas y tenues), una bruma diagonal apenas perceptible y 6 estrellas que titilan muy lento. Sin brillos ni nebulosas.
 - El cielo se pinta dentro de cada mitad del fondo, así se parte y viaja con ellas en la apertura.
+- Fondo de la portada **más oscuro** (#08112a → #010205).
+- **Estrellas con profundidad**: el campo "respira" (se acerca y se aleja) en un ciclo de 26 s; las cercanas se mueven, crecen y se aclaran más que las lejanas. Quieto con `prefers-reduced-motion`.
+- **Órbita, contorno del círculo y estrella en blanco suave** (#EBE9E8, línea al 78 %) en vez de rosa, a pedido de Coni. El rosa se mantiene en la línea bajo los títulos y el pin de ubicación. Cambiar en `--orbit-color` / `--orbit-star` (cover.css).

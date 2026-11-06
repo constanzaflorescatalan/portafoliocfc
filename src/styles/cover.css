@@ -5,6 +5,9 @@
 .cover {
   /* 112px abajo se reservan para el botón "Entrar" y su nota. */
   --u: min(calc((100svh - var(--nav-height) - 112px - 16px) / 970), calc(100vw / 780));
+  /* Color de la órbita, el contorno del círculo y la estrella (antes rosa; ver docs/07). */
+  --orbit-color: rgba(235, 233, 232, 0.78);
+  --orbit-star: #ebe9e8;
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -35,7 +38,7 @@
   bottom: 0;
   width: 200%;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 42%, #0c1730 0%, #08101f 38%, #050a15 68%, #020409 100%);
+    radial-gradient(ellipse 70% 60% at 50% 42%, #08112a 0%, #050b1a 38%, #03060f 68%, #010205 100%);
 }
 
 .cover__door--left .sky {
@@ -51,7 +54,7 @@
   position: absolute;
   inset: -20%;
   background:
-    radial-gradient(ellipse 38% 9% at 50% 50%, rgba(120, 140, 190, 0.07), transparent 70%),
+    radial-gradient(ellipse 38% 9% at 50% 50%, rgba(120, 140, 190, 0.05), transparent 70%),
     radial-gradient(ellipse 22% 7% at 38% 46%, rgba(199, 130, 162, 0.035), transparent 70%),
     radial-gradient(ellipse 26% 8% at 63% 55%, rgba(16, 46, 44, 0.18), transparent 70%);
   transform: rotate(-24deg);
@@ -202,7 +205,7 @@
 
 .orbit-line {
   fill: none;
-  stroke: var(--color-pink);
+  stroke: var(--orbit-color);
   stroke-width: 3;
   stroke-dasharray: 1;
   animation: orbit-draw 1500ms 250ms ease-out backwards;
@@ -213,7 +216,7 @@
 }
 
 .orbit-star {
-  fill: var(--color-pink);
+  fill: var(--orbit-star);
 }
 
 .hero__photo {
@@ -224,7 +227,7 @@
   width: calc(510 * var(--u));
   height: calc(510 * var(--u));
   overflow: hidden;
-  border: max(2px, calc(5 * var(--u))) solid var(--color-pink);
+  border: max(2px, calc(5 * var(--u))) solid var(--orbit-color);
   border-radius: 50%;
   background: var(--color-pine);
   animation: photo-in 900ms var(--ease-out) backwards;
