@@ -366,12 +366,6 @@
         },
         {
           "name": "Patagonia Donuts"
-        },
-        {
-          "name": "Café Castaño"
-        },
-        {
-          "name": "Ándale"
         }
       ],
       "pendingBrands": [
@@ -386,6 +380,26 @@
       "summary": "Diseño de interfaces mobile-first para la renovación del sitio web, prototipos en Figma. Vancouver, Canadá.",
       "showOrganization": true,
       "brands": []
+    },
+    {
+      "organization": "Universidad Central",
+      "kind": "Comunicaciones internas",
+      "role": "Ilustración y animación",
+      "period": "2019",
+      "summary": "Ilustración y animación para comunicaciones internas.",
+      "showOrganization": true,
+      "brands": [],
+      "toConfirm": "Vía qué agencia o si fue directo; período exacto"
+    },
+    {
+      "organization": "DECH UNIMARC",
+      "kind": "Cliente",
+      "role": "Por confirmar",
+      "period": "Por confirmar",
+      "summary": "Detalle por confirmar con Coni.",
+      "showOrganization": true,
+      "brands": [],
+      "toConfirm": "Período, rol, qué hizo y vía qué empresa"
     },
     {
       "organization": "El Búho Comunicaciones",
@@ -471,7 +485,6 @@
     "source": "https://vimeo.com/conoflor (76 videos revisados por miniatura y título)",
     "pendingToConfirm": [
       "Subsecretaría / Ministerio del Trabajo (2019): ¿vía Brecha Digital o El Búho?",
-      "Universidad Central (2019)",
       "Venezzia Live (2019)",
       "La Triada (2019, junto a Hijas del Caldero)",
       "La Chinita (app, 2017)",

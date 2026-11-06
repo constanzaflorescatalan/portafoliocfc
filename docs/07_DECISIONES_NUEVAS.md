@@ -116,3 +116,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **El Búho Comunicaciones**: ISA InterChile (videos 2019 y 2021; Coni lo mencionó como cliente de El Búho).
 - Pendientes de confirmar con Coni (en `vimeoReview` del JSON): Subsecretaría/Ministerio del Trabajo (¿vía Brecha o El Búho?), Universidad Central, Venezzia Live, La Triada, La Chinita, Mis Recetas Premium, Milkshake, Ciudad Feliz; y «Pampier», que no aparece en los videos.
 - Los trabajos universitarios de 2014 (Good Girl, Urbano, Programa, ONG, etc.) no se agregan como marcas.
+- A pedido de Coni: se reemplazaron Café Castaño y Ándale por **Universidad Central (comunicaciones internas)** y **DECH UNIMARC**. Van como marcas propias (no «vía Castaño»): Universidad Central con período 2019 y rol «Ilustración y animación» (según el video y su descripción en Vimeo); DECH UNIMARC con período y rol «Por confirmar».
