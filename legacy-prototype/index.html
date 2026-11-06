@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05080E">
+  <meta name="description" content="Portafolio de Constanza Flores. Prototipo inicial de diseño e informática.">
+  <title>Constanza Flores — Portafolio · Prototipo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-stage="intro">
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-gym" viewBox="0 0 24 24"><path d="M3 9v6m3-8v10m12-10v10m3-8v6M6 12h12"/></symbol>
+    <symbol id="i-cocina" viewBox="0 0 24 24"><path d="M4 10h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8Zm-2 0h20M8 7V3m4 4V3m4 4V3"/></symbol>
+    <symbol id="i-animales" viewBox="0 0 24 24"><ellipse cx="6" cy="7" rx="1.5" ry="2.3"/><ellipse cx="11" cy="4.8" rx="1.5" ry="2.2"/><ellipse cx="16" cy="6" rx="1.5" ry="2.2"/><ellipse cx="20" cy="9" rx="1.5" ry="2.1"/><path d="M12 12c-3.6 0-7 4.2-7 6.5 0 2.5 2 3.5 4.3 2.3 1.8-1 3.6-1 5.4 0 2.3 1.2 4.3.2 4.3-2.3 0-2.3-3.4-6.5-7-6.5Z"/></symbol>
+    <symbol id="i-tarot" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M13 6a5 5 0 1 0 0 10 4.5 4.5 0 0 1-3-5 4.5 4.5 0 0 1 3-5Zm2 11v2M7 19h9"/></symbol>
+    <symbol id="i-herbolaria" viewBox="0 0 24 24"><path d="M12 22V11M12 15C4 15 4 7 3 5c6-1 11 2 9 10Zm0-4c0-6 5-9 9-9 1 5-2 9-9 9Z"/></symbol>
+    <symbol id="i-dibujo" viewBox="0 0 24 24"><path d="m4 20 4.5-1 11-11-3.5-3.5-11 11L4 20Zm10-13 3.5 3.5M3 21h18"/></symbol>
+    <symbol id="i-pintura" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18h1a2 2 0 0 0 2-2c0-1-.8-2-1.6-2.3-.9-.5-.4-2 .8-2H19a3 3 0 0 0 3-3c0-4.8-4.5-8.7-10-8.7Z"/><circle cx="7" cy="10" r="1"/><circle cx="11" cy="6.8" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="7.5" cy="15" r="1"/></symbol>
+    <symbol id="i-jabones" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="4"/><path d="M11 6c0-2 2-3 2-5M16 7c0-1 1-2 1-3M7 15h10"/></symbol>
+    <symbol id="i-velas" viewBox="0 0 24 24"><path d="M7 12h10v9H7v-9Zm5 0V9m0-8c4 4 4 7 0 8-4-1-4-4 0-8Z"/></symbol>
+  </svg>
+  <header class="site-header" id="siteHeader">
+    <button class="header-logo" id="homeBtn" aria-label="Volver a portada">CF<span>.</span></button>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <button data-nav="design">Diseño</button>
+      <button data-nav="tech">Informática</button>
+      <button data-nav="brands">Marcas</button>
+      <button data-nav="personal">Quién soy</button>
+      <button data-nav="contact">Contacto</button>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú"><span></span><span></span></button>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil" hidden>
+    <button data-nav="design">Diseño <span>↗</span></button>
+    <button data-nav="tech">Informática <span>↗</span></button>
+    <button data-nav="brands">Marcas <span>↗</span></button>
+    <button data-nav="personal">Quién soy <span>↗</span></button>
+    <button data-nav="contact">Contacto <span>↗</span></button>
+  </nav>
+
+  <!-- ESCENA 1: PORTADA Y BROCHE -->
+  <section class="intro" id="intro" aria-label="Portada de Constanza Flores">
+    <div class="intro-door intro-door-left"></div><div class="intro-door intro-door-right"></div>
+    <div class="intro-mark intro-mark-left">PORTFOLIO <span>— 2026</span></div>
+    <div class="intro-mark intro-mark-right">DISEÑO &amp; INFORMÁTICA</div>
+    <button class="intro-composition" id="introComposition" aria-label="Entrar al portafolio de Constanza Flores">
+      <div class="intro-card" id="introCard">
+        <h1>CONSTANZA<br>FLORES</h1>
+        <p>Diseñadora Gráfica Senior <span>·</span><br> Ingeniera en Informática <span>·</span> UX/UI</p>
+        <div class="tiny-rule"></div>
+        <p class="location">⌖ &nbsp; Santiago de Chile</p>
+      </div>
+      <div class="portrait-orbit" id="portraitOrbit">
+        <svg class="orbit-line" viewBox="0 0 520 380" aria-hidden="true">
+          <ellipse cx="260" cy="190" rx="235" ry="112" transform="rotate(-20 260 190)" />
+        </svg>
+        <span class="orbit-star" id="orbitStar" aria-hidden="true">✦</span>
+        <span class="photo-circle"><img src="assets/retrato_demo.jpg" id="heroPhoto" alt="Fotografía ilustrativa de ejemplo, pendiente de reemplazar por la foto de Constanza"></span>
+      </div>
+    </button>
+    <div class="intro-bottom"><span class="demo-indicator">● &nbsp; PROTOTIPO CON CONTENIDO DE EJEMPLO</span><button id="enterBtn" class="text-action">ENTRAR AL UNIVERSO <span>↗</span></button><label class="upload-photo" for="photoInput">PROBAR MI FOTO +</label><input id="photoInput" type="file" accept="image/*" hidden></div>
+  </section>
+
+  <!-- ESCENA 2: DOS MUNDOS -->
+  <section class="world-chooser" id="chooser" aria-label="Elegir entre diseño e informática" hidden>
+    <button class="world-panel world-panel-design" data-world="design" aria-label="Entrar al universo de Diseño">
+      <svg class="hover-art" id="designArt" aria-hidden="true"></svg>
+      <div class="world-label"><span class="eyebrow">MUNDO / 01</span><h2>DISEÑO</h2><p>Creatividad en movimiento.</p><span class="world-enter">EXPLORAR <span>↗</span></span></div>
+    </button>
+    <button class="world-panel world-panel-tech" data-world="tech" aria-label="Entrar al universo de Informática">
+      <div class="code-art" id="codeArt" aria-hidden="true"></div>
+      <div class="world-label"><span class="eyebrow">MUNDO / 02</span><h2>INFORMÁTICA</h2><p>Ideas que también funcionan.</p><span class="world-enter">EXPLORAR <span>↗</span></span></div>
+    </button>
+    <div class="chooser-bottom">PASA EL CURSOR PARA EXPLORAR · CLIC PARA ENTRAR</div>
+  </section>
+
+  <!-- SITIO: UNIVERSO / MARCAS / CONTACTO -->
+  <main id="site" hidden>
+    <section class="universe chapter" id="universo">
+      <div class="space-dust" id="spaceDust" aria-hidden="true"></div>
+      <div class="universe-head"><span class="eyebrow" id="universeEyebrow">MUNDO / 01</span><h2 id="universeTitle">Diseño.</h2><p id="universeEducation">Diseño Gráfico · Universidad Diego Portales · 2016</p></div>
+      <div class="constellation" id="constellation" aria-label="Proyectos destacados"></div>
+      <button id="personalPortal" class="personal-portal" aria-label="Entrar a Un poco más de mí"><span class="portal-core"><span>Un poco<br>más de mí</span></span><span class="portal-underline">DESCUBRIR ↗</span></button>
+      <div class="space-bottom"><span>PROYECTOS DE EJEMPLO · CONTENIDO PROVISIONAL</span><a href="#marcas" class="scroll-cue">DESLIZA PARA VER MARCAS <span>↓</span></a></div>
+    </section>
+
+    <section class="brands chapter" id="marcas">
+      <div class="section-shell">
+        <div class="section-head"><span class="eyebrow">02 / EXPERIENCIA</span><h2>Marcas con las que<br>he trabajado<span class="pink-dot">.</span></h2><p>Algunas empresas y marcas con las que he colaborado a lo largo de mi trayectoria.</p></div>
+        <div class="brand-grid" id="brandGrid"></div>
+        <p class="brands-note">Nombres reales · logotipos tipográficos temporales · el color al pasar el cursor es demostrativo.</p>
+      </div>
+    </section>
+
+    <section class="contact chapter" id="contacto">
+      <div class="section-shell contact-shell"><span class="eyebrow">03 / CONTACTO</span><h2>¿Creamos algo<br><em>juntos?</em></h2><p>Siempre hay espacio para una buena idea.</p><a class="contact-email" href="mailto:conoflor@gmail.com">conoflor@gmail.com <span>↗</span></a>
+        <div class="contact-links"><a href="https://www.linkedin.com/in/conoflor" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/Confloresc" target="_blank" rel="noopener">GitHub ↗</a><a href="assets/Constanza_Flores_CV.pdf" download>Descargar CV ↓</a></div>
+        <div class="contact-foot"><span>© CONSTANZA FLORES · 2026</span><span>DISEÑO + INFORMÁTICA</span></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ESTRELLA → PROYECTO -->
+  <section class="project-view" id="projectView" aria-label="Detalle del proyecto" hidden>
+    <div class="detail-shell">
+      <div class="detail-top"><button id="detailBack" class="back-star" aria-label="Volver al universo"><span class="mini-orbit">✦</span> <span>VOLVER AL UNIVERSO</span></button><span id="projectCounter">01 / 04</span></div>
+      <div class="project-kicker"><span id="detailType">DISEÑO / PROYECTO DE EJEMPLO</span><span class="placeholder-tag">CONTENIDO DEMO</span></div>
+      <h2 id="projectTitle">Proyecto de ejemplo 01<span>.</span></h2>
+      <p class="project-summary" id="projectSummary">Descripción temporal del proyecto. Aquí irá un resumen breve cuando definamos las piezas definitivas.</p>
+      <img id="projectMainImage" class="project-hero" src="assets/demo_diseno_01.jpg" alt="Imagen de ejemplo del proyecto">
+      <div class="detail-info"><div><span class="info-label">EL OBJETIVO</span><p id="projectObjective">Texto de muestra sobre el objetivo del proyecto.</p></div><div><span class="info-label">MI PARTICIPACIÓN</span><p id="projectRole">Texto provisional que luego reemplazaremos por las tareas reales.</p></div><div><span class="info-label">HERRAMIENTAS</span><p id="projectTools">Herramienta 01 · Herramienta 02 · Herramienta 03</p></div></div>
+      <div class="project-secondary"><img id="projectSecondImage" src="assets/demo_diseno_02.jpg" alt="Segunda imagen de ejemplo"><div><span class="eyebrow">RESULTADO</span><h3>Un trabajo,<br>muchas decisiones.</h3><p id="projectResult">Aquí mostraremos piezas finales, mockups o capturas reales, junto con una explicación muy breve de los resultados.</p></div></div>
+      <div class="project-pagination"><button id="projectPrevious">← <span>PROYECTO ANTERIOR</span></button><span class="pagination-star">✦</span><button id="projectNext"><span>SIGUIENTE PROYECTO</span> →</button></div>
+    </div>
+  </section>
+
+  <!-- AGUJERO NEGRO → MUNDO PERSONAL -->
+  <section class="personal" id="personal" aria-label="Un poquito más de mí" hidden>
+    <div class="personal-shell"><div class="personal-top"><button id="personalBack" class="back-star"><span class="mini-orbit">✦</span><span>VOLVER AL UNIVERSO</span></button><span>OTRO LADO / 01</span></div>
+      <div class="personal-intro"><span class="eyebrow">EL OTRO LADO DEL UNIVERSO</span><h2>Un poquito de todo.<br><em>Mucho de mí.</em></h2><p>Fuera de la pantalla también hay cosas que disfruto crear, aprender y explorar. Haz clic en un ícono.</p></div>
+      <div class="hobby-collage" id="hobbyCollage"></div>
+      <span class="personal-foot">FOTOGRAFÍAS Y DESCRIPCIONES DE EJEMPLO · POR REEMPLAZAR</span>
+    </div>
+  </section>
+
+  <dialog class="hobby-dialog" id="hobbyDialog" aria-label="Detalle de interés personal"><button id="hobbyClose" class="dialog-close" aria-label="Cerrar">×</button><img id="hobbyImage" src="assets/demo_hobby_cocina.jpg" alt="Imagen ilustrativa de ejemplo"><div class="dialog-copy"><span class="eyebrow">UN POCO MÁS DE MÍ</span><h3 id="hobbyTitle">Cocina</h3><p id="hobbyDescription">Texto de muestra. Aquí irá una pequeña historia personal.</p><span class="placeholder-tag">IMAGEN Y TEXTO PROVISORIOS</span></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
