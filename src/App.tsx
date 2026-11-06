@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { LandingHero } from './components/LandingHero';
 import { OpeningTransition } from './components/OpeningTransition';
 import { PersonalCollage } from './components/PersonalCollage';
@@ -143,7 +144,19 @@ export default function App() {
       update(next);
       pushHash(next);
       const ms = readMs('--motion-expand', 850);
-      after(ms > 0 ? ms + 60 : 0, () => update({ stage: 'universe', world }));
+      after(ms > 0 ? ms + 60 : 0, () => {
+        const enter = () => update({ stage: 'universe', world });
+        // La palabra del mundo viaja hasta su lugar como título del universo
+        // (View Transitions). Sin soporte o con movimiento reducido: cambio directo.
+        if (ms > 0 && typeof document.startViewTransition === 'function') {
+          const root = document.documentElement;
+          root.classList.add('vt-world');
+          const vt = document.startViewTransition(() => flushSync(enter));
+          vt.finished.finally(() => root.classList.remove('vt-world'));
+        } else {
+          enter();
+        }
+      });
     },
     [after, pushHash, update],
   );

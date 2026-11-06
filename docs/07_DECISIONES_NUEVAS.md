@@ -179,3 +179,9 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **Texto de respaldo** en `<noscript>` con el mismo resumen y enlaces: lo leen robots que no ejecutan JavaScript y personas sin JavaScript; no aparece en el sitio normal.
 - El **correo queda legible** en la ficha y el respaldo (decisión consciente: canal de contacto directo; Gmail filtra el spam). En el código interactivo sigue protegido.
 - Descripción del sitio (`meta description`) con palabras clave: diseño UX/UI, diseño web, branding, Santiago de Chile.
+
+## Transición selector → universo (pedido de Coni)
+- Antes: la mitad elegida se expandía y luego aparecía otra pantalla con el título en otro lugar (se sentía como un corte).
+- Ahora: la palabra del mundo («DISEÑO» / «INFORMÁTICA») **es el mismo elemento visual** que el título del universo. Tras la expansión, **viaja hacia arriba, cambia de tamaño y se funde en «Diseño.» / «Informática.»** (View Transitions, 800 ms), mientras el selector se desvanece y el universo aparece alrededor; la formación entra después.
+- Navegadores sin View Transitions (versiones antiguas) o con movimiento reducido: entran directo al universo, sin transición.
+- Se evitó que el universo repitiera su propio fundido al terminar (causaba un parpadeo).

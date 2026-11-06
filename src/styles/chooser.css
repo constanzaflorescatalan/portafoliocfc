@@ -190,8 +190,16 @@
   pointer-events: none;
 }
 
-.chooser[data-chosen] .chooser__hint {
+.chooser[data-chosen] .chooser__hint,
+.chooser[data-chosen] .panel__cue {
   opacity: 0;
+}
+
+/* La palabra del mundo elegido es el mismo elemento visual que el título del universo:
+   al entrar, viaja y cambia de tamaño hasta su lugar (ver universe.css). */
+.chooser[data-chosen='design'] .panel--design .panel__title,
+.chooser[data-chosen='tech'] .panel--tech .panel__title {
+  view-transition-name: world-title;
 }
 
 .chooser[data-chosen='design'] .panel--tech,

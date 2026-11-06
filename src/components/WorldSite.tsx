@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Chapter, WorldId } from '../types';
 import { BrandGrid } from './BrandGrid';
 import { ContactScreen } from './ContactScreen';
@@ -36,6 +36,9 @@ export function WorldSite({
   onChapterChange,
 }: Props) {
   const scroller = useRef<HTMLDivElement>(null);
+  // Si se llegó con la transición desde el selector, el universo no repite su propio
+  // fundido de entrada (se decide una sola vez al montar, para no reiniciarlo al terminar).
+  const [morphEntry] = useState(() => document.documentElement.classList.contains('vt-world'));
   const mounted = useRef(false);
   const changeRef = useRef(onChapterChange);
   changeRef.current = onChapterChange;
@@ -82,7 +85,11 @@ export function WorldSite({
   };
 
   return (
-    <div ref={scroller} className={`site${absorbing ? ' is-absorbing' : ''}`} data-world={world}>
+    <div
+      ref={scroller}
+      className={`site${absorbing ? ' is-absorbing' : ''}${morphEntry ? ' site--morph' : ''}`}
+      data-world={world}
+    >
       <UniverseScene
         key={world}
         world={world}
