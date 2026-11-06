@@ -1,42 +1,83 @@
-import type { Ref } from 'react';
+import type { CSSProperties } from 'react';
+import { PROJECTS } from '../data/content';
 import { WORLDS } from '../data/site';
 import type { WorldId } from '../types';
+import { BlackHolePortal } from './BlackHolePortal';
+import { OrbitalProject } from './OrbitalProject';
 import { StarField } from './StarField';
 
 type Props = {
   world: WorldId;
-  onBack: () => void;
-  headingRef: Ref<HTMLHeadingElement>;
+  onOpenProject: (projectId: string) => void;
+  onPortal: () => void;
+  onScrollCue: () => void;
 };
 
 /**
- * Vista provisional de la etapa 1: título y formación del universo elegido.
- * En la etapa 2 se reemplaza por los puntos orbitales, el agujero negro y el paso a Marcas.
+ * Universo de cada mundo (docs/02): título + formación, proyectos como puntos
+ * orbitales con nombre siempre visible y el agujero negro al centro.
  */
-export function UniverseScene({ world, onBack, headingRef }: Props) {
+export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: Props) {
   const info = WORLDS[world];
+  const projects = PROJECTS[world];
+  const hasDemo = projects.some((p) => p.isDemo);
 
   return (
-    <section className="universe" aria-labelledby="universe-title">
-      <StarField count={80} seed={world === 'design' ? 57 : 91} />
-      <div className="universe__inner">
+    <section
+      id="universo"
+      data-chapter="universe"
+      className={`chapter universe universe--${world}`}
+      aria-labelledby="universe-title"
+    >
+      <StarField count={90} seed={world === 'design' ? 57 : 91} />
+
+      {/* Órbitas tenues alrededor del agujero negro: solo decoración. */}
+      <svg className="universe__orbits" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <ellipse cx="50" cy="55" rx="16" ry="13" />
+        <ellipse cx="50" cy="55" rx="29" ry="24" />
+        <ellipse cx="50" cy="55" rx="42" ry="35" />
+      </svg>
+
+      <header className="universe__head">
         <p className="eyebrow">Universo / {info.title}</p>
-        <h1 id="universe-title" className="universe__title" tabIndex={-1} ref={headingRef}>
+        <h1 id="universe-title" className="universe__title" tabIndex={-1} data-autofocus>
           {info.title}
           <span className="universe__dot">.</span>
         </h1>
         <p className="universe__credential">{info.credential}</p>
+      </header>
 
-        <div className="universe__note">
-          <p className="tag">Vista provisional · Etapa 1</p>
-          <p>
-            Aquí irán los puntos orbitales con los proyectos, el agujero negro «Un poco más de mí» y
-            el paso a Marcas. Se construye en la etapa 2.
-          </p>
-        </div>
+      <div className="universe__space">
+        <ul className="constellation" aria-label={`Proyectos de ${info.title}`}>
+          {projects.map((project, i) => (
+            <li
+              key={project.id}
+              className="constellation__item"
+              style={
+                {
+                  '--x': `${project.position[0]}%`,
+                  '--y': `${project.position[1]}%`,
+                  '--i': i,
+                } as CSSProperties
+              }
+            >
+              <OrbitalProject
+                project={project}
+                index={i}
+                total={projects.length}
+                onOpen={() => onOpenProject(project.id)}
+              />
+            </li>
+          ))}
+        </ul>
 
-        <button type="button" className="enter-btn" onClick={onBack}>
-          <span aria-hidden="true">←</span> Volver a elegir mundo
+        <BlackHolePortal onEnter={onPortal} />
+      </div>
+
+      <div className="universe__foot">
+        <span>{hasDemo ? 'Proyectos de ejemplo · contenido DEMO' : `${projects.length} proyectos`}</span>
+        <button type="button" className="scroll-cue" onClick={onScrollCue}>
+          Desliza para ver marcas <span aria-hidden="true">↓</span>
         </button>
       </div>
     </section>
