@@ -5,7 +5,6 @@ export const IDENTITY = {
   name: 'Constanza Flores',
   // Dos tramos para controlar el salto de línea sin alterar el texto.
   headline: ['Diseñadora Gráfica Senior ·', 'Ingeniera en Informática · UX/UI'],
-  email: 'constanza.florescatalan@gmail.com',
 } as const;
 
 /** Credencial visible bajo el título de cada universo (docs/02; gana sobre el JSON demo). */

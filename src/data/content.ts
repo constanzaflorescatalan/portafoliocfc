@@ -1,4 +1,5 @@
-import raw from '../../data/demo-content.json';
+// Importación por partes: solo estas secciones del JSON entran al sitio publicado.
+import { contact, experiences, identity, personalInterests, worlds as rawWorlds } from '../../data/demo-content.json';
 import type { WorldId } from '../types';
 
 /**
@@ -51,22 +52,23 @@ export type Brand = {
 
 type RawWorld = { id: string; projects: Project[] };
 
-const worlds = raw.worlds as unknown as RawWorld[];
+const worlds = rawWorlds as unknown as RawWorld[];
 
 export const PROJECTS: Record<WorldId, Project[]> = {
   design: worlds.find((w) => w.id === 'design')?.projects ?? [],
   tech: worlds.find((w) => w.id === 'tech')?.projects ?? [],
 };
 
-export const INTERESTS = raw.personalInterests as unknown as Interest[];
+export const INTERESTS = personalInterests as unknown as Interest[];
 
 export const CONTACT = {
-  titleLead: raw.contact.titleLead,
-  titleHighlight: raw.contact.titleHighlight,
-  email: raw.identity.email,
-  linkedin: raw.identity.linkedin,
-  github: raw.identity.github,
-  vimeo: raw.identity.vimeo,
+  titleLead: contact.titleLead,
+  titleHighlight: contact.titleHighlight,
+  // En el JSON va como «usuario [at] dominio» para que los robots de spam no lo detecten.
+  email: identity.email.replace(/\s*\[at\]\s*/, '@'),
+  linkedin: identity.linkedin,
+  github: identity.github,
+  vimeo: identity.vimeo,
   cv: 'assets/Constanza_Flores_CV.pdf',
 };
 
@@ -118,7 +120,7 @@ type RawExperience = {
  * (si corresponde) seguida de sus marcas, con la relación explícita
  * («Cliente vía Proust House», «Marca de Maletas Chile SpA»…).
  */
-export const BRANDS: Brand[] = (raw.experiences as RawExperience[]).flatMap((exp) => {
+export const BRANDS: Brand[] = (experiences as RawExperience[]).flatMap((exp) => {
   const base = { organization: exp.organization, role: exp.role, period: exp.period, summary: exp.summary };
   const own: Brand[] = exp.showOrganization
     ? [

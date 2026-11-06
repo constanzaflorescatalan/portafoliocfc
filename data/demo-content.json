@@ -1,14 +1,13 @@
 {
   "meta": {
-    "status": "DEMO — reemplazar antes de publicar",
-    "language": "es-CL",
-    "note": "Contenido editable del sitio. Proyectos: 'position' = [x%, y%] del punto orbital (escritorio). Intereses: orbitan en el orden de la lista. Marcas: 'experiences'."
+    "note": "Contenido público del sitio: todo lo que está aquí se publica. Las notas internas y pendientes van en docs/07_DECISIONES_NUEVAS.md, no aquí.",
+    "language": "es-CL"
   },
   "identity": {
     "name": "Constanza Flores",
     "headline": "Diseñadora Gráfica Senior · Ingeniera en Informática · UX/UI",
     "location": "Santiago de Chile",
-    "email": "constanza.florescatalan@gmail.com",
+    "email": "constanza.florescatalan [at] gmail.com",
     "linkedin": "https://www.linkedin.com/in/conoflor",
     "github": "https://github.com/constanzaflorescatalan",
     "figma": "https://figma.com/@constanzaflores",
@@ -265,8 +264,7 @@
   ],
   "contact": {
     "titleLead": "Tu mensaje será nuestro próximo",
-    "titleHighlight": "gran proyecto.",
-    "titleIsProvisional": false
+    "titleHighlight": "gran proyecto."
   },
   "experiences": [
     {
@@ -304,7 +302,6 @@
       "kind": "Colaboración freelance",
       "role": "Diseñadora Gráfica Freelance",
       "period": "Actualidad",
-      "periodPending": true,
       "summary": "Diseño gráfico freelance para proyectos de Drei Ventures.",
       "showOrganization": true,
       "brands": [
@@ -344,9 +341,6 @@
         {
           "name": "Patagonia Donuts"
         }
-      ],
-      "pendingBrands": [
-        "Pampier (escritura por confirmar)"
       ]
     },
     {
@@ -365,18 +359,16 @@
       "period": "2019",
       "summary": "Ilustración y animación para comunicaciones internas.",
       "showOrganization": true,
-      "brands": [],
-      "toConfirm": "Vía qué agencia o si fue directo; período exacto"
+      "brands": []
     },
     {
       "organization": "DECH UNIMARC",
       "kind": "Cliente",
       "role": "Por confirmar",
       "period": "Por confirmar",
-      "summary": "Detalle por confirmar con Coni.",
+      "summary": "Detalle por confirmar.",
       "showOrganization": true,
-      "brands": [],
-      "toConfirm": "Período, rol, qué hizo y vía qué empresa"
+      "brands": []
     },
     {
       "organization": "El Búho Comunicaciones",
@@ -390,10 +382,6 @@
           "name": "ISA InterChile",
           "relation": "Cliente vía El Búho Comunicaciones"
         }
-      ],
-      "pendingBrands": [
-        "Otros organismos de gobierno (por confirmar)",
-        "Ciudad Feliz (video 2016, por confirmar)"
       ]
     },
     {
@@ -457,16 +445,5 @@
       "showOrganization": true,
       "brands": []
     }
-  ],
-  "vimeoReview": {
-    "source": "https://vimeo.com/conoflor (76 videos revisados por miniatura y título)",
-    "pendingToConfirm": [
-      "Subsecretaría / Ministerio del Trabajo (2019): ¿vía Brecha Digital o El Búho?",
-      "Venezzia Live (2019)",
-      "La Triada (2019, junto a Hijas del Caldero)",
-      "La Chinita (app, 2017)",
-      "Mis Recetas Premium (app, 2016)",
-      "Milkshake (reel 2014)"
-    ]
-  }
+  ]
 }
