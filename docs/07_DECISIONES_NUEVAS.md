@@ -24,3 +24,39 @@ Este archivo registra decisiones tomadas al implementar. La especificación orig
 - Foto o logo final dentro del círculo.
 - Si la estrella orbitando se mantiene tras probarla.
 - Ritmo de la apertura (hoy ~1 s, con arranque rápido).
+
+---
+
+# Etapa 2 — Universos, casos, Quién soy, Marcas y Contacto
+
+Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 no se modificaron.
+
+## Universo
+- Proyectos como puntos orbitales (círculo rosa + dos contornos finos) con número, nombre y tipo **siempre visibles**. El punto flota suavemente; el texto queda quieto para leerlo y hacer clic con facilidad.
+- Posiciones en `data/demo-content.json` (`position: [x%, y%]`), editables sin tocar código.
+- Tres órbitas punteadas muy tenues alrededor del agujero negro, con desplazamiento lento del punteado (sin brillo).
+- Agujero negro: núcleo negro con disco de acreción tenue que gira lento (rosa/verde pino/lavanda muy bajos). Texto «Un poco más de mí» en Sacramento (acento decorativo) + «Descubrir».
+- Clic en el agujero negro: el universo hace zoom hacia el centro y se desvanece (~0,9 s) y aparece Quién soy.
+- En celular (≤ 760 px) el universo pasa a una lista de dos columnas con el agujero negro arriba (alternativa de lista de docs/05).
+
+## Caso de estudio
+- Fondo carbón `#0b0d11`. Estrella de cuatro puntas fija arriba a la izquierda con «Volver a Diseño/Informática»; Escape también vuelve.
+- Bloques: Objetivo, Mi aporte, Herramientas, Resultado. Metadatos: Cliente, Agencia/colaboración, Tipo.
+- Anterior/Siguiente da la vuelta dentro del mismo universo; contador 01 / N.
+
+## Quién soy
+- Collage con los 9 íconos de línea del prototipo; en hover se elevan y giran levemente.
+- Ventana con `<dialog>` nativo: foco atrapado, Escape, clic fuera o × cierran y el foco vuelve al ícono.
+- «Mucho de mí.» en Sacramento como único acento.
+
+## Marcas y Contacto
+- Capítulos de pantalla completa debajo del universo con encaje por pantallas (scroll-snap); el contenido sube al entrar.
+- Marcas generadas desde `brandRelationships`: primero organizaciones, luego clientes con su relación («Cliente vía Proust House», «Proyecto vía Drei Ventures»).
+- Contacto sin formulario: correo, LinkedIn, GitHub y descarga del CV.
+
+## Rutas
+`#/diseno/<id-proyecto>` caso · `#/quien-soy` · `#/marcas` · `#/contacto`. Al hacer scroll entre capítulos la URL y el menú se actualizan.
+
+## Pendiente de definir contigo
+- Proyectos reales, textos e imágenes; logos oficiales.
+- Si se mantienen la flotación de los puntos y el giro del disco del agujero negro.

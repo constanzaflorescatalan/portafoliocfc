@@ -15,22 +15,29 @@ Se abre solo en `http://localhost:5173`. Para probarlo en el celular (misma red 
 
 Otros comandos: `npm run build` (revisa tipos y genera `dist/`), `npm run preview` (sirve ese build).
 
-## Estado: etapa 1 (portada + transición)
+## Estado: etapa 2 (sitio navegable completo, con contenido DEMO)
 
-- Portada aprobada: retrato en círculo sobre tarjeta verde pino, una órbita rosa fija y una estrella de cuatro puntas que la recorre (14 s, provisional, sin brillo).
-- Apertura: el fondo negro se parte en dos; el retrato y la órbita salen con la mitad izquierda, la derecha sale vacía y la tarjeta baja.
-- Selector: DISEÑO e INFORMÁTICA; toda cada mitad es clicable. Hover con trazos (Diseño) y código/bloques de interfaz (Informática). La mitad elegida se expande.
-- Universo: vista provisional con título y formación (la etapa 2 la reemplaza).
-- Enlaces directos: `#/` portada · `#/mundos` selector · `#/diseno` · `#/informatica`. El botón «atrás» del navegador funciona.
-- Menú: Diseño e Informática ya funcionan; Marcas, Quién soy y Contacto aparecen atenuados hasta sus etapas.
+- **Portada** aprobada, apertura partida en dos y **selector** Diseño / Informática (etapa 1).
+- **Universos**: proyectos como puntos orbitales con nombre visible, agujero negro «Un poco más de mí» al centro.
+- **Casos de estudio** con estrella de regreso y Anterior / Siguiente.
+- **Quién soy**: collage de intereses con ventanas de foto + texto.
+- **Marcas** y **Contacto** como capítulos al hacer scroll bajo el universo.
+- Enlaces directos: `#/` · `#/mundos` · `#/diseno` · `#/informatica` · `#/diseno/<proyecto>` · `#/quien-soy` · `#/marcas` · `#/contacto`.
+- Detalle de decisiones nuevas en `docs/07_DECISIONES_NUEVAS.md`.
+
+## Cambiar el contenido
+
+Todo el contenido editable está en `data/demo-content.json`: proyectos (con su posición en el universo), intereses, marcas y textos de contacto. Las imágenes van en `public/assets/`.
 
 ## Estructura
 
 ```
 src/components   TopNav, MobileNav, OpeningTransition, LandingHero, WorldSelector, WorldPanel,
-                 DesignStrokes, CodeFloaters, UniverseScene, StarField
-src/data         textos y credenciales (site.ts)
-src/styles       base, nav, cover, chooser, universe
+                 DesignStrokes, CodeFloaters, WorldSite, UniverseScene, OrbitalProject,
+                 BlackHolePortal, ProjectCaseStudy, PersonalCollage, InterestModal,
+                 InterestIcon, BrandGrid, ContactScreen, StarField
+src/data         site.ts (identidad, mundos, menú) y content.ts (lee data/demo-content.json)
+src/styles       base, nav, cover, chooser, universe, chapters, case, about
 public/assets    imágenes DEMO (retrato de referencia, proyectos, intereses) y CV
 design/          tokens.css aprobado (no se modifica)
 docs/            especificación original, 07_DECISIONES_NUEVAS.md y GIT_PROTOCOLO.md
