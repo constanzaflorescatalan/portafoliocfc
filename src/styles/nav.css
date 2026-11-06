@@ -52,20 +52,14 @@
   transition: transform var(--motion-short) var(--ease-out);
 }
 
-.topnav__links button:hover:not(.is-pending),
+.topnav__links button:hover,
 .topnav__links button[aria-current='page'] {
   color: #fff;
 }
 
-.topnav__links button:hover:not(.is-pending)::after,
+.topnav__links button:hover::after,
 .topnav__links button[aria-current='page']::after {
   transform: scaleX(1);
-}
-
-/* Secciones que llegan en etapas siguientes. */
-.is-pending {
-  opacity: 0.4;
-  cursor: not-allowed !important;
 }
 
 /* Menú móvil */

@@ -1,11 +1,10 @@
 import type { NavTarget, WorldId } from '../types';
 
-/** Textos confirmados (docs/04). La portada usa exactamente estos textos, sin tagline. */
+/** Textos de la portada (docs/04 y docs/07). Sin tagline. */
 export const IDENTITY = {
   name: 'Constanza Flores',
   // Dos tramos para controlar el salto de línea sin alterar el texto.
   headline: ['Diseñadora Gráfica Senior ·', 'Ingeniera en Informática · UX/UI'],
-  location: 'Santiago de Chile',
   email: 'constanza.florescatalan@gmail.com',
 } as const;
 

@@ -148,7 +148,7 @@ export default function App() {
     [after, pushHash, update],
   );
 
-  // Agujero negro → quién soy: zoom/absorción y luego el collage.
+  // Agujero negro → quién soy: zoom/absorción y luego Quién soy.
   const enterPortal = useCallback(() => {
     if (stageRef.current !== 'universe') return;
     const world = state.world ?? readLastWorld();

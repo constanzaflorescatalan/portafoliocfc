@@ -104,32 +104,6 @@ button:disabled {
   color: var(--color-pink);
 }
 
-/* Botón de acción con contorno, usado en la portada y en el universo. */
-.enter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 22px;
-  border: 1px solid #b89daf;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  transition: background var(--motion-short), border-color var(--motion-short);
-}
-
-.enter-btn:hover:not(:disabled) {
-  background: rgba(199, 130, 162, 0.12);
-  border-color: var(--color-pink);
-}
-
-.enter-btn span {
-  color: var(--color-pink);
-  font-size: 16px;
-  letter-spacing: 0;
-}
-
 /* Estrellas de fondo mínimas y tenues. */
 .starfield {
   position: absolute;

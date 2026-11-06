@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-/** Íconos de línea minimalistas para el collage personal (docs/02: no stickers). */
+/** Íconos de línea minimalistas para Quién soy (docs/02: no stickers). */
 const PATHS: Record<string, ReactNode> = {
   gym: <path d="M3 9v6m3-8v10m12-10v10m3-8v6M6 12h12" />,
   cocina: <path d="M4 10h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8Zm-2 0h20M8 7V3m4 4V3m4 4V3" />,

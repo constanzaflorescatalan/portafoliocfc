@@ -2,7 +2,7 @@
   "meta": {
     "status": "DEMO — reemplazar antes de publicar",
     "language": "es-CL",
-    "note": "Datos DEMO. 'position' = [x%, y%] del punto orbital en el universo (escritorio)."
+    "note": "Contenido editable del sitio. Proyectos: 'position' = [x%, y%] del punto orbital (escritorio). Intereses: orbitan en el orden de la lista. Marcas: 'experiences'."
   },
   "identity": {
     "name": "Constanza Flores",
@@ -190,121 +190,77 @@
       "name": "Gym",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_gym.jpg",
-      "position": [
-        12,
-        34
-      ]
+      "image": "assets/demo_hobby_gym.jpg"
     },
     {
       "id": "cocina",
       "name": "Cocina",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_cocina.jpg",
-      "position": [
-        31,
-        26
-      ]
+      "image": "assets/demo_hobby_cocina.jpg"
     },
     {
       "id": "animales",
       "name": "Animales",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_animales.jpg",
-      "position": [
-        52,
-        40
-      ]
+      "image": "assets/demo_hobby_animales.jpg"
     },
     {
       "id": "tarot",
       "name": "Tarot",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_tarot.jpg",
-      "position": [
-        72,
-        24
-      ]
+      "image": "assets/demo_hobby_tarot.jpg"
     },
     {
       "id": "herbolaria",
       "name": "Herbolaria",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_herbolaria.jpg",
-      "position": [
-        89,
-        44
-      ]
+      "image": "assets/demo_hobby_herbolaria.jpg"
     },
     {
       "id": "dibujo",
       "name": "Dibujo",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_dibujo.jpg",
-      "position": [
-        18,
-        74
-      ]
+      "image": "assets/demo_hobby_dibujo.jpg"
     },
     {
       "id": "pintura",
       "name": "Pintura",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_pintura.jpg",
-      "position": [
-        40,
-        68
-      ]
+      "image": "assets/demo_hobby_pintura.jpg"
     },
     {
       "id": "jabones",
       "name": "Jabones",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_jabones.jpg",
-      "position": [
-        63,
-        77
-      ]
+      "image": "assets/demo_hobby_jabones.jpg"
     },
     {
       "id": "velas",
       "name": "Velas",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "assets/demo_hobby_velas.jpg",
-      "position": [
-        83,
-        71
-      ]
+      "image": "assets/demo_hobby_velas.jpg"
     },
     {
       "id": "gemoterapia",
       "name": "Gemoterapia",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "",
-      "position": [
-        50,
-        50
-      ]
+      "image": ""
     },
     {
       "id": "escultura",
       "name": "Escultura en arcilla",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "",
-      "position": [
-        50,
-        50
-      ]
+      "image": ""
     }
   ],
   "contact": {
