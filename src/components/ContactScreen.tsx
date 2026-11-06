@@ -31,11 +31,14 @@ export function ContactScreen() {
     }
   };
 
-  const links = [
-    { label: 'LinkedIn', href: CONTACT.linkedin },
-    { label: 'GitHub profesional', href: CONTACT.githubPro },
-    { label: 'GitHub académico', href: CONTACT.githubAcademic },
-    { label: 'Vimeo', href: CONTACT.vimeo },
+  // Cada grupo es una columna; los dos GitHub van uno arriba del otro.
+  const groups = [
+    [{ label: 'LinkedIn', href: CONTACT.linkedin }],
+    [
+      { label: 'GitHub profesional', href: CONTACT.githubPro },
+      { label: 'GitHub académico', href: CONTACT.githubAcademic },
+    ],
+    [{ label: 'Vimeo', href: CONTACT.vimeo }],
   ];
 
   return (
@@ -57,11 +60,13 @@ export function ContactScreen() {
               {copied ? 'Correo copiado' : ''}
             </span>
           </li>
-          {links.map((l) => (
-            <li key={l.label}>
-              <a href={l.href} target="_blank" rel="noopener noreferrer">
-                {l.label} <span aria-hidden="true">↗</span>
-              </a>
+          {groups.map((group) => (
+            <li key={group[0].label} className={group.length > 1 ? 'contact__stack' : undefined}>
+              {group.map((l) => (
+                <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
             </li>
           ))}
           <li>

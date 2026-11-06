@@ -300,6 +300,7 @@ button.brand {
   margin: 36px 0 0;
   padding: 0;
   list-style: none;
+  align-items: flex-start;
 }
 
 .contact__links a,
@@ -324,6 +325,14 @@ button.brand {
 
 .contact__mail {
   position: relative;
+}
+
+/* Todas las columnas con la misma estructura, para que queden alineadas arriba. */
+.contact__links > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 /* Aviso breve al copiar el correo. */
