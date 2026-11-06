@@ -170,3 +170,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **Correo protegido contra spam**: en el JSON va como `usuario [at] dominio` y se arma solo al copiar; ya no aparece como correo en el código publicado.
 - **Notas internas fuera del sitio publicado**: se detectó que el JSON completo (con notas como «por confirmar con Coni» y la revisión de Vimeo) viajaba en el código del sitio. Se quitaron esas notas del JSON (siguen en este documento) y el sitio importa solo las secciones que muestra. Regla: **todo lo que está en `data/demo-content.json` es público**.
 - **Accesibilidad**: la estrella de volver del caso de estudio tiene nombre accesible también en celular; los textos tenues subieron de 45 % a 60 % de opacidad para cumplir contraste AA. Revisión con axe-core: 0 problemas en 16 pantallas.
+- Contacto: el enlace de **GitHub apunta a la cuenta académica github.com/Confloresc** (pedido de Coni), en vez de la cuenta del proyecto.

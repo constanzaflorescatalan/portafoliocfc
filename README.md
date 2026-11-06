@@ -40,7 +40,7 @@ Todo el contenido está en **`data/demo-content.json`**:
 
 | Sección del JSON | Qué controla |
 | --- | --- |
-| `identity` | Correo, LinkedIn, GitHub, Vimeo |
+| `identity` | Correo, LinkedIn, GitHub (académico), Vimeo |
 | `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, imágenes, `position` en el universo) |
 | `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (`logo` opcional) |
 | `personalInterests` | Intereses de Quién soy (nombre, texto, foto) |
