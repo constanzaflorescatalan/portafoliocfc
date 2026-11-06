@@ -62,10 +62,10 @@ export const INTERESTS = raw.personalInterests as unknown as Interest[];
 
 export const CONTACT = {
   title: raw.contact.title,
-  subtitle: raw.contact.subtitle,
   email: raw.identity.email,
   linkedin: raw.identity.linkedin,
   github: raw.identity.github,
+  vimeo: raw.identity.vimeo,
   cv: 'assets/Constanza_Flores_CV.pdf',
 };
 

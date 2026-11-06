@@ -223,7 +223,8 @@
 /* ---------- Contacto ---------- */
 .contact {
   display: flex;
-  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(16, 46, 44, 0.55), var(--color-bg) 70%);
+  /* Mismo azul noche de la portada y de Marcas. */
+  background: radial-gradient(ellipse 70% 60% at 50% 42%, #08112a 0%, #050b1a 38%, #03060f 68%, #010205 100%);
 }
 
 .contact__shell {
@@ -234,10 +235,11 @@
 }
 
 .contact__title {
-  margin: 16px 0 12px;
-  font-size: clamp(46px, 7vw, 116px);
+  margin: 16px 0 clamp(36px, 6vh, 60px);
+  font-size: clamp(40px, 5.6vw, 92px);
   font-weight: 600;
-  line-height: 0.98;
+  line-height: 1.04;
+  text-wrap: balance;
   letter-spacing: 0.01em;
 }
 
@@ -246,15 +248,11 @@
   color: var(--color-pink);
 }
 
-.contact__subtitle {
-  margin: 0 0 clamp(32px, 6vh, 56px);
-  font-size: 17px;
-  color: var(--color-muted);
-}
-
 .contact__email {
   align-self: flex-start;
-  font-size: clamp(22px, 3vw, 40px);
+  max-width: 100%;
+  font-size: clamp(17px, 4.4vw, 40px);
+  overflow-wrap: anywhere;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--color-text);

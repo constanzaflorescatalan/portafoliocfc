@@ -122,3 +122,10 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Borde de la tarjeta más oscuro: línea casi negra (#02040a) en vez del borde claro tenue.
 - Luego, a pedido de Coni: tarjeta **sin contorno** (sin borde).
 - Fondo de Marcas: **mismo degradé azul noche de la portada** (#08112a → #010205) con estrellas casi invisibles (StarField con `dim` 0,35: opacidad máxima ≈ 0,12).
+
+## Contacto — pedido de Coni
+- Fondo: **mismo azul noche** de la portada y Marcas, con estrellas casi invisibles.
+- Frase nueva: **«Diseño que se ve. Código que funciona.»** (segunda parte en rosa). Se quitó «Siempre hay espacio para una buena idea.». La frase está en `contact.title` del JSON.
+- Correo nuevo: **constanza.florescatalan@gmail.com** (reemplaza conoflor@gmail.com en todo el sitio).
+- Enlaces: LinkedIn (linkedin.com/in/conoflor, el de su CV), **GitHub github.com/constanzaflorescatalan** (cuenta del proyecto) y **Vimeo vimeo.com/conoflor** (nuevo).
+- «Descargar CV» descarga el **CV ATS** que entregó Coni (reemplaza `public/assets/Constanza_Flores_CV.pdf`).

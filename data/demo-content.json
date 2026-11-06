@@ -8,9 +8,9 @@
     "name": "Constanza Flores",
     "headline": "Diseñadora Gráfica Senior · Ingeniera en Informática · UX/UI",
     "location": "Santiago de Chile",
-    "email": "conoflor@gmail.com",
-    "linkedin": "https://linkedin.com/in/conoflor",
-    "github": "https://github.com/Confloresc",
+    "email": "constanza.florescatalan@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/conoflor",
+    "github": "https://github.com/constanzaflorescatalan",
     "figma": "https://figma.com/@constanzaflores",
     "vimeo": "https://vimeo.com/conoflor"
   },
@@ -286,10 +286,8 @@
     }
   ],
   "contact": {
-    "title": "¿Creamos algo juntos?",
-    "titleIsProvisional": true,
-    "subtitle": "Siempre hay espacio para una buena idea.",
-    "subtitleIsProvisional": true
+    "title": "Diseño que se ve. Código que funciona.",
+    "titleIsProvisional": true
   },
   "experiences": [
     {
