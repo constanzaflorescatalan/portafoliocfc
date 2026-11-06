@@ -29,6 +29,7 @@ export type Interest = {
   name: string;
   isDemo: boolean;
   description: string;
+  /** Foto de la ventana; vacía = se muestra el ícono grande en su lugar. */
   image: string;
   position: [number, number];
 };

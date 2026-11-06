@@ -187,6 +187,19 @@
   min-height: 300px;
 }
 
+.modal__media--icon {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 45%, rgba(16, 46, 44, 0.6), #070b14 75%);
+}
+
+.modal__media--icon .interest-icon {
+  width: 34%;
+  height: auto;
+  stroke: var(--color-pink);
+  stroke-width: 0.9;
+}
+
 .modal__media img {
   display: block;
   width: 100%;

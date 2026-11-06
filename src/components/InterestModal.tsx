@@ -37,11 +37,15 @@ export function InterestModal({ interest, onClose }: Props) {
           <button type="button" className="modal__close" onClick={onClose} aria-label="Cerrar">
             ×
           </button>
-          <figure className="modal__media">
-            <img
-              src={asset(interest.image)}
-              alt={interest.isDemo ? `Foto de ejemplo para ${interest.name} (DEMO)` : interest.name}
-            />
+          <figure className={`modal__media${interest.image ? '' : ' modal__media--icon'}`}>
+            {interest.image ? (
+              <img
+                src={asset(interest.image)}
+                alt={interest.isDemo ? `Foto de ejemplo para ${interest.name} (DEMO)` : interest.name}
+              />
+            ) : (
+              <InterestIcon id={interest.id} />
+            )}
           </figure>
           <div className="modal__body">
             <span className="modal__icon">

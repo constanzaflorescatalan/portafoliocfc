@@ -37,6 +37,15 @@ const PATHS: Record<string, ReactNode> = {
     </>
   ),
   velas: <path d="M7 12h10v9H7v-9Zm5 0V9m0-8c4 4 4 7 0 8-4-1-4-4 0-8Z" />,
+  gemoterapia: <path d="M6 3h12l4 6-10 12L2 9l4-6Zm-4 6h20M10 3 8 9l4 12 4-12-2-6" />,
+  escultura: (
+    <>
+      <path d="M8.2 5.6 7.4 3.2l2.5 1.3M15.8 5.6l.8-2.4-2.5 1.3" />
+      <circle cx="12" cy="8.2" r="3.8" />
+      <path d="M8.6 10.4C6.9 12 6.3 15 6.8 18.5h10.4c.5-3.5-.1-6.5-1.8-8.1" />
+      <path d="M5 18.5h14M10.6 7.8h.01M13.4 7.8h.01" />
+    </>
+  ),
 };
 
 export function InterestIcon({ id }: { id: string }) {

@@ -283,6 +283,28 @@
         83,
         71
       ]
+    },
+    {
+      "id": "gemoterapia",
+      "name": "Gemoterapia",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "",
+      "position": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "escultura",
+      "name": "Escultura en arcilla",
+      "isDemo": true,
+      "description": "Texto personal de ejemplo, por escribir.",
+      "image": "",
+      "position": [
+        50,
+        50
+      ]
     }
   ],
   "contact": {
