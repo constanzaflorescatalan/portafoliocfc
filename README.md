@@ -108,8 +108,9 @@ portafoliocfc/
 | `01`–`06` | Brief, flujos, animaciones, contenido, responsive y estado original |
 | `07_DECISIONES_NUEVAS.md` | Todo lo cambiado durante la implementación y lo pendiente |
 | `08_SEGURIDAD.md` | Investigación de seguridad y protección de datos, con plan por prioridad |
+| `09_REVISION_Y_PROXIMOS_PASOS.md` | Revisión completa, crítica, referencias, lo que falta y pasos hasta publicar |
 | `GIT_PROTOCOLO.md` | Ramas, formato de commits y versiones |
 
 ## Pendiente
 
-Ver la sección «Pendiente de confirmar» en `docs/07_DECISIONES_NUEVAS.md`: proyectos reales, logos de marcas, fotos y textos de intereses, y algunos datos de marcas por confirmar.
+Lista completa de lo que falta y pasos hasta publicar en `docs/09_REVISION_Y_PROXIMOS_PASOS.md`. Seguridad en `docs/08_SEGURIDAD.md`.
