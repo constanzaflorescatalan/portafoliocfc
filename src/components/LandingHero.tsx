@@ -67,10 +67,10 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
       <div className="hero">
         <div className="hero__card">
           <h1 className="hero__name">{IDENTITY.name}</h1>
+          <div className="hero__rule" aria-hidden="true" />
           <p className="hero__headline">
             <span>{IDENTITY.headline[0]}</span> <span>{IDENTITY.headline[1]}</span>
           </p>
-          <div className="hero__rule" aria-hidden="true" />
           <p className="hero__location">
             <PinIcon />
             <span>{IDENTITY.location}</span>

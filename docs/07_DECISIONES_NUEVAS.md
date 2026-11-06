@@ -85,3 +85,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Más pequeña (600 de ancho en vez de 678; textos ~10 % menores y menos espacio interno; alto según contenido).
 - Más abajo (arriba en 510 en vez de 488): ya no toca la órbita de la luna (que baja hasta ~485); la foto aún se apoya sobre ella.
 - Verde pino más oscuro y **claramente translúcido** (≈ 40–48 % de opacidad, desenfoque mínimo de 1,5 px) para que se vean el cielo y las estrellas detrás; borde tenue al 10 %.
+- Orden de la tarjeta: **Constanza Flores → línea rosada → Diseñadora Gráfica Senior · Ingeniera en Informática · UX/UI → Santiago de Chile** (antes la línea iba después de los títulos).
