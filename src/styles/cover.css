@@ -291,8 +291,7 @@
   opacity: 0;
 }
 
-/* Acción inferior */
-.cover.is-opening @keyframes photo-in {
+@keyframes photo-in {
   from {
     opacity: 0;
     transform: scale(0.94);
