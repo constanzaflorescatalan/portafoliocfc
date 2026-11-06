@@ -80,10 +80,10 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
 
           <div className="hero__photo">
             <img
-              src={asset('assets/retrato_demo.jpg')}
-              alt="Foto de referencia, pendiente de reemplazar por la foto final de Constanza"
-              width={800}
-              height={800}
+              src={asset('assets/retrato_constanza.jpg')}
+              alt="Constanza Flores"
+              width={900}
+              height={900}
             />
           </div>
 
