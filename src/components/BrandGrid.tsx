@@ -28,26 +28,43 @@ export function BrandGrid() {
         </header>
 
         <ul className="brand-grid">
-          {BRANDS.map((brand, i) => (
-            <li key={brand.name} style={{ '--brand': brand.color, '--i': i } as CSSProperties}>
-              <button
-                type="button"
-                className="brand"
-                aria-haspopup="dialog"
-                onClick={(e) => {
-                  triggerRef.current = e.currentTarget;
-                  setOpen(brand);
-                }}
-              >
+          {BRANDS.map((brand, i) => {
+            const cls = `brand brand--${brand.logoMode}${brand.lightBg ? ' brand--light' : ''}`;
+            const style = { '--logo-bg': brand.logoBg ?? 'transparent', '--i': i } as CSSProperties;
+            const inner = (
+              <>
                 {brand.logo ? (
                   <img className="brand__logo" src={asset(brand.logo)} alt={brand.name} loading="lazy" />
                 ) : (
                   <span className="brand__name">{brand.name}</span>
                 )}
-                <span className="brand__context">{brand.context}</span>
-              </button>
-            </li>
-          ))}
+                {brand.context && <span className="brand__context">{brand.context}</span>}
+              </>
+            );
+            return (
+              <li key={brand.name}>
+                {brand.hasDetails ? (
+                  <button
+                    type="button"
+                    className={cls}
+                    style={style}
+                    aria-haspopup="dialog"
+                    onClick={(e) => {
+                      triggerRef.current = e.currentTarget;
+                      setOpen(brand);
+                    }}
+                  >
+                    {inner}
+                  </button>
+                ) : (
+                  // Marcas que por ahora solo tienen nombre y logo: sin ventana.
+                  <div className={cls} style={style} tabIndex={0}>
+                    {inner}
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
 

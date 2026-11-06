@@ -67,17 +67,21 @@
 .brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
-  text-align: left;
-  min-height: clamp(104px, 15vh, 150px);
-  padding: 22px;
+  text-align: center;
+  min-height: clamp(120px, 16vh, 160px);
+  padding: 22px 18px;
   border-right: 1px solid var(--color-line);
   border-bottom: 1px solid var(--color-line);
   outline-offset: -4px;
-  transition: background 300ms ease;
+  transition: background 350ms ease;
+}
+
+button.brand {
+  cursor: pointer;
 }
 
 .brand__name {
@@ -85,39 +89,51 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   color: #c9cccd;
-  transition: color 300ms ease, transform 400ms var(--ease-out);
 }
 
 .brand__context {
   font-size: 11px;
   color: rgba(235, 233, 232, 0.6);
+  transition: color 350ms ease;
+}
+
+/*
+  Logos: en reposo todos en blanco suave (silueta) para que la grilla se vea pareja;
+  las insignias de bloque sólido van en grises. Al pasar el cursor o enfocar,
+  cada logo aparece con sus colores sobre su fondo original.
+*/
+.brand__logo {
+  display: block;
+  max-width: 62%;
+  max-height: 68px;
+  object-fit: contain;
+  transition: filter 350ms ease, opacity 350ms ease;
+}
+
+.brand--silhouette .brand__logo {
+  filter: brightness(0) invert(0.92);
+  opacity: 0.8;
+}
+
+.brand--badge .brand__logo {
+  filter: grayscale(1) brightness(1.35) contrast(0.85);
+  opacity: 0.42;
 }
 
 .brand:hover,
 .brand:focus-visible {
-  background: rgba(235, 233, 232, 0.03);
-}
-
-.brand:hover .brand__name,
-.brand:focus-visible .brand__name {
-  color: var(--brand);
-  transform: translateX(4px);
-}
-
-/* Logos oficiales: monocromos en reposo, color original al pasar el cursor o enfocar. */
-.brand__logo {
-  max-width: 70%;
-  max-height: 56px;
-  object-fit: contain;
-  filter: grayscale(1) brightness(1.7);
-  opacity: 0.75;
-  transition: filter 300ms ease, opacity 300ms ease;
+  background: var(--logo-bg, rgba(235, 233, 232, 0.04));
 }
 
 .brand:hover .brand__logo,
 .brand:focus-visible .brand__logo {
   filter: none;
   opacity: 1;
+}
+
+.brand--light:hover .brand__context,
+.brand--light:focus-visible .brand__context {
+  color: #3a3f4a;
 }
 
 /* ---------- Ventana de marca (texto pequeño) ---------- */
@@ -176,10 +192,17 @@
 }
 
 .brand-modal__logo {
-  max-width: 60%;
+  align-self: flex-start;
+  display: inline-flex;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.brand-modal__logo img {
+  display: block;
+  max-width: 200px;
   max-height: 56px;
   object-fit: contain;
-  align-self: flex-start;
 }
 
 .brand-modal__context {

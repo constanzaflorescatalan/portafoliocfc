@@ -1,5 +1,12 @@
 // Importación por partes: solo estas secciones del JSON entran al sitio publicado.
-import { contact, experiences, identity, personalInterests, worlds as rawWorlds } from '../../data/demo-content.json';
+import {
+  contact,
+  experiences,
+  identity,
+  otherBrands,
+  personalInterests,
+  worlds as rawWorlds,
+} from '../../data/demo-content.json';
 import type { WorldId } from '../types';
 
 /**
@@ -36,12 +43,20 @@ export type Interest = {
 
 export type Brand = {
   name: string;
-  /** Relación con Coni, para no confundir agencias con sus clientes (docs/04). */
+  /** Relación con Coni (texto bajo el logo). Vacío en marcas que solo tienen nombre. */
   context: string;
-  /** Color de muestra del hover mientras no haya logos oficiales. */
+  /** Color de acento si no hay logo. */
   color: string;
-  /** Logo oficial (ruta en public/assets). Mientras no exista se muestra el nombre. */
+  /** Logo (public/assets/logos). Sin logo se muestra el nombre. */
   logo?: string;
+  /** Fondo original del logo: se muestra al pasar el cursor. */
+  logoBg?: string;
+  /** `silhouette`: blanco en reposo · `badge`: insignia en grises en reposo. */
+  logoMode: 'silhouette' | 'badge';
+  /** true si el fondo original es claro (el texto bajo el logo se oscurece al pasar el cursor). */
+  lightBg: boolean;
+  /** false = solo nombre y logo, sin ventana de detalle (por completar). */
+  hasDetails: boolean;
   /** Datos de la ventana: organización, rol, período y qué hace. */
   organization: string;
   role: string;
@@ -72,77 +87,76 @@ export const CONTACT = {
   cv: 'assets/Constanza_Flores_CV.pdf',
 };
 
-/** Colores demostrativos para el hover (se reemplazan por logos reales). */
-const BRAND_COLORS: Record<string, string> = {
-  'Proust House': '#D6A2BC',
-  'Property Partners': '#9CCABF',
-  'Imagination Station': '#AEC4DC',
-  'Scotch Plains Montessori School': '#D9B4AD',
-  'Forge Programming': '#D29CBA',
-  'Arbor Counseling Centers': '#B3C8C2',
-  'Drei Ventures': '#A5C5B1',
-  'Nuva Oxi': '#D6A1C3',
-  'HEAD Chile': '#E6C0A2',
-  'Calú Bags': '#D9B9C9',
-  Castaño: '#D8BBA6',
-  Kingsbury: '#9EC3E0',
-  'Patagonia Donuts': '#C3A7DD',
-  'Universidad Central': '#B9C3DE',
-  'DECH UNIMARC': '#E0A3A3',
-  'R Medy': '#A5B8D0',
-  'El Búho Comunicaciones': '#C9B79C',
-  MujerActual: '#D9A5B8',
-  'Hijas del Caldero': '#B9A6CF',
-  'Brecha Digital Consultores': '#9FC1C9',
-  'E-Mach Card': '#B5BDD6',
-  'Municipalidad de La Granja': '#A9C7B5',
-  'Municipalidad de La Pintana': '#B7C2DA',
-  SUBDERE: '#C9B3C9',
-  'Municipalidad de Independencia': '#D8A9B6',
-  'Municipalidad de Puerto Montt': '#9FBFD9',
-  'Servicio de Registro Civil': '#B0BEDC',
-  'ISA InterChile': '#A8C8D8',
-};
-
-type RawExperience = {
+type RawLogo = { logo?: string; logoBg?: string; logoMode?: string };
+type RawBrand = RawLogo & { name: string; relation?: string; detail?: string; nameOnly?: boolean };
+type RawExperience = RawLogo & {
   organization: string;
   kind: string;
   role: string;
   period: string;
   summary: string;
   showOrganization: boolean;
-  logo?: string;
-  brands: { name: string; relation?: string; detail?: string; logo?: string }[];
+  brands: RawBrand[];
 };
+
+/** Luminancia aproximada de un color #rrggbb (0 = negro, 1 = blanco). */
+function isLight(hex?: string): boolean {
+  if (!hex || !/^#[0-9a-f]{6}$/i.test(hex)) return false;
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.6;
+}
+
+function logoFields(o: RawLogo) {
+  return {
+    color: '#C782A2',
+    logo: o.logo,
+    logoBg: o.logoBg,
+    logoMode: (o.logoMode === 'badge' ? 'badge' : 'silhouette') as Brand['logoMode'],
+    lightBg: isLight(o.logoBg),
+  };
+}
+
+const NO_DETAILS = { organization: '', role: '', period: '', summary: '', hasDetails: false };
 
 /**
  * Grid de marcas desde `experiences` (data/demo-content.json): cada organización
  * (si corresponde) seguida de sus marcas, con la relación explícita
- * («Cliente vía Proust House», «Marca de Maletas Chile SpA»…).
+ * («Cliente vía Proust House», «Marca trabajada en Castaño»…). Al final, `otherBrands`:
+ * marcas que por ahora solo tienen nombre y logo.
  */
-export const BRANDS: Brand[] = (experiences as RawExperience[]).flatMap((exp) => {
-  const base = { organization: exp.organization, role: exp.role, period: exp.period, summary: exp.summary };
+const fromExperiences: Brand[] = (experiences as RawExperience[]).flatMap((exp) => {
+  const base = {
+    organization: exp.organization,
+    role: exp.role,
+    period: exp.period,
+    summary: exp.summary,
+    hasDetails: true,
+  };
   const own: Brand[] = exp.showOrganization
-    ? [
-        {
-          ...base,
-          name: exp.organization,
-          context: exp.kind,
-          color: BRAND_COLORS[exp.organization] ?? '#C782A2',
-          logo: exp.logo,
-        },
-      ]
+    ? [{ ...base, ...logoFields(exp), name: exp.organization, context: exp.kind }]
     : [];
   const viaAgency = exp.kind === 'Agencia';
-  const brands: Brand[] = exp.brands.map((b) => ({
-    ...base,
-    name: b.name,
-    context:
-      b.relation ??
-      (viaAgency ? `Cliente vía ${exp.organization}` : `Marca trabajada en ${exp.organization}`),
-    color: BRAND_COLORS[b.name] ?? '#C782A2',
-    logo: b.logo,
-    detail: b.detail,
-  }));
+  const brands: Brand[] = exp.brands.map((b) =>
+    b.nameOnly
+      ? { ...NO_DETAILS, ...logoFields(b), name: b.name, context: '' }
+      : {
+          ...base,
+          ...logoFields(b),
+          name: b.name,
+          context:
+            b.relation ??
+            (viaAgency ? `Cliente vía ${exp.organization}` : `Marca trabajada en ${exp.organization}`),
+          detail: b.detail,
+        },
+  );
   return [...own, ...brands];
 });
+
+const others: Brand[] = (otherBrands as RawBrand[]).map((b) => ({
+  ...NO_DETAILS,
+  ...logoFields(b),
+  name: b.name,
+  context: '',
+}));
+
+export const BRANDS: Brand[] = [...fromExperiences, ...others];

@@ -37,7 +37,9 @@ export function BrandModal({ brand, onClose }: Props) {
             ×
           </button>
           {brand.logo ? (
-            <img className="brand-modal__logo" src={asset(brand.logo)} alt={brand.name} />
+            <span className="brand-modal__logo" style={{ background: brand.logoBg ?? 'transparent' }}>
+              <img src={asset(brand.logo)} alt={brand.name} />
+            </span>
           ) : (
             <h2 id="brand-modal-title" className="brand-modal__name" style={{ color: brand.color }}>
               {brand.name}

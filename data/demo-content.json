@@ -277,25 +277,37 @@
       "brands": [
         {
           "name": "Property Partners",
-          "detail": "La Reina y Ñuñoa, Chile"
+          "detail": "La Reina y Ñuñoa, Chile",
+          "logo": "assets/logos/property-partners.webp",
+          "logoBg": "#040404"
         },
         {
           "name": "Imagination Station",
-          "detail": "Fort Worth, Texas, EE. UU."
+          "detail": "Fort Worth, Texas, EE. UU.",
+          "logo": "assets/logos/imagination-station.webp",
+          "logoBg": "#ffffff"
         },
         {
           "name": "Scotch Plains Montessori School",
-          "detail": "New Jersey, EE. UU."
+          "detail": "New Jersey, EE. UU.",
+          "logo": "assets/logos/scotch-plains.webp",
+          "logoBg": "#fefaf1"
         },
         {
           "name": "Forge Programming",
-          "detail": "EE. UU."
+          "detail": "EE. UU.",
+          "logo": "assets/logos/forge.webp",
+          "logoBg": "#f4f2e0"
         },
         {
           "name": "Arbor Counseling Centers",
-          "detail": "New Jersey, EE. UU."
+          "detail": "New Jersey, EE. UU.",
+          "logo": "assets/logos/arbor.webp",
+          "logoBg": "#ffffff"
         }
-      ]
+      ],
+      "logo": "assets/logos/proust-house.webp",
+      "logoBg": "#d0d9d4"
     },
     {
       "organization": "Drei Ventures",
@@ -307,9 +319,13 @@
       "brands": [
         {
           "name": "Nuva Oxi",
-          "relation": "Proyecto vía Drei Ventures"
+          "relation": "Proyecto vía Drei Ventures",
+          "logo": "assets/logos/nuva-oxi.webp",
+          "logoBg": "#ae1f71"
         }
-      ]
+      ],
+      "logo": "assets/logos/drei.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "Maletas Chile SpA",
@@ -320,10 +336,14 @@
       "showOrganization": false,
       "brands": [
         {
-          "name": "HEAD Chile"
+          "name": "HEAD Chile",
+          "logo": "assets/logos/head.webp",
+          "logoBg": "#000000"
         },
         {
-          "name": "Calú Bags"
+          "name": "Calú Bags",
+          "logo": "assets/logos/calu.webp",
+          "logoBg": "#ffffff"
         }
       ]
     },
@@ -336,12 +356,18 @@
       "showOrganization": true,
       "brands": [
         {
-          "name": "Kingsbury"
+          "name": "Kingsbury",
+          "logo": "assets/logos/kingsbury.webp",
+          "logoBg": "#ffffff"
         },
         {
-          "name": "Patagonia Donuts"
+          "name": "Patagonia Donuts",
+          "logo": "assets/logos/patagonia-donuts.webp",
+          "logoBg": "#ffffff"
         }
-      ]
+      ],
+      "logo": "assets/logos/castano.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "R Medy",
@@ -350,7 +376,9 @@
       "period": "2026",
       "summary": "Diseño de interfaces mobile-first para la renovación del sitio web, prototipos en Figma. Vancouver, Canadá.",
       "showOrganization": true,
-      "brands": []
+      "brands": [],
+      "logo": "assets/logos/r-medy.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "Universidad Central",
@@ -359,16 +387,27 @@
       "period": "2019",
       "summary": "Ilustración y animación para comunicaciones internas.",
       "showOrganization": true,
-      "brands": []
+      "brands": [],
+      "logo": "assets/logos/u-central.webp",
+      "logoBg": "#ffffff"
     },
     {
-      "organization": "DECH UNIMARC",
+      "organization": "DECH",
       "kind": "Cliente",
       "role": "Por confirmar",
       "period": "Por confirmar",
       "summary": "Detalle por confirmar.",
       "showOrganization": true,
-      "brands": []
+      "brands": [
+        {
+          "name": "Unimarc",
+          "nameOnly": true,
+          "logo": "assets/logos/unimarc.webp",
+          "logoBg": "#ffffff"
+        }
+      ],
+      "logo": "assets/logos/dech.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "El Búho Comunicaciones",
@@ -380,9 +419,13 @@
       "brands": [
         {
           "name": "ISA InterChile",
-          "relation": "Cliente vía El Búho Comunicaciones"
+          "relation": "Cliente vía El Búho Comunicaciones",
+          "logo": "assets/logos/isa.webp",
+          "logoBg": "#ffffff"
         }
-      ]
+      ],
+      "logo": "assets/logos/el-buho.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "MujerActual",
@@ -391,7 +434,9 @@
       "period": "2017 – 2019",
       "summary": "Contenido visual para revista, blog y plataformas digitales.",
       "showOrganization": true,
-      "brands": []
+      "brands": [],
+      "logo": "assets/logos/mujer-actual.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "Hijas del Caldero",
@@ -400,7 +445,9 @@
       "period": "2018 – 2022",
       "summary": "Identidad y material gráfico, piezas visuales, atención a clientes y apoyo en comercialización.",
       "showOrganization": true,
-      "brands": []
+      "brands": [],
+      "logo": "assets/logos/hijas-del-caldero.webp",
+      "logoBg": "#130601"
     },
     {
       "organization": "Brecha Digital Consultores",
@@ -412,29 +459,45 @@
       "brands": [
         {
           "name": "Municipalidad de La Granja",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/la-granja.webp",
+          "logoBg": "#ffffff"
         },
         {
           "name": "Municipalidad de La Pintana",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/la-pintana.webp",
+          "logoBg": "#ffffff"
         },
         {
           "name": "Municipalidad de Independencia",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/independencia.webp",
+          "logoBg": "#ffffff"
         },
         {
           "name": "Municipalidad de Puerto Montt",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/puerto-montt.webp",
+          "logoBg": "#f9fdfd"
         },
         {
           "name": "Servicio de Registro Civil",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/registro-civil.webp",
+          "logoBg": "#ffffff",
+          "logoMode": "badge"
         },
         {
           "name": "SUBDERE",
-          "relation": "Cliente vía Brecha Digital Consultores"
+          "relation": "Cliente vía Brecha Digital Consultores",
+          "logo": "assets/logos/subdere.webp",
+          "logoBg": "#ffffff",
+          "logoMode": "badge"
         }
-      ]
+      ],
+      "logo": "assets/logos/brecha-digital.webp",
+      "logoBg": "#ffffff"
     },
     {
       "organization": "E-Mach Card",
@@ -443,7 +506,73 @@
       "period": "2017 – 2019",
       "summary": "Edición, tratamiento y optimización de fotografías para el proyecto TNA.",
       "showOrganization": true,
-      "brands": []
+      "brands": [],
+      "logo": "assets/logos/emach.webp",
+      "logoBg": "#ffffff"
+    }
+  ],
+  "otherBrands": [
+    {
+      "name": "BC Media Reach",
+      "logo": "assets/logos/bc-media-reach.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Zetering",
+      "logo": "assets/logos/zetering.webp",
+      "logoBg": "#ffffff",
+      "logoMode": "badge"
+    },
+    {
+      "name": "Loz Takos",
+      "logo": "assets/logos/loz-takos.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Masoterapia Raúl Oliva Vásquez",
+      "logo": "assets/logos/masoterapia.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "#ChileSinResiduos",
+      "logo": "assets/logos/chile-sin-residuos.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Las Tabinas",
+      "logo": "assets/logos/las-tabinas.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Maestras Leyendas",
+      "logo": "assets/logos/maestras-leyendas.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Apoquindo Centro de Entrenamiento",
+      "logo": "assets/logos/apoquindo.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Municipalidad de Lo Espejo",
+      "logo": "assets/logos/lo-espejo.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Subsecretaría del Trabajo",
+      "logo": "assets/logos/subsecretaria-trabajo.webp",
+      "logoBg": "#ffffff",
+      "logoMode": "badge"
+    },
+    {
+      "name": "SISS",
+      "logo": "assets/logos/siss.webp",
+      "logoBg": "#ffffff"
+    },
+    {
+      "name": "Salsa & Avocado",
+      "logo": "assets/logos/salsa-avocado.webp",
+      "logoBg": "#fefefe"
     }
   ]
 }
