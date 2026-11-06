@@ -186,3 +186,14 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Navegadores sin View Transitions (versiones antiguas) o con movimiento reducido: entran directo al universo, sin transición.
 - Se evitó que el universo repitiera su propio fundido al terminar (causaba un parpadeo).
 - Quién soy en **celular**: ya no es una grilla quieta; mantiene **la misma órbita giratoria** que en computador, con la elipse más estirada en vertical (39 % × 43 %), íconos de 46–58 px y el título equilibrado («Un poquito / de mí.»). Probado en iPhone 13, iPhone SE y Pixel 7: ningún ícono se corta ni tapa el título. En celular horizontal la órbita es más ancha que alta.
+
+## Logos de marcas (entregados por Coni)
+- 41 logos en `public/assets/logos/` (WebP, fondo quitado, recortados; ~650 KB en total).
+- **En reposo**: todos en blanco suave (silueta) para que la grilla se vea pareja. Cuatro logos de bloque sólido (Zetering, Registro Civil, Subsecretaría del Trabajo, SUBDERE) van como **insignia en grises** (`logoMode: "badge"`), porque en silueta serían rectángulos.
+- **Al pasar el cursor o enfocar**: el logo aparece con sus colores **sobre su fondo original** (`logoBg`, detectado del borde del archivo). Si el fondo es claro, el texto bajo el logo se oscurece.
+- La ventana de cada marca muestra el logo original sobre su fondo.
+- **12 marcas nuevas, solo nombre y logo** (sin ventana ni descripción por ahora, en `otherBrands`): BC Media Reach, Zetering, Loz Takos, Masoterapia Raúl Oliva Vásquez, #ChileSinResiduos, Las Tabinas, Maestras Leyendas, Apoquindo Centro de Entrenamiento, Municipalidad de Lo Espejo, Subsecretaría del Trabajo, SISS, Salsa & Avocado.
+- «DECH UNIMARC» se separó en **DECH** (con su ventana, período por confirmar) y **Unimarc** (solo nombre y logo), porque llegaron dos logos distintos. Confirmar con Coni la relación entre ambas.
+- E-Mach: el archivo entregado era una firma de correo con datos personales de otra persona (nombre, correo y teléfono); se publicó **solo el recorte de la palabra «EMACH»**.
+- El logo de El Búho llegó muy pequeño (40 × 40 px): pedir una versión más grande.
+- Total en la grilla: 41 marcas.

@@ -42,7 +42,8 @@ Todo el contenido está en **`data/demo-content.json`**:
 | --- | --- |
 | `identity` | Correo, LinkedIn, GitHub (académico), Vimeo |
 | `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, imágenes, `position` en el universo) |
-| `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (`logo` opcional) |
+| `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (con `logo`, `logoBg` y `logoMode`) |
+| `otherBrands` | Marcas que por ahora solo tienen nombre y logo (sin ventana) |
 | `personalInterests` | Intereses de Quién soy (nombre, texto, foto) |
 | `contact` | Frase de contacto |
 
@@ -59,7 +60,7 @@ portafoliocfc/
 ├── design/
 │   └── tokens.css          tokens de diseño aprobados originales (no se modifican)
 ├── public/
-│   └── assets/             imágenes, retrato y CV (se copian tal cual al sitio)
+│   └── assets/             imágenes, retrato, CV y logos/ de marcas (se copian tal cual al sitio)
 ├── src/
 │   ├── main.tsx            punto de entrada: carga estilos y monta la app
 │   ├── App.tsx             estados, rutas (#/...) y navegación entre pantallas
