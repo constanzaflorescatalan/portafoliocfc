@@ -94,3 +94,10 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Fondos de ambas mitades con **el mismo oscuro del cielo de la portada** (#08112a → #010205). Cada mitad tiene su centro de luz propio (Diseño a la derecha de su mitad, Informática a la izquierda) y una línea divisoria tenue, para que se lean separadas.
 - **«Explorar» solo aparece al pasar el cursor** por cualquier parte de su mitad (o al enfocarla con teclado), **sin flecha ni línea**. En pantallas táctiles (sin cursor) se muestra siempre, para no ocultar cómo entrar.
 - Hover de Informática: se quitaron los «bloques de interfaz» (rectángulos vacíos que se leían como cajas sin sentido). Ahora solo aparecen fragmentos de código (16 variantes) y, a veces, un cursor parpadeando.
+
+## Universos — ajustes pedidos por Coni
+- Agujero negro: se quitaron «Un poco más de mí» y «Descubrir». Al centro va **«CF» en gris oscuro** (#343a46), apenas visible; se aclara levemente al pasar el cursor. El botón conserva el nombre accesible «Un poco más de mí: ir a Quién soy».
+- Se quitó la etiqueta «Universo / Diseño» (y su equivalente en Informática): queda solo el título y la formación.
+- Composición más arriba: agujero negro al 42 % del espacio (antes 55 %) y proyectos 14 puntos más arriba en `data/demo-content.json`, para reducir el aire bajo la formación.
+- Pie: se quitó «Proyectos de ejemplo · contenido DEMO»; queda «Desliza para ver marcas» a la derecha. Los proyectos siguen siendo DEMO hasta que Coni defina los reales.
+- Nombres de proyecto hasta 280 px de ancho para que no se corten en dos líneas.

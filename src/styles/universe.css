@@ -170,7 +170,7 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
-  max-width: 210px;
+  max-width: 280px;
 }
 
 .orbital__num {
@@ -196,7 +196,7 @@
 .blackhole {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 42%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -264,20 +264,18 @@
   transform: scale(1.1);
 }
 
-.blackhole__label {
-  font-family: var(--font-accent);
-  font-size: 30px;
-  line-height: 1;
-  color: var(--color-text);
+.blackhole__mark {
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #343a46;
+  transition: color 400ms ease;
 }
 
-.blackhole__cue {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-pink);
-  opacity: 0.8;
+.blackhole:hover .blackhole__mark,
+.blackhole:focus-visible .blackhole__mark {
+  color: #4a5160;
 }
 
 /* Absorción hacia el agujero negro antes de abrir Quién soy. */
@@ -296,7 +294,7 @@
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 16px;
   font-size: 10px;

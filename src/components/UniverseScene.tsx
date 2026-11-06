@@ -20,7 +20,6 @@ type Props = {
 export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: Props) {
   const info = WORLDS[world];
   const projects = PROJECTS[world];
-  const hasDemo = projects.some((p) => p.isDemo);
 
   return (
     <section
@@ -32,7 +31,6 @@ export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: P
       <StarField count={90} seed={world === 'design' ? 57 : 91} />
 
       <header className="universe__head">
-        <p className="eyebrow">Universo / {info.title}</p>
         <h1 id="universe-title" className="universe__title" tabIndex={-1} data-autofocus>
           {info.title}
           <span className="universe__dot">.</span>
@@ -68,7 +66,6 @@ export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: P
       </div>
 
       <div className="universe__foot">
-        <span>{hasDemo ? 'Proyectos de ejemplo · contenido DEMO' : `${projects.length} proyectos`}</span>
         <button type="button" className="scroll-cue" onClick={onScrollCue}>
           Desliza para ver marcas <span aria-hidden="true">↓</span>
         </button>
