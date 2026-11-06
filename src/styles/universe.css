@@ -58,7 +58,7 @@
   font-size: clamp(44px, 5.4vw, 92px);
   font-weight: 600;
   line-height: 1.02;
-  letter-spacing: -0.07em;
+  letter-spacing: 0.01em;
 }
 
 .universe__title:focus {
@@ -183,7 +183,7 @@
 .orbital__title {
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   color: var(--color-text);
 }
 

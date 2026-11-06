@@ -74,3 +74,9 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - La estrella de cuatro puntas que recorre la órbita pasa a ser una **luna**: círculo pequeño (r = 10) con sombreado esférico suave, sin brillo.
 - Movimiento de estrellas más perceptible: ciclo de 14 s y amplitud 0,16 (antes 26 s y 0,075, demasiado sutil).
 - Barra de navegación superior más oscura (casi negra, 97 % → 86 %).
+
+## Tipografía — cambio elegido por Coni
+- **Urbanist** reemplaza a DM Sans como tipografía principal en todo el sitio (opción B de la comparación). Sacramento se mantiene para acentos.
+- Se definió en `src/styles/base.css` (`--font-primary`), sin modificar `design/tokens.css`.
+- Se eliminó el espaciado negativo entre letras de títulos y nombre (antes hasta −0,07 em); ahora títulos +0,01/+0,02 em y texto general +0,02 em. Nombre de portada en peso 600.
+- Nombre en portada como «Constanza Flores» (solo C y F en mayúscula), sin `text-transform: uppercase`.
