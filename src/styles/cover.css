@@ -127,15 +127,15 @@
   align-items: center;
   text-align: center;
   border-radius: calc(52 * var(--u));
-  border: 1px solid rgba(235, 233, 232, 0.06);
+  border: 1px solid rgba(235, 233, 232, 0.1);
   background: linear-gradient(
     157deg,
-    rgba(18, 52, 43, 0.74) 2%,
-    rgba(12, 37, 34, 0.7) 60%,
-    rgba(9, 28, 26, 0.76) 100%
+    rgba(22, 64, 52, 0.46) 2%,
+    rgba(15, 46, 41, 0.4) 60%,
+    rgba(11, 35, 32, 0.48) 100%
   );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
   animation: card-in 1100ms 550ms var(--ease-out) backwards;
   transition:
     transform var(--motion-medium) var(--ease-out),
