@@ -107,6 +107,7 @@ portafoliocfc/
 | `00_ESPECIFICACION_COMPLETA.md` | Especificación completa (fuente de verdad) |
 | `01`–`06` | Brief, flujos, animaciones, contenido, responsive y estado original |
 | `07_DECISIONES_NUEVAS.md` | Todo lo cambiado durante la implementación y lo pendiente |
+| `08_SEGURIDAD.md` | Investigación de seguridad y protección de datos, con plan por prioridad |
 | `GIT_PROTOCOLO.md` | Ramas, formato de commits y versiones |
 
 ## Pendiente
