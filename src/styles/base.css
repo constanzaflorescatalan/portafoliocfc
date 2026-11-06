@@ -1,5 +1,6 @@
 /* Variables extra (los tokens aprobados viven en design/tokens.css y no se modifican). */
 :root {
+  color-scheme: dark; /* sitio de un solo aspecto, oscuro */
   --ease-out: cubic-bezier(0.2, 0.76, 0.17, 1);
   --motion-expand: 850ms; /* expansión de la mitad elegida */
   --color-line: rgba(235, 233, 232, 0.12);

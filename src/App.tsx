@@ -15,6 +15,17 @@ import type { AppState, Chapter, NavTarget, Stage, WorldId } from './types';
 const WORLD_BY_PATH: Record<string, WorldId> = { diseno: 'design', informatica: 'tech' };
 const LAST_WORLD_KEY = 'cf:lastWorld';
 
+/** Cambia la URL sin romper la navegación si el navegador bloquea el historial (iframes, vistas previas). */
+function setHash(hash: string, mode: 'push' | 'replace') {
+  if (window.location.hash === hash) return;
+  try {
+    if (mode === 'push') window.history.pushState(null, '', hash);
+    else window.history.replaceState(null, '', hash);
+  } catch {
+    /* sin historial: la app sigue funcionando por estado */
+  }
+}
+
 function readLastWorld(): WorldId {
   try {
     const value = window.sessionStorage.getItem(LAST_WORLD_KEY);
@@ -101,8 +112,7 @@ export default function App() {
   }, []);
 
   const pushHash = useCallback((next: AppState) => {
-    const hash = hashFor(next);
-    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+    setHash(hashFor(next), 'push');
   }, []);
 
   /** Salto directo, sin animación (menú, volver, historial del navegador). */
@@ -181,8 +191,7 @@ export default function App() {
     (chapter: Chapter) => {
       setVisibleChapter(chapter);
       if (stageRef.current !== 'universe' || !state.world) return;
-      const hash = hashFor({ stage: 'universe', world: state.world, chapter });
-      if (window.location.hash !== hash) window.history.replaceState(null, '', hash);
+      setHash(hashFor({ stage: 'universe', world: state.world, chapter }), 'replace');
     },
     [state.world],
   );
