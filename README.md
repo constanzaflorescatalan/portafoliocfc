@@ -1,51 +1,114 @@
 # Portafolio Constanza Flores
 
-React + Vite + TypeScript, CSS propio y tokens de `design/tokens.css`. Sin plantillas.
+Portafolio personal de **Constanza Flores**, diseñadora gráfica senior e ingeniera en informática.
+Hecho desde cero con **React + Vite + TypeScript** y CSS propio, sin plantillas.
 
-## Cómo verlo en tu navegador
+## Cómo verlo en tu computador
 
-Necesitas [Node.js](https://nodejs.org) 20 o superior.
+Necesitas [Node.js](https://nodejs.org) 20 o superior (la versión está en `.nvmrc`).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Se abre solo en `http://localhost:5173`. Para probarlo en el celular (misma red wifi), usa la dirección «Network» que muestra la terminal.
+Se abre en `http://localhost:5173`. Para probarlo en el celular (misma red wifi), usa la dirección «Network» que muestra la terminal.
 
-Otros comandos: `npm run build` (revisa tipos y genera `dist/`), `npm run preview` (sirve ese build).
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo con recarga automática |
+| `npm run build` | Revisa tipos y genera el sitio final en `dist/` |
+| `npm run preview` | Sirve la versión de `dist/` para revisarla |
+| `npm run typecheck` | Solo revisa tipos de TypeScript |
 
-## Estado: etapa 2 (sitio navegable completo, con contenido DEMO)
+## Recorrido del sitio
 
-- **Portada** aprobada, apertura partida en dos y **selector** Diseño / Informática (etapa 1).
-- **Universos**: proyectos como puntos orbitales con nombre visible, agujero negro «Un poco más de mí» al centro.
-- **Casos de estudio** con estrella de regreso y Anterior / Siguiente.
-- **Quién soy**: collage de intereses con ventanas de foto + texto.
-- **Marcas** y **Contacto** como capítulos al hacer scroll bajo el universo.
-- Enlaces directos: `#/` · `#/mundos` · `#/diseno` · `#/informatica` · `#/diseno/<proyecto>` · `#/quien-soy` · `#/marcas` · `#/contacto`.
-- Detalle de decisiones nuevas en `docs/07_DECISIONES_NUEVAS.md`.
+1. **Portada**: foto en círculo con órbita y luna, tarjeta azul oscuro, cielo con estrellas en movimiento. La flecha abre el broche.
+2. **Apertura**: el fondo se parte en dos; la foto se va con la mitad izquierda.
+3. **Selector**: DISEÑO / INFORMÁTICA. Trazos de color o código al pasar el cursor; «Explorar» aparece en la mitad activa.
+4. **Universos**: proyectos como puntos orbitales y agujero negro «CF» que lleva a Quién soy.
+5. **Casos de estudio**: estrella para volver y Anterior / Siguiente.
+6. **Marcas**: grilla de marcas; cada una abre una ventana con período, rol y qué hizo Coni.
+7. **Contacto**: «Tu mensaje será nuestro próximo gran proyecto.», botón Mail que copia el correo, LinkedIn, GitHub, Vimeo y CV.
+8. **Quién soy**: íconos de intereses orbitando alrededor del título; cada uno abre una ventana.
 
-## Cambiar el contenido
+Enlaces directos: `#/` · `#/mundos` · `#/diseno` · `#/informatica` · `#/diseno/<id-proyecto>` · `#/marcas` · `#/contacto` · `#/quien-soy`. El botón «atrás» del navegador funciona.
 
-Todo el contenido editable está en `data/demo-content.json`: proyectos (con su posición en el universo), intereses, marcas y textos de contacto. Las imágenes van en `public/assets/`.
+## Cambiar el contenido (sin tocar código)
 
-## Estructura
+Todo el contenido está en **`data/demo-content.json`**:
+
+| Sección del JSON | Qué controla |
+| --- | --- |
+| `identity` | Correo, LinkedIn, GitHub, Vimeo |
+| `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, imágenes, `position` en el universo) |
+| `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (`logo` opcional) |
+| `personalInterests` | Intereses de Quién soy (nombre, texto, foto) |
+| `contact` | Frase de contacto |
+
+Las imágenes y el CV van en **`public/assets/`** y se nombran en el JSON como `assets/archivo.jpg`.
+Los textos e imágenes marcados con `isDemo: true` son de ejemplo y muestran la etiqueta DEMO.
+
+## Estructura del proyecto
 
 ```
-src/components   TopNav, MobileNav, OpeningTransition, LandingHero, WorldSelector, WorldPanel,
-                 DesignStrokes, CodeFloaters, WorldSite, UniverseScene, OrbitalProject,
-                 BlackHolePortal, ProjectCaseStudy, PersonalCollage, InterestModal,
-                 InterestIcon, BrandGrid, ContactScreen, StarField
-src/data         site.ts (identidad, mundos, menú) y content.ts (lee data/demo-content.json)
-src/styles       base, nav, cover, chooser, universe, chapters, case, about
-public/assets    imágenes DEMO (retrato de referencia, proyectos, intereses) y CV
-design/          tokens.css aprobado (no se modifica)
-docs/            especificación original, 07_DECISIONES_NUEVAS.md y GIT_PROTOCOLO.md
-legacy-prototype prototipo HTML anterior (solo referencia)
+portafoliocfc/
+├── index.html              página base (fuentes, título, metadatos)
+├── data/
+│   └── demo-content.json   contenido editable (proyectos, marcas, intereses, contacto)
+├── design/
+│   └── tokens.css          tokens de diseño aprobados originales (no se modifican)
+├── public/
+│   └── assets/             imágenes, retrato y CV (se copian tal cual al sitio)
+├── src/
+│   ├── main.tsx            punto de entrada: carga estilos y monta la app
+│   ├── App.tsx             estados, rutas (#/...) y navegación entre pantallas
+│   ├── types.ts            tipos compartidos
+│   ├── components/         un componente por pieza de la interfaz (ver abajo)
+│   ├── data/               site.ts (identidad, mundos, menú) · content.ts (lee el JSON)
+│   ├── hooks/              useReducedMotion
+│   ├── lib/                asset (rutas a public/) · motion (duraciones de los tokens)
+│   └── styles/             un archivo CSS por sección
+├── docs/                   especificación y decisiones (ver abajo)
+├── references/             referencias visuales aprobadas y CV original
+└── legacy-prototype/       prototipo HTML anterior (solo referencia, no se publica)
 ```
 
-Todas las imágenes y textos de proyectos son de muestra; el retrato es una **foto de referencia, por reemplazar**.
+### Componentes (`src/components/`)
 
-## Trabajo con Git
+| Pantalla | Componentes |
+| --- | --- |
+| Menú | `TopNav`, `MobileNav` |
+| Portada y apertura | `LandingHero`, `OpeningTransition`, `CoverSky` |
+| Selector | `WorldSelector`, `WorldPanel`, `DesignStrokes`, `CodeFloaters` |
+| Universo + capítulos | `WorldSite`, `UniverseScene`, `OrbitalProject`, `BlackHolePortal`, `StarField` |
+| Casos | `ProjectCaseStudy` |
+| Marcas | `BrandGrid`, `BrandModal` |
+| Contacto | `ContactScreen` |
+| Quién soy | `PersonalCollage`, `InterestIcon`, `InterestModal` |
 
-Ramas, formato de commits y versiones: ver [`docs/GIT_PROTOCOLO.md`](docs/GIT_PROTOCOLO.md).
+### Estilos (`src/styles/`)
+
+| Archivo | Sección |
+| --- | --- |
+| `base.css` | Reset, tipografía (Urbanist), variables extra, utilidades |
+| `nav.css` | Menú de escritorio y móvil |
+| `cover.css` | Portada, cielo, órbita, tarjeta y apertura |
+| `chooser.css` | Selector Diseño / Informática |
+| `universe.css` | Universos, puntos orbitales, agujero negro |
+| `chapters.css` | Marcas y Contacto |
+| `case.css` | Casos de estudio |
+| `about.css` | Quién soy y su ventana |
+
+## Documentación (`docs/`)
+
+| Archivo | Contenido |
+| --- | --- |
+| `00_ESPECIFICACION_COMPLETA.md` | Especificación completa (fuente de verdad) |
+| `01`–`06` | Brief, flujos, animaciones, contenido, responsive y estado original |
+| `07_DECISIONES_NUEVAS.md` | Todo lo cambiado durante la implementación y lo pendiente |
+| `GIT_PROTOCOLO.md` | Ramas, formato de commits y versiones |
+
+## Pendiente
+
+Ver la sección «Pendiente de confirmar» en `docs/07_DECISIONES_NUEVAS.md`: proyectos reales, logos de marcas, fotos y textos de intereses, y algunos datos de marcas por confirmar.

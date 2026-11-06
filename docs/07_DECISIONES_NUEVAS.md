@@ -138,3 +138,25 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **Solo íconos**, sin nombres visibles (el nombre va como etiqueta accesible y en la ventana). Los 9 íconos **orbitan muy lento (140 s por vuelta) alrededor del título** en una elipse, cada uno flotando suavemente; la órbita se detiene al pasar el cursor o enfocar con teclado para poder hacer clic con calma. Círculos azul oscuro translúcidos; al pasar el cursor, borde y ícono rosados.
 - En celular (o pantallas bajas): grilla de 3 × 3 sin órbita. Con `prefers-reduced-motion`: todo quieto.
 - Nuevos intereses a pedido de Coni: **Gemoterapia** (ícono de gema facetada) y **Escultura en arcilla** (ícono de figurita tipo gatito sobre una base). Ahora son 11 íconos en la órbita. Sin foto todavía: la ventana muestra el ícono grande en rosa sobre fondo verde pino oscuro hasta que Coni entregue imagen y texto.
+
+---
+
+# Pendiente de confirmar (resumen al cierre del día)
+
+**Contenido**
+- Proyectos reales de Diseño e Informática (hoy son DEMO).
+- Logos oficiales de las marcas (hoy se muestran los nombres).
+- Fotos y textos de los 11 intereses de Quién soy (hoy son de ejemplo; Gemoterapia y Escultura sin foto).
+
+**Datos de marcas**
+- Nombre correcto de «Pampier» (Castaño).
+- Desde cuándo trabaja con Drei Ventures.
+- Si se mantiene Arbor Counseling Centers.
+- Universidad Central: vía qué agencia y período exacto.
+- DECH UNIMARC: período, rol y vía qué empresa.
+- Clientes de El Búho por confirmar (organismos de gobierno, Ciudad Feliz).
+- Vimeo por confirmar: Subsecretaría/Ministerio del Trabajo, Venezzia Live, La Triada, La Chinita, Mis Recetas Premium, Milkshake.
+
+**Técnico**
+- Estrellas de la portada: Coni las vio solo arriba a la izquierda en su equipo; falta captura y navegador para reproducirlo (sospecha: Safari).
+- Publicación pública (GitHub Pages / Vercel) cuando Coni lo pida.

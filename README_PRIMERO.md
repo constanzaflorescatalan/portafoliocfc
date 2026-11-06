@@ -1,3 +1,5 @@
+> **Documento histórico.** Este fue el archivo de entrega inicial para Claude Code. El estado actual del proyecto está en `README.md` y los cambios en `docs/07_DECISIONES_NUEVAS.md`.
+
 # Portafolio Constanza Flores — Entrega para Claude Code
 
 **Objetivo:** convertir el concepto aprobado en un sitio real, original, responsive y accesible; usar contenido e imágenes de demostración hasta que Coni apruebe la curaduría. **No** usar plantillas comerciales ni inventar trabajos, resultados o credenciales.
