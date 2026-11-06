@@ -34,14 +34,14 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 ## Universo
 - Proyectos como puntos orbitales (círculo rosa + dos contornos finos) con número, nombre y tipo **siempre visibles**. El punto flota suavemente; el texto queda quieto para leerlo y hacer clic con facilidad.
 - Posiciones en `data/demo-content.json` (`position: [x%, y%]`), editables sin tocar código.
-- Tres órbitas punteadas muy tenues alrededor del agujero negro, con desplazamiento lento del punteado (sin brillo).
+- ~~Órbitas punteadas alrededor del agujero negro~~: retiradas para cumplir `docs/00` («sin elementos ornamentales añadidos sin aprobación»).
 - Agujero negro: núcleo negro con disco de acreción tenue que gira lento (rosa/verde pino/lavanda muy bajos). Texto «Un poco más de mí» en Sacramento (acento decorativo) + «Descubrir».
 - Clic en el agujero negro: el universo hace zoom hacia el centro y se desvanece (~0,9 s) y aparece Quién soy.
 - En celular (≤ 760 px) el universo pasa a una lista de dos columnas con el agujero negro arriba (alternativa de lista de docs/05).
 
 ## Caso de estudio
 - Fondo carbón `#0b0d11`. Estrella de cuatro puntas fija arriba a la izquierda con «Volver a Diseño/Informática»; Escape también vuelve.
-- Bloques: Objetivo, Mi aporte, Herramientas, Resultado. Metadatos: Cliente, Agencia/colaboración, Tipo.
+- Bloques: Objetivo, Mi participación (texto de `docs/00`), Herramientas, Resultado. Metadatos: Cliente, Agencia/colaboración, Tipo.
 - Anterior/Siguiente da la vuelta dentro del mismo universo; contador 01 / N.
 
 ## Quién soy
@@ -60,3 +60,6 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 ## Pendiente de definir contigo
 - Proyectos reales, textos e imágenes; logos oficiales.
 - Si se mantienen la flotación de los puntos y el giro del disco del agujero negro.
+
+## Ajustes por la especificación completa (`docs/00`)
+- Marcas y Quién soy pasan a fondo negro carbón; Quién soy suma acentos verde bosque (círculos de íconos y resplandor de fondo muy tenue).

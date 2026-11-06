@@ -31,13 +31,6 @@ export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: P
     >
       <StarField count={90} seed={world === 'design' ? 57 : 91} />
 
-      {/* Órbitas tenues alrededor del agujero negro: solo decoración. */}
-      <svg className="universe__orbits" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <ellipse cx="50" cy="55" rx="16" ry="13" />
-        <ellipse cx="50" cy="55" rx="29" ry="24" />
-        <ellipse cx="50" cy="55" rx="42" ry="35" />
-      </svg>
-
       <header className="universe__head">
         <p className="eyebrow">Universo / {info.title}</p>
         <h1 id="universe-title" className="universe__title" tabIndex={-1} data-autofocus>

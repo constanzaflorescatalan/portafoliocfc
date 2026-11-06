@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
   padding: calc(var(--nav-height) + clamp(24px, 5vh, 56px)) clamp(20px, 4.5vw, 90px) 32px;
-  background: radial-gradient(ellipse 60% 55% at 50% 50%, #0d1322 0%, #04060c 75%);
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 62%, rgba(16, 46, 44, 0.45), transparent 70%),
+    var(--color-charcoal);
   animation: portal-out 900ms var(--ease-out) backwards;
 }
 
@@ -96,6 +98,7 @@
   height: 76px;
   border: 1px solid rgba(235, 233, 232, 0.18);
   border-radius: 50%;
+  background: rgba(16, 46, 44, 0.35);
   transition: border-color 300ms, background 300ms;
 }
 
@@ -129,7 +132,7 @@
 .interest:hover .interest__circle,
 .interest:focus-visible .interest__circle {
   border-color: var(--color-pink);
-  background: rgba(199, 130, 162, 0.08);
+  background: var(--color-pine);
 }
 
 .interest:hover .interest-icon,

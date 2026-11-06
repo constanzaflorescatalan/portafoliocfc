@@ -6,7 +6,6 @@ import { WORLDS } from '../data/site';
 import type { WorldId } from '../types';
 import { InterestIcon } from './InterestIcon';
 import { InterestModal } from './InterestModal';
-import { StarField } from './StarField';
 
 type Props = { world: WorldId; onBack: () => void };
 
@@ -20,8 +19,6 @@ export function PersonalCollage({ world, onBack }: Props) {
 
   return (
     <section className="about" aria-labelledby="about-title">
-      <StarField count={60} seed={23} />
-
       <button type="button" className="about__back" onClick={onBack}>
         <span aria-hidden="true">←</span> Volver a {WORLDS[world].title}
       </button>

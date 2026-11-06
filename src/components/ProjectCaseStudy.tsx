@@ -44,7 +44,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
 
   const blocks = [
     { label: 'Objetivo', text: project.goal },
-    { label: 'Mi aporte', text: project.contribution },
+    { label: 'Mi participación', text: project.contribution },
     { label: 'Herramientas', text: project.tools.length ? project.tools.join(' · ') : 'Por definir (DEMO)' },
     { label: 'Resultado', text: project.result },
   ];
