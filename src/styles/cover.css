@@ -111,7 +111,7 @@
 }
 
 /*
-  Tarjeta verde pino, más oscura y translúcida (deja ver el cielo detrás).
+  Tarjeta de vidrio azul oscuro (pedido de Coni; antes verde pino).
   Arriba en 510: la órbita baja hasta ~485, así no la toca; la foto (hasta 528) aún se apoya en ella.
 */
 .hero__card {
@@ -126,15 +126,17 @@
   align-items: center;
   text-align: center;
   border-radius: calc(52 * var(--u));
-  border: 1px solid rgba(235, 233, 232, 0.1);
-  background: linear-gradient(
-    157deg,
-    rgba(22, 64, 52, 0.46) 2%,
-    rgba(15, 46, 41, 0.4) 60%,
-    rgba(11, 35, 32, 0.48) 100%
-  );
-  -webkit-backdrop-filter: blur(1.5px);
-  backdrop-filter: blur(1.5px);
+  /* Vidrio esmerilado azul oscuro: deja ver el cielo difuminado detrás. */
+  border: 1px solid rgba(190, 210, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(150deg, rgba(34, 52, 104, 0.42) 0%, rgba(14, 24, 56, 0.36) 55%, rgba(8, 14, 34, 0.46) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
+    0 24px 60px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
   animation: card-in 1100ms 550ms var(--ease-out) backwards;
   transition:
     transform var(--motion-medium) var(--ease-out),
