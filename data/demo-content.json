@@ -392,22 +392,16 @@
       "logoBg": "#ffffff"
     },
     {
-      "organization": "DECH",
+      "organization": "DECH · Unimarc",
       "kind": "Cliente",
       "role": "Por confirmar",
       "period": "Por confirmar",
       "summary": "Detalle por confirmar.",
       "showOrganization": true,
-      "brands": [
-        {
-          "name": "Unimarc",
-          "nameOnly": true,
-          "logo": "assets/logos/unimarc.webp",
-          "logoBg": "#ffffff"
-        }
-      ],
-      "logo": "assets/logos/dech.webp",
-      "logoBg": "#ffffff"
+      "brands": [],
+      "logo": "assets/logos/dech-unimarc.webp",
+      "logoBg": "#ffffff",
+      "logoTall": true
     },
     {
       "organization": "El Búho Comunicaciones",
@@ -482,18 +476,34 @@
           "logoBg": "#f9fdfd"
         },
         {
+          "name": "Municipalidad de Lo Espejo",
+          "logo": "assets/logos/lo-espejo.webp",
+          "logoBg": "#ffffff",
+          "nameOnly": true
+        },
+        {
           "name": "Servicio de Registro Civil",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/registro-civil.webp",
-          "logoBg": "#ffffff",
-          "logoMode": "badge"
+          "logoBg": "#ef3f44"
         },
         {
           "name": "SUBDERE",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/subdere.webp",
+          "logoBg": "#ef3f44"
+        },
+        {
+          "name": "Subsecretaría del Trabajo",
+          "logo": "assets/logos/subsecretaria-trabajo.webp",
+          "logoBg": "#ef3f44",
+          "nameOnly": true
+        },
+        {
+          "name": "SISS",
+          "logo": "assets/logos/siss.webp",
           "logoBg": "#ffffff",
-          "logoMode": "badge"
+          "nameOnly": true
         }
       ],
       "logo": "assets/logos/brecha-digital.webp",
@@ -520,8 +530,7 @@
     {
       "name": "Zetering",
       "logo": "assets/logos/zetering.webp",
-      "logoBg": "#ffffff",
-      "logoMode": "badge"
+      "logoBg": "#ffffff"
     },
     {
       "name": "Loz Takos",
@@ -551,22 +560,6 @@
     {
       "name": "Apoquindo Centro de Entrenamiento",
       "logo": "assets/logos/apoquindo.webp",
-      "logoBg": "#ffffff"
-    },
-    {
-      "name": "Municipalidad de Lo Espejo",
-      "logo": "assets/logos/lo-espejo.webp",
-      "logoBg": "#ffffff"
-    },
-    {
-      "name": "Subsecretaría del Trabajo",
-      "logo": "assets/logos/subsecretaria-trabajo.webp",
-      "logoBg": "#ffffff",
-      "logoMode": "badge"
-    },
-    {
-      "name": "SISS",
-      "logo": "assets/logos/siss.webp",
       "logoBg": "#ffffff"
     },
     {

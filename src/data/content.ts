@@ -53,6 +53,8 @@ export type Brand = {
   logoBg?: string;
   /** `silhouette`: blanco en reposo · `badge`: insignia en grises en reposo. */
   logoMode: 'silhouette' | 'badge';
+  /** Logo alto (dos logos apilados): se muestra con más altura. */
+  logoTall: boolean;
   /** true si el fondo original es claro (el texto bajo el logo se oscurece al pasar el cursor). */
   lightBg: boolean;
   /** false = solo nombre y logo, sin ventana de detalle (por completar). */
@@ -87,7 +89,7 @@ export const CONTACT = {
   cv: 'assets/Constanza_Flores_CV.pdf',
 };
 
-type RawLogo = { logo?: string; logoBg?: string; logoMode?: string };
+type RawLogo = { logo?: string; logoBg?: string; logoMode?: string; logoTall?: boolean };
 type RawBrand = RawLogo & { name: string; relation?: string; detail?: string; nameOnly?: boolean };
 type RawExperience = RawLogo & {
   organization: string;
@@ -112,6 +114,7 @@ function logoFields(o: RawLogo) {
     logo: o.logo,
     logoBg: o.logoBg,
     logoMode: (o.logoMode === 'badge' ? 'badge' : 'silhouette') as Brand['logoMode'],
+    logoTall: Boolean(o.logoTall),
     lightBg: isLight(o.logoBg),
   };
 }

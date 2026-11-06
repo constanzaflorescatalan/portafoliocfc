@@ -115,6 +115,10 @@ button.brand {
   opacity: 0.8;
 }
 
+.brand--tall .brand__logo {
+  max-height: 104px;
+}
+
 .brand--badge .brand__logo {
   filter: grayscale(1) brightness(1.35) contrast(0.85);
   opacity: 0.42;
