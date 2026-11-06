@@ -87,11 +87,12 @@ Lo honesto primero: **no existe forma de impedir al 100 % que alguien guarde una
 
 Ojo con las **marcas de clientes**: antes de publicar logos y piezas de clientes (Proust House, HEAD, Castaño, municipalidades, etc.), confirma que tienes permiso para mostrarlas, sobre todo si hubo acuerdos de confidencialidad.
 
-**3.5 Robots de IA y *scraping***
-- Crear `public/robots.txt` que pida a los robots de IA (GPTBot, ClaudeBot, Google-Extended, CCBot, etc.) no usar el sitio. Los robots serios lo respetan.
-- En Cloudflare: activar *Security → Bots → Block AI Scrapers and Crawlers*. La documentación de Cloudflare indica que está en todos los planes.
+**3.5 Robots de IA y *scraping*** — *actualizado (sesión 2)*
+- **Decisión de Coni: priorizar la visibilidad.** Se permite a todos los buscadores y robots de IA, para aparecer cuando un reclutador busque con ChatGPT, Claude, Perplexity o Gemini. Solo se bloquea Bytespider. Ver `07_DECISIONES_NUEVAS.md`.
+- Las imágenes se cuidan con tamaño web, marca de agua y aviso de derechos (punto 3.4), no bloqueando robots.
+- Si en el futuro se quiere frenar solo el entrenamiento de IA sin perder la búsqueda: bloquear GPTBot, ClaudeBot, CCBot y Google-Extended, y mantener permitidos OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User y Perplexity-User.
 
-**3.6 Correo contra spam**
+**3.6 Correo contra spam** — *nota: el correo ahora es legible en la ficha Schema.org y el texto de respaldo, por decisión de visibilidad*
 - Ya no se muestra el correo como texto (el botón «Mail» lo copia). Se puede además **guardar el correo codificado** en el código y armarlo solo al hacer clic, para que los robots de spam no lo encuentren.
 - Opcional: usar un **correo exclusivo para el portafolio** o un alias.
 
@@ -116,7 +117,7 @@ Ojo con las **marcas de clientes**: antes de publicar logos y piezas de clientes
 3. [ ] Activar 2FA en GitHub, más Dependabot, secret scanning y protección de `main`.
 4. [ ] Elegir hosting (recomendado: Cloudflare Pages o Vercel).
 5. [x] Agregar el archivo de cabeceras de seguridad (`_headers` o `vercel.json`) con CSP, HSTS, etc. ✅ (sesión 2)
-6. [x] Agregar `robots.txt` con bloqueo de robots de IA. ✅ (sesión 2)
+6. [x] `robots.txt` ✅ (sesión 2; luego abierto a robots de IA para visibilidad)
 7. [x] Alojar las fuentes en el sitio. ✅ (sesión 2)
 8. [x] Codificar el correo en el código. ✅ (sesión 2)
 9. [ ] Agregar el aviso de derechos de autor en el pie.

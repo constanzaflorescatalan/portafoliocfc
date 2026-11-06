@@ -171,3 +171,11 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - **Notas internas fuera del sitio publicado**: se detectó que el JSON completo (con notas como «por confirmar con Coni» y la revisión de Vimeo) viajaba en el código del sitio. Se quitaron esas notas del JSON (siguen en este documento) y el sitio importa solo las secciones que muestra. Regla: **todo lo que está en `data/demo-content.json` es público**.
 - **Accesibilidad**: la estrella de volver del caso de estudio tiene nombre accesible también en celular; los textos tenues subieron de 45 % a 60 % de opacidad para cumplir contraste AA. Revisión con axe-core: 0 problemas en 16 pantallas.
 - Contacto: el enlace de **GitHub apunta a la cuenta académica github.com/Confloresc** (pedido de Coni), en vez de la cuenta del proyecto.
+
+## Visibilidad para buscadores e IA (decisión de Coni)
+- Prioridad: **que reclutadores y clientes la encuentren**, también a través de asistentes de IA (ChatGPT, Claude, Perplexity, Gemini).
+- `public/robots.txt`: se **permite a todos** los buscadores y robots de IA (búsqueda, asistentes y entrenamiento). Único bloqueo: **Bytespider** (recopilación agresiva, sin aporte de visibilidad). Reemplaza el bloqueo amplio anterior.
+- **Ficha Schema.org (tipo Person)** en el `<head>` de `index.html`: nombre, profesiones, descripción, correo, Santiago (CL), estudios (UDP 2016, Duoc UC 2025), especialidades, idiomas y perfiles (LinkedIn, GitHub académico, Vimeo, Figma). Invisible para visitantes. Al tener dominio, agregar `"url"`.
+- **Texto de respaldo** en `<noscript>` con el mismo resumen y enlaces: lo leen robots que no ejecutan JavaScript y personas sin JavaScript; no aparece en el sitio normal.
+- El **correo queda legible** en la ficha y el respaldo (decisión consciente: canal de contacto directo; Gmail filtra el spam). En el código interactivo sigue protegido.
+- Descripción del sitio (`meta description`) con palabras clave: diseño UX/UI, diseño web, branding, Santiago de Chile.
