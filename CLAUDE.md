@@ -3,6 +3,7 @@
 Eres el agente de implementación de una web personal original para una diseñadora gráfica senior e ingeniera en informática. Hablar con la usuaria en español de Chile. **Prioridad: reproducir decisiones aprobadas, no reinventar diseño.**
 
 ## Fuente de verdad
+- **`docs/00_ESPECIFICACION_COMPLETA.md` es la especificación completa y fuente de verdad principal.** Antes de cambiar algo aprobado, preguntar.
 - Leer `docs/01_BRIEF_Y_DECISIONES.md` hasta `docs/05_RESPONSIVE_ACCESIBILIDAD_QA.md` antes de escribir componentes.
 - Usar `design/tokens.css`; mantener DM Sans + Sacramento, colores aprobados.
 - Datos de prueba desde `data/demo-content.json`; no presentarlos como experiencia real de la usuaria.
