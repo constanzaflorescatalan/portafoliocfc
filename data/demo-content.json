@@ -1,7 +1,8 @@
 {
   "meta": {
     "status": "DEMO — reemplazar antes de publicar",
-    "language": "es-CL"
+    "language": "es-CL",
+    "note": "Datos DEMO. 'position' = [x%, y%] del punto orbital en el universo (escritorio)."
   },
   "identity": {
     "name": "Constanza Flores",
@@ -23,30 +24,94 @@
           "id": "demo-diseno-01",
           "title": "Proyecto demo de Diseño 01",
           "isDemo": true,
+          "type": "Diseño editorial (DEMO)",
           "client": "Marca ficticia (DEMO)",
           "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
           "goal": "Texto de ejemplo. Pendiente de reemplazar.",
           "contribution": "Participación por definir, no atribuir todavía.",
           "tools": [],
           "result": "Resultado sin definir (DEMO)",
-          "image": "legacy-prototype/assets/demo_diseno_01.jpg"
+          "image": "assets/demo_diseno_01.jpg",
+          "gallery": [
+            "assets/demo_diseno_02.jpg",
+            "assets/demo_diseno_03.jpg"
+          ],
+          "position": [
+            22,
+            40
+          ]
         },
         {
           "id": "demo-diseno-02",
           "title": "Proyecto demo de Diseño 02",
           "isDemo": true,
+          "type": "Diseño de producto (DEMO)",
           "client": "Marca ficticia (DEMO)",
           "agency": "Sin asignar (DEMO)",
-          "goal": "Texto de ejemplo.",
-          "contribution": "Pendiente.",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
           "tools": [],
-          "result": "Pendiente.",
-          "image": "legacy-prototype/assets/demo_diseno_02.jpg"
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_diseno_02.jpg",
+          "gallery": [
+            "assets/demo_diseno_03.jpg",
+            "assets/demo_diseno_04.jpg"
+          ],
+          "position": [
+            77,
+            34
+          ]
+        },
+        {
+          "id": "demo-diseno-03",
+          "title": "Proyecto demo de Diseño 03",
+          "isDemo": true,
+          "type": "Campaña gráfica (DEMO)",
+          "client": "Marca ficticia (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
+          "tools": [],
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_diseno_03.jpg",
+          "gallery": [
+            "assets/demo_diseno_01.jpg",
+            "assets/demo_diseno_04.jpg"
+          ],
+          "position": [
+            24,
+            78
+          ]
+        },
+        {
+          "id": "demo-diseno-04",
+          "title": "Proyecto demo de Diseño 04",
+          "isDemo": true,
+          "type": "Audiovisual (DEMO)",
+          "client": "Marca ficticia (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
+          "tools": [],
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_diseno_04.jpg",
+          "gallery": [
+            "assets/demo_diseno_03.jpg",
+            "assets/demo_diseno_01.jpg"
+          ],
+          "position": [
+            78,
+            74
+          ]
         }
       ]
     },
     {
-      "id": "informatics",
+      "id": "tech",
       "title": "INFORMÁTICA",
       "degree": "Ingeniería en Informática · Duoc UC · Título profesional · 2025",
       "projects": [
@@ -54,12 +119,67 @@
           "id": "demo-informatica-01",
           "title": "Proyecto demo de Informática 01",
           "isDemo": true,
-          "client": "Ejemplo no real",
-          "goal": "Texto de ejemplo.",
-          "contribution": "Pendiente de validar.",
+          "type": "Desarrollo web (DEMO)",
+          "client": "Ejemplo no real (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
           "tools": [],
-          "result": "Pendiente.",
-          "image": "legacy-prototype/assets/demo_info_01.jpg"
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_info_01.jpg",
+          "gallery": [
+            "assets/demo_info_02.jpg",
+            "assets/demo_info_03.jpg"
+          ],
+          "position": [
+            23,
+            42
+          ]
+        },
+        {
+          "id": "demo-informatica-02",
+          "title": "Proyecto demo de Informática 02",
+          "isDemo": true,
+          "type": "UX/UI (DEMO)",
+          "client": "Ejemplo no real (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
+          "tools": [],
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_info_02.jpg",
+          "gallery": [
+            "assets/demo_info_03.jpg",
+            "assets/demo_info_01.jpg"
+          ],
+          "position": [
+            78,
+            36
+          ]
+        },
+        {
+          "id": "demo-informatica-03",
+          "title": "Proyecto demo de Informática 03",
+          "isDemo": true,
+          "type": "Aplicación (DEMO)",
+          "client": "Ejemplo no real (DEMO)",
+          "agency": "Sin asignar (DEMO)",
+          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
+          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
+          "contribution": "Participación por definir, no atribuir todavía.",
+          "tools": [],
+          "result": "Resultado sin definir (DEMO)",
+          "image": "assets/demo_info_03.jpg",
+          "gallery": [
+            "assets/demo_info_01.jpg",
+            "assets/demo_info_02.jpg"
+          ],
+          "position": [
+            30,
+            79
+          ]
         }
       ]
     }
@@ -105,63 +225,99 @@
       "name": "Gym",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_gym.jpg"
+      "image": "assets/demo_hobby_gym.jpg",
+      "position": [
+        12,
+        34
+      ]
     },
     {
       "id": "cocina",
       "name": "Cocina",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_cocina.jpg"
+      "image": "assets/demo_hobby_cocina.jpg",
+      "position": [
+        31,
+        26
+      ]
     },
     {
       "id": "animales",
       "name": "Animales",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_animales.jpg"
+      "image": "assets/demo_hobby_animales.jpg",
+      "position": [
+        52,
+        40
+      ]
     },
     {
       "id": "tarot",
       "name": "Tarot",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_tarot.jpg"
+      "image": "assets/demo_hobby_tarot.jpg",
+      "position": [
+        72,
+        24
+      ]
     },
     {
       "id": "herbolaria",
       "name": "Herbolaria",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_herbolaria.jpg"
+      "image": "assets/demo_hobby_herbolaria.jpg",
+      "position": [
+        89,
+        44
+      ]
     },
     {
       "id": "dibujo",
       "name": "Dibujo",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_dibujo.jpg"
+      "image": "assets/demo_hobby_dibujo.jpg",
+      "position": [
+        18,
+        74
+      ]
     },
     {
       "id": "pintura",
       "name": "Pintura",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_pintura.jpg"
+      "image": "assets/demo_hobby_pintura.jpg",
+      "position": [
+        40,
+        68
+      ]
     },
     {
       "id": "jabones",
       "name": "Jabones",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_jabones.jpg"
+      "image": "assets/demo_hobby_jabones.jpg",
+      "position": [
+        63,
+        77
+      ]
     },
     {
       "id": "velas",
       "name": "Velas",
       "isDemo": true,
       "description": "Texto personal de ejemplo, por escribir.",
-      "image": "legacy-prototype/assets/demo_hobby_velas.jpg"
+      "image": "assets/demo_hobby_velas.jpg",
+      "position": [
+        83,
+        71
+      ]
     }
   ],
   "contact": {
