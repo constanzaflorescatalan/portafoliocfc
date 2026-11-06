@@ -109,3 +109,10 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - El texto bajo cada nombre se mantiene por ahora (Coni lo pidió así hasta tener logos).
 - Marcas agregadas según el CV y lo que contó Coni: HEAD Chile y Calú Bags (Maletas Chile SpA), Patagonia Donas (Castaño), Municipalidad de La Granja, Municipalidad de La Pintana y SUBDERE (clientes vía Brecha Digital Consultores), El Búho Comunicaciones, MujerActual, Hijas del Caldero, Brecha Digital Consultores, E-Mach Card.
 - **Pendiente de confirmar con Coni** (no se publican hasta confirmar): nombre de la marca de pan de Castaño; escritura de «Pampier»; desde cuándo trabaja con Drei Ventures (hoy dice solo «Actualidad»); clientes de El Búho (ej. «Isa» y organismos de gobierno); si Arbor Counseling Centers se mantiene (está en el CV anterior, no en el ATS).
+
+### Marcas encontradas en Vimeo (vimeo.com/conoflor, 76 videos revisados por título y miniatura)
+- **Castaño** (videos 2022): Kingsbury (la «marca de pan»: Pan Perfecto, 50/50, Wholegrain), **Patagonia Donuts** (así aparece en el logo; antes decía «Patagonia Donas»), Café Castaño y Ándale (tortillas Castaño).
+- **Brecha Digital Consultores** (videos 2020 marcados «derechos agencia b.digital»): se suman Municipalidad de Independencia, Municipalidad de Puerto Montt y Servicio de Registro Civil (Clave Única). La Pintana se confirma por el logo del Departamento de Salud Municipal en la serie del tigre (2021).
+- **El Búho Comunicaciones**: ISA InterChile (videos 2019 y 2021; Coni lo mencionó como cliente de El Búho).
+- Pendientes de confirmar con Coni (en `vimeoReview` del JSON): Subsecretaría/Ministerio del Trabajo (¿vía Brecha o El Búho?), Universidad Central, Venezzia Live, La Triada, La Chinita, Mis Recetas Premium, Milkshake, Ciudad Feliz; y «Pampier», que no aparece en los videos.
+- Los trabajos universitarios de 2014 (Good Girl, Urbano, Programa, ONG, etc.) no se agregan como marcas.

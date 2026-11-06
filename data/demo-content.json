@@ -362,11 +362,19 @@
       "showOrganization": true,
       "brands": [
         {
-          "name": "Patagonia Donas"
+          "name": "Kingsbury"
+        },
+        {
+          "name": "Patagonia Donuts"
+        },
+        {
+          "name": "Café Castaño"
+        },
+        {
+          "name": "Ándale"
         }
       ],
       "pendingBrands": [
-        "Marca de pan (nombre por confirmar)",
         "Pampier (escritura por confirmar)"
       ]
     },
@@ -386,9 +394,15 @@
       "period": "2016 – 2022",
       "summary": "Piezas para proyectos de marketing y publicidad, adaptadas a distintos clientes y formatos.",
       "showOrganization": true,
-      "brands": [],
+      "brands": [
+        {
+          "name": "ISA InterChile",
+          "relation": "Cliente vía El Búho Comunicaciones"
+        }
+      ],
       "pendingBrands": [
-        "Clientes por confirmar con Coni (ej. «Isa» y organismos de gobierno)"
+        "Otros organismos de gobierno (por confirmar)",
+        "Ciudad Feliz (video 2016, por confirmar)"
       ]
     },
     {
@@ -426,6 +440,18 @@
           "relation": "Cliente vía Brecha Digital Consultores"
         },
         {
+          "name": "Municipalidad de Independencia",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        },
+        {
+          "name": "Municipalidad de Puerto Montt",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        },
+        {
+          "name": "Servicio de Registro Civil",
+          "relation": "Cliente vía Brecha Digital Consultores"
+        },
+        {
           "name": "SUBDERE",
           "relation": "Cliente vía Brecha Digital Consultores"
         }
@@ -440,5 +466,17 @@
       "showOrganization": true,
       "brands": []
     }
-  ]
+  ],
+  "vimeoReview": {
+    "source": "https://vimeo.com/conoflor (76 videos revisados por miniatura y título)",
+    "pendingToConfirm": [
+      "Subsecretaría / Ministerio del Trabajo (2019): ¿vía Brecha Digital o El Búho?",
+      "Universidad Central (2019)",
+      "Venezzia Live (2019)",
+      "La Triada (2019, junto a Hijas del Caldero)",
+      "La Chinita (app, 2017)",
+      "Mis Recetas Premium (app, 2016)",
+      "Milkshake (reel 2014)"
+    ]
+  }
 }

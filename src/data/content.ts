@@ -82,7 +82,10 @@ const BRAND_COLORS: Record<string, string> = {
   'HEAD Chile': '#E6C0A2',
   'Calú Bags': '#D9B9C9',
   Castaño: '#D8BBA6',
-  'Patagonia Donas': '#E2C7A0',
+  Kingsbury: '#9EC3E0',
+  'Patagonia Donuts': '#C3A7DD',
+  'Café Castaño': '#C9A27E',
+  Ándale: '#E3C76E',
   'R Medy': '#A5B8D0',
   'El Búho Comunicaciones': '#C9B79C',
   MujerActual: '#D9A5B8',
@@ -92,6 +95,10 @@ const BRAND_COLORS: Record<string, string> = {
   'Municipalidad de La Granja': '#A9C7B5',
   'Municipalidad de La Pintana': '#B7C2DA',
   SUBDERE: '#C9B3C9',
+  'Municipalidad de Independencia': '#D8A9B6',
+  'Municipalidad de Puerto Montt': '#9FBFD9',
+  'Servicio de Registro Civil': '#B0BEDC',
+  'ISA InterChile': '#A8C8D8',
 };
 
 type RawExperience = {
