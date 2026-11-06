@@ -86,3 +86,6 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Más abajo (arriba en 510 en vez de 488): ya no toca la órbita de la luna (que baja hasta ~485); la foto aún se apoya sobre ella.
 - Verde pino más oscuro y **claramente translúcido** (≈ 40–48 % de opacidad, desenfoque mínimo de 1,5 px) para que se vean el cielo y las estrellas detrás; borde tenue al 10 %.
 - Orden de la tarjeta: **Constanza Flores → línea rosada → Diseñadora Gráfica Senior · Ingeniera en Informática · UX/UI → Santiago de Chile** (antes la línea iba después de los títulos).
+- Se eliminaron de la portada «Santiago de Chile», el botón «Entrar al universo» y la nota «Prototipo con contenido de ejemplo».
+- En su lugar, dentro de la tarjeta, una **flecha hacia abajo** en un círculo fino que se mueve suavemente (invita a hacer clic sin texto). Es un botón accesible («Entrar al portafolio») para teclado y lector de pantalla; con el ratón se puede hacer clic en todo el conjunto. Sin movimiento con `prefers-reduced-motion`.
+- Al quitar la barra inferior, la composición de la portada usa más alto de pantalla y se ve más grande.

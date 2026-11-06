@@ -3,8 +3,7 @@
   (lienzo de 750×970 unidades, tomado de la portada aprobada a 1920×1080) quepa en alto y en ancho.
 */
 .cover {
-  /* 112px abajo se reservan para el botón "Entrar" y su nota. */
-  --u: min(calc((100svh - var(--nav-height) - 112px - 16px) / 970), calc(100vw / 780));
+  --u: min(calc((100svh - var(--nav-height) - 24px - 16px) / 970), calc(100vw / 780));
   /* Color de la órbita, el contorno del círculo y la estrella (antes rosa; ver docs/07). */
   --orbit-color: rgba(235, 233, 232, 0.78);
   position: fixed;
@@ -12,7 +11,7 @@
   z-index: 50;
   display: grid;
   place-items: center;
-  padding: var(--nav-height) 0 112px;
+  padding: var(--nav-height) 0 24px;
 }
 
 /* Las dos mitades del fondo negro. */
@@ -171,20 +170,43 @@
   background: var(--color-pink);
 }
 
-.hero__location {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: calc(12 * var(--u));
-  font-size: calc(26 * var(--u));
-  font-style: italic;
-  color: #e7d6dd;
+.hero__enter {
+  display: grid;
+  place-items: center;
+  width: calc(64 * var(--u));
+  height: calc(64 * var(--u));
+  border: 1px solid rgba(235, 233, 232, 0.3);
+  border-radius: 50%;
+  color: var(--color-pink);
+  transition: border-color var(--motion-short), background var(--motion-short);
 }
 
-.hero__pin {
-  width: calc(26 * var(--u));
-  height: calc(26 * var(--u));
-  fill: var(--color-pink);
+.hero__enter svg {
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: enter-nudge 2.2s ease-in-out 2s infinite;
+}
+
+/* La zona clicable cubre la tarjeta: el hover se lee desde el conjunto. */
+.hero:hover .hero__enter,
+.hero__enter:focus-visible {
+  border-color: var(--color-pink);
+  background: rgba(199, 130, 162, 0.1);
+}
+
+@keyframes enter-nudge {
+  0%,
+  100% {
+    transform: translateY(-12%);
+  }
+  50% {
+    transform: translateY(14%);
+  }
 }
 
 /* Retrato + órbita (se van hacia la izquierda con la mitad izquierda del fondo). */
@@ -270,33 +292,7 @@
 }
 
 /* Acción inferior */
-.cover__bottom {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  right: 0;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  transition: opacity var(--motion-medium) ease;
-}
-
-.cover.is-opening .cover__bottom {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.cover__demo {
-  margin: 0;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-@keyframes photo-in {
+.cover.is-opening @keyframes photo-in {
   from {
     opacity: 0;
     transform: scale(0.94);
@@ -323,6 +319,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero__enter svg {
+    animation: none;
+  }
+
   .sky__twinkle {
     animation: none;
     opacity: 0.5;

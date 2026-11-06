@@ -51,14 +51,6 @@ function OrbitMoon({ half }: { half: 'front' | 'back' }) {
   );
 }
 
-function PinIcon() {
-  return (
-    <svg className="hero__pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
-    </svg>
-  );
-}
-
 export function LandingHero({ opening, reduced, onEnter }: Props) {
   const orbitTransform = `translate(${ORBIT.cx} ${ORBIT.cy}) rotate(${ORBIT.rotate})`;
 
@@ -71,10 +63,18 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           <p className="hero__headline">
             <span>{IDENTITY.headline[0]}</span> <span>{IDENTITY.headline[1]}</span>
           </p>
-          <p className="hero__location">
-            <PinIcon />
-            <span>{IDENTITY.location}</span>
-          </p>
+          {/* Flecha que invita a entrar (sin texto). Control accesible por teclado. */}
+          <button
+            type="button"
+            className="hero__enter"
+            aria-label="Entrar al portafolio"
+            disabled={opening}
+            onClick={onEnter}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M6 13l6 6 6-6" />
+            </svg>
+          </button>
         </div>
 
         <div className="hero__portrait">
@@ -111,7 +111,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           </svg>
         </div>
 
-        {/* Zona clicable del "broche" para ratón y toque. El control accesible es el botón de abajo. */}
+        {/* Zona clicable del "broche" para ratón y toque. El control accesible es la flecha de la tarjeta. */}
         <button
           type="button"
           className="hero__clasp"
@@ -122,12 +122,6 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
         />
       </div>
 
-      <div className="cover__bottom">
-        <button type="button" className="enter-btn" disabled={opening} onClick={onEnter}>
-          Entrar al universo <span aria-hidden="true">↗</span>
-        </button>
-        <p className="cover__demo">Prototipo con contenido de ejemplo</p>
-      </div>
     </>
   );
 }
