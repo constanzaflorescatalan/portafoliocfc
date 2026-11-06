@@ -4,7 +4,7 @@
   inset: 0;
   z-index: 20;
   display: flex;
-  background: var(--color-universe);
+  background: #010205;
 }
 
 .panel {
@@ -18,7 +18,7 @@
   place-items: center;
   text-align: center;
   color: var(--color-text);
-  background: radial-gradient(ellipse at 70% 45%, #0b1326, var(--color-universe) 72%);
+  background: radial-gradient(ellipse 85% 70% at 62% 46%, #08112a 0%, #050b1a 40%, #03060f 72%, #010205 100%);
   transition:
     flex-grow var(--motion-expand) var(--ease-out),
     opacity calc(var(--motion-expand) * 0.7) ease,
@@ -26,11 +26,11 @@
 }
 
 .panel--tech {
-  background: radial-gradient(ellipse at 30% 50%, #0a1424, var(--color-universe) 72%);
+  background: radial-gradient(ellipse 85% 70% at 38% 50%, #071328 0%, #040b18 40%, #02060e 72%, #010205 100%);
 }
 
 .panel + .panel {
-  border-left: 1px solid var(--color-line);
+  border-left: 1px solid rgba(235, 233, 232, 0.1);
 }
 
 .panel:focus-visible {
@@ -61,19 +61,33 @@
   white-space: nowrap;
 }
 
+/* «Explorar» solo aparece al pasar el cursor por cualquier parte de su mitad (o al enfocarla). */
 .panel__cue {
   padding: 8px 4px;
-  border-bottom: 1px solid var(--color-pink-soft);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--color-pink);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 350ms ease,
+    transform 450ms var(--ease-out);
 }
 
-.panel__cue span {
-  margin-left: 10px;
-  font-size: 15px;
+.panel:hover .panel__cue,
+.panel:focus-visible .panel__cue {
+  opacity: 1;
+  transform: none;
+}
+
+/* En pantallas táctiles no hay cursor: se muestra siempre para no ocultar cómo entrar. */
+@media (hover: none) {
+  .panel__cue {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .chooser__hint {

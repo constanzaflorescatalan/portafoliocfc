@@ -51,7 +51,7 @@ export function WorldPanel({ world, reduced, onChoose, buttonRef }: Props) {
       <span className="panel__label">
         <span className="panel__title">{info.selectorTitle}</span>
         <span className="panel__cue">
-          Explorar <span aria-hidden="true">↗</span>
+          Explorar
         </span>
       </span>
     </button>

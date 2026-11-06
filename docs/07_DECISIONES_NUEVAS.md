@@ -89,3 +89,7 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Se eliminaron de la portada «Santiago de Chile», el botón «Entrar al universo» y la nota «Prototipo con contenido de ejemplo».
 - En su lugar, dentro de la tarjeta, una **flecha hacia abajo** en un círculo fino que se mueve suavemente (invita a hacer clic sin texto). Es un botón accesible («Entrar al portafolio») para teclado y lector de pantalla; con el ratón se puede hacer clic en todo el conjunto. Sin movimiento con `prefers-reduced-motion`.
 - Al quitar la barra inferior, la composición de la portada usa más alto de pantalla y se ve más grande.
+
+## Selector Diseño / Informática — ajustes pedidos por Coni
+- Fondos de ambas mitades con **el mismo oscuro del cielo de la portada** (#08112a → #010205). Cada mitad tiene su centro de luz propio (Diseño a la derecha de su mitad, Informática a la izquierda) y una línea divisoria tenue, para que se lean separadas.
+- **«Explorar» solo aparece al pasar el cursor** por cualquier parte de su mitad (o al enfocarla con teclado), **sin flecha ni línea**. En pantallas táctiles (sin cursor) se muestra siempre, para no ocultar cómo entrar.
