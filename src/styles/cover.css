@@ -160,6 +160,44 @@
   color: #ece4e4;
 }
 
+/* Títulos ↔ presentación: el alto de la tarjeta cambia suave (filas 1fr/0fr). */
+.hero__swap {
+  display: grid;
+  grid-template-rows: 1fr 0fr;
+  width: 100%;
+  transition: grid-template-rows 700ms var(--ease-out);
+}
+
+.hero__swap.is-bio {
+  grid-template-rows: 0fr 1fr;
+}
+
+.hero__swap-item {
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+  transition: opacity 350ms ease;
+}
+
+.hero__swap.is-bio .hero__swap-item:first-child,
+.hero__swap:not(.is-bio) .hero__swap-item:last-child {
+  opacity: 0;
+}
+
+.hero__swap.is-bio .hero__swap-item:last-child {
+  transition-delay: 250ms;
+}
+
+.hero__bio {
+  margin: 0 0 calc(26 * var(--u));
+  max-width: calc(520 * var(--u));
+  font-size: max(13px, calc(20 * var(--u)));
+  line-height: 1.55;
+  color: #d9d6d6;
+  text-wrap: pretty;
+}
+
 .hero__headline span {
   display: inline-block;
 }
@@ -356,5 +394,10 @@
   .hero__photo,
   .orbit-line {
     animation: none;
+  }
+
+  .hero__swap,
+  .hero__swap-item {
+    transition: none;
   }
 }

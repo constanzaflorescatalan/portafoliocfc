@@ -164,3 +164,6 @@ const others: Brand[] = (otherBrands as RawBrand[]).map((b) => ({
 }));
 
 export const BRANDS: Brand[] = [...fromExperiences, ...others];
+
+/** Texto corto de presentación: aparece en la tarjeta de la portada con el primer clic. */
+export const BIO: string = identity.bio;

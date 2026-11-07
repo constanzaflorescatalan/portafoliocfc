@@ -87,6 +87,7 @@ Implementada el 7 de noviembre de 2026 para que Coni la revise. **No está en `m
 | 9 | Marcas: color en un recuadro redondeado suave; sin efecto mientras se hace scroll | `chapters.css`, `WorldSite` |
 | 10 | Intro corta (~0,6 s) al volver a la portada en la misma visita | `LandingHero` (`hero--quick`) |
 | 11 | «DISEÑO / INFORMÁTICA» aparecen al final de la apertura; efectos del selector más visibles | `chooser.css` |
+| 12 | **Presentación en la portada** (idea de Coni): el primer clic hace crecer la tarjeta y muestra un texto corto de quién es; el segundo abre el broche. En visitas repetidas parte con el texto visible. Texto elegido: opción E, editable en `identity.bio` del JSON | `LandingHero`, `cover.css`, `data/demo-content.json` |
 
 Mediciones de la propuesta (mismo método):
 

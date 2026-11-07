@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BIO } from '../data/content';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
 
@@ -65,6 +66,13 @@ function readSeen(): boolean {
 
 export function LandingHero({ opening, reduced, onEnter }: Props) {
   const [quick] = useState(readSeen);
+  // Paso 1: nombre y títulos. Paso 2 (primer clic): la tarjeta crece y muestra quién es.
+  // El segundo clic abre el broche. Si ya vio la portada en esta visita, parte en el paso 2.
+  const [showBio, setShowBio] = useState(quick);
+  const advance = () => {
+    if (!showBio) setShowBio(true);
+    else onEnter();
+  };
   useEffect(() => {
     try {
       window.sessionStorage.setItem(SEEN_KEY, '1');
@@ -81,16 +89,26 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
         <div className="hero__card">
           <h1 className="hero__name">{IDENTITY.name}</h1>
           <div className="hero__rule" aria-hidden="true" />
-          <p className="hero__headline">
-            <span>{IDENTITY.headline[0]}</span> <span>{IDENTITY.headline[1]}</span>
-          </p>
+          {/* Títulos y presentación comparten lugar: uno se pliega y el otro se despliega. */}
+          <div className={`hero__swap${showBio ? ' is-bio' : ''}`}>
+            <div className="hero__swap-item" aria-hidden={showBio}>
+              <p className="hero__headline">
+                <span>{IDENTITY.headline[0]}</span> <span>{IDENTITY.headline[1]}</span>
+              </p>
+            </div>
+            <div className="hero__swap-item" aria-hidden={!showBio}>
+              <p className="hero__bio" aria-live="polite">
+                {showBio ? BIO : ''}
+              </p>
+            </div>
+          </div>
           {/* Flecha que invita a entrar (sin texto). Control accesible por teclado. */}
           <button
             type="button"
             className="hero__enter"
-            aria-label="Entrar al portafolio"
+            aria-label={showBio ? 'Entrar al portafolio' : 'Conocer a Constanza'}
             disabled={opening}
-            onClick={onEnter}
+            onClick={advance}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 5v14M6 13l6 6 6-6" />
@@ -139,7 +157,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           tabIndex={-1}
           aria-hidden="true"
           disabled={opening}
-          onClick={onEnter}
+          onClick={advance}
         />
       </div>
 
