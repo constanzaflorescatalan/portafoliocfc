@@ -66,9 +66,9 @@ function readSeen(): boolean {
 
 export function LandingHero({ opening, reduced, onEnter }: Props) {
   const [quick] = useState(readSeen);
-  // Paso 1: nombre y títulos. Paso 2 (primer clic): la tarjeta crece y muestra quién es.
-  // El segundo clic abre el broche. Si ya vio la portada en esta visita, parte en el paso 2.
-  const [showBio, setShowBio] = useState(quick);
+  // Paso 1 (siempre): nombre y títulos. Paso 2 (primer clic): los títulos se van y la
+  // tarjeta muestra quién es. El segundo clic abre el broche hacia Diseño / Informática.
+  const [showBio, setShowBio] = useState(false);
   const advance = () => {
     if (!showBio) setShowBio(true);
     else onEnter();
