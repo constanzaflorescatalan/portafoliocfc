@@ -1,7 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import type { HoverLayerHandle } from '../types';
 
-const MAX_LIVE = 14;
+const MAX_LIVE = 18;
 const TOKENS = [
   'const idea = true;',
   '<interface />',

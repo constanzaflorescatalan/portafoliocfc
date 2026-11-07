@@ -69,3 +69,31 @@ El sitio **se mueve bien y sin errores**, y las animaciones respetan «reducir m
 - Cuadros por segundo con `requestAnimationFrame` durante 1,5–2 s.
 - Costo de procesador y recálculos de diseño con las métricas de rendimiento de Chrome (3 s en reposo por pantalla).
 - No se probó en celulares reales ni en Safari: conviene confirmar ahí la fluidez de la portada y de Quién soy.
+
+## Propuesta en prueba (rama `propuesta/transiciones`, no aprobada)
+
+Implementada el 7 de noviembre de 2026 para que Coni la revise. **No está en `main`** hasta su aprobación.
+
+| # | Cambio | Dónde |
+| --- | --- | --- |
+| 1 | Quién soy con cielo **quieto** (sin respiración ni titileo) | `CoverSky` (`still`), `PersonalCollage` |
+| 2 | Órbita de Quién soy movida solo con transformaciones, sin desenfoque detrás de los íconos | `PersonalCollage`, `about.css` |
+| 3 | Cielo de la portada a 30 cuadros por segundo (el movimiento es lento, se ve igual) | `CoverSky` |
+| 4 | Abrir proyecto: el nombre viaja del punto al título del caso; al volver, hace el viaje al revés | `App.tsx` (`transition`), `case.css` |
+| 5 | Volver al universo (desde caso o Quién soy) sin repetir la entrada | `WorldSite` (`site--calm`) |
+| 6 | Siguiente / Anterior: el caso sale hacia un lado y el nuevo entra desde el otro | `ProjectCaseStudy`, `case.css` |
+| 7 | Portal: Quién soy aparece mientras el universo se absorbe (sin negro) | `App.tsx`, `universe.css` |
+| 8 | Entrada al universo más corta (~2,4 s → ~1,5 s) | `--motion-expand` 600 ms, transición 700 ms |
+| 9 | Marcas: color en un recuadro redondeado suave; sin efecto mientras se hace scroll | `chapters.css`, `WorldSite` |
+| 10 | Intro corta (~0,6 s) al volver a la portada en la misma visita | `LandingHero` (`hero--quick`) |
+| 11 | «DISEÑO / INFORMÁTICA» aparecen al final de la apertura; efectos del selector más visibles | `chooser.css` |
+
+Mediciones de la propuesta (mismo método):
+
+| Pantalla | Antes | Propuesta |
+| --- | --- | --- |
+| Quién soy | 56 cps, tirón de 83 ms, ~550 ms de procesador | **60 cps, sin tirones, ~16 ms** |
+| Portada | ~550 ms de procesador | **~350 ms** |
+| Selector → universo listo | ~2,4 s | **~1,5 s** |
+
+Sin errores; probado con teclado, «reducir movimiento» y celular (iPhone 13 emulado). La órbita se detiene al pasar el cursor o enfocar un ícono.

@@ -48,6 +48,12 @@
   transition: transform 350ms var(--ease-out);
 }
 
+/* Mientras se abre el broche, las palabras aparecen recién al final (docs/02-03). */
+.chooser[data-opening] .panel__label,
+.chooser[data-opening] .chooser__hint {
+  animation: fade-in 400ms ease 600ms backwards;
+}
+
 .panel:hover .panel__label,
 .panel:focus-visible .panel__label {
   transform: translateY(-6px);
@@ -117,17 +123,17 @@
 
 .stroke {
   fill: none;
-  stroke-width: 1.6;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-dasharray: 1;
-  animation: stroke-trace 1250ms ease-out forwards;
+  animation: stroke-trace 1800ms ease-out forwards;
 }
 
 .float {
   position: absolute;
   white-space: nowrap;
   pointer-events: none;
-  animation: float-up 1400ms ease-out forwards;
+  animation: float-up 2000ms ease-out forwards;
 }
 
 .float--code {
@@ -163,11 +169,11 @@
     transform: translateY(8px);
   }
   25% {
-    opacity: 0.75;
+    opacity: 0.9;
   }
   100% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-36px);
   }
 }
 

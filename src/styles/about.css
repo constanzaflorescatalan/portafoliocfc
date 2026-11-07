@@ -1,10 +1,4 @@
 /* Quién soy: mismo cielo de la portada, íconos orbitando alrededor del título. */
-@property --rot {
-  syntax: '<angle>';
-  inherits: true;
-  initial-value: 0deg;
-}
-
 .about {
   position: fixed;
   inset: 0;
@@ -14,7 +8,7 @@
   flex-direction: column;
   padding: calc(var(--nav-height) + 20px) clamp(20px, 4.5vw, 90px) 24px;
   background: #010205;
-  animation: portal-out 900ms var(--ease-out) backwards;
+  animation: portal-out 800ms var(--ease-out) backwards;
 }
 
 .about__back {
@@ -67,38 +61,69 @@
   color: var(--color-muted);
 }
 
-/* Órbita: cada ícono sobre una elipse; --rot gira muy lento todo el conjunto. */
+/*
+  Órbita: los íconos giran sobre una elipse solo con transformaciones (las mueve la
+  tarjeta gráfica, no se recalcula la página). Truco: un círculo que gira dentro de un
+  contenedor aplastado (--k) es una elipse; cada ícono deshace el giro y el aplastamiento
+  para verse siempre derecho. --r, --k y --k-inv los mide PersonalCollage según el tamaño.
+*/
 .orbit {
   position: absolute;
   inset: 0;
+  --rx: 40%;
+  --ry: 38%;
+  --orbit-time: 140s;
+  pointer-events: none;
+}
+
+.orbit__squash {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: scaleY(var(--k, 1));
+}
+
+.orbit__spin {
   margin: 0;
   padding: 0;
   list-style: none;
-  --rx: 40%;
-  --ry: 38%;
-  animation: orbit-turn 140s linear infinite;
-}
-
-.orbit:hover,
-.orbit:focus-within {
-  animation-play-state: paused;
+  animation: orbit-spin var(--orbit-time) linear infinite;
 }
 
 .orbit__item {
   position: absolute;
-  left: calc(50% + cos(var(--a) + var(--rot)) * var(--rx));
-  top: calc(50% + sin(var(--a) + var(--rot)) * var(--ry));
+  left: 0;
+  top: 0;
+  transform: rotate(var(--a)) translateX(var(--r, 0px)) rotate(calc(-1 * var(--a)));
+}
+
+.orbit__counter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Orden: deshacer el giro (rotate), deshacer el aplastamiento (scale) y centrar (transform). */
+  scale: 1 var(--k-inv, 1);
   transform: translate(-50%, -50%);
-  animation: point-in 700ms var(--ease-out) backwards;
-  animation-delay: calc(450ms + var(--i) * 80ms);
+  animation: orbit-spin var(--orbit-time) linear infinite reverse;
+}
+
+/* Al pasar el cursor o enfocar un ícono, la órbita se detiene para poder tocarlo. */
+.orbit:has(.interest:hover) .orbit__spin,
+.orbit:has(.interest:hover) .orbit__counter,
+.orbit:focus-within .orbit__spin,
+.orbit:focus-within .orbit__counter {
+  animation-play-state: paused;
 }
 
 .interest {
   display: block;
   padding: 6px;
   border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  animation-delay: calc(var(--i) * -1.7s);
+  pointer-events: auto;
+  animation:
+    point-in 700ms var(--ease-out) backwards,
+    float 8s ease-in-out infinite;
+  animation-delay: calc(450ms + var(--i) * 80ms), calc(var(--i) * -1.7s);
 }
 
 .interest__circle {
@@ -108,9 +133,8 @@
   height: clamp(64px, 6.4vw, 92px);
   border: 1px solid rgba(235, 233, 232, 0.16);
   border-radius: 50%;
-  background: rgba(10, 18, 40, 0.55);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  /* Sin desenfoque detrás (era lo más caro de la pantalla): un azul algo más opaco. */
+  background: rgba(10, 18, 40, 0.78);
   transition:
     border-color 300ms,
     background 300ms,
@@ -236,9 +260,9 @@
   color: var(--color-muted);
 }
 
-@keyframes orbit-turn {
+@keyframes orbit-spin {
   to {
-    --rot: 360deg;
+    rotate: 360deg;
   }
 }
 
@@ -323,8 +347,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .about,
-  .orbit,
-  .orbit__item,
+  .orbit__spin,
+  .orbit__counter,
   .interest,
   .modal[open] {
     animation: none;

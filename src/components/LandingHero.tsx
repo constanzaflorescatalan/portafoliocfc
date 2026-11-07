@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
 
@@ -32,14 +33,14 @@ function MoonGradient({ half }: { half: 'front' | 'back' }) {
   );
 }
 
-function OrbitMoon({ half }: { half: 'front' | 'back' }) {
+function OrbitMoon({ half, begin }: { half: 'front' | 'back'; begin: string }) {
   return (
     <g opacity="0">
-      <animateMotion dur={`${ORBIT_SECONDS}s`} begin="1.8s" repeatCount="indefinite" path={FULL_LOOP} />
+      <animateMotion dur={`${ORBIT_SECONDS}s`} begin={begin} repeatCount="indefinite" path={FULL_LOOP} />
       <animate
         attributeName="opacity"
         dur={`${ORBIT_SECONDS}s`}
-        begin="1.8s"
+        begin={begin}
         repeatCount="indefinite"
         calcMode="discrete"
         keyTimes="0;0.5"
@@ -51,12 +52,32 @@ function OrbitMoon({ half }: { half: 'front' | 'back' }) {
   );
 }
 
+const SEEN_KEY = 'cf:coverSeen';
+
+/** ¿Ya vio la portada completa en esta visita? Entonces la intro es corta. */
+function readSeen(): boolean {
+  try {
+    return window.sessionStorage.getItem(SEEN_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
 export function LandingHero({ opening, reduced, onEnter }: Props) {
+  const [quick] = useState(readSeen);
+  useEffect(() => {
+    try {
+      window.sessionStorage.setItem(SEEN_KEY, '1');
+    } catch {
+      /* sin almacenamiento: siempre intro completa */
+    }
+  }, []);
+  const moonBegin = quick ? '0.5s' : '1.8s';
   const orbitTransform = `translate(${ORBIT.cx} ${ORBIT.cy}) rotate(${ORBIT.rotate})`;
 
   return (
     <>
-      <div className="hero">
+      <div className={`hero${quick ? ' hero--quick' : ''}`}>
         <div className="hero__card">
           <h1 className="hero__name">{IDENTITY.name}</h1>
           <div className="hero__rule" aria-hidden="true" />
@@ -89,7 +110,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
                 ry={ORBIT.ry}
                 pathLength="1"
               />
-              {!reduced && <OrbitMoon half="back" />}
+              {!reduced && <OrbitMoon half="back" begin={moonBegin} />}
             </g>
           </svg>
 
@@ -106,7 +127,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
             <MoonGradient half="front" />
             <g transform={orbitTransform}>
               <path className="orbit-line orbit-line--front" d={FRONT_ARC} pathLength="1" />
-              {!reduced && <OrbitMoon half="front" />}
+              {!reduced && <OrbitMoon half="front" begin={moonBegin} />}
             </g>
           </svg>
         </div>

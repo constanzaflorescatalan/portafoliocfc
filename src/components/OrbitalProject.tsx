@@ -20,7 +20,9 @@ export function OrbitalProject({ project, index, total, onOpen }: Props) {
         <span className="orbital__num">
           {pad(index + 1)} / {pad(total)}
         </span>
-        <span className="orbital__title">{project.title}</span>
+        <span className="orbital__title" data-project-title={project.id}>
+          {project.title}
+        </span>
         <span className="orbital__type">{project.type}</span>
       </span>
     </button>

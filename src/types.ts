@@ -28,6 +28,8 @@ export type AppState = {
   chapter?: Chapter;
   /** Cambia en cada clic del menú, para volver a desplazar aunque el capítulo sea el mismo. */
   nonce?: number;
+  /** Vuelta al universo (desde un caso o Quién soy): aparece ya armado, sin repetir la entrada. */
+  calm?: boolean;
 };
 
 export type NavTarget = WorldId | 'brands' | 'about' | 'contact';

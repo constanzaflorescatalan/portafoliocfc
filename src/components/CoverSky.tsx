@@ -54,10 +54,20 @@ function makeStars(width: number, height: number): Star[] {
   });
 }
 
-/** `full`: ocupa todo su contenedor (Quién soy) en vez del 200 % de cada puerta de la portada. */
-export function CoverSky({ full = false }: { full?: boolean }) {
+/** El movimiento es muy lento: 30 cuadros por segundo se ven igual y gastan la mitad. */
+const FRAME_MS = 1000 / 30;
+
+type Props = {
+  /** Ocupa todo su contenedor (Quién soy) en vez del 200 % de cada puerta de la portada. */
+  full?: boolean;
+  /** Cielo quieto: se dibuja una sola vez, sin respiración ni titileo (Quién soy). */
+  still?: boolean;
+};
+
+export function CoverSky({ full = false, still = false }: Props) {
   const ref = useRef<HTMLCanvasElement>(null);
-  const reduced = useReducedMotion();
+  const reducedMotion = useReducedMotion();
+  const reduced = reducedMotion || still;
 
   useEffect(() => {
     const canvas = ref.current;
@@ -102,8 +112,12 @@ export function CoverSky({ full = false }: { full?: boolean }) {
       }
     };
 
+    let last = -Infinity;
     const loop = (time: number) => {
-      draw(time);
+      if (time - last >= FRAME_MS) {
+        last = time;
+        draw(time);
+      }
       frame = window.requestAnimationFrame(loop);
     };
 
@@ -127,7 +141,7 @@ export function CoverSky({ full = false }: { full?: boolean }) {
     <div className={`sky${full ? ' sky--full' : ''}`} aria-hidden="true">
       <div className="sky__haze" />
       <canvas ref={ref} className="sky__stars" />
-      {TWINKLES.map((t, i) => (
+      {!still && TWINKLES.map((t, i) => (
         <i
           key={i}
           className="sky__twinkle"

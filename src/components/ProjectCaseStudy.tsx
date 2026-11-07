@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { PROJECTS } from '../data/content';
 import { WORLDS } from '../data/site';
 import { asset } from '../lib/asset';
@@ -8,7 +8,7 @@ type Props = {
   world: WorldId;
   projectId: string;
   onBack: () => void;
-  onNavigate: (projectId: string) => void;
+  onNavigate: (projectId: string, dir: 'next' | 'prev') => void;
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -26,8 +26,16 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
   const next = list[(index + 1) % list.length];
   const scroller = useRef<HTMLElement>(null);
 
-  // Al cambiar de proyecto, volver arriba.
-  useEffect(() => {
+  // Si el caso llega con una transición (título que viaja, o deslizamiento entre casos),
+  // no repite su propio fundido. Se decide al montar, para no reiniciarlo al terminar.
+  const [morphEntry] = useState(() => document.documentElement.classList.contains('vt-project'));
+  const sliding = useMemo(() => {
+    const root = document.documentElement.classList;
+    return root.contains('vt-case-next') || root.contains('vt-case-prev');
+  }, [projectId]);
+
+  // Al cambiar de proyecto, volver arriba (antes de pintar, para que la transición lo capture).
+  useLayoutEffect(() => {
     scroller.current?.scrollTo({ top: 0 });
   }, [projectId]);
 
@@ -50,7 +58,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
   ];
 
   return (
-    <article ref={scroller} className="case" aria-labelledby="case-title">
+    <article ref={scroller} className={`case${morphEntry ? ' case--morph' : ''}`} aria-labelledby="case-title">
       <button
         type="button"
         className="case__star"
@@ -63,7 +71,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
         <span>Volver a {WORLDS[world].title}</span>
       </button>
 
-      <div className="case__inner" key={project.id}>
+      <div className={`case__inner${morphEntry || sliding ? ' case__inner--still' : ''}`} key={project.id}>
         <header className="case__head">
           <p className="case__kicker">
             <span>
@@ -128,11 +136,11 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
 
         {list.length > 1 && (
           <nav className="case__pager" aria-label="Otros proyectos">
-            <button type="button" onClick={() => onNavigate(prev.id)}>
+            <button type="button" onClick={() => onNavigate(prev.id, 'prev')}>
               <span className="case__pager-dir">← Anterior</span>
               <span className="case__pager-title">{prev.title}</span>
             </button>
-            <button type="button" onClick={() => onNavigate(next.id)}>
+            <button type="button" onClick={() => onNavigate(next.id, 'next')}>
               <span className="case__pager-dir">Siguiente →</span>
               <span className="case__pager-title">{next.title}</span>
             </button>

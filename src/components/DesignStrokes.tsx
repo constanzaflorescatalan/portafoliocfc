@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from 'react';
 import type { HoverLayerHandle } from '../types';
 
 const NS = 'http://www.w3.org/2000/svg';
-const MAX_LIVE = 14;
+const MAX_LIVE = 18;
 // Rosa y verde salvia, más un tercer acento (lavanda) muy tenue (docs/03).
 const PALETTE = [
   { color: '#C782A2', opacity: 0.9 },

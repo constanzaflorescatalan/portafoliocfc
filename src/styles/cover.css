@@ -292,6 +292,30 @@
   opacity: 0;
 }
 
+/* Segunda vez en la portada (misma visita): la misma secuencia, en ~0,6 s. */
+.hero--quick .hero__photo {
+  animation-duration: 450ms;
+}
+
+.hero--quick .orbit-line {
+  animation-duration: 600ms;
+  animation-delay: 0ms;
+}
+
+.hero--quick .orbit-line--front {
+  animation-duration: 350ms;
+  animation-delay: 300ms;
+}
+
+.hero--quick .hero__card {
+  animation-duration: 550ms;
+  animation-delay: 150ms;
+}
+
+.hero--quick .hero__enter svg {
+  animation-delay: 800ms;
+}
+
 @keyframes photo-in {
   from {
     opacity: 0;

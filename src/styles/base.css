@@ -4,7 +4,7 @@
   /* Tipografía principal elegida por Coni: Urbanist (reemplaza a DM Sans de tokens.css; ver docs/07). */
   --font-primary: "Urbanist Variable", "Urbanist", system-ui, sans-serif;
   --ease-out: cubic-bezier(0.2, 0.76, 0.17, 1);
-  --motion-expand: 850ms; /* expansión de la mitad elegida */
+  --motion-expand: 600ms; /* expansión de la mitad elegida */
   --color-line: rgba(235, 233, 232, 0.12);
   --color-pink-soft: rgba(199, 130, 162, 0.4);
 }

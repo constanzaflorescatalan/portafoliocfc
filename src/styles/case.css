@@ -64,6 +64,8 @@
 }
 
 .case__title {
+  /* El ancho abraza el texto: así el título calza con el nombre del punto al viajar. */
+  width: fit-content;
   margin: 20px 0 28px;
   font-size: clamp(38px, 5.6vw, 84px);
   font-weight: 600;
@@ -228,5 +230,112 @@
   .case,
   .case__inner {
     animation: none;
+  }
+}
+
+/* ---------- Transiciones entre pantallas (View Transitions; ver App.tsx) ---------- */
+
+/* Llegó con transición: sin fundido propio (lo hace la transición). */
+.case--morph,
+.case__inner--still {
+  animation: none;
+}
+
+/* Universo ↔ caso: el nombre del proyecto viaja entre el punto y el título. */
+::view-transition-group(project-title) {
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+::view-transition-old(project-title),
+::view-transition-new(project-title) {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* El texto chico y el grande se cruzan rápido, para que no se vea doble. */
+::view-transition-old(project-title) {
+  animation: vt-out 260ms ease both;
+}
+
+::view-transition-new(project-title) {
+  animation: vt-in 260ms ease both;
+}
+
+/* El título del mundo no flota sobre el caso: se va o llega rápido. */
+html.vt-project::view-transition-old(world-title) {
+  animation: vt-out 250ms ease both;
+}
+
+html.vt-project::view-transition-new(world-title) {
+  animation: vt-in 400ms ease 250ms both;
+}
+
+html.vt-project::view-transition-old(root) {
+  animation: vt-out 400ms ease both;
+}
+
+html.vt-project::view-transition-new(root) {
+  animation: vt-in 500ms ease 150ms both;
+}
+
+/* Caso → caso: el actual sale hacia un lado y el nuevo entra desde el otro. */
+html.vt-case-next .case__inner,
+html.vt-case-prev .case__inner {
+  view-transition-name: case-body;
+}
+
+html.vt-case-next::view-transition-old(root),
+html.vt-case-next::view-transition-new(root),
+html.vt-case-prev::view-transition-old(root),
+html.vt-case-prev::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(case-body) {
+  animation: none;
+}
+
+html.vt-case-next::view-transition-old(case-body) {
+  animation: case-out-left 450ms cubic-bezier(0.55, 0, 0.75, 0.3) both;
+}
+
+html.vt-case-next::view-transition-new(case-body) {
+  animation: case-in-right 600ms var(--ease-out) 120ms both;
+}
+
+html.vt-case-prev::view-transition-old(case-body) {
+  animation: case-out-right 450ms cubic-bezier(0.55, 0, 0.75, 0.3) both;
+}
+
+html.vt-case-prev::view-transition-new(case-body) {
+  animation: case-in-left 600ms var(--ease-out) 120ms both;
+}
+
+@keyframes case-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes case-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+@keyframes case-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+@keyframes case-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
   }
 }

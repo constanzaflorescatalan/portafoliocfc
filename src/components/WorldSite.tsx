@@ -9,6 +9,8 @@ type Props = {
   chapter?: Chapter;
   nonce?: number;
   absorbing: boolean;
+  /** Vuelta desde un caso o Quién soy: sin repetir las animaciones de entrada. */
+  calm: boolean;
   reduced: boolean;
   onOpenProject: (world: WorldId, project: string) => void;
   onPortal: () => void;
@@ -30,6 +32,7 @@ export function WorldSite({
   chapter,
   nonce,
   absorbing,
+  calm,
   reduced,
   onOpenProject,
   onPortal,
@@ -38,7 +41,12 @@ export function WorldSite({
   const scroller = useRef<HTMLDivElement>(null);
   // Si se llegó con la transición desde el selector, el universo no repite su propio
   // fundido de entrada (se decide una sola vez al montar, para no reiniciarlo al terminar).
-  const [morphEntry] = useState(() => document.documentElement.classList.contains('vt-world'));
+  const [morphEntry] = useState(() => {
+    const root = document.documentElement.classList;
+    return root.contains('vt-world') || root.contains('vt-project');
+  });
+  const [calmEntry] = useState(calm);
+  const scrollTimer = useRef<number | undefined>(undefined);
   const mounted = useRef(false);
   const changeRef = useRef(onChapterChange);
   changeRef.current = onChapterChange;
@@ -78,6 +86,17 @@ export function WorldSite({
     return () => observer.disconnect();
   }, [world]);
 
+  useEffect(() => () => window.clearTimeout(scrollTimer.current), []);
+
+  // Mientras se hace scroll, las marcas no reaccionan al cursor (sin destellos al pasar).
+  const onScroll = () => {
+    const root = scroller.current;
+    if (!root) return;
+    root.classList.add('is-scrolling');
+    window.clearTimeout(scrollTimer.current);
+    scrollTimer.current = window.setTimeout(() => root.classList.remove('is-scrolling'), 180);
+  };
+
   const scrollToBrands = () => {
     const root = scroller.current;
     const target = root?.querySelector<HTMLElement>('#marcas');
@@ -87,8 +106,9 @@ export function WorldSite({
   return (
     <div
       ref={scroller}
-      className={`site${absorbing ? ' is-absorbing' : ''}${morphEntry ? ' site--morph' : ''}`}
+      className={`site${absorbing ? ' is-absorbing' : ''}${morphEntry ? ' site--morph' : ''}${calmEntry ? ' site--calm' : ''}`}
       data-world={world}
+      onScroll={onScroll}
     >
       <UniverseScene
         key={world}

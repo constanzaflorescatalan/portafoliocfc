@@ -112,6 +112,37 @@ export default function App() {
     timer.current = window.setTimeout(fn, ms);
   }, []);
 
+  /**
+   * Cambio de pantalla con View Transitions. `kind` es una clase temporal en <html> que
+   * elige la coreografía en CSS. Si se indican `from` y `to`, ese elemento (el nombre del
+   * proyecto) viaja de un lugar a otro. Sin soporte o con movimiento reducido: cambio directo.
+   */
+  const transition = useCallback(
+    (kind: string, change: () => void, from?: string, to?: string) => {
+      if (reduced || typeof document.startViewTransition !== 'function') {
+        change();
+        return;
+      }
+      const root = document.documentElement;
+      const name = 'project-title';
+      const oldEl = from ? document.querySelector<HTMLElement>(from) : null;
+      oldEl?.style.setProperty('view-transition-name', name);
+      root.classList.add(kind);
+      let newEl: HTMLElement | null = null;
+      const vt = document.startViewTransition(() => {
+        flushSync(change);
+        oldEl?.style.removeProperty('view-transition-name');
+        newEl = to ? document.querySelector<HTMLElement>(to) : null;
+        newEl?.style.setProperty('view-transition-name', name);
+      });
+      vt.finished.finally(() => {
+        root.classList.remove(kind);
+        newEl?.style.removeProperty('view-transition-name');
+      });
+    },
+    [reduced],
+  );
+
   const pushHash = useCallback((next: AppState) => {
     setHash(hashFor(next), 'push');
   }, []);
@@ -143,7 +174,7 @@ export default function App() {
       const next: AppState = { stage: 'entering', world };
       update(next);
       pushHash(next);
-      const ms = readMs('--motion-expand', 850);
+      const ms = readMs('--motion-expand', 600);
       after(ms > 0 ? ms + 60 : 0, () => {
         const enter = () => update({ stage: 'universe', world });
         // La palabra del mundo viaja hasta su lugar como título del universo
@@ -168,13 +199,28 @@ export default function App() {
     const next: AppState = { stage: 'portal', world };
     update(next);
     pushHash(next);
+    // Quién soy empieza a aparecer mientras el universo termina de absorberse (sin negro intermedio).
     const ms = readMs('--motion-portal', 900);
-    after(ms > 0 ? ms : 0, () => update({ stage: 'about', world }));
+    after(ms > 0 ? Math.round(ms * 0.68) : 0, () => update({ stage: 'about', world }));
   }, [after, pushHash, update, state.world]);
 
+  // Universo → caso: el nombre del proyecto viaja desde su punto hasta el título del caso.
   const openProject = useCallback(
-    (world: WorldId, project: string) => jump({ stage: 'project', world, project }),
-    [jump],
+    (world: WorldId, project: string) =>
+      transition(
+        'vt-project',
+        () => jump({ stage: 'project', world, project }),
+        `[data-project-title="${project}"]`,
+        '.case__title',
+      ),
+    [jump, transition],
+  );
+
+  // Caso → caso: el actual sale hacia un lado y el nuevo entra desde el otro.
+  const navigateProject = useCallback(
+    (world: WorldId, project: string, dir: 'next' | 'prev') =>
+      transition(`vt-case-${dir}`, () => jump({ stage: 'project', world, project })),
+    [jump, transition],
   );
 
   const goNav = useCallback(
@@ -194,9 +240,18 @@ export default function App() {
   );
 
   const goHome = useCallback(() => jump({ stage: 'cover', world: null }), [jump]);
+  // Volver al universo: ya armado, sin repetir la entrada. Desde un caso, el título
+  // del caso vuelve a su punto (el mismo viaje, al revés).
   const backToUniverse = useCallback(
-    (world: WorldId) => jump({ stage: 'universe', world }),
-    [jump],
+    (world: WorldId, fromProject?: string) => {
+      const next: AppState = { stage: 'universe', world, calm: true };
+      if (!fromProject) {
+        jump(next);
+        return;
+      }
+      transition('vt-project', () => jump(next), '.case__title', `[data-project-title="${fromProject}"]`);
+    },
+    [jump, transition],
   );
 
   /** El scroll entre capítulos actualiza la URL sin llenar el historial. */
@@ -278,6 +333,7 @@ export default function App() {
             chapter={state.chapter}
             nonce={state.nonce}
             absorbing={stage === 'portal'}
+            calm={!!state.calm}
             reduced={reduced}
             onOpenProject={openProject}
             onPortal={enterPortal}
@@ -289,8 +345,8 @@ export default function App() {
           <ProjectCaseStudy
             world={world}
             projectId={state.project}
-            onBack={() => backToUniverse(world)}
-            onNavigate={(id) => openProject(world, id)}
+            onBack={() => backToUniverse(world, state.project)}
+            onNavigate={(id, dir) => navigateProject(world, id, dir)}
           />
         )}
 

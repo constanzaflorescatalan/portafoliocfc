@@ -77,7 +77,32 @@
   border-right: 1px solid var(--color-line);
   border-bottom: 1px solid var(--color-line);
   outline-offset: -4px;
-  transition: background 350ms ease;
+  position: relative;
+}
+
+/* Fondo original del logo: un recuadro redondeado que aparece suave, no la celda entera. */
+.brand::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  z-index: 0;
+  border-radius: 16px;
+  background: var(--logo-bg);
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 450ms ease,
+    transform 550ms var(--ease-out);
+}
+
+.brand > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mientras se hace scroll, las celdas no reaccionan al cursor (sin destellos). */
+.site.is-scrolling .brand {
+  pointer-events: none;
 }
 
 button.brand {
@@ -94,7 +119,7 @@ button.brand {
 .brand__context {
   font-size: 11px;
   color: rgba(235, 233, 232, 0.6);
-  transition: color 350ms ease;
+  transition: color 450ms ease;
 }
 
 /*
@@ -107,7 +132,7 @@ button.brand {
   max-width: 62%;
   max-height: 68px;
   object-fit: contain;
-  transition: filter 350ms ease, opacity 350ms ease;
+  transition: filter 450ms ease, opacity 450ms ease;
 }
 
 .brand--silhouette .brand__logo {
@@ -131,9 +156,10 @@ button.brand {
   opacity: 0.42;
 }
 
-.brand:hover,
-.brand:focus-visible {
-  background: var(--logo-bg, rgba(235, 233, 232, 0.04));
+.brand:hover::before,
+.brand:focus-visible::before {
+  opacity: 1;
+  transform: none;
 }
 
 .brand:hover .brand__logo,

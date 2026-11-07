@@ -30,7 +30,7 @@ export function BrandGrid() {
         <ul className="brand-grid">
           {BRANDS.map((brand, i) => {
             const cls = `brand brand--${brand.logoMode}${brand.lightBg ? ' brand--light' : ''}${brand.logoTall ? ' brand--tall' : ''}`;
-            const style = { '--logo-bg': brand.logoBg ?? 'transparent', '--i': i } as CSSProperties;
+            const style = { '--logo-bg': brand.logoBg ?? 'rgba(235, 233, 232, 0.05)', '--i': i } as CSSProperties;
             const inner = (
               <>
                 {brand.logo ? (

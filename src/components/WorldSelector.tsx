@@ -17,6 +17,7 @@ export function WorldSelector({ chosen, inert, reduced, onChoose, firstPanelRef 
     <section
       className="chooser"
       data-chosen={chosen ?? undefined}
+      data-opening={inert ? '' : undefined}
       aria-label="Elegir mundo"
       inert={inert}
     >

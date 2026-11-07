@@ -38,7 +38,7 @@
   transform-origin: 50% 58%;
   transition:
     transform var(--motion-portal) cubic-bezier(0.6, 0, 0.8, 0.4),
-    opacity var(--motion-portal) ease-in,
+    opacity calc(var(--motion-portal) * 0.7) ease-in,
     filter var(--motion-portal) ease-in;
 }
 
@@ -63,7 +63,7 @@
 
 /* ---------- Transición selector → universo ---------- */
 ::view-transition-group(world-title) {
-  animation-duration: 800ms;
+  animation-duration: 700ms;
   animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
 }
 
@@ -72,20 +72,31 @@
 ::view-transition-new(world-title) {
   height: 100%;
   object-fit: contain;
-  animation-duration: 800ms;
+  animation-duration: 700ms;
   animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
 }
 
 ::view-transition-old(root) {
-  animation: vt-out 650ms ease both;
+  animation: vt-out 550ms ease both;
 }
 
 ::view-transition-new(root) {
-  animation: vt-in 650ms ease both;
+  animation: vt-in 550ms ease both;
 }
 
 /* Durante la transición, el universo no hace su propio fundido de entrada. */
 .site--morph {
+  animation: none;
+}
+
+/* Vuelta desde un caso o Quién soy: fundido corto y todo ya en su lugar. */
+.site--calm {
+  animation-duration: 300ms;
+}
+
+.site--calm .universe__credential,
+.site--calm .constellation__item,
+.site--calm .blackhole {
   animation: none;
 }
 
