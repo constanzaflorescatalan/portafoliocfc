@@ -38,8 +38,7 @@
   transform-origin: 50% 58%;
   transition:
     transform var(--motion-portal) cubic-bezier(0.6, 0, 0.8, 0.4),
-    opacity calc(var(--motion-portal) * 0.7) ease-in,
-    filter var(--motion-portal) ease-in;
+    opacity calc(var(--motion-portal) * 0.7) ease-in;
 }
 
 .universe--tech {
@@ -345,7 +344,6 @@
 .site.is-absorbing .universe {
   transform: scale(3.2);
   opacity: 0;
-  filter: blur(6px);
 }
 
 /* ---------- Pie del universo ---------- */

@@ -107,6 +107,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
         <figure className="case__hero">
           <img
             src={asset(project.image)}
+            decoding="async"
             alt={project.isDemo ? 'Imagen de ejemplo (DEMO), no es un trabajo real' : project.title}
           />
         </figure>
@@ -127,6 +128,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
                 <img
                   src={asset(src)}
                   loading="lazy"
+                  decoding="async"
                   alt={project.isDemo ? `Imagen de galería ${i + 1} (DEMO)` : `${project.title}, imagen ${i + 1}`}
                 />
               </figure>

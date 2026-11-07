@@ -47,6 +47,16 @@ export function WorldSite({
   });
   const [calmEntry] = useState(calm);
   const scrollTimer = useRef<number | undefined>(undefined);
+  // Marcas y Contacto (40 logos) se arman después de la animación de entrada, para que
+  // no la traben. Si se llega directo a esos capítulos (menú o enlace), se arman de inmediato.
+  const [chaptersReady, setChaptersReady] = useState(() => !!chapter && chapter !== 'universe');
+  useEffect(() => {
+    if (chaptersReady) return;
+    const id = window.setTimeout(() => setChaptersReady(true), calm ? 350 : 1500);
+    return () => window.clearTimeout(id);
+  }, [chaptersReady, calm]);
+  const needChapters = !!chapter && chapter !== 'universe';
+  if (needChapters && !chaptersReady) setChaptersReady(true);
   const mounted = useRef(false);
   const changeRef = useRef(onChapterChange);
   changeRef.current = onChapterChange;
@@ -84,7 +94,7 @@ export function WorldSite({
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, [world]);
+  }, [world, chaptersReady]);
 
   useEffect(() => () => window.clearTimeout(scrollTimer.current), []);
 
@@ -98,9 +108,16 @@ export function WorldSite({
   };
 
   const scrollToBrands = () => {
-    const root = scroller.current;
-    const target = root?.querySelector<HTMLElement>('#marcas');
-    if (root && target) root.scrollTo({ top: target.offsetTop, behavior: reduced ? 'auto' : 'smooth' });
+    const go = () => {
+      const root = scroller.current;
+      const target = root?.querySelector<HTMLElement>('#marcas');
+      if (root && target) root.scrollTo({ top: target.offsetTop, behavior: reduced ? 'auto' : 'smooth' });
+    };
+    if (chaptersReady) go();
+    else {
+      setChaptersReady(true);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(go));
+    }
   };
 
   return (
@@ -117,8 +134,12 @@ export function WorldSite({
         onPortal={onPortal}
         onScrollCue={scrollToBrands}
       />
-      <BrandGrid />
-      <ContactScreen />
+      {chaptersReady && (
+        <>
+          <BrandGrid />
+          <ContactScreen />
+        </>
+      )}
     </div>
   );
 }

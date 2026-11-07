@@ -98,3 +98,22 @@ Mediciones de la propuesta (mismo método):
 | Selector → universo listo | ~2,4 s | **~1,5 s** |
 
 Sin errores; probado con teclado, «reducir movimiento» y celular (iPhone 13 emulado). La órbita se detiene al pasar el cursor o enfocar un ícono.
+
+### Ajuste de fluidez (pedido de Coni: «se queda pegado»)
+
+Medido con el procesador 4 veces más lento (simula un notebook modesto), contando el tiempo total de cuadros trabados (> 50 ms) en cada transición:
+
+| Transición | Antes | Después |
+| --- | --- | --- |
+| Agujero negro → Quién soy | 783 ms | 83 ms |
+| Selector → universo | 383–717 ms | 67 ms |
+| Abrir texto de la portada | 67 ms | 0–67 ms |
+| Siguiente / anterior | 200 ms | 0–83 ms |
+| Volver (estrella) | 167 ms | 67–83 ms |
+
+Causas y arreglos:
+- El **menú superior** tenía un desenfoque detrás (`backdrop-filter`) que se recalculaba en cada cuadro de cada animación de pantalla completa → fondo sólido del mismo color.
+- La **tarjeta de la portada** y la **estrella de los casos** también tenían desenfoque → mismo color, un poco más opaco.
+- El **portal** animaba desenfoques de pantalla completa en el universo y en Quién soy → solo zoom y fundido.
+- Al entrar al universo se armaban **Marcas y Contacto (40 logos)** a la vez → se arman justo después de la animación (o de inmediato si se llega directo a esos capítulos).
+- Imágenes de los casos con decodificación asíncrona.
