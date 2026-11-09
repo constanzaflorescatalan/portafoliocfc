@@ -322,8 +322,8 @@ button.brand {
 .contact__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 36px;
-  margin: 36px 0 0;
+  gap: 0 36px;
+  margin: 28px 0 0;
   padding: 0;
   list-style: none;
   align-items: flex-start;
@@ -331,6 +331,11 @@ button.brand {
 
 .contact__links a,
 .contact__links button {
+  /* Zona de toque de 44 px de alto (dedo), aunque el texto sea pequeño. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.45em;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -358,14 +363,14 @@ button.brand {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 0;
 }
 
 /* Aviso breve al copiar el correo. */
 .contact__toast {
   position: absolute;
   left: 0;
-  top: calc(100% + 10px);
+  top: 100%;
   white-space: nowrap;
   font-size: 11px;
   letter-spacing: 0.08em;

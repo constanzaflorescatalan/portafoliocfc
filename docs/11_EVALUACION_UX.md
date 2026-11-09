@@ -64,3 +64,10 @@ Revisión completa de la rama `propuesta/transiciones` (incluye la presentación
 | 5 | Acortar la espera hasta el primer proyecto: botón «Ver proyectos» discreto en el texto de la portada que lleve directo a Diseño | Medio, decide Coni |
 | 6 | Cambio de mundo desde el menú con la misma transición de la palabra que viaja | Medio |
 | 7 | Página 404 al publicar | Bajo, en la fase de publicación |
+
+## Aplicado el 9 de noviembre (rama `propuesta/transiciones`)
+
+- **1. «Atrás» del navegador** igual que los botones del sitio: desde un caso, el título vuelve a su punto y el universo aparece armado; desde Quién soy, universo armado; entre casos, deslizamiento hacia el lado correcto.
+- **2. Contacto**: todos los enlaces con 44 px de zona de toque (se ven igual).
+- **4. Estrella del caso en celular**: dice «Volver a Diseño/Informática», se esconde al bajar y reaparece al subir (o al enfocarla con teclado).
+- **5. Pista en la portada**: en el segundo paso la flecha gira y apunta hacia adelante.

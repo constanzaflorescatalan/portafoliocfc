@@ -236,6 +236,18 @@
   background: rgba(199, 130, 162, 0.1);
 }
 
+/* Segundo paso: la flecha gira y apunta hacia adelante (entrar), y su vaivén pasa a ser horizontal. */
+.hero__enter {
+  transition:
+    border-color var(--motion-short),
+    background var(--motion-short),
+    rotate 500ms var(--ease-out);
+}
+
+.hero__enter--go {
+  rotate: -90deg;
+}
+
 @keyframes enter-nudge {
   0%,
   100% {

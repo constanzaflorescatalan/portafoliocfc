@@ -34,9 +34,15 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
     return root.contains('vt-case-next') || root.contains('vt-case-prev');
   }, [projectId]);
 
+  // Dirección del scroll: en celular la estrella se esconde al bajar y vuelve al subir.
+  const [down, setDown] = useState(false);
+  const lastY = useRef(0);
+
   // Al cambiar de proyecto, volver arriba (antes de pintar, para que la transición lo capture).
   useLayoutEffect(() => {
     scroller.current?.scrollTo({ top: 0 });
+    lastY.current = 0;
+    setDown(false);
   }, [projectId]);
 
   // Escape también vuelve al universo.
@@ -48,6 +54,15 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
     return () => document.removeEventListener('keydown', onKey);
   }, [onBack]);
 
+  const onScroll = () => {
+    const y = scroller.current?.scrollTop ?? 0;
+    const delta = y - lastY.current;
+    if (Math.abs(delta) > 6) {
+      setDown(delta > 0 && y > 120);
+      lastY.current = y;
+    }
+  };
+
   if (!project) return null;
 
   const blocks = [
@@ -58,7 +73,12 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
   ];
 
   return (
-    <article ref={scroller} className={`case${morphEntry ? ' case--morph' : ''}`} aria-labelledby="case-title">
+    <article
+      ref={scroller}
+      className={`case${morphEntry ? ' case--morph' : ''}${down ? ' is-scrolling-down' : ''}`}
+      aria-labelledby="case-title"
+      onScroll={onScroll}
+    >
       <button
         type="button"
         className="case__star"

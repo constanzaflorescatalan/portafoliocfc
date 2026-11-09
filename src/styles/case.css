@@ -216,12 +216,17 @@
     margin-left: 0;
   }
 
-  .case__star span {
-    display: none;
+  /* En celular la estrella dice «Volver», se esconde al bajar y reaparece al subir. */
+  .case__star {
+    padding: 10px 14px 10px 10px;
+    transition:
+      transform 350ms var(--ease-out),
+      opacity 250ms ease;
   }
 
-  .case__star {
-    padding: 10px;
+  .case.is-scrolling-down .case__star:not(:focus-visible) {
+    transform: translateY(calc(-100% - var(--nav-height)));
+    opacity: 0;
   }
 }
 

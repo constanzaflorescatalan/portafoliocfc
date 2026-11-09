@@ -95,6 +95,9 @@ export default function App() {
   const reduced = useReducedMotion();
   const [state, setState] = useState<AppState>(parseHash);
   const stageRef = useRef<Stage>(state.stage);
+  /** Estado actual para el botón «atrás» del navegador (sin re-suscribir el evento). */
+  const stateRef = useRef<AppState>(state);
+  stateRef.current = state;
   const timer = useRef<number | undefined>(undefined);
   const firstPanelRef = useRef<HTMLButtonElement>(null);
   const previousStage = useRef<Stage>(state.stage);
@@ -243,13 +246,13 @@ export default function App() {
   // Volver al universo: ya armado, sin repetir la entrada. Desde un caso, el título
   // del caso vuelve a su punto (el mismo viaje, al revés).
   const backToUniverse = useCallback(
-    (world: WorldId, fromProject?: string) => {
+    (world: WorldId, fromProject?: string, push = true) => {
       const next: AppState = { stage: 'universe', world, calm: true };
       if (!fromProject) {
-        jump(next);
+        jump(next, push);
         return;
       }
-      transition('vt-project', () => jump(next), '.case__title', `[data-project-title="${fromProject}"]`);
+      transition('vt-project', () => jump(next, push), '.case__title', `[data-project-title="${fromProject}"]`);
     },
     [jump, transition],
   );
@@ -266,13 +269,33 @@ export default function App() {
 
   // Botón "atrás/adelante" del navegador.
   useEffect(() => {
-    const onPop = () => jump(parseHash(), false);
+    // «Atrás/adelante» se comporta igual que los botones del sitio: desde un caso o
+    // Quién soy, el universo vuelve ya armado (y el título del caso vuelve a su punto).
+    const onPop = () => {
+      const next = parseHash();
+      const cur = stateRef.current;
+      const toWorld = next.stage === 'universe' && !next.chapter && next.world === cur.world;
+      if (toWorld && cur.stage === 'project' && next.world) {
+        backToUniverse(next.world, cur.project, false);
+      } else if (toWorld && (cur.stage === 'about' || cur.stage === 'portal')) {
+        jump({ ...next, calm: true }, false);
+      } else if (cur.stage === 'project' && next.stage === 'project' && next.world && next.project) {
+        const list = PROJECTS[next.world];
+        const from = list.findIndex((p) => p.id === cur.project);
+        const to = list.findIndex((p) => p.id === next.project);
+        const world = next.world;
+        const project = next.project;
+        transition(`vt-case-${to > from ? 'next' : 'prev'}`, () => jump({ stage: 'project', world, project }, false));
+      } else {
+        jump(next, false);
+      }
+    };
     window.addEventListener('popstate', onPop);
     return () => {
       window.removeEventListener('popstate', onPop);
       window.clearTimeout(timer.current);
     };
-  }, [jump]);
+  }, [jump, backToUniverse, transition]);
 
   // Foco coherente al cambiar de pantalla (teclado y lector de pantalla).
   useEffect(() => {

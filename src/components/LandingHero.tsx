@@ -105,7 +105,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           {/* Flecha que invita a entrar (sin texto). Control accesible por teclado. */}
           <button
             type="button"
-            className="hero__enter"
+            className={`hero__enter${showBio ? ' hero__enter--go' : ''}`}
             aria-label={showBio ? 'Entrar al portafolio' : 'Conocer a Constanza'}
             disabled={opening}
             onClick={advance}
