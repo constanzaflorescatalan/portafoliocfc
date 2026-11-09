@@ -1,9 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BIO } from '../data/content';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
 
-type Props = { opening: boolean; reduced: boolean; onEnter: () => void };
+import type { WorldId } from '../types';
+
+type Props = {
+  opening: boolean;
+  reduced: boolean;
+  onEnter: () => void;
+  /** Atajo «Ver proyectos»: entra directo a un mundo, sin pasar por el selector. */
+  onShortcut: (world: WorldId) => void;
+};
 
 /**
  * Geometría de la portada aprobada (referencia 1920×1080, `references/portada_aprobada.png`)
@@ -64,11 +72,34 @@ function readSeen(): boolean {
   }
 }
 
-export function LandingHero({ opening, reduced, onEnter }: Props) {
+export function LandingHero({ opening, reduced, onEnter, onShortcut }: Props) {
   const [quick] = useState(readSeen);
   // Paso 1 (siempre): nombre y títulos. Paso 2 (primer clic): los títulos se van y la
   // tarjeta muestra quién es. El segundo clic abre el broche hacia Diseño / Informática.
   const [showBio, setShowBio] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [fit, setFit] = useState(1);
+
+  // Con el texto, la tarjeta crece. Si ya no cabe en la pantalla, toda la composición
+  // se achica lo justo (a la vez que la tarjeta crece) para que nada quede cortado.
+  useLayoutEffect(() => {
+    if (!showBio) return;
+    const measure = () => {
+      const hero = heroRef.current;
+      const card = hero?.querySelector<HTMLElement>('.hero__card');
+      const items = hero?.querySelectorAll<HTMLElement>('.hero__swap-item');
+      if (!hero || !card || !items || items.length < 2) return;
+      // Alto final = alto actual + (alto del texto − alto de los títulos), sin esperar la animación.
+      const grow = items[1].scrollHeight - items[0].getBoundingClientRect().height - items[1].getBoundingClientRect().height;
+      const top = hero.getBoundingClientRect().top / (fit || 1);
+      const bottom = top + (card.getBoundingClientRect().bottom - hero.getBoundingClientRect().top) / (fit || 1) + Math.max(0, grow);
+      const limit = window.innerHeight - 14;
+      setFit(bottom > limit ? Math.max(0.7, (limit - top) / (bottom - top)) : 1);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [showBio]);
   const advance = () => {
     if (!showBio) setShowBio(true);
     else onEnter();
@@ -85,8 +116,19 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
 
   return (
     <>
-      <div className={`hero${quick ? ' hero--quick' : ''}`}>
-        <div className="hero__card">
+      <div
+        ref={heroRef}
+        className={`hero${quick ? ' hero--quick' : ''}`}
+        style={fit < 1 ? { transform: `scale(${fit.toFixed(3)})` } : undefined}
+      >
+        {/* En el paso del texto la tarjeta queda sobre la zona del broche, para que el atajo se pueda tocar. */}
+        <div
+          className={`hero__card${showBio ? ' is-bio' : ''}`}
+          onClick={(e) => {
+            if (!showBio || opening || (e.target as Element).closest('a, button')) return;
+            onEnter();
+          }}
+        >
           <h1 className="hero__name">{IDENTITY.name}</h1>
           <div className="hero__rule" aria-hidden="true" />
           {/* Títulos y presentación comparten lugar: uno se pliega y el otro se despliega. */}
@@ -97,9 +139,22 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
               </p>
             </div>
             <div className="hero__swap-item" aria-hidden={!showBio}>
-              <p className="hero__bio" aria-live="polite">
-                {showBio ? BIO : ''}
-              </p>
+              <div className="hero__bio-wrap">
+                <p className="hero__bio" aria-live="polite">
+                  {showBio ? BIO : ''}
+                </p>
+                {showBio && (
+                  <p className="hero__shortcut">
+                    <span>Ver proyectos</span>
+                    <a href="#/diseno" onClick={(e) => { e.preventDefault(); onShortcut('design'); }}>
+                      Diseño <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="#/informatica" onClick={(e) => { e.preventDefault(); onShortcut('tech'); }}>
+                      Informática <span aria-hidden="true">→</span>
+                    </a>
+                  </p>
+                )}
+              </div>
             </div>
           </div>
           {/* Flecha que invita a entrar (sin texto). Control accesible por teclado. */}

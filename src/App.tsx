@@ -346,7 +346,12 @@ export default function App() {
 
         {showCover && (
           <OpeningTransition opening={stage === 'opening'}>
-            <LandingHero opening={stage === 'opening'} reduced={reduced} onEnter={openCover} />
+            <LandingHero
+              opening={stage === 'opening'}
+              reduced={reduced}
+              onEnter={openCover}
+              onShortcut={(w) => jump({ stage: 'universe', world: w, chapter: 'universe', nonce: Date.now() })}
+            />
           </OpeningTransition>
         )}
 

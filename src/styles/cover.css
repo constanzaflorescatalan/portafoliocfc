@@ -111,6 +111,8 @@
 .hero {
   position: relative;
   z-index: 2;
+  transform-origin: 50% 0;
+  transition: transform 700ms var(--ease-out);
   width: calc(750 * var(--u));
   height: calc(970 * var(--u));
 }
@@ -194,6 +196,64 @@
   line-height: 1.55;
   color: #d9d6d6;
   text-wrap: pretty;
+}
+
+/* Ejemplo: atajo «Ver proyectos» bajo la presentación. */
+.hero__card.is-bio {
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hero__bio-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__bio-wrap .hero__bio {
+  margin-bottom: calc(14 * var(--u));
+}
+
+.hero__shortcut {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 calc(18 * var(--u));
+  margin: 0 0 calc(18 * var(--u));
+  font-size: max(11px, calc(14 * var(--u)));
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__shortcut > span {
+  color: rgba(235, 233, 232, 0.55);
+}
+
+.hero__shortcut a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 44px;
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+.hero__shortcut a:hover,
+.hero__shortcut a:focus-visible {
+  color: var(--color-text);
+}
+
+@media (max-width: 760px) {
+  .hero__shortcut > span {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .hero__shortcut a {
+    min-height: 40px;
+  }
 }
 
 .hero__headline span {
