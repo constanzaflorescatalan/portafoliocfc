@@ -71,3 +71,8 @@ Revisión completa de la rama `propuesta/transiciones` (incluye la presentación
 - **2. Contacto**: todos los enlaces con 44 px de zona de toque (se ven igual).
 - **4. Estrella del caso en celular**: dice «Volver a Diseño/Informática», se esconde al bajar y reaparece al subir (o al enfocarla con teclado).
 - **5. Pista en la portada**: en el segundo paso la flecha gira y apunta hacia adelante.
+- **Botón «Volver» unificado**: Quién soy usa la misma estrella rosa en cápsula que los casos (componente `BackStar`), pedido de Coni.
+
+### Descartado
+
+- **3. Atajo «Ver proyectos · Diseño → · Informática →»** en el texto de la portada: se probó en un link aparte (rama `ejemplo/ver-proyectos`) y **Coni no lo aprobó**. La portada queda como estaba (nombre y títulos → texto → broche).

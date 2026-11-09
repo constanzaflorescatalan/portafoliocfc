@@ -11,22 +11,6 @@
   animation: portal-out 800ms var(--ease-out) backwards;
 }
 
-.about__back {
-  position: relative;
-  z-index: 2;
-  align-self: flex-start;
-  display: inline-flex;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.about__back span {
-  color: var(--color-pink);
-}
-
 .about__stage {
   position: relative;
   z-index: 2;

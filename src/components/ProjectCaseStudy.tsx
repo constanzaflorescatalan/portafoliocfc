@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { PROJECTS } from '../data/content';
 import { WORLDS } from '../data/site';
 import { asset } from '../lib/asset';
+import { BackStar } from './BackStar';
 import type { WorldId } from '../types';
 
 type Props = {
@@ -12,7 +13,6 @@ type Props = {
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
-const STAR = 'M0 -15 L4 -4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4 -4 Z';
 
 /**
  * Caso de estudio editorial (docs/02): fondo carbón, estrella fija para volver al
@@ -79,17 +79,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
       aria-labelledby="case-title"
       onScroll={onScroll}
     >
-      <button
-        type="button"
-        className="case__star"
-        onClick={onBack}
-        aria-label={`Volver a ${WORLDS[world].title}`}
-      >
-        <svg viewBox="-16 -16 32 32" aria-hidden="true" focusable="false">
-          <path d={STAR} />
-        </svg>
-        <span>Volver a {WORLDS[world].title}</span>
-      </button>
+      <BackStar label={`Volver a ${WORLDS[world].title}`} onClick={onBack} />
 
       <div className={`case__inner${morphEntry || sliding ? ' case__inner--still' : ''}`} key={project.id}>
         <header className="case__head">

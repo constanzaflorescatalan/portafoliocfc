@@ -4,6 +4,7 @@ import { INTERESTS } from '../data/content';
 import type { Interest } from '../data/content';
 import { WORLDS } from '../data/site';
 import type { WorldId } from '../types';
+import { BackStar } from './BackStar';
 import { CoverSky } from './CoverSky';
 import { InterestIcon } from './InterestIcon';
 import { InterestModal } from './InterestModal';
@@ -47,9 +48,7 @@ export function PersonalCollage({ world, onBack }: Props) {
     <section className="about" aria-labelledby="about-title">
       <CoverSky full still />
 
-      <button type="button" className="about__back" onClick={onBack}>
-        <span aria-hidden="true">←</span> Volver a {WORLDS[world].title}
-      </button>
+      <BackStar label={`Volver a ${WORLDS[world].title}`} onClick={onBack} />
 
       <div className="about__stage">
         <header className="about__head">
