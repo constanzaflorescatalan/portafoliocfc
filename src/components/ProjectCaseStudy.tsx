@@ -148,13 +148,20 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
 
         {list.length > 1 && (
           <nav className="case__pager" aria-label="Otros proyectos">
+            {/* Mini imagen del proyecto anterior / siguiente: un adelanto, no la imagen completa. */}
             <button type="button" onClick={() => onNavigate(prev.id, 'prev')}>
-              <span className="case__pager-dir">← Anterior</span>
-              <span className="case__pager-title">{prev.title}</span>
+              <img className="case__pager-thumb" src={asset(prev.image)} alt="" loading="lazy" decoding="async" />
+              <span className="case__pager-text">
+                <span className="case__pager-dir">← Anterior</span>
+                <span className="case__pager-title">{prev.title}</span>
+              </span>
             </button>
             <button type="button" onClick={() => onNavigate(next.id, 'next')}>
-              <span className="case__pager-dir">Siguiente →</span>
-              <span className="case__pager-title">{next.title}</span>
+              <img className="case__pager-thumb" src={asset(next.image)} alt="" loading="lazy" decoding="async" />
+              <span className="case__pager-text">
+                <span className="case__pager-dir">Siguiente →</span>
+                <span className="case__pager-title">{next.title}</span>
+              </span>
             </button>
           </nav>
         )}

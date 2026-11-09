@@ -139,16 +139,48 @@
 
 .case__pager button {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 28px 0;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 24px 28px 0;
   text-align: left;
 }
 
 .case__pager button + button {
-  align-items: flex-end;
+  flex-direction: row-reverse;
+  padding: 28px 0 28px 24px;
   text-align: right;
   border-left: 1px solid var(--color-line);
+}
+
+.case__pager-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.case__pager button + button .case__pager-text {
+  align-items: flex-end;
+}
+
+/* Adelanto: recorte pequeño de la imagen principal del proyecto. */
+.case__pager-thumb {
+  flex: none;
+  width: 104px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #13161b;
+  opacity: 0.75;
+  transition:
+    opacity 400ms ease,
+    transform 500ms var(--ease-out);
+}
+
+.case__pager button:hover .case__pager-thumb,
+.case__pager button:focus-visible .case__pager-thumb {
+  opacity: 1;
+  transform: scale(1.04);
 }
 
 .case__pager-dir {
@@ -185,6 +217,24 @@
 
   .case__counter {
     margin-left: 0;
+  }
+
+  /* En celular la mini imagen va arriba del nombre, más chica. */
+  .case__pager button,
+  .case__pager button + button {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 24px 12px 24px 0;
+  }
+
+  .case__pager button + button {
+    align-items: flex-end;
+    padding: 24px 0 24px 12px;
+  }
+
+  .case__pager-thumb {
+    width: 76px;
   }
 
   /* En celular la estrella dice «Volver», se esconde al bajar y reaparece al subir. */
