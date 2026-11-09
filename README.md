@@ -42,7 +42,7 @@ Todo el contenido está en **`data/demo-content.json`**:
 | --- | --- |
 | `identity` | Correo, LinkedIn, GitHub profesional y académico, Vimeo |
 | `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, imágenes, `position` en el universo) |
-| `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (con `logo`, `logoBg` y `logoMode`) |
+| `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (con `logo`, `logoBg`, `logoMode` y `preview` = imagen del trabajo y enlace de video) |
 | `otherBrands` | Marcas que por ahora solo tienen nombre y logo (sin ventana) |
 | `personalInterests` | Intereses de Quién soy (nombre, texto, foto) |
 | `contact` | Frase de contacto |

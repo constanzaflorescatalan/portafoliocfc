@@ -65,6 +65,17 @@ export type Brand = {
   period: string;
   summary: string;
   detail?: string;
+  /** Vista previa del trabajo en la ventana: imagen y, si es video, su enlace. */
+  preview?: BrandPreview;
+};
+
+export type BrandPreview = {
+  /** Imagen del trabajo (o portada del video), en public/assets. */
+  image?: string;
+  /** Enlace al video (Vimeo, YouTube…). Si existe, la imagen lleva botón de reproducir. */
+  video?: string;
+  /** true = imagen de ejemplo: se muestra la etiqueta DEMO. */
+  isDemo?: boolean;
 };
 
 type RawWorld = { id: string; projects: Project[] };
@@ -91,8 +102,15 @@ export const CONTACT = {
 };
 
 type RawLogo = { logo?: string; logoBg?: string; logoMode?: string; logoTall?: boolean };
-type RawBrand = RawLogo & { name: string; relation?: string; detail?: string; nameOnly?: boolean };
+type RawBrand = RawLogo & {
+  name: string;
+  relation?: string;
+  detail?: string;
+  nameOnly?: boolean;
+  preview?: BrandPreview;
+};
 type RawExperience = RawLogo & {
+  preview?: BrandPreview;
   organization: string;
   kind: string;
   role: string;
@@ -137,7 +155,7 @@ const fromExperiences: Brand[] = (experiences as RawExperience[]).flatMap((exp) 
     hasDetails: true,
   };
   const own: Brand[] = exp.showOrganization
-    ? [{ ...base, ...logoFields(exp), name: exp.organization, context: exp.kind }]
+    ? [{ ...base, ...logoFields(exp), name: exp.organization, context: exp.kind, preview: exp.preview }]
     : [];
   const viaAgency = exp.kind === 'Agencia';
   const brands: Brand[] = exp.brands.map((b) =>
@@ -151,6 +169,7 @@ const fromExperiences: Brand[] = (experiences as RawExperience[]).flatMap((exp) 
             b.relation ??
             (viaAgency ? `Cliente vía ${exp.organization}` : `Marca trabajada en ${exp.organization}`),
           detail: b.detail,
+          preview: b.preview,
         },
   );
   return [...own, ...brands];

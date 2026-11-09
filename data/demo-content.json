@@ -309,7 +309,11 @@
         }
       ],
       "logo": "assets/logos/proust-house.webp",
-      "logoBg": "#d0d9d4"
+      "logoBg": "#d0d9d4",
+      "preview": {
+        "image": "assets/demo_diseno_01.jpg",
+        "isDemo": true
+      }
     },
     {
       "organization": "Drei Ventures",
@@ -369,7 +373,12 @@
         }
       ],
       "logo": "assets/logos/castano.webp",
-      "logoBg": "#ffffff"
+      "logoBg": "#ffffff",
+      "preview": {
+        "image": "assets/demo_diseno_04.jpg",
+        "video": "https://vimeo.com/conoflor",
+        "isDemo": true
+      }
     },
     {
       "organization": "R Medy",
