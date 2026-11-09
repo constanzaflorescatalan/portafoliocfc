@@ -111,6 +111,7 @@ portafoliocfc/
 | `08_SEGURIDAD.md` | Investigación de seguridad y protección de datos, con plan por prioridad |
 | `09_REVISION_Y_PROXIMOS_PASOS.md` | Revisión completa, crítica, referencias, lo que falta y pasos hasta publicar |
 | `10_ANALISIS_TRANSICIONES.md` | Análisis crítico de transiciones, efectos y rendimiento, con recomendaciones |
+| `11_EVALUACION_UX.md` | Evaluación UX/UI y front-end completa, con problemas por prioridad |
 | `GIT_PROTOCOLO.md` | Ramas, formato de commits y versiones |
 
 ## Pendiente
