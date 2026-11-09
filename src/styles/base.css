@@ -148,3 +148,8 @@ button:disabled {
 .back-star:focus-visible svg {
   rotate: 90deg;
 }
+
+/* Dentro del universo la estrella se queda arriba y se va con el scroll (no tapa Marcas ni Contacto). */
+.back-star--inline {
+  position: absolute;
+}

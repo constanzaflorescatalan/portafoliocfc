@@ -14,6 +14,7 @@ type Props = {
   reduced: boolean;
   onOpenProject: (world: WorldId, project: string) => void;
   onPortal: () => void;
+  onBackToWorlds: () => void;
   onChapterChange: (chapter: Chapter) => void;
 };
 
@@ -36,6 +37,7 @@ export function WorldSite({
   reduced,
   onOpenProject,
   onPortal,
+  onBackToWorlds,
   onChapterChange,
 }: Props) {
   const scroller = useRef<HTMLDivElement>(null);
@@ -133,6 +135,7 @@ export function WorldSite({
         onOpenProject={(id) => onOpenProject(world, id)}
         onPortal={onPortal}
         onScrollCue={scrollToBrands}
+        onBack={onBackToWorlds}
       />
       {chaptersReady && (
         <>

@@ -521,3 +521,10 @@
     animation: none;
   }
 }
+
+/* Pantallas angostas: el título baja un poco para no quedar bajo la estrella «Volver». */
+@media (max-width: 900px) {
+  .universe__head {
+    padding-top: 40px;
+  }
+}

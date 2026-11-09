@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import { PROJECTS } from '../data/content';
 import { WORLDS } from '../data/site';
 import type { WorldId } from '../types';
+import { BackStar } from './BackStar';
 import { BlackHolePortal } from './BlackHolePortal';
 import { OrbitalProject } from './OrbitalProject';
 import { StarField } from './StarField';
@@ -11,13 +12,15 @@ type Props = {
   onOpenProject: (projectId: string) => void;
   onPortal: () => void;
   onScrollCue: () => void;
+  /** Volver a la pantalla dividida Diseño / Informática. */
+  onBack: () => void;
 };
 
 /**
  * Universo de cada mundo (docs/02): título + formación, proyectos como puntos
  * orbitales con nombre siempre visible y el agujero negro al centro.
  */
-export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: Props) {
+export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue, onBack }: Props) {
   const info = WORLDS[world];
   const projects = PROJECTS[world];
 
@@ -29,6 +32,9 @@ export function UniverseScene({ world, onOpenProject, onPortal, onScrollCue }: P
       aria-labelledby="universe-title"
     >
       <StarField count={90} seed={world === 'design' ? 57 : 91} />
+
+      {/* Misma estrella «Volver» que en los casos y Quién soy; se queda arriba del universo al bajar. */}
+      <BackStar className="back-star--inline" label="Volver a los mundos" onClick={onBack} />
 
       <header className="universe__head">
         <h1 id="universe-title" className="universe__title" tabIndex={-1} data-autofocus>

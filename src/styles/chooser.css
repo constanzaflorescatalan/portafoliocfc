@@ -208,6 +208,12 @@
   view-transition-name: world-title;
 }
 
+/* Al volver desde el universo, la palabra hace el viaje al revés hasta su mitad. */
+html.vt-world-back[data-back-world='design'] .panel--design .panel__title,
+html.vt-world-back[data-back-world='tech'] .panel--tech .panel__title {
+  view-transition-name: world-title;
+}
+
 .chooser[data-chosen='design'] .panel--tech,
 .chooser[data-chosen='tech'] .panel--design {
   flex-grow: 0.0001;

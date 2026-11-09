@@ -243,6 +243,27 @@ export default function App() {
   );
 
   const goHome = useCallback(() => jump({ stage: 'cover', world: null }), [jump]);
+
+  // Universo → pantalla dividida: la palabra hace el viaje de entrada al revés
+  // («Diseño.» vuelve a ser «DISEÑO» en su mitad).
+  const backToWorlds = useCallback(
+    (world: WorldId, push = true) => {
+      const change = () => jump({ stage: 'chooser', world: null }, push);
+      if (reduced || typeof document.startViewTransition !== 'function') {
+        change();
+        return;
+      }
+      const root = document.documentElement;
+      root.dataset.backWorld = world;
+      root.classList.add('vt-world-back');
+      const vt = document.startViewTransition(() => flushSync(change));
+      vt.finished.finally(() => {
+        root.classList.remove('vt-world-back');
+        delete root.dataset.backWorld;
+      });
+    },
+    [jump, reduced],
+  );
   // Volver al universo: ya armado, sin repetir la entrada. Desde un caso, el título
   // del caso vuelve a su punto (el mismo viaje, al revés).
   const backToUniverse = useCallback(
@@ -279,6 +300,8 @@ export default function App() {
         backToUniverse(next.world, cur.project, false);
       } else if (toWorld && (cur.stage === 'about' || cur.stage === 'portal')) {
         jump({ ...next, calm: true }, false);
+      } else if (cur.stage === 'universe' && next.stage === 'chooser' && cur.world) {
+        backToWorlds(cur.world, false);
       } else if (cur.stage === 'project' && next.stage === 'project' && next.world && next.project) {
         const list = PROJECTS[next.world];
         const from = list.findIndex((p) => p.id === cur.project);
@@ -295,7 +318,7 @@ export default function App() {
       window.removeEventListener('popstate', onPop);
       window.clearTimeout(timer.current);
     };
-  }, [jump, backToUniverse, transition]);
+  }, [jump, backToUniverse, backToWorlds, transition]);
 
   // Foco coherente al cambiar de pantalla (teclado y lector de pantalla).
   useEffect(() => {
@@ -360,6 +383,7 @@ export default function App() {
             reduced={reduced}
             onOpenProject={openProject}
             onPortal={enterPortal}
+            onBackToWorlds={() => backToWorlds(world)}
             onChapterChange={onChapterChange}
           />
         )}

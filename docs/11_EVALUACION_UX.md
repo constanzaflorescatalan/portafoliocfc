@@ -76,3 +76,4 @@ Revisión completa de la rama `propuesta/transiciones` (incluye la presentación
 ### Descartado
 
 - **3. Atajo «Ver proyectos · Diseño → · Informática →»** en el texto de la portada: se probó en un link aparte (rama `ejemplo/ver-proyectos`) y **Coni no lo aprobó**. La portada queda como estaba (nombre y títulos → texto → broche).
+- **Volver a los mundos** (pedido de Coni): Diseño e Informática tienen la misma estrella «Volver», que lleva a la pantalla dividida. La palabra hace el viaje de entrada al revés («Diseño.» → «DISEÑO»). La estrella se va con el scroll (no tapa Marcas ni Contacto) y el «atrás» del navegador hace lo mismo. En pantallas angostas el título baja 40 px para no quedar bajo la estrella.
