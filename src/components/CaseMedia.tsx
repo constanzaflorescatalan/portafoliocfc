@@ -13,7 +13,7 @@ function vimeoId(value: string): string | null {
  * no se cargue, un espacio «pendiente» con la misma proporción y el fondo del proyecto.
  */
 export function CaseMedia({ media, bg }: { media: ProjectMedia; bg?: string }) {
-  const style = { aspectRatio: media.ratio, '--media-bg': bg } as CSSProperties;
+  const style = { aspectRatio: media.ratio, '--media-bg': media.bg ?? bg } as CSSProperties;
   const id = media.vimeo ? vimeoId(media.vimeo) : null;
   let body;
   if (id) {
@@ -26,7 +26,15 @@ export function CaseMedia({ media, bg }: { media: ProjectMedia; bg?: string }) {
       />
     );
   } else if (media.src) {
-    body = <img src={asset(media.src)} alt={media.alt} loading="lazy" decoding="async" />;
+    const img = <img src={asset(media.fallback ?? media.src)} alt={media.alt} loading="lazy" decoding="async" />;
+    body = media.fallback ? (
+      <picture>
+        <source srcSet={asset(media.src)} type="image/webp" />
+        {img}
+      </picture>
+    ) : (
+      img
+    );
   } else {
     body = (
       <span className="case-media__pending" role="img" aria-label={`${media.alt} (imagen pendiente)`}>

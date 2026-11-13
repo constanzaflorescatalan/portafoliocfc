@@ -259,11 +259,34 @@
 }
 
 .case__media--grid {
-  grid-template-columns: repeat(min(var(--cols), 3), minmax(0, 1fr));
+  grid-template-columns: repeat(min(var(--cols), 4), minmax(0, 1fr));
 }
 
 .case__media--phone {
   grid-template-columns: repeat(auto-fill, minmax(150px, 220px));
+}
+
+/* Una fila propia (ej. los 5 acondicionadores) y grilla chica (fotos originales, redes). */
+.case__media--row {
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 12px;
+}
+
+.case__media--small {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 200px));
+  gap: 12px;
+}
+
+.case__section-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Bloque solo de imágenes: ocupa todo el ancho. */
+.case__section--bare {
+  grid-template-columns: 1fr;
 }
 
 /* Una pieza: marco con el fondo uniforme del proyecto y la proporción reservada. */
@@ -338,8 +361,14 @@
     grid-template-columns: 1fr;
   }
 
-  .case__media--phone {
+  .case__media--phone,
+  .case__media--small {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* En celular la fila de 5 pasa a una grilla de 3. */
+  .case__media--row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

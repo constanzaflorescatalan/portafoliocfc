@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { PROJECTS } from '../data/content';
+import { isReady } from '../data/content';
 import type { Project } from '../data/content';
 import { WORLDS } from '../data/site';
 import { asset } from '../lib/asset';
@@ -149,27 +150,54 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
         {project.sections ? (
           // Proyecto real: portada y bloques con sus piezas (data/demo-content.json).
           <>
-            {project.cover && (
+            {project.cover && isReady(project.cover) && (
               <div className="case__cover">
                 <CaseMedia media={project.cover} bg={project.mediaBg} />
               </div>
             )}
-            {project.sections.map((section) => (
-              <section key={section.title} className="case__section">
-                <div className="case__section-text">
-                  <h2>{section.title}</h2>
-                  <p>{section.text}</p>
-                </div>
-                <div
-                  className={`case__media case__media--${section.layout}`}
-                  style={{ '--cols': section.columns ?? 3 } as CSSProperties}
+            {project.sections.map((section) => {
+              // Solo piezas cargadas: lo pendiente (ej. videos que irán a Vimeo) no aparece.
+              const media = section.media.filter(isReady);
+              const extra = section.extra?.media.filter(isReady) ?? [];
+              if (!media.length && !extra.length) return null;
+              const hasText = Boolean(section.title || section.text);
+              return (
+                <section
+                  key={section.title || media[0]?.src}
+                  className={`case__section${hasText ? '' : ' case__section--bare'}`}
+                  aria-label={section.title || undefined}
                 >
-                  {section.media.map((m, i) => (
-                    <CaseMedia key={(m.src || m.pending || m.alt) + i} media={m} bg={project.mediaBg} />
-                  ))}
-                </div>
-              </section>
-            ))}
+                  {hasText && (
+                    <div className="case__section-text">
+                      {section.title && <h2>{section.title}</h2>}
+                      {section.text && <p>{section.text}</p>}
+                    </div>
+                  )}
+                  <div className="case__section-media">
+                    {media.length > 0 && (
+                      <div
+                        className={`case__media case__media--${section.layout}`}
+                        style={{ '--cols': section.columns ?? media.length } as CSSProperties}
+                      >
+                        {media.map((m) => (
+                          <CaseMedia key={m.src || m.vimeo} media={m} bg={project.mediaBg} />
+                        ))}
+                      </div>
+                    )}
+                    {section.extra && extra.length > 0 && (
+                      <div
+                        className={`case__media case__media--${section.extra.layout}`}
+                        style={{ '--cols': section.extra.columns ?? extra.length } as CSSProperties}
+                      >
+                        {extra.map((m) => (
+                          <CaseMedia key={m.src || m.vimeo} media={m} bg={project.mediaBg} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </section>
+              );
+            })}
           </>
         ) : (
           <>

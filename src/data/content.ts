@@ -43,7 +43,12 @@ export type Project = {
 
 /** Una pieza (imagen o video) de un proyecto. Sin `src` todavía: se muestra un espacio «pendiente». */
 export type ProjectMedia = {
+  /** Imagen WebP optimizada (vacía = pendiente). */
   src: string;
+  /** Respaldo JPG/PNG para navegadores sin WebP. */
+  fallback?: string;
+  /** Fondo propio de la pieza si no sirve el del proyecto (ej. logo negro). */
+  bg?: string;
   alt: string;
   /** Proporción del espacio, ej. "16/9", para que no salte al cargar. */
   ratio: string;
@@ -55,14 +60,22 @@ export type ProjectMedia = {
   vimeo?: string;
 };
 
+export type MediaLayout = 'feature' | 'sequence' | 'grid' | 'strip' | 'phone' | 'row' | 'small';
+
 export type ProjectSection = {
+  /** Vacíos = bloque solo de imágenes (sin texto). */
   title: string;
   text: string;
-  /** feature: una pieza grande · sequence: 2 lado a lado · grid: grilla · strip: franja · phone: videos verticales. */
-  layout: 'feature' | 'sequence' | 'grid' | 'strip' | 'phone';
+  /** feature: una pieza grande · sequence: 2 lado a lado · grid: grilla · strip: franja · phone: videos verticales · row: una fila · small: grilla chica. */
+  layout: MediaLayout;
   columns?: number;
   media: ProjectMedia[];
+  /** Segundo grupo bajo el primero (ej. fila de acondicionadores, fotos originales chicas). */
+  extra?: { layout: MediaLayout; columns?: number; media: ProjectMedia[] };
 };
+
+/** Una pieza se muestra solo si ya tiene imagen o video; las pendientes no aparecen en la web. */
+export const isReady = (m: ProjectMedia) => Boolean(m.src || m.vimeo);
 
 export type Interest = {
   id: string;
