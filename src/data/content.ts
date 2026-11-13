@@ -30,6 +30,38 @@ export type Project = {
   gallery: string[];
   /** Posición del punto orbital en escritorio: [x %, y %]. */
   position: [number, number];
+  /** Proyectos reales por bloques (si existen, reemplazan Objetivo/Participación/…). */
+  subtitle?: string;
+  role?: string;
+  years?: string;
+  scope?: string;
+  /** Fondo uniforme de las imágenes del proyecto (crema, azul claro, negro…). */
+  mediaBg?: string;
+  cover?: ProjectMedia;
+  sections?: ProjectSection[];
+};
+
+/** Una pieza (imagen o video) de un proyecto. Sin `src` todavía: se muestra un espacio «pendiente». */
+export type ProjectMedia = {
+  src: string;
+  alt: string;
+  /** Proporción del espacio, ej. "16/9", para que no salte al cargar. */
+  ratio: string;
+  caption?: string;
+  /** Archivo de origen que falta cargar (solo como referencia de trabajo). */
+  pending?: string;
+  kind?: 'image' | 'video';
+  /** ID o enlace de Vimeo para videos. */
+  vimeo?: string;
+};
+
+export type ProjectSection = {
+  title: string;
+  text: string;
+  /** feature: una pieza grande · sequence: 2 lado a lado · grid: grilla · strip: franja · phone: videos verticales. */
+  layout: 'feature' | 'sequence' | 'grid' | 'strip' | 'phone';
+  columns?: number;
+  media: ProjectMedia[];
 };
 
 export type Interest = {

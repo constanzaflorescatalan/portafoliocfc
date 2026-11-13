@@ -22,91 +22,357 @@
       "degree": "Diseño Gráfico · Universidad Diego Portales · Título profesional y licenciatura · 2016",
       "projects": [
         {
-          "id": "demo-diseno-01",
-          "title": "Proyecto demo de Diseño 01",
-          "isDemo": true,
-          "type": "Diseño editorial (DEMO)",
-          "client": "Marca ficticia (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_diseno_01.jpg",
-          "gallery": [
-            "assets/demo_diseno_02.jpg",
-            "assets/demo_diseno_03.jpg"
+          "id": "castano",
+          "title": "Castaño",
+          "isDemo": false,
+          "type": "Packaging y punto de venta",
+          "client": "Castaño",
+          "subtitle": "Packaging, envases y punto de venta para una panadería con 90 años de historia.",
+          "intro": "Como Líder de Diseño de Castaño, estuve a cargo de la gráfica que acompaña a la marca en sus tiendas, en el supermercado y en redes sociales. El desafío era conservar la calidez de una panadería tradicional chilena y, al mismo tiempo, darle una imagen actual y consistente a toda su línea de productos.",
+          "role": "Líder de Diseño",
+          "years": "2021–2024",
+          "scope": "Packaging, envases, punto de venta y contenido para redes",
+          "mediaBg": "#F6F0E6",
+          "cover": {
+            "src": "",
+            "alt": "Arte plano curvado del vaso de Castaño, con ilustraciones de panes y café alrededor del mensaje «La vida es más rica con Castaño»",
+            "ratio": "2/1",
+            "pending": "Envase Castaño, arte plano curvado.png"
+          },
+          "sections": [
+            {
+              "title": "Vaso para cafetería",
+              "layout": "sequence",
+              "text": "Diseño del vaso para la cafetería de las tiendas Castaño. Una ilustración de línea fina con panes, cruasanes, muffins y granos de café rodea el mensaje «La vida es más rica con Castaño». El arte se trabajó sobre la plantilla curva del vaso para que el patrón quede continuo al armarlo.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Dos vasos de Castaño con café",
+                  "ratio": "1/1",
+                  "caption": "Del arte plano al vaso real",
+                  "pending": "Bxam8DqXSbX34mNbh-1000-x.webp"
+                },
+                {
+                  "src": "",
+                  "alt": "Vaso de Castaño junto a un sándwich y un muffin",
+                  "ratio": "60/51",
+                  "caption": "El vaso en la tienda",
+                  "pending": "images-4.jpg"
+                }
+              ]
+            },
+            {
+              "title": "Packaging de línea",
+              "layout": "grid",
+              "columns": 3,
+              "text": "Etiquetas y fajas para los productos envasados de la marca: galletas artesanales, queques de temporada, muffins, pan y café. Cada producto tiene su propio color o recurso gráfico, pero todos comparten la misma estructura, para que la línea se reconozca junta en la góndola.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Envases de galletas artesanales de Castaño, sabores mantequilla y limón",
+                  "ratio": "1/1",
+                  "caption": "Galletas artesanales",
+                  "pending": "B4dxrZvo3Ru93TF2v-2400-x.webp"
+                },
+                {
+                  "src": "",
+                  "alt": "Etiqueta estacional del Queque Invierno de Castaño",
+                  "ratio": "1/1",
+                  "caption": "Queque Invierno",
+                  "pending": "Captura de pantalla 2026-11-13 a la(s) 12.25.09 a.m..png"
+                },
+                {
+                  "src": "",
+                  "alt": "Bolsa de Café Castaño Blend Orgánico",
+                  "ratio": "1/1",
+                  "caption": "Café Castaño",
+                  "pending": "D_NQ_NP_656698-…-castano-1-kg.webp"
+                },
+                {
+                  "src": "",
+                  "alt": "Faja del Muffin Chocolate Negro de Castaño",
+                  "ratio": "1/1",
+                  "caption": "Muffin Chocolate Negro",
+                  "pending": "15e2ef71-….avif"
+                },
+                {
+                  "src": "",
+                  "alt": "Bolsa de Pan Hallulla de Castaño",
+                  "ratio": "1/1",
+                  "caption": "Pan Hallulla",
+                  "pending": "evywcQ7TefZysoQqg-1001-x.webp"
+                }
+              ]
+            },
+            {
+              "title": "Punto de venta",
+              "layout": "strip",
+              "text": "Exhibidor para el lanzamiento del Pan Blanco XL de 770 g, con un 35 % más de producto. La pieza se instaló en supermercados y lleva la promoción al tono cercano de la marca con el mensaje «Nuestro cariño es cada vez más grande».",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Exhibidor del Pan Blanco XL de 770 g instalado en supermercados",
+                  "ratio": "2/1",
+                  "caption": "Exhibidor «770 g» en supermercados",
+                  "pending": "Captura de pantalla 2026-11-13 a la(s) 11.22.15 a.m..png"
+                },
+                {
+                  "src": "",
+                  "alt": "Vista cercana del exhibidor del Pan Blanco XL",
+                  "ratio": "4/3",
+                  "caption": "Detalle del exhibidor",
+                  "pending": "Captura de pantalla 2026-11-13 a la(s) 11.21.50 a.m..png"
+                }
+              ]
+            },
+            {
+              "title": "Contenido para redes",
+              "layout": "phone",
+              "text": "Piezas animadas para el Instagram de Castaño: concursos, campañas de temporada y contenido del día a día.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Animación «¿Trajiste almuerzo?» para el Instagram de Castaño",
+                  "ratio": "9/16",
+                  "caption": "«¿Trajiste almuerzo?»",
+                  "pending": "igexport-C4gMMPip5cN.mp4",
+                  "kind": "video"
+                },
+                {
+                  "src": "",
+                  "alt": "Animación del concurso de empanadas de Castaño",
+                  "ratio": "9/16",
+                  "caption": "Concurso de empanadas",
+                  "pending": "igexport-C4s9PK5ruz0.mp4",
+                  "kind": "video"
+                }
+              ]
+            }
           ],
-          "position": [
-            22,
-            26
-          ]
-        },
-        {
-          "id": "demo-diseno-02",
-          "title": "Proyecto demo de Diseño 02",
-          "isDemo": true,
-          "type": "Diseño de producto (DEMO)",
-          "client": "Marca ficticia (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
+          "goal": "",
+          "contribution": "",
           "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_diseno_02.jpg",
-          "gallery": [
-            "assets/demo_diseno_03.jpg",
-            "assets/demo_diseno_04.jpg"
-          ],
-          "position": [
-            77,
-            20
-          ]
-        },
-        {
-          "id": "demo-diseno-03",
-          "title": "Proyecto demo de Diseño 03",
-          "isDemo": true,
-          "type": "Campaña gráfica (DEMO)",
-          "client": "Marca ficticia (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_diseno_03.jpg",
-          "gallery": [
-            "assets/demo_diseno_01.jpg",
-            "assets/demo_diseno_04.jpg"
-          ],
+          "result": "",
+          "image": "",
+          "gallery": [],
           "position": [
             24,
-            64
+            30
           ]
         },
         {
-          "id": "demo-diseno-04",
-          "title": "Proyecto demo de Diseño 04",
-          "isDemo": true,
-          "type": "Audiovisual (DEMO)",
-          "client": "Marca ficticia (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_diseno_04.jpg",
-          "gallery": [
-            "assets/demo_diseno_03.jpg",
-            "assets/demo_diseno_01.jpg"
+          "id": "kingsbury-calendario-2022",
+          "title": "Kingsbury · Calendario 2022",
+          "isDemo": false,
+          "type": "Diseño editorial e ilustración",
+          "client": "Kingsbury (marca de Castaño)",
+          "subtitle": "Un calendario que presenta la línea de panes de molde mes a mes.",
+          "intro": "Calendario de 18 páginas para Kingsbury, marca de pan de molde de Castaño. Cada mes toma el color de uno de los productos y lo acompaña con una receta de sándwich y un código QR para verla completa. Abre con una ilustración de ciudad en tonos azules con toda la línea al frente, y usa el mes de enero para lanzar el nuevo pan Hi Low.",
+          "role": "Diseño editorial e ilustración",
+          "years": "2021–2022",
+          "scope": "Calendario de 18 páginas e ilustración de portada",
+          "mediaBg": "#DCE8F4",
+          "cover": {
+            "src": "",
+            "alt": "Portada del calendario Kingsbury 2022: ilustración de una ciudad en tonos azules con la línea completa de panes al frente",
+            "ratio": "3/2",
+            "caption": "Portada ilustrada con la línea completa de productos",
+            "pending": "calendario Kingsbury_TRZ.pdf · pág. 1"
+          },
+          "sections": [
+            {
+              "title": "Un color por producto",
+              "layout": "grid",
+              "columns": 3,
+              "text": "Cada mes toma el color de uno de los panes de la línea y lo acompaña con una receta de sándwich, para que el cambio de producto se note de un vistazo.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Página de enero del calendario Kingsbury en verde, lanzamiento del pan Hi Low",
+                  "ratio": "3/2",
+                  "caption": "Enero: lanzamiento del nuevo pan Hi Low",
+                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 3"
+                },
+                {
+                  "src": "",
+                  "alt": "Página de junio del calendario Kingsbury en azul, Pan Perfecto con receta",
+                  "ratio": "3/2",
+                  "caption": "Junio: Pan Perfecto, con receta y QR",
+                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 8"
+                },
+                {
+                  "src": "",
+                  "alt": "Página de diciembre del calendario Kingsbury en café, Integral Wholegrain con receta",
+                  "ratio": "3/2",
+                  "caption": "Diciembre: Integral Wholegrain, con receta y QR",
+                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 14"
+                }
+              ]
+            }
           ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "",
+          "gallery": [],
           "position": [
-            78,
-            60
+            77,
+            28
+          ]
+        },
+        {
+          "id": "hijas-del-caldero",
+          "title": "Hijas del Caldero",
+          "isDemo": false,
+          "type": "Identidad de marca",
+          "client": "Hijas del Caldero",
+          "subtitle": "Identidad de marca para una tienda de cosmética natural y productos rituales.",
+          "intro": "Hijas del Caldero vende cosmética artesanal, perfumes, sales y productos esotéricos. Diseñé su identidad completa: un caldero grabado en dorado sobre negro, con tipografía de carácter gótico y ornamentos de inspiración victoriana. A partir de ahí construí un sistema de etiquetas para más de diez formatos (sprays, cremas, jabones, shampoo, sales y polvos), además de catálogos, afiches, packs especiales y piezas animadas.",
+          "role": "Identidad, packaging, editorial y animación",
+          "years": "2019–2023",
+          "scope": "Logo, sistema de etiquetas, catálogo, afiches, packs y animación",
+          "mediaBg": "#111111",
+          "cover": {
+            "src": "",
+            "alt": "Logo de Hijas del Caldero: caldero grabado en dorado sobre negro con letras góticas",
+            "ratio": "1/1",
+            "pending": "logo hijas del caldero n c dor.png"
+          },
+          "sections": [
+            {
+              "title": "Logo",
+              "layout": "grid",
+              "columns": 3,
+              "text": "Un caldero de estilo grabado, con letras góticas y detalles en dorado. Funciona en dorado sobre negro, en blanco, en negro y como sello circular.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Logo circular de Hijas del Caldero, versión sello",
+                  "ratio": "1/1",
+                  "caption": "Sello circular",
+                  "pending": "logoo hdc circulo.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Logo de Hijas del Caldero en blanco",
+                  "ratio": "1/1",
+                  "caption": "Versión en blanco",
+                  "pending": "logo blanco.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Logo de Hijas del Caldero en negro",
+                  "ratio": "1/1",
+                  "caption": "Versión en negro",
+                  "pending": "logo negro.png"
+                }
+              ]
+            },
+            {
+              "title": "Sistema de etiquetas",
+              "layout": "grid",
+              "columns": 5,
+              "text": "Una misma base (fondo negro, marco ornamental y nombre del producto como protagonista) adaptada a cada formato: rectángulos para sprays y shampoo, hexágonos para cremas y tiras para sales y polvos. El color del marco cambia según la intención del producto, y detalles como las fases lunares refuerzan el universo de la marca.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Etiqueta del Spray Mágico «Atrae Fortuna», negra y dorada",
+                  "ratio": "5/8",
+                  "caption": "Spray Mágico «Atrae Fortuna»",
+                  "pending": "SPRAY DE 5 X 8 CM/1.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Etiqueta del spray «Rayo Verde», variante verde",
+                  "ratio": "5/8",
+                  "caption": "Spray «Rayo Verde»",
+                  "pending": "etiquetas/VERDE.jpg"
+                },
+                {
+                  "src": "",
+                  "alt": "Etiqueta del acondicionador «Chocolate Menta» con fases lunares",
+                  "ratio": "536/944",
+                  "caption": "Acondicionador «Chocolate Menta»",
+                  "pending": "SHAMPOO ACONDICIONADOR/1.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Etiqueta hexagonal de la Crema de Lavanda",
+                  "ratio": "577/500",
+                  "caption": "Crema de Lavanda",
+                  "pending": "CREMAS (hexágonos)/1.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Etiqueta del Jabón Rosa Mosqueta",
+                  "ratio": "370/509",
+                  "caption": "Jabón Rosa Mosqueta",
+                  "pending": "JABONES/1.png"
+                }
+              ]
+            },
+            {
+              "title": "Aplicaciones",
+              "layout": "grid",
+              "columns": 2,
+              "text": "La identidad se extiende a catálogos de productos, afiches para rituales y eventos, packs especiales como el Pack Ritual Lunar y tarjetas de presentación.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Afiche ritual «Samhain & Beltane» de Hijas del Caldero",
+                  "ratio": "2448/3168",
+                  "caption": "Afiche ritual «Samhain & Beltane»",
+                  "pending": "hdc afiche/ritual-2023.png"
+                },
+                {
+                  "src": "",
+                  "alt": "Portada del catálogo de cosmética, mármol negro y dorado",
+                  "ratio": "2448/3168",
+                  "caption": "Catálogo de cosmética",
+                  "pending": "catalogo cosmetica.pdf · pág. 1"
+                },
+                {
+                  "src": "",
+                  "alt": "Pack Ritual Lunar de Hijas del Caldero",
+                  "ratio": "1/1",
+                  "caption": "Pack Ritual Lunar",
+                  "pending": "PACK-LUNAR1.jpg"
+                },
+                {
+                  "src": "",
+                  "alt": "Pack Ritual Lunar de Hijas del Caldero, segunda vista",
+                  "ratio": "1/1",
+                  "caption": "Pack Ritual Lunar, detalle",
+                  "pending": "PACK-LUNAR2.jpg"
+                }
+              ]
+            },
+            {
+              "title": "Animación",
+              "layout": "feature",
+              "text": "Piezas animadas para redes y lanzamientos, que llevan al movimiento la estética dorada y ornamental de la marca.",
+              "media": [
+                {
+                  "src": "",
+                  "alt": "Video promocional animado de Hijas del Caldero",
+                  "ratio": "1920/1510",
+                  "caption": "Video promocional",
+                  "pending": "hdc promo.mp4",
+                  "kind": "video"
+                }
+              ]
+            }
+          ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "",
+          "gallery": [],
+          "position": [
+            32,
+            74
           ]
         }
       ]

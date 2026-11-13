@@ -41,7 +41,7 @@ Todo el contenido está en **`data/demo-content.json`**:
 | Sección del JSON | Qué controla |
 | --- | --- |
 | `identity` | Correo, LinkedIn, GitHub profesional y académico, Vimeo |
-| `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, imágenes, `position` en el universo) |
+| `worlds[].projects` | Proyectos de Diseño e Informática (título, textos, `position` en el universo; los reales usan `cover` y `sections` con sus piezas, ver `docs/13_CARGA_PROYECTOS.md`) |
 | `experiences` | Marcas: organización, rol, período, resumen y marcas asociadas (con `logo`, `logoBg`, `logoMode` y `preview` = imagen del trabajo y enlace de video) |
 | `otherBrands` | Marcas que por ahora solo tienen nombre y logo (sin ventana) |
 | `personalInterests` | Intereses de Quién soy (nombre, texto, foto) |
@@ -112,6 +112,8 @@ portafoliocfc/
 | `09_REVISION_Y_PROXIMOS_PASOS.md` | Revisión completa, crítica, referencias, lo que falta y pasos hasta publicar |
 | `10_ANALISIS_TRANSICIONES.md` | Análisis crítico de transiciones, efectos y rendimiento, con recomendaciones |
 | `11_EVALUACION_UX.md` | Evaluación UX/UI y front-end completa, con problemas por prioridad |
+| `12_ESPECIFICACION_PROYECTOS.md` | Especificación de Coni para los proyectos de Diseño (piezas, textos, calidad) |
+| `13_CARGA_PROYECTOS.md` | Qué se implementó de la especificación, cómo cargar imágenes y qué falta |
 | `GIT_PROTOCOLO.md` | Ramas, formato de commits y versiones |
 
 ## Pendiente

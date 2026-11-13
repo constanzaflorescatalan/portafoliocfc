@@ -1,8 +1,11 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { PROJECTS } from '../data/content';
+import type { Project } from '../data/content';
 import { WORLDS } from '../data/site';
 import { asset } from '../lib/asset';
 import { BackStar } from './BackStar';
+import { CaseMedia } from './CaseMedia';
 import type { WorldId } from '../types';
 
 type Props = {
@@ -13,6 +16,15 @@ type Props = {
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
+
+/** Mini imagen del proyecto anterior/siguiente: su portada o, si falta, un recuadro con su fondo. */
+function PagerThumb({ project }: { project: Project }) {
+  const src = project.cover?.src || project.image;
+  if (!src) {
+    return <span className="case__pager-thumb case__pager-thumb--empty" style={{ background: project.mediaBg }} aria-hidden="true" />;
+  }
+  return <img className="case__pager-thumb" src={asset(src)} alt="" loading="lazy" decoding="async" />;
+}
 
 /**
  * Caso de estudio editorial (docs/02): fondo carbón, estrella fija para volver al
@@ -95,69 +107,118 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
           <h1 id="case-title" className="case__title" tabIndex={-1} data-autofocus>
             {project.title}
           </h1>
+          {project.subtitle && <p className="case__subtitle">{project.subtitle}</p>}
           <dl className="case__meta">
-            <div>
-              <dt>Cliente</dt>
-              <dd>{project.client}</dd>
-            </div>
-            {project.agency && (
-              <div>
-                <dt>Agencia / colaboración</dt>
-                <dd>{project.agency}</dd>
-              </div>
+            {project.sections ? (
+              <>
+                <div>
+                  <dt>Rol</dt>
+                  <dd>{project.role}</dd>
+                </div>
+                <div>
+                  <dt>Años</dt>
+                  <dd>{project.years}</dd>
+                </div>
+                <div>
+                  <dt>Alcance</dt>
+                  <dd>{project.scope}</dd>
+                </div>
+              </>
+            ) : (
+              <>
+                <div>
+                  <dt>Cliente</dt>
+                  <dd>{project.client}</dd>
+                </div>
+                {project.agency && (
+                  <div>
+                    <dt>Agencia / colaboración</dt>
+                    <dd>{project.agency}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>Tipo</dt>
+                  <dd>{project.type}</dd>
+                </div>
+              </>
             )}
-            <div>
-              <dt>Tipo</dt>
-              <dd>{project.type}</dd>
-            </div>
           </dl>
           <p className="case__intro">{project.intro}</p>
         </header>
 
-        <figure className="case__hero">
-          <img
-            src={asset(project.image)}
-            decoding="async"
-            alt={project.isDemo ? 'Imagen de ejemplo (DEMO), no es un trabajo real' : project.title}
-          />
-        </figure>
-
-        <section className="case__blocks" aria-label="Detalles del proyecto">
-          {blocks.map((b) => (
-            <div key={b.label} className="case__block">
-              <h2>{b.label}</h2>
-              <p>{b.text}</p>
-            </div>
-          ))}
-        </section>
-
-        {project.gallery.length > 0 && (
-          <section className="case__gallery" aria-label="Galería">
-            {project.gallery.map((src, i) => (
-              <figure key={src + i}>
-                <img
-                  src={asset(src)}
-                  loading="lazy"
-                  decoding="async"
-                  alt={project.isDemo ? `Imagen de galería ${i + 1} (DEMO)` : `${project.title}, imagen ${i + 1}`}
-                />
-              </figure>
+        {project.sections ? (
+          // Proyecto real: portada y bloques con sus piezas (data/demo-content.json).
+          <>
+            {project.cover && (
+              <div className="case__cover">
+                <CaseMedia media={project.cover} bg={project.mediaBg} />
+              </div>
+            )}
+            {project.sections.map((section) => (
+              <section key={section.title} className="case__section">
+                <div className="case__section-text">
+                  <h2>{section.title}</h2>
+                  <p>{section.text}</p>
+                </div>
+                <div
+                  className={`case__media case__media--${section.layout}`}
+                  style={{ '--cols': section.columns ?? 3 } as CSSProperties}
+                >
+                  {section.media.map((m, i) => (
+                    <CaseMedia key={(m.src || m.pending || m.alt) + i} media={m} bg={project.mediaBg} />
+                  ))}
+                </div>
+              </section>
             ))}
-          </section>
+          </>
+        ) : (
+          <>
+            <figure className="case__hero">
+              <img
+                src={asset(project.image)}
+                decoding="async"
+                alt={project.isDemo ? 'Imagen de ejemplo (DEMO), no es un trabajo real' : project.title}
+              />
+            </figure>
+
+            <section className="case__blocks" aria-label="Detalles del proyecto">
+              {blocks.map((b) => (
+                <div key={b.label} className="case__block">
+                  <h2>{b.label}</h2>
+                  <p>{b.text}</p>
+                </div>
+              ))}
+            </section>
+
+            {project.gallery.length > 0 && (
+              <section className="case__gallery" aria-label="Galería">
+                {project.gallery.map((src, i) => (
+                  <figure key={src + i}>
+                    <img
+                      src={asset(src)}
+                      loading="lazy"
+                      decoding="async"
+                      alt={project.isDemo ? `Imagen de galería ${i + 1} (DEMO)` : `${project.title}, imagen ${i + 1}`}
+                    />
+                  </figure>
+                ))}
+              </section>
+            )}
+          </>
         )}
 
         {list.length > 1 && (
           <nav className="case__pager" aria-label="Otros proyectos">
             {/* Mini imagen del proyecto anterior / siguiente: un adelanto, no la imagen completa. */}
             <button type="button" onClick={() => onNavigate(prev.id, 'prev')}>
-              <img className="case__pager-thumb" src={asset(prev.image)} alt="" loading="lazy" decoding="async" />
+              <PagerThumb project={prev} />
               <span className="case__pager-text">
                 <span className="case__pager-dir">← Anterior</span>
                 <span className="case__pager-title">{prev.title}</span>
               </span>
             </button>
             <button type="button" onClick={() => onNavigate(next.id, 'next')}>
-              <img className="case__pager-thumb" src={asset(next.image)} alt="" loading="lazy" decoding="async" />
+              <PagerThumb project={next} />
               <span className="case__pager-text">
                 <span className="case__pager-dir">Siguiente →</span>
                 <span className="case__pager-title">{next.title}</span>
