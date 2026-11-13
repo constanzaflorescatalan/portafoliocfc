@@ -530,3 +530,9 @@ html.vt-case-prev::view-transition-new(case-body) {
     transform: translateX(-80px);
   }
 }
+
+/* Portadas cuadradas o verticales (ej. logo): no más altas que la pantalla. */
+.case__cover .case-media__frame {
+  max-height: 78vh;
+  margin-inline: auto;
+}

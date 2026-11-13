@@ -34,10 +34,11 @@
           "scope": "Packaging, envases, punto de venta y contenido para redes",
           "mediaBg": "#F6F0E6",
           "cover": {
-            "src": "",
-            "alt": "Arte plano curvado del vaso de Castaño, con ilustraciones de panes y café alrededor del mensaje «La vida es más rica con Castaño»",
-            "ratio": "2/1",
-            "pending": "Envase Castaño, arte plano curvado.png"
+            "src": "assets/proyectos/castano/1.1a-vaso-arte-plano.webp",
+            "fallback": "assets/proyectos/castano/1.1a-vaso-arte-plano.jpg",
+            "alt": "Arte plano del vaso de Castaño recortado sobre fondo crema: ilustraciones de línea fina con panes, cruasanes, muffins y granos de café alrededor del mensaje «La vida es más rica con Castaño»",
+            "ratio": "3/2",
+            "caption": "Arte plano del vaso"
           },
           "sections": [
             {
@@ -46,20 +47,39 @@
               "text": "Diseño del vaso para la cafetería de las tiendas Castaño. Una ilustración de línea fina con panes, cruasanes, muffins y granos de café rodea el mensaje «La vida es más rica con Castaño». El arte se trabajó sobre la plantilla curva del vaso para que el patrón quede continuo al armarlo.",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Dos vasos de Castaño con café",
-                  "ratio": "1/1",
-                  "caption": "Del arte plano al vaso real",
-                  "pending": "Bxam8DqXSbX34mNbh-1000-x.webp"
+                  "src": "assets/proyectos/castano/1.1d-vaso-render-3d.webp",
+                  "fallback": "assets/proyectos/castano/1.1d-vaso-render-3d.jpg",
+                  "alt": "Render 3D del vaso de Castaño con tapa blanca sobre fondo crema",
+                  "ratio": "561/701",
+                  "caption": "Render 3D del vaso"
                 },
                 {
-                  "src": "",
-                  "alt": "Vaso de Castaño junto a un sándwich y un muffin",
-                  "ratio": "60/51",
-                  "caption": "El vaso en la tienda",
-                  "pending": "images-4.jpg"
+                  "src": "assets/proyectos/castano/1.1e-vaso-escena-cafeteria.webp",
+                  "fallback": "assets/proyectos/castano/1.1e-vaso-escena-cafeteria.jpg",
+                  "alt": "Montaje del vaso de Castaño en una cafetería, junto a una medialuna y pan",
+                  "ratio": "561/701",
+                  "caption": "El vaso en escena"
                 }
-              ]
+              ],
+              "extra": {
+                "layout": "small",
+                "media": [
+                  {
+                    "src": "assets/proyectos/castano/1.1b-vasos-con-cafe.webp",
+                    "fallback": "assets/proyectos/castano/1.1b-vasos-con-cafe.jpg",
+                    "alt": "Fotografía de dos vasos de Castaño con café",
+                    "ratio": "1/1",
+                    "caption": "Foto original"
+                  },
+                  {
+                    "src": "assets/proyectos/castano/1.1c-vaso-ambiente.webp",
+                    "fallback": "assets/proyectos/castano/1.1c-vaso-ambiente.jpg",
+                    "alt": "Fotografía del vaso de Castaño junto a un sándwich y un muffin",
+                    "ratio": "20/17",
+                    "caption": "Foto original"
+                  }
+                ]
+              }
             },
             {
               "title": "Packaging de línea",
@@ -68,39 +88,39 @@
               "text": "Etiquetas y fajas para los productos envasados de la marca: galletas artesanales, queques de temporada, muffins, pan y café. Cada producto tiene su propio color o recurso gráfico, pero todos comparten la misma estructura, para que la línea se reconozca junta en la góndola.",
               "media": [
                 {
-                  "src": "",
+                  "src": "assets/proyectos/castano/1.2a-galletas-artesanales.webp",
+                  "fallback": "assets/proyectos/castano/1.2a-galletas-artesanales.jpg",
                   "alt": "Envases de galletas artesanales de Castaño, sabores mantequilla y limón",
-                  "ratio": "1/1",
-                  "caption": "Galletas artesanales",
-                  "pending": "B4dxrZvo3Ru93TF2v-2400-x.webp"
+                  "ratio": "80/69",
+                  "caption": "Galletas artesanales"
                 },
                 {
-                  "src": "",
-                  "alt": "Etiqueta estacional del Queque Invierno de Castaño",
-                  "ratio": "1/1",
-                  "caption": "Queque Invierno",
-                  "pending": "Captura de pantalla 2026-11-13 a la(s) 12.25.09 a.m..png"
+                  "src": "assets/proyectos/castano/1.2b-queque-invierno.webp",
+                  "fallback": "assets/proyectos/castano/1.2b-queque-invierno.jpg",
+                  "alt": "Bolsa del Queque Invierno de Castaño con etiqueta estacional sobre fondo azul con copos de nieve",
+                  "ratio": "407/459",
+                  "caption": "Queque Invierno"
                 },
                 {
-                  "src": "",
-                  "alt": "Bolsa de Café Castaño Blend Orgánico",
+                  "src": "assets/proyectos/castano/1.2c-cafe-castano.webp",
+                  "fallback": "assets/proyectos/castano/1.2c-cafe-castano.jpg",
+                  "alt": "Bolsas de Café Castaño Blend Orgánico junto a granos de café",
                   "ratio": "1/1",
-                  "caption": "Café Castaño",
-                  "pending": "D_NQ_NP_656698-…-castano-1-kg.webp"
+                  "caption": "Café Castaño"
                 },
                 {
-                  "src": "",
-                  "alt": "Faja del Muffin Chocolate Negro de Castaño",
+                  "src": "assets/proyectos/castano/1.2d-muffin-chocolate.webp",
+                  "fallback": "assets/proyectos/castano/1.2d-muffin-chocolate.jpg",
+                  "alt": "Envase del Muffin Chocolate Negro de Castaño con su faja",
                   "ratio": "1/1",
-                  "caption": "Muffin Chocolate Negro",
-                  "pending": "15e2ef71-….avif"
+                  "caption": "Muffin Chocolate Negro"
                 },
                 {
-                  "src": "",
+                  "src": "assets/proyectos/castano/1.2e-pan-hallulla.webp",
+                  "fallback": "assets/proyectos/castano/1.2e-pan-hallulla.jpg",
                   "alt": "Bolsa de Pan Hallulla de Castaño",
                   "ratio": "1/1",
-                  "caption": "Pan Hallulla",
-                  "pending": "evywcQ7TefZysoQqg-1001-x.webp"
+                  "caption": "Pan Hallulla"
                 }
               ]
             },
@@ -110,18 +130,18 @@
               "text": "Exhibidor para el lanzamiento del Pan Blanco XL de 770 g, con un 35 % más de producto. La pieza se instaló en supermercados y lleva la promoción al tono cercano de la marca con el mensaje «Nuestro cariño es cada vez más grande».",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Exhibidor del Pan Blanco XL de 770 g instalado en supermercados",
-                  "ratio": "2/1",
-                  "caption": "Exhibidor «770 g» en supermercados",
-                  "pending": "Captura de pantalla 2026-11-13 a la(s) 11.22.15 a.m..png"
+                  "src": "assets/proyectos/castano/1.3a-exhibidor-tres-tiendas.webp",
+                  "fallback": "assets/proyectos/castano/1.3a-exhibidor-tres-tiendas.jpg",
+                  "alt": "Exhibidor del Pan Blanco XL de 770 g instalado en tres supermercados",
+                  "ratio": "179/83",
+                  "caption": "Exhibidor «770 g» en supermercados"
                 },
                 {
-                  "src": "",
-                  "alt": "Vista cercana del exhibidor del Pan Blanco XL",
-                  "ratio": "4/3",
-                  "caption": "Detalle del exhibidor",
-                  "pending": "Captura de pantalla 2026-11-13 a la(s) 11.21.50 a.m..png"
+                  "src": "assets/proyectos/castano/1.3b-exhibidor-vista.webp",
+                  "fallback": "assets/proyectos/castano/1.3b-exhibidor-vista.jpg",
+                  "alt": "Exhibidor del Pan Blanco XL de 770 g en el pasillo de un supermercado",
+                  "ratio": "68/97",
+                  "caption": "Detalle del exhibidor"
                 }
               ]
             },
@@ -153,7 +173,7 @@
           "contribution": "",
           "tools": [],
           "result": "",
-          "image": "",
+          "image": "assets/proyectos/castano/1.1a-vaso-arte-plano.webp",
           "gallery": [],
           "position": [
             24,
@@ -173,39 +193,65 @@
           "scope": "Calendario de 18 páginas e ilustración de portada",
           "mediaBg": "#DCE8F4",
           "cover": {
-            "src": "",
-            "alt": "Portada del calendario Kingsbury 2022: ilustración de una ciudad en tonos azules con la línea completa de panes al frente",
-            "ratio": "3/2",
-            "caption": "Portada ilustrada con la línea completa de productos",
-            "pending": "calendario Kingsbury_TRZ.pdf · pág. 1"
+            "src": "assets/proyectos/kingsbury-calendario-2022/2.0-montaje-calendario-escritorio.webp",
+            "fallback": "assets/proyectos/kingsbury-calendario-2022/2.0-montaje-calendario-escritorio.jpg",
+            "alt": "Montaje del calendario triangular de escritorio Kingsbury 2022, anillado arriba, con la portada ilustrada al frente sobre un escritorio",
+            "ratio": "3/2"
           },
           "sections": [
             {
-              "title": "Un color por producto",
-              "layout": "grid",
-              "columns": 3,
-              "text": "Cada mes toma el color de uno de los panes de la línea y lo acompaña con una receta de sándwich, para que el cambio de producto se note de un vistazo.",
+              "title": "",
+              "text": "",
+              "layout": "feature",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Página de enero del calendario Kingsbury en verde, lanzamiento del pan Hi Low",
-                  "ratio": "3/2",
-                  "caption": "Enero: lanzamiento del nuevo pan Hi Low",
-                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 3"
+                  "src": "assets/proyectos/kingsbury-calendario-2022/2.1-portada.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/2.1-portada.jpg",
+                  "alt": "Portada del calendario Kingsbury 2022: ilustración de una ciudad en tonos azules con la línea completa de panes de molde al frente",
+                  "ratio": "800/511",
+                  "caption": "Portada ilustrada con la línea completa de productos"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "text": "",
+              "layout": "grid",
+              "columns": 3,
+              "media": [
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/2.2-enero-hi-low.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/2.2-enero-hi-low.jpg",
+                  "alt": "Página de enero del calendario Kingsbury en verde, con el lanzamiento del pan Hi Low",
+                  "ratio": "800/511",
+                  "caption": "Enero: lanzamiento del nuevo pan Hi Low"
                 },
                 {
-                  "src": "",
-                  "alt": "Página de junio del calendario Kingsbury en azul, Pan Perfecto con receta",
-                  "ratio": "3/2",
-                  "caption": "Junio: Pan Perfecto, con receta y QR",
-                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 8"
+                  "src": "assets/proyectos/kingsbury-calendario-2022/2.3-junio-pan-perfecto.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/2.3-junio-pan-perfecto.jpg",
+                  "alt": "Página de junio del calendario Kingsbury en azul, con el Pan Perfecto y una receta de sándwich",
+                  "ratio": "800/511",
+                  "caption": "Junio: Pan Perfecto, con receta y QR"
                 },
                 {
-                  "src": "",
-                  "alt": "Página de diciembre del calendario Kingsbury en café, Integral Wholegrain con receta",
-                  "ratio": "3/2",
-                  "caption": "Diciembre: Integral Wholegrain, con receta y QR",
-                  "pending": "calendario Kingsbury_TRZ.pdf · pág. 14"
+                  "src": "assets/proyectos/kingsbury-calendario-2022/2.4-diciembre-wholegrain.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/2.4-diciembre-wholegrain.jpg",
+                  "alt": "Página de diciembre del calendario Kingsbury en café, con el pan Integral Wholegrain y una receta de sándwich",
+                  "ratio": "800/509",
+                  "caption": "Diciembre: Integral Wholegrain, con receta y QR"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "text": "",
+              "layout": "feature",
+              "media": [
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/2.5-contraportada-hi-low.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/2.5-contraportada-hi-low.jpg",
+                  "alt": "Contraportada del calendario Kingsbury en verde con el pan Hi Low",
+                  "ratio": "80/51"
                 }
               ]
             }
@@ -214,7 +260,7 @@
           "contribution": "",
           "tools": [],
           "result": "",
-          "image": "",
+          "image": "assets/proyectos/kingsbury-calendario-2022/2.0-montaje-calendario-escritorio.webp",
           "gallery": [],
           "position": [
             77,
@@ -234,10 +280,10 @@
           "scope": "Logo, sistema de etiquetas, catálogo, afiches, packs y animación",
           "mediaBg": "#111111",
           "cover": {
-            "src": "",
+            "src": "assets/proyectos/hijas-del-caldero/3.1a-logo-dorado.webp",
+            "fallback": "assets/proyectos/hijas-del-caldero/3.1a-logo-dorado.png",
             "alt": "Logo de Hijas del Caldero: caldero grabado en dorado sobre negro con letras góticas",
-            "ratio": "1/1",
-            "pending": "logo hijas del caldero n c dor.png"
+            "ratio": "1063/1127"
           },
           "sections": [
             {
@@ -247,104 +293,211 @@
               "text": "Un caldero de estilo grabado, con letras góticas y detalles en dorado. Funciona en dorado sobre negro, en blanco, en negro y como sello circular.",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Logo circular de Hijas del Caldero, versión sello",
+                  "src": "assets/proyectos/hijas-del-caldero/3.1b-logo-circular.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.1b-logo-circular.png",
+                  "alt": "Logo circular de Hijas del Caldero en dorado sobre negro, versión sello",
                   "ratio": "1/1",
-                  "caption": "Sello circular",
-                  "pending": "logoo hdc circulo.png"
+                  "caption": "Sello circular"
                 },
                 {
-                  "src": "",
+                  "src": "assets/proyectos/hijas-del-caldero/3.1c-logo-blanco.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.1c-logo-blanco.png",
                   "alt": "Logo de Hijas del Caldero en blanco",
-                  "ratio": "1/1",
-                  "caption": "Versión en blanco",
-                  "pending": "logo blanco.png"
+                  "ratio": "189/200",
+                  "caption": "Versión en blanco"
                 },
                 {
-                  "src": "",
-                  "alt": "Logo de Hijas del Caldero en negro",
-                  "ratio": "1/1",
+                  "src": "assets/proyectos/hijas-del-caldero/3.1c-logo-negro.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.1c-logo-negro.png",
+                  "alt": "Logo de Hijas del Caldero en negro sobre fondo claro",
+                  "ratio": "189/200",
                   "caption": "Versión en negro",
-                  "pending": "logo negro.png"
+                  "bg": "#F2EEE6"
                 }
               ]
             },
             {
               "title": "Sistema de etiquetas",
               "layout": "grid",
-              "columns": 5,
+              "columns": 4,
               "text": "Una misma base (fondo negro, marco ornamental y nombre del producto como protagonista) adaptada a cada formato: rectángulos para sprays y shampoo, hexágonos para cremas y tiras para sales y polvos. El color del marco cambia según la intención del producto, y detalles como las fases lunares refuerzan el universo de la marca.",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Etiqueta del Spray Mágico «Atrae Fortuna», negra y dorada",
-                  "ratio": "5/8",
+                  "src": "assets/proyectos/hijas-del-caldero/3.2a-spray-atrae-fortuna.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.2a-spray-atrae-fortuna.jpg",
+                  "alt": "Etiqueta del Spray Mágico «Atrae Fortuna», gris y dorada, con marco ornamental",
+                  "ratio": "50/77",
                   "caption": "Spray Mágico «Atrae Fortuna»",
-                  "pending": "SPRAY DE 5 X 8 CM/1.png"
+                  "bg": "#FFFFFF"
                 },
                 {
-                  "src": "",
-                  "alt": "Etiqueta del spray «Rayo Verde», variante verde",
-                  "ratio": "5/8",
-                  "caption": "Spray «Rayo Verde»",
-                  "pending": "etiquetas/VERDE.jpg"
+                  "src": "assets/proyectos/hijas-del-caldero/3.2b-spray-conexion.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.2b-spray-conexion.jpg",
+                  "alt": "Etiqueta del Spray Mágico «Conexión», variante negra con marco ornamental",
+                  "ratio": "50/77",
+                  "caption": "Spray Mágico «Conexión»",
+                  "bg": "#FFFFFF"
                 },
                 {
-                  "src": "",
-                  "alt": "Etiqueta del acondicionador «Chocolate Menta» con fases lunares",
-                  "ratio": "536/944",
-                  "caption": "Acondicionador «Chocolate Menta»",
-                  "pending": "SHAMPOO ACONDICIONADOR/1.png"
-                },
-                {
-                  "src": "",
-                  "alt": "Etiqueta hexagonal de la Crema de Lavanda",
-                  "ratio": "577/500",
+                  "src": "assets/proyectos/hijas-del-caldero/3.2d-crema-lavanda.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.2d-crema-lavanda.jpg",
+                  "alt": "Etiqueta hexagonal de la Crema de Lavanda, negra y dorada",
+                  "ratio": "650/667",
                   "caption": "Crema de Lavanda",
-                  "pending": "CREMAS (hexágonos)/1.png"
+                  "bg": "#FFFFFF"
                 },
                 {
-                  "src": "",
-                  "alt": "Etiqueta del Jabón Rosa Mosqueta",
-                  "ratio": "370/509",
-                  "caption": "Jabón Rosa Mosqueta",
-                  "pending": "JABONES/1.png"
+                  "src": "assets/proyectos/hijas-del-caldero/3.2e-jabon-rosa-jazmin-violeta.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.2e-jabon-rosa-jazmin-violeta.jpg",
+                  "alt": "Etiqueta del jabón Rosa · Jazmín · Violeta con marco ornamental",
+                  "ratio": "500/381",
+                  "caption": "Jabón Rosa · Jazmín · Violeta",
+                  "bg": "#FFFFFF"
+                }
+              ],
+              "extra": {
+                "layout": "row",
+                "media": [
+                  {
+                    "src": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-calendula-melisa.webp",
+                    "fallback": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-calendula-melisa.jpg",
+                    "alt": "Etiqueta del acondicionador «Magia Capilar» Caléndula Melisa, con ilustración botánica y fases lunares",
+                    "ratio": "10/17",
+                    "caption": "Acondicionador Caléndula Melisa",
+                    "bg": "#FFFFFF"
+                  },
+                  {
+                    "src": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-lavanda-magica.webp",
+                    "fallback": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-lavanda-magica.jpg",
+                    "alt": "Etiqueta del acondicionador «Magia Capilar» Lavanda Mágica, con ilustración botánica y fases lunares",
+                    "ratio": "10/17",
+                    "caption": "Acondicionador Lavanda Mágica",
+                    "bg": "#FFFFFF"
+                  },
+                  {
+                    "src": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-lemongrass-limon.webp",
+                    "fallback": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-lemongrass-limon.jpg",
+                    "alt": "Etiqueta del acondicionador «Magia Capilar» Lemongrass Limón, con ilustración botánica y fases lunares",
+                    "ratio": "10/17",
+                    "caption": "Acondicionador Lemongrass Limón",
+                    "bg": "#FFFFFF"
+                  },
+                  {
+                    "src": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-manzanilla-naranja.webp",
+                    "fallback": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-manzanilla-naranja.jpg",
+                    "alt": "Etiqueta del acondicionador «Magia Capilar» Manzanilla Naranja, con ilustración botánica y fases lunares",
+                    "ratio": "10/17",
+                    "caption": "Acondicionador Manzanilla Naranja",
+                    "bg": "#FFFFFF"
+                  },
+                  {
+                    "src": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-romero-ortiga.webp",
+                    "fallback": "assets/proyectos/hijas-del-caldero/3.2c-acondicionador-romero-ortiga.jpg",
+                    "alt": "Etiqueta del acondicionador «Magia Capilar» Romero Ortiga, con ilustración botánica y fases lunares",
+                    "ratio": "10/17",
+                    "caption": "Acondicionador Romero Ortiga",
+                    "bg": "#FFFFFF"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "En el producto",
+              "layout": "grid",
+              "columns": 3,
+              "text": "Las etiquetas aplicadas a sus envases: sprays, shampoo y acondicionador, jabones, aceites y sales, todos dentro de una misma atmósfera natural y ritual.",
+              "media": [
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5a-montaje-spray-atrae-fortuna.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5a-montaje-spray-atrae-fortuna.jpg",
+                  "alt": "Montaje de producto: frasco ámbar del Spray Mágico «Atrae Fortuna» sobre lino crudo con lavanda y cuarzos",
+                  "ratio": "561/701",
+                  "caption": "Spray «Atrae Fortuna»"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5b-montaje-spray-amor-propio.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5b-montaje-spray-amor-propio.jpg",
+                  "alt": "Montaje de producto: frasco ámbar del spray «Amor Propio» sobre lino crudo",
+                  "ratio": "561/701",
+                  "caption": "Spray «Amor Propio»"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5c-montaje-shampoo-acondicionador-lavanda.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5c-montaje-shampoo-acondicionador-lavanda.jpg",
+                  "alt": "Montaje de producto: shampoo y acondicionador Lavanda Mágica sobre lino crudo con lavanda",
+                  "ratio": "561/701",
+                  "caption": "Shampoo y acondicionador Lavanda Mágica"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5d-montaje-jabon-rosa-jazmin-violeta.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5d-montaje-jabon-rosa-jazmin-violeta.jpg",
+                  "alt": "Montaje de producto: jabón Rosa · Jazmín · Violeta con pétalos sobre lino crudo",
+                  "ratio": "561/701",
+                  "caption": "Jabón Rosa · Jazmín · Violeta"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5e-montaje-aceite-abramelin.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5e-montaje-aceite-abramelin.jpg",
+                  "alt": "Montaje de producto: frasco gotero del Aceite Abramelin junto a una vela",
+                  "ratio": "561/701",
+                  "caption": "Aceite Abramelin"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.5f-montaje-sal-de-las-brujas.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.5f-montaje-sal-de-las-brujas.jpg",
+                  "alt": "Montaje de producto: frasco de vidrio con corcho de la Sal de las Brujas",
+                  "ratio": "561/701",
+                  "caption": "Sal de las Brujas"
                 }
               ]
             },
             {
               "title": "Aplicaciones",
               "layout": "grid",
-              "columns": 2,
+              "columns": 3,
               "text": "La identidad se extiende a catálogos de productos, afiches para rituales y eventos, packs especiales como el Pack Ritual Lunar y tarjetas de presentación.",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Afiche ritual «Samhain & Beltane» de Hijas del Caldero",
-                  "ratio": "2448/3168",
-                  "caption": "Afiche ritual «Samhain & Beltane»",
-                  "pending": "hdc afiche/ritual-2023.png"
+                  "src": "assets/proyectos/hijas-del-caldero/3.3a-afiche-ritual.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3a-afiche-ritual.jpg",
+                  "alt": "Afiche ritual «Samhain & Beltane» de Hijas del Caldero, con el caldero rodeado de flores sobre negro y marco dorado",
+                  "ratio": "371/480",
+                  "caption": "Afiche ritual «Samhain & Beltane»"
                 },
                 {
-                  "src": "",
-                  "alt": "Portada del catálogo de cosmética, mármol negro y dorado",
-                  "ratio": "2448/3168",
-                  "caption": "Catálogo de cosmética",
-                  "pending": "catalogo cosmetica.pdf · pág. 1"
+                  "src": "assets/proyectos/hijas-del-caldero/3.3b-catalogo-portada.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3b-catalogo-portada.jpg",
+                  "alt": "Portada del catálogo «Cosmética Mágica» en mármol negro con vetas doradas",
+                  "ratio": "371/480",
+                  "caption": "Catálogo: portada"
                 },
                 {
-                  "src": "",
-                  "alt": "Pack Ritual Lunar de Hijas del Caldero",
+                  "src": "assets/proyectos/hijas-del-caldero/3.3b-catalogo-interior-shampoo.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3b-catalogo-interior-shampoo.jpg",
+                  "alt": "Página interior del catálogo con la línea de shampoo y acondicionador",
+                  "ratio": "371/480",
+                  "caption": "Catálogo: shampoo y acondicionador"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.3c-pack-lunar-1.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3c-pack-lunar-1.jpg",
+                  "alt": "Pack Ritual Lunar de Hijas del Caldero: caja con productos y gráfica de lunas doradas",
                   "ratio": "1/1",
-                  "caption": "Pack Ritual Lunar",
-                  "pending": "PACK-LUNAR1.jpg"
+                  "caption": "Pack Ritual Lunar"
                 },
                 {
-                  "src": "",
-                  "alt": "Pack Ritual Lunar de Hijas del Caldero, segunda vista",
+                  "src": "assets/proyectos/hijas-del-caldero/3.3c-pack-lunar-2.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3c-pack-lunar-2.jpg",
+                  "alt": "Pack Ritual Lunar abierto con sus productos",
                   "ratio": "1/1",
-                  "caption": "Pack Ritual Lunar, detalle",
-                  "pending": "PACK-LUNAR2.jpg"
+                  "caption": "Pack Ritual Lunar, interior"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.3d-tarjeta-presentacion.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.3d-tarjeta-presentacion.jpg",
+                  "alt": "Tarjeta de presentación negra con marco dorado y lunas",
+                  "ratio": "946/591",
+                  "caption": "Tarjeta de presentación"
                 }
               ]
             },
@@ -362,13 +515,41 @@
                   "kind": "video"
                 }
               ]
+            },
+            {
+              "title": "Redes y eventos",
+              "layout": "small",
+              "text": "Piezas para Instagram, radio y encuentros en línea, que mantienen la identidad incluso en el contenido del día a día.",
+              "media": [
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.6a-flyer-martes-de-brujas.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.6a-flyer-martes-de-brujas.jpg",
+                  "alt": "Flyer del conversatorio esotérico «Martes de Brujas» con velas",
+                  "ratio": "1/1",
+                  "caption": "Martes de Brujas"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.6c-flyer-horoscopo-y-tarot.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.6c-flyer-horoscopo-y-tarot.jpg",
+                  "alt": "Flyer «Horóscopo & Tarot» semanal de Hijas del Caldero",
+                  "ratio": "1/1",
+                  "caption": "Horóscopo & Tarot"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/3.6d-flyer-horoscopo-magico.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/3.6d-flyer-horoscopo-magico.jpg",
+                  "alt": "Flyer «Horóscopo mágico» semanal de Hijas del Caldero para radio",
+                  "ratio": "1/1",
+                  "caption": "Horóscopo mágico"
+                }
+              ]
             }
           ],
           "goal": "",
           "contribution": "",
           "tools": [],
           "result": "",
-          "image": "",
+          "image": "assets/proyectos/hijas-del-caldero/3.1a-logo-dorado.webp",
           "gallery": [],
           "position": [
             32,

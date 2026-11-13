@@ -1,33 +1,38 @@
 # 13 — Carga de los proyectos de Diseño
 
-Implementación de `12_ESPECIFICACION_PROYECTOS.md` (documento de Coni, se conserva sin cambios). Rama `contenido/proyectos-diseno`.
+Implementación de `12_ESPECIFICACION_PROYECTOS.md` (documento de Coni, versión con archivos; se conserva sin cambios). Rama `contenido/proyectos-diseno`.
 
 ## Qué está hecho
 
-- Los 4 proyectos DEMO de Diseño se reemplazaron por **Castaño**, **Kingsbury · Calendario 2022** e **Hijas del Caldero**, en ese orden, con los textos del documento.
-- Cada caso tiene: título, bajada, Rol / Años / Alcance, descripción, portada y bloques con sus piezas, en el orden y con los pies de imagen del documento.
-- Solo se incluyeron las piezas marcadas ✅ y ⚠️. Las ❌ y las excluidas no están.
-- Cada pieza tiene un espacio reservado con su proporción y el fondo uniforme del proyecto (crema `#F6F0E6`, azul claro, negro `#111`), con la marca «Imagen pendiente» o «Video pendiente» hasta que se cargue.
-- Videos preparados para Vimeo: en bucle y sin sonido. Se permitió `player.vimeo.com` en la política de seguridad (`public/_headers`).
+- Los 4 proyectos DEMO de Diseño se reemplazaron por **Castaño**, **Kingsbury · Calendario 2022** e **Hijas del Caldero**, en ese orden, con los textos aprobados del documento, sin reescribir.
+- **46 imágenes** cargadas en `public/assets/proyectos/<proyecto>/`, con el nombre del ID de su ficha (1.1a, 2.3, 3.5c…).
+  - WebP (calidad 82; 58 en los logos blanco/negro por peso) + respaldo JPG (PNG si tiene transparencia), máximo 2400 px en el lado largo.
+  - Todas dentro del peso del documento (≤ 400 KB en grilla, ≤ 800 KB en portada). Total WebP: ~6,9 MB.
+  - Cada imagen tiene su texto alternativo (`alt`) descriptivo.
+- Estructura de cada caso: título, bajada, Rol / Años / Alcance, descripción, portada y bloques.
+  - **Castaño:** portada = arte plano (1.1a) → render 3D y escena (1.1d, 1.1e) → fotos originales chicas (1.1b, 1.1c) → packaging en grilla → punto de venta en franja.
+  - **Kingsbury:** portada = montaje del calendario (2.0) → portada plana (2.1) → enero, junio y diciembre en grilla → contraportada (2.5) como cierre.
+  - **Hijas del Caldero:** portada = logo dorado → versiones de logo → etiquetas planas + fila de 5 acondicionadores → **montajes de producto justo después (3.5)** → aplicaciones → redes y eventos.
+- Fondo uniforme por proyecto (crema, azul claro, negro). Excepciones por pieza: logo negro sobre crema claro y etiquetas sobre blanco, para que se vean.
+- **Videos:** no se subieron (irán a Vimeo). Los bloques «Contenido para redes» (Castaño) y «Animación» (Hijas del Caldero) están preparados en el JSON y **no aparecen** hasta tener el enlace de Vimeo. La política de seguridad ya permite `player.vimeo.com`.
 - Informática sigue con proyectos DEMO.
 
-## Cómo cargar una imagen
+## Decisiones tomadas al cargar (revisar con Coni)
 
-1. Optimizar según las reglas del documento (sección 0): WebP calidad ~82, ≥1600 px de lado largo para portadas, ≥1000 px para grilla, sin franjas legales, QR ni datos de terceros.
-2. Guardar en `public/assets/proyectos/<id-del-proyecto>/`, por ejemplo `public/assets/proyectos/castano/vaso-arte-plano.webp`.
-3. En `data/demo-content.json`, en la pieza correspondiente (se reconoce por `pending`, el nombre del archivo de origen), escribir la ruta en `src`: `"src": "assets/proyectos/castano/vaso-arte-plano.webp"`. Ajustar `ratio` a la proporción real si cambia.
-4. Para un video: subirlo a Vimeo y escribir el enlace en `vimeo`.
+- **1.3b exhibidor:** venía con dos vistas juntas; se usa solo la más nítida (la derecha), como pide el documento.
+- **3.3a afiche:** se taparon el teléfono y el correo de la escuela (datos de contacto de terceros, regla de la sección 0). Se mantiene @hijasdelcaldero.
+- **3.3d tarjeta:** se tapó el teléfono personal de Coni (igual que en el CV público).
+- **3.6b flyer «Lectura de Tarot Online»:** no se incluyó porque muestra el nombre de otra persona (regla de datos personales).
+- **3.5 montajes y 1.1d / 1.1e:** el documento indica que son montajes generados a partir del arte real. Los textos alternativos dicen «Montaje de producto» / «Render 3D» para no presentarlos como fotos reales.
+- La sección 3.7 excluye flyers de horóscopo/tarot, pero la 3.6 dice que Coni los agregó: se respetó la 3.6 (grilla chica al final).
 
-## Datos por confirmar antes de publicar
+## Cómo cargar más piezas
 
-- Castaño: «90 años de historia» y que el vaso es para la cafetería de las tiendas.
-- Años: Castaño 2021–2024 (coincide con el CV), Kingsbury 2021–2022, Hijas del Caldero 2019–2023.
+1. Optimizar (reglas de la sección 0): WebP ~82 + JPG, ≤ 2400 px, sin franjas legales, QR vigentes ni datos de terceros.
+2. Guardar en `public/assets/proyectos/<id-del-proyecto>/`.
+3. En `data/demo-content.json`, en la pieza: `src` (WebP), `fallback` (JPG/PNG), `alt`, `ratio` y `caption`.
+4. Para un video: subirlo a Vimeo y poner el enlace en `vimeo` de la pieza correspondiente (ya existen con `pending`).
 
-## Pendientes de material (del documento, sección 4)
+## Pendiente
 
-- Castaño: originales en alta del vaso (1.1b–1.1c), Queque Invierno (1.2b) y Café (1.2c); recortar franja del Ministerio de Salud (1.2a) y tarjeta amarilla (1.2e).
-- Kingsbury: exportar páginas 1, 3, 8 y 14 del PDF a 2400 px y tapar los QR.
-- Hijas del Caldero: reexportar etiquetas desde los `.ai` a ≥1600 px (o mockups) y exportar portada del catálogo.
-- Subir a Vimeo `hdc promo.mp4` y `igexport-C4gMMPip5cN.mp4`.
-
-Las imágenes no llegaron a esta sesión: el disco «coni vida» y el Escritorio están en la lista de Remote Control, pero el computador no los ofrece a sesiones en la nube. Se pueden subir como zip.
+- Coni: subir a Vimeo `hdc promo.mp4` (y opcionalmente `igexport-C4gMMPip5cN.mp4` e `igexport-C4s9PK5ruz0.mp4`) y pasar los enlaces.
