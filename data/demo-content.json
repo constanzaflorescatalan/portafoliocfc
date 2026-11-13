@@ -564,6 +564,137 @@
       "degree": "Ingeniería en Informática · Duoc UC · Título profesional · 2025",
       "projects": [
         {
+          "id": "grado-cerrado",
+          "title": "Grado Cerrado",
+          "isDemo": false,
+          "type": "App móvil y web",
+          "client": "Grado Cerrado",
+          "subtitle": "App para preparar el examen de grado de Derecho.",
+          "intro": "Grado Cerrado es una aplicación para preparar el examen de grado de Derecho en Chile. Propone tests por área, como Derecho Civil y Derecho Procesal, muestra el resultado y la retroalimentación de cada respuesta, y acompaña el avance diario del estudiante con una mascota que celebra cada logro.",
+          "scope": "Marca, diseño de interfaz, arquitectura y modelo de datos",
+          "mediaBg": "#F5D96C",
+          "cover": {
+            "src": "assets/proyectos/grado-cerrado/4.0-portada.webp",
+            "fallback": "assets/proyectos/grado-cerrado/4.0-portada.jpg",
+            "alt": "Portada de Grado Cerrado: logo de la app y tres pantallas del celular sobre fondo amarillo",
+            "ratio": "8/5"
+          },
+          "sections": [
+            {
+              "title": "Pantallas",
+              "layout": "phone",
+              "text": "Recorrido principal de la app: inicio de sesión, bienvenida, panel con el progreso diario y las áreas de estudio, tests de alternativas, resultados con retroalimentación y una pantalla de celebración al completar cada test.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1a-intro.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1a-intro.png",
+                  "alt": "Pantalla de inicio de Grado Cerrado, con botones para iniciar sesión o registrarse y la mascota mapache",
+                  "ratio": "799/1500",
+                  "caption": "Inicio"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1b-bienvenida.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1b-bienvenida.png",
+                  "alt": "Pantalla de bienvenida con la mascota mapache con birrete: «Tu APP inteligente para preparar tu examen de grado de Derecho»",
+                  "ratio": "799/1500",
+                  "caption": "Bienvenida"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1c-dashboard.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1c-dashboard.png",
+                  "alt": "Panel principal con el progreso diario del estudiante y las áreas Derecho Civil y Derecho Procesal",
+                  "ratio": "799/1500",
+                  "caption": "Panel de avance"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1d-test-civil.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1d-test-civil.png",
+                  "alt": "Test de Derecho Civil: pregunta 3 de 10 con cuatro alternativas",
+                  "ratio": "799/1500",
+                  "caption": "Test de Derecho Civil"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1e-feedback.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1e-feedback.png",
+                  "alt": "Resultado del test: 70 % de respuestas correctas, tiempo total y retroalimentación de las preguntas incorrectas",
+                  "ratio": "799/1500",
+                  "caption": "Resultado y retroalimentación"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.1f-felicidades.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.1f-felicidades.png",
+                  "alt": "Pantalla de felicitaciones con la mascota celebrando al completar un test",
+                  "ratio": "799/1500",
+                  "caption": "Felicitaciones"
+                }
+              ]
+            },
+            {
+              "title": "Marca",
+              "layout": "sequence",
+              "text": "Logotipo e isotipo de la app: el nombre en una etiqueta amarilla con la bajada «Capítulo terminado», y las iniciales GC dentro de un círculo.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.2a-logo.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.2a-logo.png",
+                  "alt": "Logotipo de Grado Cerrado con la bajada «Capítulo terminado»",
+                  "ratio": "894/397",
+                  "caption": "Logotipo",
+                  "bg": "#F2F0EA"
+                },
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.2b-isotipo.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.2b-isotipo.jpg",
+                  "alt": "Isotipo de Grado Cerrado: letras GC grises sobre un círculo amarillo",
+                  "ratio": "1/1",
+                  "caption": "Isotipo",
+                  "bg": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "title": "Arquitectura",
+              "layout": "feature",
+              "text": "La app móvil (Ionic y Angular) y la versión web (Angular en Azure Static Web Apps) se conectan por HTTPS a un backend en .NET Core sobre Azure App Service, dentro de una red virtual en la región Brazil South. Los datos están en Azure Database for PostgreSQL, en una subred privada, junto a Qdrant en Azure Container Instances y Azure Blob Storage. Además usa Azure Speech Service, OpenAI y Gemini, y Firebase Cloud Messaging para las notificaciones.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.3a-arquitectura-azure.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.3a-arquitectura-azure.jpg",
+                  "alt": "Diagrama de arquitectura en Azure: clientes web y móvil, backend .NET Core en App Service, PostgreSQL, Qdrant, Blob Storage, Speech Service, Firebase Cloud Messaging, OpenAI y Gemini",
+                  "ratio": "1700/1449",
+                  "caption": "Arquitectura en Azure",
+                  "bg": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "title": "Modelo de datos",
+              "layout": "feature",
+              "text": "Base de datos relacional con áreas, temas y subtemas, tests, preguntas generadas y personalizadas con sus opciones, notificaciones y el registro de días de estudio de cada estudiante.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grado-cerrado/4.3b-modelo-de-datos.webp",
+                  "fallback": "assets/proyectos/grado-cerrado/4.3b-modelo-de-datos.jpg",
+                  "alt": "Diagrama entidad-relación con las tablas áreas, temas, subtemas, tests, preguntas generadas y personalizadas, opciones, estudiantes, notificaciones y registro de días de estudio",
+                  "ratio": "16/9",
+                  "caption": "Modelo de datos",
+                  "bg": "#FFFFFF"
+                }
+              ]
+            }
+          ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "assets/proyectos/grado-cerrado/4.0-portada.webp",
+          "gallery": [],
+          "position": [
+            70,
+            72
+          ]
+        },
+        {
           "id": "demo-informatica-01",
           "title": "Proyecto demo de Informática 01",
           "isDemo": true,

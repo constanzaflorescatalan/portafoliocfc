@@ -36,3 +36,10 @@ Implementación de `12_ESPECIFICACION_PROYECTOS.md` (documento de Coni, versión
 ## Pendiente
 
 - Coni: subir a Vimeo `hdc promo.mp4` (y opcionalmente `igexport-C4gMMPip5cN.mp4` e `igexport-C4s9PK5ruz0.mp4`) y pasar los enlaces.
+
+## Informática: Grado Cerrado (agregado el 13 de noviembre)
+
+- Primer proyecto real de Informática. Los 3 DEMO de Informática se mantienen por ahora (no se borra nada sin pedirlo).
+- 11 imágenes en `public/assets/proyectos/grado-cerrado/` (WebP + PNG/JPG, ~0,6 MB en WebP): portada, 6 pantallas, logotipo, isotipo, arquitectura en Azure y modelo de datos.
+- **No llegó documento con textos.** Los textos se escribieron solo con lo que muestran las imágenes (bajada de la portada, funciones visibles en las pantallas, servicios del diagrama y tablas del modelo). Fondo del proyecto: amarillo de la marca `#F5D96C`.
+- **Por confirmar con Coni:** rol (¿proyecto de título?, ¿equipo?, ¿qué hizo ella?), año y si hay demo o repositorio público. Mientras tanto, la ficha muestra solo «Alcance»; «Rol» y «Años» aparecen solos cuando se completen en el JSON.

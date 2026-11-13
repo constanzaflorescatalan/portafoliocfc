@@ -112,18 +112,19 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
           <dl className="case__meta">
             {project.sections ? (
               <>
-                <div>
-                  <dt>Rol</dt>
-                  <dd>{project.role}</dd>
-                </div>
-                <div>
-                  <dt>Años</dt>
-                  <dd>{project.years}</dd>
-                </div>
-                <div>
-                  <dt>Alcance</dt>
-                  <dd>{project.scope}</dd>
-                </div>
+                {/* Solo los datos que existen (ej. sin rol confirmado, no se muestra). */}
+                {[
+                  ['Rol', project.role],
+                  ['Años', project.years],
+                  ['Alcance', project.scope],
+                ]
+                  .filter(([, v]) => v)
+                  .map(([label, value]) => (
+                    <div key={label}>
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
               </>
             ) : (
               <>
