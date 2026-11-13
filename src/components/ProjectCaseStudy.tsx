@@ -115,6 +115,7 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
                 {/* Solo los datos que existen (ej. sin rol confirmado, no se muestra). */}
                 {[
                   ['Rol', project.role],
+                  ['Contexto', project.context],
                   ['Años', project.years],
                   ['Alcance', project.scope],
                 ]

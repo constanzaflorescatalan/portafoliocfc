@@ -33,6 +33,8 @@ export type Project = {
   /** Proyectos reales por bloques (si existen, reemplazan Objetivo/Participación/…). */
   subtitle?: string;
   role?: string;
+  /** Contexto del proyecto (ej. «Proyecto de título en equipo · Duoc UC»). */
+  context?: string;
   years?: string;
   scope?: string;
   /** Fondo uniforme de las imágenes del proyecto (crema, azul claro, negro…). */
