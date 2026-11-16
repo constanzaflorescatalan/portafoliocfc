@@ -262,7 +262,8 @@
 .hero__portrait {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  /* Sobre la zona clicable del broche: solo la foto y las marcas reciben el cursor. */
+  z-index: 5;
   pointer-events: none;
   transition: transform var(--motion-long) var(--ease-out);
 }
@@ -283,18 +284,6 @@
   z-index: 3;
 }
 
-.orbit-line {
-  fill: none;
-  stroke: var(--orbit-color);
-  stroke-width: 3;
-  stroke-dasharray: 1;
-  animation: orbit-draw 1500ms 250ms ease-out backwards;
-}
-
-.orbit-line--front {
-  animation: orbit-fade 700ms 900ms ease-out backwards;
-}
-
 /* Marcas en la órbita: aparecen suave cuando la línea ya está dibujada. */
 .orbit-brands {
   animation: orbit-brands-in 1200ms 600ms ease-out backwards;
@@ -304,15 +293,38 @@
   animation-delay: 0ms;
 }
 
+/* Cada marca: borde fino nítido y, con el cursor encima, crece un poco. */
+.orbit-chip {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.orbit-chip image,
+.orbit-chip__edge {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 260ms var(--ease-out);
+}
+
+.orbit-chip__edge {
+  fill: none;
+  stroke: rgba(235, 233, 232, 0.28);
+  stroke-width: 1;
+}
+
+.orbit-chip:hover image,
+.orbit-chip:hover .orbit-chip__edge {
+  transform: scale(1.45);
+}
+
+.orbit-chip:hover .orbit-chip__edge {
+  stroke: rgba(235, 233, 232, 0.55);
+}
+
 @keyframes orbit-brands-in {
   from {
     opacity: 0;
   }
-}
-
-.orbit-moon {
-  stroke: rgba(5, 8, 14, 0.35);
-  stroke-width: 1;
 }
 
 .hero__photo {
@@ -327,6 +339,11 @@
   border-radius: 50%;
   background: var(--color-pine);
   animation: photo-in 900ms var(--ease-out) backwards;
+}
+
+.hero__photo {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .hero__photo img {
@@ -360,16 +377,6 @@
   animation-duration: 450ms;
 }
 
-.hero--quick .orbit-line {
-  animation-duration: 600ms;
-  animation-delay: 0ms;
-}
-
-.hero--quick .orbit-line--front {
-  animation-duration: 350ms;
-  animation-delay: 300ms;
-}
-
 .hero--quick .hero__card {
   animation-duration: 550ms;
   animation-delay: 150ms;
@@ -383,18 +390,6 @@
   from {
     opacity: 0;
     transform: scale(0.94);
-  }
-}
-
-@keyframes orbit-draw {
-  from {
-    stroke-dashoffset: 1;
-  }
-}
-
-@keyframes orbit-fade {
-  from {
-    opacity: 0;
   }
 }
 
@@ -417,7 +412,7 @@
 
   .hero__card,
   .hero__photo,
-  .orbit-line {
+  .orbit-brands {
     animation: none;
   }
 

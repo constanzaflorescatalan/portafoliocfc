@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type React from 'react';
 import { BIO, BRANDS } from '../data/content';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
@@ -10,49 +11,8 @@ type Props = { opening: boolean; reduced: boolean; onEnter: () => void };
  * expresada en un lienzo de 750×970 que escala con `--u` (ver cover.css).
  */
 const ORBIT = { cx: 381, cy: 314, rx: 385, ry: 116, rotate: -20 };
-/** Vuelta completa de la estrella; mantener igual a `--orbit-duration` en tokens.css (provisional). */
-const ORBIT_SECONDS = 14;
-
-const FRONT_ARC = `M ${-ORBIT.rx} 0 A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${ORBIT.rx} 0`;
-const FULL_LOOP = `${FRONT_ARC} A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${-ORBIT.rx} 0`;
-/** Radio de la luna que recorre la órbita (en unidades del lienzo 750×970). */
-const MOON_R = 10;
-
-/**
- * Luna (antes estrella de cuatro puntas), sin brillo. Hay una copia detrás y otra delante de la foto;
- * cada una es visible solo durante la mitad de la órbita que le corresponde.
- */
-function MoonGradient({ half }: { half: 'front' | 'back' }) {
-  return (
-    <defs>
-      <radialGradient id={`moon-${half}`} cx="38%" cy="34%" r="70%">
-        <stop offset="0%" stopColor="#f4f3f2" />
-        <stop offset="55%" stopColor="#d9d8db" />
-        <stop offset="100%" stopColor="#8f97a8" />
-      </radialGradient>
-    </defs>
-  );
-}
-
-function OrbitMoon({ half, begin }: { half: 'front' | 'back'; begin: string }) {
-  return (
-    <g opacity="0">
-      <animateMotion dur={`${ORBIT_SECONDS}s`} begin={begin} repeatCount="indefinite" path={FULL_LOOP} />
-      <animate
-        attributeName="opacity"
-        dur={`${ORBIT_SECONDS}s`}
-        begin={begin}
-        repeatCount="indefinite"
-        calcMode="discrete"
-        keyTimes="0;0.5"
-        values={half === 'front' ? '1;0' : '0;1'}
-      />
-      {/* Luna: círculo con sombreado esférico suave (sin brillo). */}
-      <circle className="orbit-moon" r={MOON_R} fill={`url(#moon-${half})`} />
-    </g>
-  );
-}
-
+/** Elipse completa: la mitad de adelante (abajo) primero, luego la de atrás. Sin línea visible. */
+const FULL_LOOP = `M ${-ORBIT.rx} 0 A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${ORBIT.rx} 0 A ${ORBIT.rx} ${ORBIT.ry} 0 0 0 ${-ORBIT.rx} 0`;
 /**
  * Marcas con las que ha trabajado: círculos pequeños en blanco y negro que recorren la misma
  * órbita que la luna, más lento. Imágenes en `public/assets/logos-orbita` (mismo nombre que el logo).
@@ -88,7 +48,10 @@ function BrandChip({ src, index, half, still }: { src: string; index: number; ha
   const chip = (
     // La órbita está girada; se compensa para que los logos queden derechos.
     <g transform={`rotate(${-ORBIT.rotate})`}>
-      <image href={asset(src)} x={-BRAND_R} y={-BRAND_R} width={BRAND_R * 2} height={BRAND_R * 2} />
+      <g className="orbit-chip">
+        <image href={asset(src)} x={-BRAND_R} y={-BRAND_R} width={BRAND_R * 2} height={BRAND_R * 2} />
+        <circle className="orbit-chip__edge" r={BRAND_R - 0.5} />
+      </g>
     </g>
   );
   if (still) {
@@ -98,16 +61,17 @@ function BrandChip({ src, index, half, still }: { src: string; index: number; ha
   }
   const begin = `${(-f * BRAND_SECONDS).toFixed(2)}s`;
   return (
-    <g opacity="0">
+    // `visibility` (no opacidad): la copia oculta no recibe el cursor.
+    <g visibility="hidden">
       <animateMotion dur={`${BRAND_SECONDS}s`} begin={begin} repeatCount="indefinite" path={FULL_LOOP} />
       <animate
-        attributeName="opacity"
+        attributeName="visibility"
         dur={`${BRAND_SECONDS}s`}
         begin={begin}
         repeatCount="indefinite"
         calcMode="discrete"
         keyTimes="0;0.5"
-        values={half === 'front' ? '1;0' : '0;1'}
+        values={half === 'front' ? 'visible;hidden' : 'hidden;visible'}
       />
       {chip}
     </g>
@@ -115,8 +79,13 @@ function BrandChip({ src, index, half, still }: { src: string; index: number; ha
 }
 
 function OrbitBrands({ half, still }: { half: 'front' | 'back'; still: boolean }) {
+  // Con el cursor sobre una marca, la órbita se detiene para que no se escape.
+  const pause = (e: React.PointerEvent<SVGGElement>, stop: boolean) => {
+    if (e.pointerType !== 'mouse') return;
+    document.querySelectorAll<SVGSVGElement>('.hero__orbit').forEach((svg) => (stop ? svg.pauseAnimations() : svg.unpauseAnimations()));
+  };
   return (
-    <g className="orbit-brands">
+    <g className="orbit-brands" onPointerOver={(e) => pause(e, true)} onPointerOut={(e) => pause(e, false)}>
       {ORBIT_LOGOS.map((src, i) => (
         <BrandChip key={src} src={src} index={i} half={half} still={still} />
       ))}
@@ -151,7 +120,6 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
       /* sin almacenamiento: siempre intro completa */
     }
   }, []);
-  const moonBegin = quick ? '0.5s' : '1.8s';
   // Las marcas se cargan después del retrato para no retrasar la portada.
   const [brandsReady, setBrandsReady] = useState(false);
   useEffect(() => {
@@ -195,22 +163,13 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
 
         <div className="hero__portrait">
           <svg className="hero__orbit" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
-            <MoonGradient half="back" />
             <g transform={orbitTransform}>
-              <ellipse
-                className="orbit-line"
-                cx="0"
-                cy="0"
-                rx={ORBIT.rx}
-                ry={ORBIT.ry}
-                pathLength="1"
-              />
               {brandsReady && <OrbitBrands half="back" still={reduced} />}
-              {!reduced && <OrbitMoon half="back" begin={moonBegin} />}
             </g>
           </svg>
 
-          <div className="hero__photo">
+          {/* La foto queda sobre la zona clicable (para tapar las marcas de atrás); también avanza. */}
+          <div className="hero__photo" onClick={opening ? undefined : advance}>
             <img
               src={asset('assets/retrato_constanza.jpg')}
               alt="Constanza Flores"
@@ -220,11 +179,8 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
           </div>
 
           <svg className="hero__orbit hero__orbit--front" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
-            <MoonGradient half="front" />
             <g transform={orbitTransform}>
-              <path className="orbit-line orbit-line--front" d={FRONT_ARC} pathLength="1" />
               {brandsReady && <OrbitBrands half="front" still={reduced} />}
-              {!reduced && <OrbitMoon half="front" begin={moonBegin} />}
             </g>
           </svg>
         </div>
