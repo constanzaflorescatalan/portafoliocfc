@@ -63,3 +63,11 @@ Los videos muestran la portada de Vimeo con botón de reproducir; el reproductor
 - **No incluidos:** App de asistencia QR (AstGon/myApp-ApiLogin-) y Estacionamiento (AstGon/Parking): visualmente muy básicos frente al resto (pantallas blancas, imágenes rotas) y la app muestra nombres reales de compañeros. Se pueden mencionar más adelante como enlaces a repositorio.
 - **Se quitaron los 3 proyectos DEMO** de Informática: quedan Grado Cerrado, R·MEDY y Grupo Cero.
 - Nuevo campo `links` en los proyectos (botones a sitio o repositorio).
+
+## Vancouver Laser & Skin Care Centre (16 de noviembre)
+
+Caso de estudio UX/UI armado con el material del Drive de Coni (carpeta ROBERT › VANCOUVER, mismo grupo de clínicas que R·MEDY, misma dirección en 750 West Broadway):
+- Diagnóstico y textos tomados de sus documentos «Revisión inicial y levantamiento de secciones», «Estilo Visual 1» y «Estilo Visual 2».
+- Imágenes: mapa del sitio, 4 wireframes (PDF exportado), estilo 1 y 2 (inicio y tratamientos), diseño final (inicio, destacados y Explore Treatments).
+- Se recortaron las secciones de reseñas con nombres de pacientes. No se usaron cotizaciones.
+- Año 2025 (fechas de los archivos). *Por confirmar con Coni:* si va como proyecto propio o dentro de R·MEDY, y si el rediseño está publicado (vancouverlaser.com) para enlazarlo.

@@ -774,7 +774,7 @@
           "image": "assets/proyectos/grado-cerrado/4.0-portada.webp",
           "gallery": [],
           "position": [
-            32,
+            30,
             74
           ],
           "role": "Frontend principal y apoyo en backend",
@@ -886,7 +886,155 @@
           "gallery": [],
           "position": [
             77,
-            26
+            24
+          ]
+        },
+        {
+          "id": "vancouver-laser",
+          "title": "Vancouver Laser & Skin Care Centre",
+          "isDemo": false,
+          "type": "Rediseño web UX/UI",
+          "client": "Vancouver Laser & Skin Care Centre",
+          "subtitle": "Rediseño integral del sitio de una clínica estética premiada en Canadá: del diagnóstico al diseño final.",
+          "intro": "El objetivo era modernizar la interfaz, ordenar la navegación y facilitar el agendamiento. La pregunta que guió el proyecto fue: ¿un usuario nuevo puede identificar el tratamiento adecuado y agendar una cita en menos de 3 minutos desde cualquier página? Partí con un diagnóstico del sitio actual, reorganicé su arquitectura, diseñé wireframes y propuse dos estilos visuales antes de llegar al diseño final.",
+          "role": "Diseño UX/UI",
+          "context": "Proyecto freelance · Vancouver, Canadá",
+          "years": "2025",
+          "scope": "Diagnóstico UX, arquitectura de información, wireframes, estilos visuales y diseño final",
+          "mediaBg": "#F3EEE8",
+          "cover": {
+            "src": "assets/proyectos/vancouver-laser/7.0-final-inicio.webp",
+            "fallback": "assets/proyectos/vancouver-laser/7.0-final-inicio.jpg",
+            "alt": "Diseño final del inicio de Vancouver Laser & Skin Care Centre: hero «Winner, One of the Best in Canada» con el premio y un tratamiento láser",
+            "ratio": "16/11"
+          },
+          "sections": [
+            {
+              "title": "Diagnóstico y arquitectura",
+              "layout": "feature",
+              "text": "El sitio tenía la información completa, pero mal organizada: un menú sobrecargado, contenido duplicado entre Treatments y Conditions, un buscador poco visible y un agendamiento con demasiados pasos. Reorganicé el sitio en un mapa más simple, con una sola sección «Explore Treatments» por categorías.",
+              "media": [
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.1-mapa-sitio.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.1-mapa-sitio.jpg",
+                  "alt": "Mapa del sitio con Home y las secciones About, Explore Treatments (Facial, Laser & Light, Body, Hair, Health & Wellness), Skin Gym, Booking, Contact y Shop",
+                  "ratio": "2400/1393",
+                  "caption": "Mapa del sitio",
+                  "bg": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "title": "Wireframes",
+              "layout": "grid",
+              "columns": 4,
+              "text": "Estructura de baja fidelidad para el inicio, el hub de tratamientos, cada categoría y la ficha de un tratamiento, con el agendamiento siempre a mano.",
+              "media": [
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.2-wireframe-inicio.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.2-wireframe-inicio.jpg",
+                  "alt": "Wireframe del inicio: banner, tratamientos destacados, agendamiento, reseñas y financiamiento",
+                  "ratio": "827/893",
+                  "caption": "Inicio",
+                  "bg": "#FFFFFF"
+                },
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.3-wireframe-tratamientos.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.3-wireframe-tratamientos.jpg",
+                  "alt": "Wireframe de Explore Treatments con cinco categorías",
+                  "ratio": "1654/1589",
+                  "caption": "Explore Treatments",
+                  "bg": "#FFFFFF"
+                },
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.4-wireframe-faciales.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.4-wireframe-faciales.jpg",
+                  "alt": "Wireframe de Facial Treatments con subcategorías",
+                  "ratio": "1654/1833",
+                  "caption": "Categoría",
+                  "bg": "#FFFFFF"
+                },
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.5-wireframe-ficha-tratamiento.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.5-wireframe-ficha-tratamiento.jpg",
+                  "alt": "Wireframe de la ficha de un tratamiento con antes y después, beneficios y botón para agendar",
+                  "ratio": "1654/2223",
+                  "caption": "Ficha de tratamiento",
+                  "bg": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "title": "Dos estilos visuales",
+              "layout": "sequence",
+              "text": "Propuse dos direcciones. La primera, sobria y premium: mucho blanco, títulos serif y detalles dorados, con una navegación de scroll continuo. La segunda, más cálida y cercana: fondos rosados claros, tipografía editorial y bloques cortos que invitan a explorar cada tratamiento.",
+              "media": [
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.6-estilo1-inicio.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.6-estilo1-inicio.jpg",
+                  "alt": "Estilo visual 1: inicio en negro y dorado con el premio y tratamientos destacados",
+                  "ratio": "16/15",
+                  "caption": "Estilo 1 · Inicio"
+                },
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.8-estilo2-inicio.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.8-estilo2-inicio.jpg",
+                  "alt": "Estilo visual 2: inicio en rosado claro con el premio y tarjetas de tratamientos",
+                  "ratio": "281/300",
+                  "caption": "Estilo 2 · Inicio"
+                }
+              ],
+              "extra": {
+                "layout": "sequence",
+                "media": [
+                  {
+                    "src": "assets/proyectos/vancouver-laser/7.7-estilo1-tratamientos.webp",
+                    "fallback": "assets/proyectos/vancouver-laser/7.7-estilo1-tratamientos.jpg",
+                    "alt": "Estilo visual 1: página Explore Treatments con fotos y etiquetas",
+                    "ratio": "160/131",
+                    "caption": "Estilo 1 · Tratamientos"
+                  },
+                  {
+                    "src": "assets/proyectos/vancouver-laser/7.9-estilo2-tratamientos.webp",
+                    "fallback": "assets/proyectos/vancouver-laser/7.9-estilo2-tratamientos.jpg",
+                    "alt": "Estilo visual 2: página Explore Treatments con tarjetas rosadas por categoría",
+                    "ratio": "1111/1200",
+                    "caption": "Estilo 2 · Tratamientos"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Diseño final",
+              "layout": "sequence",
+              "text": "El diseño final usa tonos arena neutros, tratamientos destacados en tarjetas con su botón de acción y una página hub para explorar los tratamientos por categoría.",
+              "media": [
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.11-final-destacados.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.11-final-destacados.jpg",
+                  "alt": "Diseño final: tratamientos destacados en tarjetas con imagen, descripción y botón Explore",
+                  "ratio": "1769/2400",
+                  "caption": "Tratamientos destacados"
+                },
+                {
+                  "src": "assets/proyectos/vancouver-laser/7.10-final-tratamientos.webp",
+                  "fallback": "assets/proyectos/vancouver-laser/7.10-final-tratamientos.jpg",
+                  "alt": "Diseño final de Explore Treatments con categorías Facial, Laser & Light, Body, Hair y Health & Wellness",
+                  "ratio": "543/800",
+                  "caption": "Explore Treatments"
+                }
+              ]
+            }
+          ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "assets/proyectos/vancouver-laser/7.0-final-inicio.webp",
+          "gallery": [],
+          "position": [
+            72,
+            72
           ]
         },
         {
@@ -1007,8 +1155,8 @@
           "image": "assets/proyectos/grupo-cero/6.0-inicio.webp",
           "gallery": [],
           "position": [
-            24,
-            28
+            23,
+            26
           ]
         }
       ]
