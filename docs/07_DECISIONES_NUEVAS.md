@@ -225,3 +225,4 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Fluidez medida con el procesador 4 veces más lento: 60 cuadros por segundo, sin tirones.
 - Es un cambio a la portada aprobada: queda en revisión hasta que Coni lo confirme.
 - **Ajustes pedidos por Coni (mismo día):** se quitó la **luna** y la **línea blanca** de la órbita (las marcas giran solas, sin línea). El borde de cada círculo ahora es un trazo fino nítido dibujado aparte (antes venía dentro de la imagen y se veía irregular). **Con el cursor encima, la marca crece un 45 %** y toda la órbita se detiene mientras el cursor esté sobre ella, para que no se escape. Al hacer clic en la foto, la portada avanza igual que antes (la foto quedó sobre la zona clicable para tapar las marcas que pasan por detrás).
+- **Clic en una marca de la órbita** (pedido de Coni): lleva directo a la sección **Marcas**, igual que «Marcas» en el menú. Funciona con clic y con toque en el celular.

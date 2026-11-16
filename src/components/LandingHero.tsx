@@ -4,7 +4,7 @@ import { BIO, BRANDS } from '../data/content';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
 
-type Props = { opening: boolean; reduced: boolean; onEnter: () => void };
+type Props = { opening: boolean; reduced: boolean; onEnter: () => void; onBrands: () => void };
 
 /**
  * Geometría de la portada aprobada (referencia 1920×1080, `references/portada_aprobada.png`)
@@ -78,14 +78,20 @@ function BrandChip({ src, index, half, still }: { src: string; index: number; ha
   );
 }
 
-function OrbitBrands({ half, still }: { half: 'front' | 'back'; still: boolean }) {
+function OrbitBrands({ half, still, onBrands }: { half: 'front' | 'back'; still: boolean; onBrands: () => void }) {
   // Con el cursor sobre una marca, la órbita se detiene para que no se escape.
   const pause = (e: React.PointerEvent<SVGGElement>, stop: boolean) => {
     if (e.pointerType !== 'mouse') return;
     document.querySelectorAll<SVGSVGElement>('.hero__orbit').forEach((svg) => (stop ? svg.pauseAnimations() : svg.unpauseAnimations()));
   };
   return (
-    <g className="orbit-brands" onPointerOver={(e) => pause(e, true)} onPointerOut={(e) => pause(e, false)}>
+    // Clic en cualquier marca: va directo a la sección Marcas.
+    <g
+      className="orbit-brands"
+      onPointerOver={(e) => pause(e, true)}
+      onPointerOut={(e) => pause(e, false)}
+      onClick={onBrands}
+    >
       {ORBIT_LOGOS.map((src, i) => (
         <BrandChip key={src} src={src} index={i} half={half} still={still} />
       ))}
@@ -104,7 +110,7 @@ function readSeen(): boolean {
   }
 }
 
-export function LandingHero({ opening, reduced, onEnter }: Props) {
+export function LandingHero({ opening, reduced, onEnter, onBrands }: Props) {
   const [quick] = useState(readSeen);
   // Paso 1 (siempre): nombre y títulos. Paso 2 (primer clic): los títulos se van y la
   // tarjeta muestra quién es. El segundo clic abre el broche hacia Diseño / Informática.
@@ -164,7 +170,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
         <div className="hero__portrait">
           <svg className="hero__orbit" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
             <g transform={orbitTransform}>
-              {brandsReady && <OrbitBrands half="back" still={reduced} />}
+              {brandsReady && <OrbitBrands half="back" still={reduced} onBrands={onBrands} />}
             </g>
           </svg>
 
@@ -180,7 +186,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
 
           <svg className="hero__orbit hero__orbit--front" viewBox="0 0 750 970" aria-hidden="true" focusable="false">
             <g transform={orbitTransform}>
-              {brandsReady && <OrbitBrands half="front" still={reduced} />}
+              {brandsReady && <OrbitBrands half="front" still={reduced} onBrands={onBrands} />}
             </g>
           </svg>
         </div>
