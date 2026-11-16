@@ -774,77 +774,241 @@
           "image": "assets/proyectos/grado-cerrado/4.0-portada.webp",
           "gallery": [],
           "position": [
-            70,
-            72
+            32,
+            74
           ],
           "role": "Frontend principal y apoyo en backend",
           "context": "Proyecto de título en equipo (Capstone) · Duoc UC",
           "years": "2025"
         },
         {
-          "id": "demo-informatica-01",
-          "title": "Proyecto demo de Informática 01",
-          "isDemo": true,
-          "type": "Desarrollo web (DEMO)",
-          "client": "Ejemplo no real (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_info_01.jpg",
-          "gallery": [
-            "assets/demo_info_02.jpg",
-            "assets/demo_info_03.jpg"
+          "id": "r-medy",
+          "title": "R·MEDY",
+          "isDemo": false,
+          "type": "Diseño web UX/UI",
+          "client": "R·MEDY Health and Wellness",
+          "subtitle": "Renovación del sitio web de una clínica de salud integral en Vancouver, con enfoque mobile-first.",
+          "intro": "Diseño de interfaces para la renovación del sitio web de R·MEDY, una clínica de salud y bienestar en Vancouver, Canadá. Organicé y simplifiqué los contenidos para mejorar la navegación y la lectura, diseñé en Figma las secciones, componentes, navegación, tarjetas, botones y formularios, y desarrollé prototipos e interacciones adaptando los lineamientos de la marca al entorno digital, iterando con el cliente hasta dejar los diseños listos para implementar.",
+          "role": "Diseño UX/UI",
+          "context": "Proyecto freelance · Vancouver, Canadá",
+          "years": "2026",
+          "scope": "Arquitectura de contenidos, componentes, prototipos y diseño mobile-first",
+          "mediaBg": "#F4EFE6",
+          "links": [
+            {
+              "label": "Ver sitio publicado",
+              "href": "https://rmedymd.com/"
+            }
           ],
+          "cover": {
+            "src": "assets/proyectos/r-medy/5.0-inicio-escritorio.webp",
+            "fallback": "assets/proyectos/r-medy/5.0-inicio-escritorio.jpg",
+            "alt": "Inicio del sitio de R·MEDY: título «A complete picture of your health», botones de programas y consulta, y una foto de un equipo médico con pacientes",
+            "ratio": "8/5"
+          },
+          "sections": [
+            {
+              "title": "Mobile-first",
+              "layout": "phone",
+              "text": "El sitio se pensó primero para el celular: jerarquía clara, botones grandes y contenidos breves, con un prototipo de app para encontrar el servicio adecuado según la necesidad.",
+              "media": [
+                {
+                  "src": "assets/proyectos/r-medy/5.5-inicio-celular.webp",
+                  "fallback": "assets/proyectos/r-medy/5.5-inicio-celular.jpg",
+                  "alt": "Inicio del sitio de R·MEDY en celular",
+                  "ratio": "195/332",
+                  "caption": "Inicio en celular"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.6-buscador-celular.webp",
+                  "fallback": "assets/proyectos/r-medy/5.6-buscador-celular.jpg",
+                  "alt": "Buscador «What brings you in?» en celular, con opciones según la necesidad del paciente",
+                  "ratio": "1109/2400",
+                  "caption": "Buscador de servicios"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.7-prototipo-app.webp",
+                  "fallback": "assets/proyectos/r-medy/5.7-prototipo-app.jpg",
+                  "alt": "Prototipo de app de R·MEDY con buscador de inquietudes y filtros de salud y estética",
+                  "ratio": "195/332",
+                  "caption": "Prototipo de app"
+                }
+              ]
+            },
+            {
+              "title": "Encontrar el servicio",
+              "layout": "feature",
+              "text": "Un buscador guiado que recomienda el programa adecuado según lo que la persona necesita, y una grilla de tarjetas con todos los servicios de la clínica.",
+              "media": [
+                {
+                  "src": "assets/proyectos/r-medy/5.1-buscador-servicios.webp",
+                  "fallback": "assets/proyectos/r-medy/5.1-buscador-servicios.jpg",
+                  "alt": "Sección «What brings you in?»: opciones a la izquierda y una recomendación con botones a la derecha",
+                  "ratio": "72/35",
+                  "caption": "Buscador guiado"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.2-grilla-servicios.webp",
+                  "fallback": "assets/proyectos/r-medy/5.2-grilla-servicios.jpg",
+                  "alt": "Grilla de seis tarjetas de servicios con ícono, título, descripción y enlace",
+                  "ratio": "1440/809",
+                  "caption": "Grilla de servicios"
+                }
+              ]
+            },
+            {
+              "title": "Recorrido y contacto",
+              "layout": "feature",
+              "text": "Un recorrido de cuatro pasos que explica el proceso de atención, y un formulario de consulta gratuita simple y claro.",
+              "media": [
+                {
+                  "src": "assets/proyectos/r-medy/5.3-cuatro-pasos.webp",
+                  "fallback": "assets/proyectos/r-medy/5.3-cuatro-pasos.jpg",
+                  "alt": "Sección de cuatro pasos numerados, desde la primera evaluación hasta resultados duraderos",
+                  "ratio": "480/281",
+                  "caption": "Cuatro pasos"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.4-formulario-consulta.webp",
+                  "fallback": "assets/proyectos/r-medy/5.4-formulario-consulta.jpg",
+                  "alt": "Formulario de consulta gratuita sobre fondo verde, con datos de contacto de la clínica",
+                  "ratio": "1440/751",
+                  "caption": "Formulario de consulta"
+                }
+              ]
+            }
+          ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "assets/proyectos/r-medy/5.0-inicio-escritorio.webp",
+          "gallery": [],
           "position": [
-            23,
+            77,
+            26
+          ]
+        },
+        {
+          "id": "grupo-cero",
+          "title": "Grupo Cero",
+          "isDemo": false,
+          "type": "Sitio web",
+          "client": "Proyecto académico",
+          "subtitle": "Galería en línea para dar a conocer y vender obras de artistas locales.",
+          "intro": "Grupo Cero es un sitio web de galería de arte para artistas locales. Reúne obras de escultura, orfebrería, pintura y tejido, con perfiles de cada artista, la ficha de cada obra con su autor, año, técnica y valor, carro de compras, contacto para artistas que quieran exponer, y registro, inicio de sesión y perfil de usuario.",
+          "role": "Diseño y desarrollo",
+          "context": "Proyecto académico en equipo · Duoc UC",
+          "years": "2023",
+          "scope": "Diseño de interfaz, maquetación responsive y navegación",
+          "mediaBg": "#E9E7E4",
+          "links": [
+            {
+              "label": "Ver repositorio",
+              "href": "https://github.com/Confloresc/Prueba-1"
+            }
+          ],
+          "cover": {
+            "src": "assets/proyectos/grupo-cero/6.0-inicio.webp",
+            "fallback": "assets/proyectos/grupo-cero/6.0-inicio.jpg",
+            "alt": "Inicio del sitio Grupo Cero: banner con aros de perlas y el título «Diseños de artistas locales»",
+            "ratio": "8/5"
+          },
+          "sections": [
+            {
+              "title": "Navegación por categorías y artistas",
+              "layout": "sequence",
+              "text": "Las obras se ordenan en cuatro categorías y cada artista tiene su propia página, para recorrer la galería por tipo de obra o por autor.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grupo-cero/6.1-categorias.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.1-categorias.jpg",
+                  "alt": "Página de categorías con escultura, orfebrería, pinturas y tejido",
+                  "ratio": "8/5",
+                  "caption": "Categorías"
+                },
+                {
+                  "src": "assets/proyectos/grupo-cero/6.2-artistas.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.2-artistas.jpg",
+                  "alt": "Página de artistas con cuatro perfiles, una breve biografía y su especialidad",
+                  "ratio": "8/5",
+                  "caption": "Artistas"
+                }
+              ]
+            },
+            {
+              "title": "Del artista a la obra",
+              "layout": "sequence",
+              "text": "Desde el perfil de cada artista se llega a la ficha de la obra, con sus datos, su valor y la opción de agregarla al carro.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grupo-cero/6.3-perfil-artista.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.3-perfil-artista.jpg",
+                  "alt": "Perfil de una artista escultora con sus obras",
+                  "ratio": "8/5",
+                  "caption": "Perfil de artista"
+                },
+                {
+                  "src": "assets/proyectos/grupo-cero/6.4-detalle-obra.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.4-detalle-obra.jpg",
+                  "alt": "Ficha de una obra con autor, año, categoría, valor, descripción y botón para agregar al carro",
+                  "ratio": "8/5",
+                  "caption": "Ficha de obra"
+                }
+              ]
+            },
+            {
+              "title": "Cuentas de usuario",
+              "layout": "feature",
+              "text": "Registro, inicio de sesión y perfil para quienes compran o exponen en la galería.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grupo-cero/6.5-registro.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.5-registro.jpg",
+                  "alt": "Formulario de registro con nombre, apellido, correo y contraseña",
+                  "ratio": "8/5",
+                  "caption": "Registro"
+                }
+              ]
+            },
+            {
+              "title": "Responsive",
+              "layout": "phone",
+              "text": "El sitio se adapta al celular con menú desplegable y contenidos en una columna.",
+              "media": [
+                {
+                  "src": "assets/proyectos/grupo-cero/6.6-inicio-celular.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.6-inicio-celular.jpg",
+                  "alt": "Inicio de Grupo Cero en celular",
+                  "ratio": "195/332",
+                  "caption": "Inicio"
+                },
+                {
+                  "src": "assets/proyectos/grupo-cero/6.7-artistas-celular.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.7-artistas-celular.jpg",
+                  "alt": "Página de artistas en celular",
+                  "ratio": "195/332",
+                  "caption": "Artistas"
+                },
+                {
+                  "src": "assets/proyectos/grupo-cero/6.8-registro-celular.webp",
+                  "fallback": "assets/proyectos/grupo-cero/6.8-registro-celular.jpg",
+                  "alt": "Formulario de registro en celular",
+                  "ratio": "195/332",
+                  "caption": "Registro"
+                }
+              ]
+            }
+          ],
+          "goal": "",
+          "contribution": "",
+          "tools": [],
+          "result": "",
+          "image": "assets/proyectos/grupo-cero/6.0-inicio.webp",
+          "gallery": [],
+          "position": [
+            24,
             28
-          ]
-        },
-        {
-          "id": "demo-informatica-02",
-          "title": "Proyecto demo de Informática 02",
-          "isDemo": true,
-          "type": "UX/UI (DEMO)",
-          "client": "Ejemplo no real (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_info_02.jpg",
-          "gallery": [
-            "assets/demo_info_03.jpg",
-            "assets/demo_info_01.jpg"
-          ],
-          "position": [
-            78,
-            22
-          ]
-        },
-        {
-          "id": "demo-informatica-03",
-          "title": "Proyecto demo de Informática 03",
-          "isDemo": true,
-          "type": "Aplicación (DEMO)",
-          "client": "Ejemplo no real (DEMO)",
-          "agency": "Sin asignar (DEMO)",
-          "intro": "Texto de ejemplo. Aquí irá una introducción breve del proyecto real.",
-          "goal": "Texto de ejemplo. Pendiente de reemplazar.",
-          "contribution": "Participación por definir, no atribuir todavía.",
-          "tools": [],
-          "result": "Resultado sin definir (DEMO)",
-          "image": "assets/demo_info_03.jpg",
-          "gallery": [
-            "assets/demo_info_01.jpg",
-            "assets/demo_info_02.jpg"
-          ],
-          "position": [
-            30,
-            65
           ]
         }
       ]

@@ -147,6 +147,15 @@ export function ProjectCaseStudy({ world, projectId, onBack, onNavigate }: Props
             )}
           </dl>
           <p className="case__intro">{project.intro}</p>
+          {project.links && project.links.length > 0 && (
+            <p className="case__links">
+              {project.links.map((l) => (
+                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </p>
+          )}
         </header>
 
         {project.sections ? (

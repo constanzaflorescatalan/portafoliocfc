@@ -55,3 +55,11 @@ Se revisaron los 60 videos públicos de vimeo.com/conoflor y se usaron los que c
 - **Marcas (ventana con video):** Castaño, Kingsbury, Patagonia Donuts, Universidad Central, ISA InterChile, Municipalidad de La Granja (vía Brecha Digital, según la descripción del video). Se quitó la imagen DEMO de Proust House.
 
 Los videos muestran la portada de Vimeo con botón de reproducir; el reproductor se carga solo al tocarlo (rendimiento). Portadas en `public/assets/proyectos/<proyecto>/video-<id>` y `public/assets/marcas-videos/`.
+
+## Informática completa (16 de noviembre, decisión delegada por Coni: «dale con lo que creas mejor»)
+
+- **R·MEDY** (nuevo): capturas del sitio publicado rmedymd.com (inicio, buscador guiado, grilla de servicios, cuatro pasos, formulario; escritorio y celular) y del prototipo de app encontrado en su Drive (carpeta ROBERT). Texto basado en su CV. Enlace «Ver sitio publicado». **No se usaron** las secciones con fotos/nombres de médicos ni reseñas de pacientes (datos de terceros), ni la boleta o cotización del Drive. *Por confirmar con Coni:* qué secciones del sitio publicado son diseño suyo (la implementación figura de Forward Marketing).
+- **Grupo Cero** (nuevo, repo Confloresc/Prueba-1): galería de arte de artistas locales, capturas tomadas localmente (Bootstrap servido desde npm). Proyecto en equipo con Astrid, 2023 (según fechas del repositorio). Enlace «Ver repositorio».
+- **No incluidos:** App de asistencia QR (AstGon/myApp-ApiLogin-) y Estacionamiento (AstGon/Parking): visualmente muy básicos frente al resto (pantallas blancas, imágenes rotas) y la app muestra nombres reales de compañeros. Se pueden mencionar más adelante como enlaces a repositorio.
+- **Se quitaron los 3 proyectos DEMO** de Informática: quedan Grado Cerrado, R·MEDY y Grupo Cero.
+- Nuevo campo `links` en los proyectos (botones a sitio o repositorio).

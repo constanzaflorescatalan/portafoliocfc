@@ -41,6 +41,8 @@ export type Project = {
   mediaBg?: string;
   cover?: ProjectMedia;
   sections?: ProjectSection[];
+  /** Enlaces externos (sitio publicado, repositorio…). */
+  links?: { label: string; href: string }[];
 };
 
 /** Una pieza (imagen o video) de un proyecto. Sin `src` todavía: se muestra un espacio «pendiente». */
