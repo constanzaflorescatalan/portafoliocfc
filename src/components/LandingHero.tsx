@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BIO } from '../data/content';
+import { BIO, BRANDS } from '../data/content';
 import { IDENTITY } from '../data/site';
 import { asset } from '../lib/asset';
 
@@ -53,6 +53,77 @@ function OrbitMoon({ half, begin }: { half: 'front' | 'back'; begin: string }) {
   );
 }
 
+/**
+ * Marcas con las que ha trabajado: círculos pequeños en blanco y negro que recorren la misma
+ * órbita que la luna, más lento. Imágenes en `public/assets/logos-orbita` (mismo nombre que el logo).
+ */
+const BRAND_SECONDS = 90;
+const BRAND_R = 19;
+const ORBIT_LOGOS: string[] = Array.from(
+  new Set(BRANDS.filter((b) => b.logo).map((b) => b.logo!.replace('assets/logos/', 'assets/logos-orbita/'))),
+);
+
+/** Puntos repartidos a igual distancia sobre la órbita (para la versión quieta). */
+const STILL_POINTS: [number, number][] = (() => {
+  const steps = 720;
+  const pts: [number, number][] = [];
+  for (let k = 0; k <= steps; k++) {
+    const a = (2 * Math.PI * k) / steps;
+    pts.push([-ORBIT.rx * Math.cos(a), ORBIT.ry * Math.sin(a)]);
+  }
+  const acc = [0];
+  for (let k = 1; k < pts.length; k++) acc.push(acc[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
+  const total = acc[acc.length - 1];
+  return ORBIT_LOGOS.map((_, i) => {
+    const target = (i / ORBIT_LOGOS.length) * total;
+    const k = acc.findIndex((d) => d >= target);
+    return pts[Math.max(0, k)];
+  });
+})();
+
+/** Un círculo de marca. Con movimiento reducido queda quieto en su punto de la órbita. */
+function BrandChip({ src, index, half, still }: { src: string; index: number; half: 'front' | 'back'; still: boolean }) {
+  const n = ORBIT_LOGOS.length;
+  const f = index / n;
+  const chip = (
+    // La órbita está girada; se compensa para que los logos queden derechos.
+    <g transform={`rotate(${-ORBIT.rotate})`}>
+      <image href={asset(src)} x={-BRAND_R} y={-BRAND_R} width={BRAND_R * 2} height={BRAND_R * 2} />
+    </g>
+  );
+  if (still) {
+    const [x, y] = STILL_POINTS[index];
+    if ((half === 'front') !== y >= 0) return null;
+    return <g transform={`translate(${x.toFixed(1)} ${y.toFixed(1)})`}>{chip}</g>;
+  }
+  const begin = `${(-f * BRAND_SECONDS).toFixed(2)}s`;
+  return (
+    <g opacity="0">
+      <animateMotion dur={`${BRAND_SECONDS}s`} begin={begin} repeatCount="indefinite" path={FULL_LOOP} />
+      <animate
+        attributeName="opacity"
+        dur={`${BRAND_SECONDS}s`}
+        begin={begin}
+        repeatCount="indefinite"
+        calcMode="discrete"
+        keyTimes="0;0.5"
+        values={half === 'front' ? '1;0' : '0;1'}
+      />
+      {chip}
+    </g>
+  );
+}
+
+function OrbitBrands({ half, still }: { half: 'front' | 'back'; still: boolean }) {
+  return (
+    <g className="orbit-brands">
+      {ORBIT_LOGOS.map((src, i) => (
+        <BrandChip key={src} src={src} index={i} half={half} still={still} />
+      ))}
+    </g>
+  );
+}
+
 const SEEN_KEY = 'cf:coverSeen';
 
 /** ¿Ya vio la portada completa en esta visita? Entonces la intro es corta. */
@@ -81,6 +152,12 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
     }
   }, []);
   const moonBegin = quick ? '0.5s' : '1.8s';
+  // Las marcas se cargan después del retrato para no retrasar la portada.
+  const [brandsReady, setBrandsReady] = useState(false);
+  useEffect(() => {
+    const t = window.setTimeout(() => setBrandsReady(true), quick ? 150 : 900);
+    return () => window.clearTimeout(t);
+  }, [quick]);
   const orbitTransform = `translate(${ORBIT.cx} ${ORBIT.cy}) rotate(${ORBIT.rotate})`;
 
   return (
@@ -128,6 +205,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
                 ry={ORBIT.ry}
                 pathLength="1"
               />
+              {brandsReady && <OrbitBrands half="back" still={reduced} />}
               {!reduced && <OrbitMoon half="back" begin={moonBegin} />}
             </g>
           </svg>
@@ -145,6 +223,7 @@ export function LandingHero({ opening, reduced, onEnter }: Props) {
             <MoonGradient half="front" />
             <g transform={orbitTransform}>
               <path className="orbit-line orbit-line--front" d={FRONT_ARC} pathLength="1" />
+              {brandsReady && <OrbitBrands half="front" still={reduced} />}
               {!reduced && <OrbitMoon half="front" begin={moonBegin} />}
             </g>
           </svg>

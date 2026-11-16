@@ -295,6 +295,21 @@
   animation: orbit-fade 700ms 900ms ease-out backwards;
 }
 
+/* Marcas en la órbita: aparecen suave cuando la línea ya está dibujada. */
+.orbit-brands {
+  animation: orbit-brands-in 1200ms 600ms ease-out backwards;
+}
+
+.hero--quick .orbit-brands {
+  animation-delay: 0ms;
+}
+
+@keyframes orbit-brands-in {
+  from {
+    opacity: 0;
+  }
+}
+
 .orbit-moon {
   stroke: rgba(5, 8, 14, 0.35);
   stroke-width: 1;

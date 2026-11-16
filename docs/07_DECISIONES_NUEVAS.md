@@ -213,3 +213,14 @@ Todo lo de abajo está **pendiente de tu aprobación visual**. Los docs 01–06 
 - Registro Civil, SUBDERE y Subsecretaría del Trabajo vuelven a su **recuadro azul y rojo original** (pedido de Coni), con «Gobierno de Chile». En reposo, modo contornos (`lines`); al pasar el cursor, colores originales sobre blanco.
 - Contacto con **dos GitHub** (pedido de Coni): **GitHub profesional** github.com/constanzaflorescatalan (donde está esta web) y **GitHub académico** github.com/Confloresc (proyectos de la universidad). También en la ficha Schema.org y en el texto de respaldo. En el JSON: `identity.githubPro` y `identity.githubAcademic`.
 - Contacto: los dos GitHub van **uno arriba del otro** en la misma columna; todas las columnas alineadas arriba.
+
+## Portada: marcas girando en la órbita (16 de noviembre de 2026, propuesta, rama `propuesta/marcas-orbita`)
+
+- Pedido de Coni: «un círculo pequeño con cada marca (en blanco y negro) con la que he trabajado y que giren», en la órbita de la luna de la portada.
+- Las **40 marcas con logo** de la galería de Marcas recorren la misma elipse que la luna, como cuentas de un collar, una vuelta cada **90 s** (la luna sigue a 14 s). Pasan por detrás de la foto en la mitad de atrás y por delante en la mitad de adelante, igual que la luna.
+- Cada círculo es el logo en **blanco sobre fondo oscuro** (los logos de fondo claro se invierten), con un borde gris fino. Imágenes en `public/assets/logos-orbita/` (128 px, 119 KB en total), generadas desde `public/assets/logos/` con el mismo nombre de archivo; la lista sale sola de `BRANDS`, así que una marca nueva con logo aparece en la órbita al regenerar su círculo.
+- Se cargan 0,9 s después de abrir la portada (para no retrasar la foto) y aparecen con un fundido suave.
+- Con «reducir movimiento», los círculos quedan quietos y repartidos a igual distancia sobre la órbita.
+- Son decorativos (`aria-hidden`); los nombres de las marcas están en la sección Marcas.
+- Fluidez medida con el procesador 4 veces más lento: 60 cuadros por segundo, sin tirones.
+- Es un cambio a la portada aprobada: queda en revisión hasta que Coni lo confirme.
