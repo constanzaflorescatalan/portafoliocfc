@@ -44,3 +44,14 @@ Implementación de `12_ESPECIFICACION_PROYECTOS.md` (documento de Coni, versión
 - **No llegó documento con textos.** Los textos se escribieron solo con lo que muestran las imágenes (bajada de la portada, funciones visibles en las pantallas, servicios del diagrama y tablas del modelo). Fondo del proyecto: amarillo de la marca `#F5D96C`.
 - **Confirmado por Coni:** proyecto de título en equipo (Capstone, Duoc UC), 2025; ella hizo principalmente el frontend y apoyó en backend.
 - **Repositorio:** está en la cuenta de la compañera (github.com/AstGon/Grado_Cerrado, carpetas Fase1–Fase3). Falta que Coni confirme si se enlaza.
+
+## Videos de Vimeo (agregados el 16 de noviembre)
+
+Se revisaron los 60 videos públicos de vimeo.com/conoflor y se usaron los que calzan con lo publicado:
+
+- **Castaño · Contenido para redes:** tutorial de pedidos (716184922), compra online y retiro (716185024), Café Castaño (716184408). Reemplazan a los mp4 de Instagram, que no estaban en Vimeo.
+- **Kingsbury · Animaciones para redes (bloque nuevo):** Pan Perfecto (716186262), Kingsbury (716186176), Wholegrain (716184993), 50/50 (716186218).
+- **Hijas del Caldero · Animación:** logo animado (357417276), Ostara (363591215), Luna cuervo (363591260). `hdc promo.mp4` sigue pendiente (no está en Vimeo).
+- **Marcas (ventana con video):** Castaño, Kingsbury, Patagonia Donuts, Universidad Central, ISA InterChile, Municipalidad de La Granja (vía Brecha Digital, según la descripción del video). Se quitó la imagen DEMO de Proust House.
+
+Los videos muestran la portada de Vimeo con botón de reproducir; el reproductor se carga solo al tocarlo (rendimiento). Portadas en `public/assets/proyectos/<proyecto>/video-<id>` y `public/assets/marcas-videos/`.

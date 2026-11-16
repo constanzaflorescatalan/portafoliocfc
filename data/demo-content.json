@@ -147,26 +147,38 @@
             },
             {
               "title": "Contenido para redes",
-              "layout": "phone",
+              "layout": "grid",
               "text": "Piezas animadas para el Instagram de Castaño: concursos, campañas de temporada y contenido del día a día.",
               "media": [
                 {
-                  "src": "",
-                  "alt": "Animación «¿Trajiste almuerzo?» para el Instagram de Castaño",
-                  "ratio": "9/16",
-                  "caption": "«¿Trajiste almuerzo?»",
-                  "pending": "igexport-C4gMMPip5cN.mp4",
-                  "kind": "video"
+                  "src": "assets/proyectos/castano/video-716184922.webp",
+                  "fallback": "assets/proyectos/castano/video-716184922.jpg",
+                  "alt": "Animación tutorial «Cómo hacer tu pedido en Pedidos Castaño»",
+                  "ratio": "1/1",
+                  "caption": "Tutorial: cómo hacer tu pedido",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716184922"
                 },
                 {
-                  "src": "",
-                  "alt": "Animación del concurso de empanadas de Castaño",
-                  "ratio": "9/16",
-                  "caption": "Concurso de empanadas",
-                  "pending": "igexport-C4s9PK5ruz0.mp4",
-                  "kind": "video"
+                  "src": "assets/proyectos/castano/video-716185024.webp",
+                  "fallback": "assets/proyectos/castano/video-716185024.jpg",
+                  "alt": "Animación «Cómo comprar online y retirar en Tienda Castaño»",
+                  "ratio": "1/1",
+                  "caption": "Compra online y retiro en tienda",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716185024"
+                },
+                {
+                  "src": "assets/proyectos/castano/video-716184408.webp",
+                  "fallback": "assets/proyectos/castano/video-716184408.jpg",
+                  "alt": "Animación de Café Castaño",
+                  "ratio": "1/1",
+                  "caption": "Café Castaño",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716184408"
                 }
-              ]
+              ],
+              "columns": 3
             }
           ],
           "goal": "",
@@ -252,6 +264,50 @@
                   "fallback": "assets/proyectos/kingsbury-calendario-2022/2.5-contraportada-hi-low.jpg",
                   "alt": "Contraportada del calendario Kingsbury en verde con el pan Hi Low",
                   "ratio": "80/51"
+                }
+              ]
+            },
+            {
+              "title": "Animaciones para redes",
+              "text": "",
+              "layout": "grid",
+              "columns": 4,
+              "media": [
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/video-716186262.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/video-716186262.jpg",
+                  "alt": "Animación de Pan Perfecto de Kingsbury",
+                  "ratio": "1/1",
+                  "caption": "Pan Perfecto",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716186262"
+                },
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/video-716186176.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/video-716186176.jpg",
+                  "alt": "Animación de Kingsbury con un sándwich de pan integral",
+                  "ratio": "1/1",
+                  "caption": "Kingsbury",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716186176"
+                },
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/video-716184993.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/video-716184993.jpg",
+                  "alt": "Animación del Pan Integral Wholegrain de Kingsbury",
+                  "ratio": "1/1",
+                  "caption": "Wholegrain",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716184993"
+                },
+                {
+                  "src": "assets/proyectos/kingsbury-calendario-2022/video-716186218.webp",
+                  "fallback": "assets/proyectos/kingsbury-calendario-2022/video-716186218.jpg",
+                  "alt": "Animación 50/50 de Kingsbury: mitad pan integral y mitad pan blanco",
+                  "ratio": "1/1",
+                  "caption": "50/50",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/716186218"
                 }
               ]
             }
@@ -503,9 +559,36 @@
             },
             {
               "title": "Animación",
-              "layout": "feature",
+              "layout": "grid",
               "text": "Piezas animadas para redes y lanzamientos, que llevan al movimiento la estética dorada y ornamental de la marca.",
               "media": [
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/video-357417276.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/video-357417276.jpg",
+                  "alt": "Animación del logo de Hijas del Caldero con fuego dorado",
+                  "ratio": "640/361",
+                  "caption": "Logo animado",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/357417276"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/video-363591215.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/video-363591215.jpg",
+                  "alt": "Animación de Ostara de Hijas del Caldero: el logo rodeado de flores",
+                  "ratio": "640/361",
+                  "caption": "Ostara",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/363591215"
+                },
+                {
+                  "src": "assets/proyectos/hijas-del-caldero/video-363591260.webp",
+                  "fallback": "assets/proyectos/hijas-del-caldero/video-363591260.jpg",
+                  "alt": "Animación «Luna cuervo» con cuervos en ramas bajo la luna",
+                  "ratio": "640/311",
+                  "caption": "Luna cuervo",
+                  "kind": "video",
+                  "vimeo": "https://vimeo.com/363591260"
+                },
                 {
                   "src": "",
                   "alt": "Video promocional animado de Hijas del Caldero",
@@ -514,7 +597,8 @@
                   "pending": "hdc promo.mp4",
                   "kind": "video"
                 }
-              ]
+              ],
+              "columns": 3
             },
             {
               "title": "Redes y eventos",
@@ -890,11 +974,7 @@
         }
       ],
       "logo": "assets/logos/proust-house.webp",
-      "logoBg": "#d0d9d4",
-      "preview": {
-        "image": "assets/demo_diseno_01.jpg",
-        "isDemo": true
-      }
+      "logoBg": "#d0d9d4"
     },
     {
       "organization": "Drei Ventures",
@@ -945,20 +1025,27 @@
         {
           "name": "Kingsbury",
           "logo": "assets/logos/kingsbury.webp",
-          "logoBg": "#ffffff"
+          "logoBg": "#ffffff",
+          "preview": {
+            "image": "assets/proyectos/kingsbury-calendario-2022/video-716186262.webp",
+            "video": "https://vimeo.com/716186262"
+          }
         },
         {
           "name": "Patagonia Donuts",
           "logo": "assets/logos/patagonia-donuts.webp",
-          "logoBg": "#ffffff"
+          "logoBg": "#ffffff",
+          "preview": {
+            "image": "assets/marcas-videos/video-716185973.webp",
+            "video": "https://vimeo.com/716185973"
+          }
         }
       ],
       "logo": "assets/logos/castano.webp",
       "logoBg": "#ffffff",
       "preview": {
-        "image": "assets/demo_diseno_03.jpg",
-        "video": "https://vimeo.com/conoflor",
-        "isDemo": true
+        "image": "assets/proyectos/castano/video-716184922.webp",
+        "video": "https://vimeo.com/716184922"
       }
     },
     {
@@ -981,7 +1068,11 @@
       "showOrganization": true,
       "brands": [],
       "logo": "assets/logos/u-central.webp",
-      "logoBg": "#ffffff"
+      "logoBg": "#ffffff",
+      "preview": {
+        "image": "assets/marcas-videos/video-323480100.webp",
+        "video": "https://vimeo.com/323480100"
+      }
     },
     {
       "organization": "DECH · Unimarc",
@@ -1007,7 +1098,11 @@
           "name": "ISA InterChile",
           "relation": "Cliente vía El Búho Comunicaciones",
           "logo": "assets/logos/isa.webp",
-          "logoBg": "#ffffff"
+          "logoBg": "#ffffff",
+          "preview": {
+            "image": "assets/marcas-videos/video-576960741.webp",
+            "video": "https://vimeo.com/576960741"
+          }
         }
       ],
       "logo": "assets/logos/el-buho.webp",
@@ -1033,7 +1128,11 @@
       "showOrganization": true,
       "brands": [],
       "logo": "assets/logos/hijas-del-caldero.webp",
-      "logoBg": "#000000"
+      "logoBg": "#000000",
+      "preview": {
+        "image": "assets/proyectos/hijas-del-caldero/video-357417276.webp",
+        "video": "https://vimeo.com/357417276"
+      }
     },
     {
       "organization": "Brecha Digital Consultores",
@@ -1047,7 +1146,11 @@
           "name": "Municipalidad de La Granja",
           "relation": "Cliente vía Brecha Digital Consultores",
           "logo": "assets/logos/la-granja.webp",
-          "logoBg": "#ffffff"
+          "logoBg": "#ffffff",
+          "preview": {
+            "image": "assets/marcas-videos/video-465967886.webp",
+            "video": "https://vimeo.com/465967886"
+          }
         },
         {
           "name": "Municipalidad de La Pintana",

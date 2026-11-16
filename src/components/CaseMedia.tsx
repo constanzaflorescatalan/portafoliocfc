@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { CSSProperties } from 'react';
 import type { ProjectMedia } from '../data/content';
 import { asset } from '../lib/asset';
@@ -15,15 +16,35 @@ function vimeoId(value: string): string | null {
 export function CaseMedia({ media, bg }: { media: ProjectMedia; bg?: string }) {
   const style = { aspectRatio: media.ratio, '--media-bg': media.bg ?? bg } as CSSProperties;
   const id = media.vimeo ? vimeoId(media.vimeo) : null;
+  // Video: primero su portada con botón de reproducir; el reproductor de Vimeo se carga
+  // solo al tocarlo (así la página no carga varios reproductores de una vez).
+  const [playing, setPlaying] = useState(false);
   let body;
-  if (id) {
+  if (id && playing) {
     body = (
       <iframe
-        src={`https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1`}
+        src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&title=0&byline=0&portrait=0&dnt=1`}
         title={media.alt}
-        loading="lazy"
         allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
       />
+    );
+  } else if (id) {
+    body = (
+      <button type="button" className="case-media__play" onClick={() => setPlaying(true)}>
+        {media.src && (
+          <picture>
+            <source srcSet={asset(media.src)} type="image/webp" />
+            <img src={asset(media.fallback ?? media.src)} alt="" loading="lazy" decoding="async" />
+          </picture>
+        )}
+        <span className="case-media__play-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M9 7l8 5-8 5z" />
+          </svg>
+        </span>
+        <span className="sr-only">Reproducir video: {media.alt}</span>
+      </button>
     );
   } else if (media.src) {
     const img = <img src={asset(media.fallback ?? media.src)} alt={media.alt} loading="lazy" decoding="async" />;
