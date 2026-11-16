@@ -59,7 +59,7 @@ Los videos muestran la portada de Vimeo con botón de reproducir; el reproductor
 ## Informática completa (16 de noviembre, decisión delegada por Coni: «dale con lo que creas mejor»)
 
 - **R·MEDY** (nuevo): capturas del sitio publicado rmedymd.com (inicio, buscador guiado, grilla de servicios, cuatro pasos, formulario; escritorio y celular) y del prototipo de app encontrado en su Drive (carpeta ROBERT). Texto basado en su CV. Enlace «Ver sitio publicado». **No se usaron** las secciones con fotos/nombres de médicos ni reseñas de pacientes (datos de terceros), ni la boleta o cotización del Drive. *Por confirmar con Coni:* qué secciones del sitio publicado son diseño suyo (la implementación figura de Forward Marketing).
-- **Grupo Cero** (nuevo, repo Confloresc/Prueba-1): galería de arte de artistas locales, capturas tomadas localmente (Bootstrap servido desde npm). Proyecto en equipo con Astrid, 2023 (según fechas del repositorio). Enlace «Ver repositorio».
+- ~~**Grupo Cero**~~ (quitado el 16 de noviembre a pedido de Coni; repo Confloresc/Prueba-1): galería de arte de artistas locales, capturas tomadas localmente (Bootstrap servido desde npm). Proyecto en equipo con Astrid, 2023 (según fechas del repositorio). Enlace «Ver repositorio».
 - **No incluidos:** App de asistencia QR (AstGon/myApp-ApiLogin-) y Estacionamiento (AstGon/Parking): visualmente muy básicos frente al resto (pantallas blancas, imágenes rotas) y la app muestra nombres reales de compañeros. Se pueden mencionar más adelante como enlaces a repositorio.
 - **Se quitaron los 3 proyectos DEMO** de Informática: quedan Grado Cerrado, R·MEDY y Grupo Cero.
 - Nuevo campo `links` en los proyectos (botones a sitio o repositorio).
@@ -79,3 +79,14 @@ Caso de estudio UX/UI armado con el material del Drive de Coni (carpeta ROBERT �
 - Bloques: Inicio y navegación · Programas · Herramientas para decidir (evaluación, precios, reserva, contacto) · Contenido y marca. Textos escritos a partir de lo visible en las pantallas.
 - Se mantiene el botón «Ver sitio publicado» (rmedymd.com).
 - Se intentó la API de Figma con clave personal; la primera clave guardada fue rechazada (inválida) y Coni prefirió no entregar otra. Esa credencial inválida quedó guardada en el entorno y puede borrarse desde la configuración del entorno.
+
+## Cambio del 16 de noviembre: Estacionamiento en vez de Grupo Cero
+
+- Coni pidió **quitar Grupo Cero** y poner la app de estacionamiento o la de reconocimiento facial.
+- **Reconocimiento facial: no está en GitHub.** Se revisaron todos los repositorios públicos de Confloresc y AstGon (Api, Estacionamiento, Estacionamiento2, Parking, ASTRID, PaginaWeb, myApp-ApiLogin-, etc.): ninguno tiene código de cámara o rostros. Puede estar en otra cuenta, en el Drive o en su computador.
+- **Arriendo de Estacionamientos** (repo AstGon/Estacionamiento, fork Confloresc/Estacionamiento, nov. 2023): se usó la versión más completa (perfil, vehículos, calificaciones, reportes PDF), no la anterior «Parking» que se había descartado.
+  - Capturas tomadas corriendo la app localmente con una **copia de la base de datos con nombres, correos, teléfonos y RUT ficticios** (la base del repositorio trae datos reales de la compañera).
+  - El logo no cargaba en Linux porque el código pide `Logo.png` y el archivo es `logo.png` (en Windows funcionaba); solo en la copia de capturas se duplicó el archivo. Font Awesome se sirvió desde npm para que se vean las estrellas.
+  - Portada en computador (2880 × 1800) y 9 pantallas de celular en tres secciones: Entrada y tipos de cuenta, Buscar/reservar/calificar, Panel del dueño.
+  - **Sin enlace a repositorio** por ahora: el repo público incluye `db.sqlite3` con datos personales reales (teléfono y RUT). Recomendado borrarlo del repo antes de enlazarlo.
+  - Año 2023 y Duoc UC según el repositorio (correo institucional de la compañera); falta confirmación de Coni.

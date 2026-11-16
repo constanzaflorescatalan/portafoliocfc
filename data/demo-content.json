@@ -1080,112 +1080,107 @@
           ]
         },
         {
-          "id": "grupo-cero",
-          "title": "Grupo Cero",
+          "id": "estacionamiento",
+          "title": "Arriendo de Estacionamientos",
           "isDemo": false,
-          "type": "Sitio web",
+          "type": "Sistema web",
           "client": "Proyecto académico",
-          "subtitle": "Galería en línea para dar a conocer y vender obras de artistas locales.",
-          "intro": "Grupo Cero es un sitio web de galería de arte para artistas locales. Reúne obras de escultura, orfebrería, pintura y tejido, con perfiles de cada artista, la ficha de cada obra con su autor, año, técnica y valor, carro de compras, contacto para artistas que quieran exponer, y registro, inicio de sesión y perfil de usuario.",
+          "subtitle": "Sistema web para arrendar estacionamientos por día y hora, con cuentas de cliente y de dueño.",
+          "intro": "Quien arrienda busca por comuna, fecha y horario, ve los estacionamientos libres con su precio por hora, reserva, modifica o cancela, y después califica al dueño. Quien es dueño publica sus estacionamientos, los habilita o deshabilita y genera informes en PDF de lo recaudado.",
           "role": "Diseño y desarrollo",
           "context": "Proyecto académico en equipo · Duoc UC",
           "years": "2023",
-          "scope": "Diseño de interfaz, maquetación responsive y navegación",
-          "mediaBg": "#E9E7E4",
-          "links": [
-            {
-              "label": "Ver repositorio",
-              "href": "https://github.com/Confloresc/Prueba-1"
-            }
-          ],
+          "scope": "Diseño de interfaz, desarrollo web con Python y Django, base de datos y reportes",
+          "mediaBg": "#ECEAF2",
+          "links": [],
           "cover": {
-            "src": "assets/proyectos/grupo-cero/6.0-inicio.webp",
-            "fallback": "assets/proyectos/grupo-cero/6.0-inicio.jpg",
-            "alt": "Inicio del sitio Grupo Cero: banner con aros de perlas y el título «Diseños de artistas locales»",
+            "src": "assets/proyectos/estacionamiento/7.0-portada.webp",
+            "fallback": "assets/proyectos/estacionamiento/7.0-portada.jpg",
+            "alt": "Inicio del sistema de arriendo de estacionamientos en computador",
             "ratio": "8/5"
           },
           "sections": [
             {
-              "title": "Navegación por categorías y artistas",
-              "layout": "sequence",
-              "text": "Las obras se ordenan en cuatro categorías y cada artista tiene su propia página, para recorrer la galería por tipo de obra o por autor.",
-              "media": [
-                {
-                  "src": "assets/proyectos/grupo-cero/6.1-categorias.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.1-categorias.jpg",
-                  "alt": "Página de categorías con escultura, orfebrería, pinturas y tejido",
-                  "ratio": "8/5",
-                  "caption": "Categorías"
-                },
-                {
-                  "src": "assets/proyectos/grupo-cero/6.2-artistas.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.2-artistas.jpg",
-                  "alt": "Página de artistas con cuatro perfiles, una breve biografía y su especialidad",
-                  "ratio": "8/5",
-                  "caption": "Artistas"
-                }
-              ]
-            },
-            {
-              "title": "Del artista a la obra",
-              "layout": "sequence",
-              "text": "Desde el perfil de cada artista se llega a la ficha de la obra, con sus datos, su valor y la opción de agregarla al carro.",
-              "media": [
-                {
-                  "src": "assets/proyectos/grupo-cero/6.3-perfil-artista.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.3-perfil-artista.jpg",
-                  "alt": "Perfil de una artista escultora con sus obras",
-                  "ratio": "8/5",
-                  "caption": "Perfil de artista"
-                },
-                {
-                  "src": "assets/proyectos/grupo-cero/6.4-detalle-obra.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.4-detalle-obra.jpg",
-                  "alt": "Ficha de una obra con autor, año, categoría, valor, descripción y botón para agregar al carro",
-                  "ratio": "8/5",
-                  "caption": "Ficha de obra"
-                }
-              ]
-            },
-            {
-              "title": "Cuentas de usuario",
-              "layout": "feature",
-              "text": "Registro, inicio de sesión y perfil para quienes compran o exponen en la galería.",
-              "media": [
-                {
-                  "src": "assets/proyectos/grupo-cero/6.5-registro.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.5-registro.jpg",
-                  "alt": "Formulario de registro con nombre, apellido, correo y contraseña",
-                  "ratio": "8/5",
-                  "caption": "Registro"
-                }
-              ]
-            },
-            {
-              "title": "Responsive",
+              "title": "Entrada y tipos de cuenta",
               "layout": "phone",
-              "text": "El sitio se adapta al celular con menú desplegable y contenidos en una columna.",
+              "text": "Al registrarse se elige si la cuenta es de cliente o de dueño; cada una ve un menú y funciones distintas.",
               "media": [
                 {
-                  "src": "assets/proyectos/grupo-cero/6.6-inicio-celular.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.6-inicio-celular.jpg",
-                  "alt": "Inicio de Grupo Cero en celular",
+                  "src": "assets/proyectos/estacionamiento/7.01-inicio.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.01-inicio.jpg",
+                  "alt": "Inicio del sistema en celular, con la bienvenida y una foto de autos estacionados",
                   "ratio": "195/332",
                   "caption": "Inicio"
                 },
                 {
-                  "src": "assets/proyectos/grupo-cero/6.7-artistas-celular.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.7-artistas-celular.jpg",
-                  "alt": "Página de artistas en celular",
-                  "ratio": "195/332",
-                  "caption": "Artistas"
-                },
-                {
-                  "src": "assets/proyectos/grupo-cero/6.8-registro-celular.webp",
-                  "fallback": "assets/proyectos/grupo-cero/6.8-registro-celular.jpg",
-                  "alt": "Formulario de registro en celular",
+                  "src": "assets/proyectos/estacionamiento/7.02-registro.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.02-registro.jpg",
+                  "alt": "Registro con elección entre cuenta de cliente o de dueño",
                   "ratio": "195/332",
                   "caption": "Registro"
+                },
+                {
+                  "src": "assets/proyectos/estacionamiento/7.03-login.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.03-login.jpg",
+                  "alt": "Formulario de inicio de sesión",
+                  "ratio": "195/332",
+                  "caption": "Inicio de sesión"
+                }
+              ]
+            },
+            {
+              "title": "Buscar, reservar y calificar",
+              "layout": "phone",
+              "text": "El cliente filtra por comuna y horario, reserva un estacionamiento libre y, al terminar el arriendo, califica al dueño. En su perfil registra sus vehículos.",
+              "media": [
+                {
+                  "src": "assets/proyectos/estacionamiento/7.04-buscar.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.04-buscar.jpg",
+                  "alt": "Búsqueda por comuna, fecha y hora de inicio y término",
+                  "ratio": "195/332",
+                  "caption": "Buscar"
+                },
+                {
+                  "src": "assets/proyectos/estacionamiento/7.05-resultados.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.05-resultados.jpg",
+                  "alt": "Resultado de la búsqueda con dirección, precio por hora y botón Reservar",
+                  "ratio": "195/332",
+                  "caption": "Resultados"
+                },
+                {
+                  "src": "assets/proyectos/estacionamiento/7.06-calificar.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.06-calificar.jpg",
+                  "alt": "Ventana para calificar al dueño con estrellas y un comentario",
+                  "ratio": "195/332",
+                  "caption": "Calificar"
+                },
+                {
+                  "src": "assets/proyectos/estacionamiento/7.07-perfil.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.07-perfil.jpg",
+                  "alt": "Perfil del cliente con sus vehículos registrados",
+                  "ratio": "195/332",
+                  "caption": "Perfil"
+                }
+              ]
+            },
+            {
+              "title": "Panel del dueño",
+              "layout": "phone",
+              "text": "El dueño administra sus estacionamientos y descarga un informe en PDF con lo recaudado en un rango de fechas.",
+              "media": [
+                {
+                  "src": "assets/proyectos/estacionamiento/7.08-dueno.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.08-dueno.jpg",
+                  "alt": "Panel del dueño con su estacionamiento y el botón para deshabilitarlo",
+                  "ratio": "195/332",
+                  "caption": "Mis estacionamientos"
+                },
+                {
+                  "src": "assets/proyectos/estacionamiento/7.09-informe.webp",
+                  "fallback": "assets/proyectos/estacionamiento/7.09-informe.jpg",
+                  "alt": "Formulario para generar un informe en PDF entre dos fechas",
+                  "ratio": "195/332",
+                  "caption": "Informe PDF"
                 }
               ]
             }
@@ -1194,7 +1189,7 @@
           "contribution": "",
           "tools": [],
           "result": "",
-          "image": "assets/proyectos/grupo-cero/6.0-inicio.webp",
+          "image": "assets/proyectos/estacionamiento/7.0-portada.webp",
           "gallery": [],
           "position": [
             23,
