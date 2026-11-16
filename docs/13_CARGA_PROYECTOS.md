@@ -71,3 +71,11 @@ Caso de estudio UX/UI armado con el material del Drive de Coni (carpeta ROBERT �
 - Imágenes: mapa del sitio, 4 wireframes (PDF exportado), estilo 1 y 2 (inicio y tratamientos), diseño final (inicio, destacados y Explore Treatments).
 - Se recortaron las secciones de reseñas con nombres de pacientes. No se usaron cotizaciones.
 - Año 2025 (fechas de los archivos). *Por confirmar con Coni:* si va como proyecto propio o dentro de R·MEDY, y si el rediseño está publicado (vancouverlaser.com) para enlazarlo.
+
+## R·MEDY con el diseño de Figma (16 de noviembre)
+
+- Coni exportó desde Figma (con Claude en Chrome) las 12 pantallas **mobile** de la página «RMEDY — RESTRUCTURE» (804 × 1732, 2x). Reemplazan las capturas del sitio publicado (se borraron).
+- Portada: composición con tres pantallas en marcos de celular (terapia hormonal, inicio, reserva).
+- Bloques: Inicio y navegación · Programas · Herramientas para decidir (evaluación, precios, reserva, contacto) · Contenido y marca. Textos escritos a partir de lo visible en las pantallas.
+- Se mantiene el botón «Ver sitio publicado» (rmedymd.com).
+- Se intentó la API de Figma con clave personal; la primera clave guardada fue rechazada (inválida) y Coni prefirió no entregar otra. Esa credencial inválida quedó guardada en el entorno y puede borrarse desde la configuración del entorno.

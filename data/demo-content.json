@@ -787,12 +787,12 @@
           "isDemo": false,
           "type": "Diseño web UX/UI",
           "client": "R·MEDY Health and Wellness",
-          "subtitle": "Renovación del sitio web de una clínica de salud integral en Vancouver, con enfoque mobile-first.",
+          "subtitle": "Rediseño mobile-first del sitio de una clínica de salud integral en Vancouver.",
           "intro": "Diseño de interfaces para la renovación del sitio web de R·MEDY, una clínica de salud y bienestar en Vancouver, Canadá. Organicé y simplifiqué los contenidos para mejorar la navegación y la lectura, diseñé en Figma las secciones, componentes, navegación, tarjetas, botones y formularios, y desarrollé prototipos e interacciones adaptando los lineamientos de la marca al entorno digital, iterando con el cliente hasta dejar los diseños listos para implementar.",
           "role": "Diseño UX/UI",
           "context": "Proyecto freelance · Vancouver, Canadá",
           "years": "2026",
-          "scope": "Arquitectura de contenidos, componentes, prototipos y diseño mobile-first",
+          "scope": "Arquitectura de contenidos, diseño de interfaz mobile, componentes y prototipo en Figma",
           "mediaBg": "#F4EFE6",
           "links": [
             {
@@ -801,79 +801,121 @@
             }
           ],
           "cover": {
-            "src": "assets/proyectos/r-medy/5.0-inicio-escritorio.webp",
-            "fallback": "assets/proyectos/r-medy/5.0-inicio-escritorio.jpg",
-            "alt": "Inicio del sitio de R·MEDY: título «A complete picture of your health», botones de programas y consulta, y una foto de un equipo médico con pacientes",
+            "src": "assets/proyectos/r-medy/5.00-portada.webp",
+            "fallback": "assets/proyectos/r-medy/5.00-portada.jpg",
+            "alt": "Tres pantallas mobile del rediseño de R·MEDY: terapia hormonal, inicio y reserva de consulta",
             "ratio": "8/5"
           },
           "sections": [
             {
-              "title": "Mobile-first",
+              "title": "Inicio y navegación",
               "layout": "phone",
-              "text": "El sitio se pensó primero para el celular: jerarquía clara, botones grandes y contenidos breves, con un prototipo de app para encontrar el servicio adecuado según la necesidad.",
+              "text": "Un inicio que va directo al grano: propuesta de valor, buscador, señales de confianza y «What brings you in?» para que cada persona elija su camino. El menú agrupa la oferta por público (mujeres, hombres, empresas) y por tipo de cuidado, con el botón de consulta siempre visible.",
               "media": [
                 {
-                  "src": "assets/proyectos/r-medy/5.5-inicio-celular.webp",
-                  "fallback": "assets/proyectos/r-medy/5.5-inicio-celular.jpg",
-                  "alt": "Inicio del sitio de R·MEDY en celular",
-                  "ratio": "195/332",
-                  "caption": "Inicio en celular"
+                  "src": "assets/proyectos/r-medy/5.01-home.webp",
+                  "fallback": "assets/proyectos/r-medy/5.01-home.jpg",
+                  "alt": "Inicio mobile de R·MEDY con buscador, señales de confianza y la sección What brings you in?",
+                  "ratio": "201/433",
+                  "caption": "Inicio"
                 },
                 {
-                  "src": "assets/proyectos/r-medy/5.6-buscador-celular.webp",
-                  "fallback": "assets/proyectos/r-medy/5.6-buscador-celular.jpg",
-                  "alt": "Buscador «What brings you in?» en celular, con opciones según la necesidad del paciente",
-                  "ratio": "1109/2400",
-                  "caption": "Buscador de servicios"
-                },
-                {
-                  "src": "assets/proyectos/r-medy/5.7-prototipo-app.webp",
-                  "fallback": "assets/proyectos/r-medy/5.7-prototipo-app.jpg",
-                  "alt": "Prototipo de app de R·MEDY con buscador de inquietudes y filtros de salud y estética",
-                  "ratio": "195/332",
-                  "caption": "Prototipo de app"
+                  "src": "assets/proyectos/r-medy/5.02-menu.webp",
+                  "fallback": "assets/proyectos/r-medy/5.02-menu.jpg",
+                  "alt": "Menú mobile de R·MEDY organizado por público y tipo de cuidado",
+                  "ratio": "201/433",
+                  "caption": "Menú"
                 }
               ]
             },
             {
-              "title": "Encontrar el servicio",
-              "layout": "feature",
-              "text": "Un buscador guiado que recomienda el programa adecuado según lo que la persona necesita, y una grilla de tarjetas con todos los servicios de la clínica.",
+              "title": "Programas",
+              "layout": "phone",
+              "text": "Cada programa sigue la misma estructura: una promesa clara, etiquetas que resumen el enfoque y una pregunta de entrada para quien todavía no sabe si es para él o ella.",
               "media": [
                 {
-                  "src": "assets/proyectos/r-medy/5.1-buscador-servicios.webp",
-                  "fallback": "assets/proyectos/r-medy/5.1-buscador-servicios.jpg",
-                  "alt": "Sección «What brings you in?»: opciones a la izquierda y una recomendación con botones a la derecha",
-                  "ratio": "72/35",
-                  "caption": "Buscador guiado"
+                  "src": "assets/proyectos/r-medy/5.03-hormonas.webp",
+                  "fallback": "assets/proyectos/r-medy/5.03-hormonas.jpg",
+                  "alt": "Página de terapia hormonal femenina: Restore balance. Renew your energy.",
+                  "ratio": "201/433",
+                  "caption": "Terapia hormonal"
                 },
                 {
-                  "src": "assets/proyectos/r-medy/5.2-grilla-servicios.webp",
-                  "fallback": "assets/proyectos/r-medy/5.2-grilla-servicios.jpg",
-                  "alt": "Grilla de seis tarjetas de servicios con ícono, título, descripción y enlace",
-                  "ratio": "1440/809",
-                  "caption": "Grilla de servicios"
+                  "src": "assets/proyectos/r-medy/5.04-peso.webp",
+                  "fallback": "assets/proyectos/r-medy/5.04-peso.jpg",
+                  "alt": "Página de control de peso: Reset your metabolism.",
+                  "ratio": "201/433",
+                  "caption": "Control de peso"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.05-empresas.webp",
+                  "fallback": "assets/proyectos/r-medy/5.05-empresas.jpg",
+                  "alt": "Página de salud ejecutiva para empresas",
+                  "ratio": "201/433",
+                  "caption": "Salud para empresas"
                 }
               ]
             },
             {
-              "title": "Recorrido y contacto",
-              "layout": "feature",
-              "text": "Un recorrido de cuatro pasos que explica el proceso de atención, y un formulario de consulta gratuita simple y claro.",
+              "title": "Herramientas para decidir",
+              "layout": "phone",
+              "text": "Funciones que bajan la incertidumbre antes de agendar: una calculadora de edad biológica, precios transparentes, una reserva en tres pasos que compara disponibilidad entre clínicas y un contacto que deriva a cada persona por el camino más rápido.",
               "media": [
                 {
-                  "src": "assets/proyectos/r-medy/5.3-cuatro-pasos.webp",
-                  "fallback": "assets/proyectos/r-medy/5.3-cuatro-pasos.jpg",
-                  "alt": "Sección de cuatro pasos numerados, desde la primera evaluación hasta resultados duraderos",
-                  "ratio": "480/281",
-                  "caption": "Cuatro pasos"
+                  "src": "assets/proyectos/r-medy/5.06-evaluacion.webp",
+                  "fallback": "assets/proyectos/r-medy/5.06-evaluacion.jpg",
+                  "alt": "Calculadora de edad biológica con controles para edad, estatura y peso",
+                  "ratio": "201/433",
+                  "caption": "Evaluación"
                 },
                 {
-                  "src": "assets/proyectos/r-medy/5.4-formulario-consulta.webp",
-                  "fallback": "assets/proyectos/r-medy/5.4-formulario-consulta.jpg",
-                  "alt": "Formulario de consulta gratuita sobre fondo verde, con datos de contacto de la clínica",
-                  "ratio": "1440/751",
-                  "caption": "Formulario de consulta"
+                  "src": "assets/proyectos/r-medy/5.07-precios.webp",
+                  "fallback": "assets/proyectos/r-medy/5.07-precios.jpg",
+                  "alt": "Página de precios del programa de control de peso",
+                  "ratio": "201/433",
+                  "caption": "Precios"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.08-reserva.webp",
+                  "fallback": "assets/proyectos/r-medy/5.08-reserva.jpg",
+                  "alt": "Reserva en tres pasos: clínica, horario y datos, comparando disponibilidad",
+                  "ratio": "201/433",
+                  "caption": "Reserva"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.09-contacto.webp",
+                  "fallback": "assets/proyectos/r-medy/5.09-contacto.jpg",
+                  "alt": "Contacto con opciones según lo que la persona necesita",
+                  "ratio": "201/433",
+                  "caption": "Contacto"
+                }
+              ]
+            },
+            {
+              "title": "Contenido y marca",
+              "layout": "phone",
+              "text": "Páginas de equipo, artículos y productos con el mismo sistema visual: tipografía serif editorial, tonos crema y verde profundo, y componentes reutilizables.",
+              "media": [
+                {
+                  "src": "assets/proyectos/r-medy/5.10-nosotros.webp",
+                  "fallback": "assets/proyectos/r-medy/5.10-nosotros.jpg",
+                  "alt": "Página Sobre nosotros con video de la clínica",
+                  "ratio": "201/433",
+                  "caption": "Sobre nosotros"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.11-blog.webp",
+                  "fallback": "assets/proyectos/r-medy/5.11-blog.jpg",
+                  "alt": "Blog con buscador, filtros y artículo destacado",
+                  "ratio": "201/433",
+                  "caption": "Blog"
+                },
+                {
+                  "src": "assets/proyectos/r-medy/5.12-producto.webp",
+                  "fallback": "assets/proyectos/r-medy/5.12-producto.jpg",
+                  "alt": "Ficha de producto Brightening Clarity Concentrate",
+                  "ratio": "201/433",
+                  "caption": "Producto"
                 }
               ]
             }
@@ -882,7 +924,7 @@
           "contribution": "",
           "tools": [],
           "result": "",
-          "image": "assets/proyectos/r-medy/5.0-inicio-escritorio.webp",
+          "image": "assets/proyectos/r-medy/5.00-portada.webp",
           "gallery": [],
           "position": [
             77,
